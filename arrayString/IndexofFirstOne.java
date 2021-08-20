@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // It is similar approach as quick sort
 public class IndexofFirstOne {
