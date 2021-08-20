@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // Find minimum difference between sum & the given sum to get the closest sum & then find pair
 // THis operation will be performed after sorting the array

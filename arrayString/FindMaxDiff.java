@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // Here larger number is always appearing after smaller number
 // It also cater leader in array problem
