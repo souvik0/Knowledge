@@ -1,0 +1,8 @@
+/Client.class
+/FileDownloaderAbstraction.class
+/FileDownloaderAbstractionImpl.class
+/FileDownloaderImplementor.class
+/LinuxFileDownloaderImplementor.class
+/MacFileDownloaderImplementor.class
+/OSType.class
+/WindowsFileDownloaderImplementor.class
