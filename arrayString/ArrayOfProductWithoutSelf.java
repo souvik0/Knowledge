@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 // Product without self
 public class ArrayOfProductWithoutSelf {
 

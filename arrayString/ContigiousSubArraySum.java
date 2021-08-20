@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // It gives only one sub array which is the first one
 

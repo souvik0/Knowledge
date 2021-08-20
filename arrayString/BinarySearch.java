@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 /* Always performs on a sorted array.
    To find out which index of the array is holding the item  

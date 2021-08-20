@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 import java.io.IOException;
 import java.nio.file.Files;

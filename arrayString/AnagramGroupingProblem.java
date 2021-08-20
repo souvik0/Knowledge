@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 /* Any kind of grouping of objects can be done easily with hashing algorithm
    Like this one as well topView, bottomView & verticalView of BT/BST 
