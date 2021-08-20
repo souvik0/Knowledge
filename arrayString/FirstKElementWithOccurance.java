@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 /* Find k numbers with most occurrences in the given array
    Given an array of n numbers and a positive integer k. 

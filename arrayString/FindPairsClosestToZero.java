@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // wHILE FINDING CLOSEST TO ZERO, TRY TP FIND OUT MINIMUM SUM
 //THis operation will be performed after sorting the array

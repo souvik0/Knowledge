@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 /* Time Complexity : O(nlogn)
 
