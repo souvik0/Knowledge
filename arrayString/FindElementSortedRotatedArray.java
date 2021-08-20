@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 /*Using Binary Search:
     Step 1: Find index of pivot element (Index of minimum element)
