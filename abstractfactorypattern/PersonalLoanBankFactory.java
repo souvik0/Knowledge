@@ -1,4 +1,4 @@
-package com.abstractfactorypattern;
+package abstractfactorypattern;
 
 public class PersonalLoanBankFactory implements Loan {
 
