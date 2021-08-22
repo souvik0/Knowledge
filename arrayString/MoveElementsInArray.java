@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 // Moving the specified element to the end of an array
 public class MoveElementsInArray {
 

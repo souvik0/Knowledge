@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // This program will also cater majority problem, where occurance of an element is more than n/2
 import java.util.HashMap;

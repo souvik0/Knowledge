@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 public class MergeTwoSortedArrays {
 

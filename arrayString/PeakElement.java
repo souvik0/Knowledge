@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 /* O(log n) time complexity
    This problem can be solved with leader in array approach also, 
