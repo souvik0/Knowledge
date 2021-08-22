@@ -1,4 +1,4 @@
-package com.bridgepattern;
+package bridgepattern;
 
 // Concrete abstraction uses implementor hierarchies to satisfy needs
 

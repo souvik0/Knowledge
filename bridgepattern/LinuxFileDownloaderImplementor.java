@@ -1,4 +1,4 @@
-package com.bridgepattern;
+package bridgepattern;
 
 public class LinuxFileDownloaderImplementor implements FileDownloaderImplementor {
 
