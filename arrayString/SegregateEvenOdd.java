@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 /* This is similar algorithm as quick sort. Apart from Quick sort calculates pivot element before while & check
    condition with pivot element */

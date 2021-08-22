@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // Here string is getting split maximum in 3 parts where every part must contain 'a'
 // Objective is to find out how many ways we can achieve the above

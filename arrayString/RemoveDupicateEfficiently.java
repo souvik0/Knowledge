@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // Remove duplicate without using any extra map object
 import java.util.Arrays;
