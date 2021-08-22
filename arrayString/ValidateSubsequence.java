@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 // Sam logic can also be applicable for sub array check.
 public class ValidateSubsequence {
 

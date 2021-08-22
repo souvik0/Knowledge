@@ -1,4 +1,4 @@
-package com.arrayString;
+package arrayString;
 
 // Finding out triplet sum equals to zero
 import java.util.Arrays;
