@@ -1,4 +1,4 @@
-package com.expression;
+package expression;
 
 public class TreeNode {
 

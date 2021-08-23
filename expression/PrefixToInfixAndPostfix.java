@@ -1,4 +1,4 @@
-package com.expression;
+package expression;
 
 import java.util.Stack;
 
