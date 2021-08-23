@@ -1,4 +1,4 @@
-package com.dynamicprogramming;
+package dynamicprogramming;
 
 // This problem can be viewed as BFS traversal from start to destination in a matrix
 // Matrix cells can be represented as graph nodes

@@ -1,4 +1,4 @@
-package com.dynamicprogramming;
+package dynamicprogramming;
 
 public class Longest_common_substr {
 

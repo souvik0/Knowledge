@@ -1,4 +1,4 @@
-package com.dynamicprogramming;
+package dynamicprogramming;
 
 // This can be solved using Fibonacci series approach
 public class StaircaseProblem {

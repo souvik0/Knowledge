@@ -1,4 +1,4 @@
-package com.dynamicprogramming;
+package dynamicprogramming;
 
 // It is also termed as Chinese CHecker problem
 import java.util.ArrayList;

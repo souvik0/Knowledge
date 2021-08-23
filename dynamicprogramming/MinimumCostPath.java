@@ -1,4 +1,4 @@
-package com.dynamicprogramming;
+package dynamicprogramming;
 
 // To find out minimum cost path from top left to bottom right.
 // Only right & down direction is possible move

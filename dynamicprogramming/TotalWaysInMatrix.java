@@ -1,4 +1,4 @@
-package com.dynamicprogramming;
+package dynamicprogramming;
 
 // Here we can move only in right & bottom direction
 // if there is diagonal movement also add count[i-1][j-1] in the final result

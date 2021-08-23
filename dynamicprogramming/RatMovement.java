@@ -1,4 +1,4 @@
-package com.dynamicprogramming;
+package dynamicprogramming;
 // Here rat can move in left, right, bottom & up direction by 1 step each
 public class RatMovement {
 
