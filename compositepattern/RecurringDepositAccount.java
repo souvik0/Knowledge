@@ -1,4 +1,4 @@
-package com.compositepattern;
+package compositepattern;
 
 public class RecurringDepositAccount extends Account {
 

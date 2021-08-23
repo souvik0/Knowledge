@@ -1,4 +1,4 @@
-package com.compositepattern;
+package compositepattern;
 
 public class DepositAccount extends Account {
 
