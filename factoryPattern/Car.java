@@ -1,4 +1,4 @@
-package com.factoryPattern;
+package factoryPattern;
 
 // It can be interface also
 public abstract class Car {

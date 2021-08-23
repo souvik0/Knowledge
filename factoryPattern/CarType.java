@@ -1,4 +1,4 @@
-package com.factoryPattern;
+package factoryPattern;
 
 public enum CarType {
 

@@ -1,4 +1,4 @@
-package com.factoryPattern;
+package factoryPattern;
 
 public class Sedan extends Car{
 
