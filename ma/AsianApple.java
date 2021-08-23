@@ -1,4 +1,4 @@
-package com.ma;
+package ma;
 
 public class AsianApple extends Apple {
 

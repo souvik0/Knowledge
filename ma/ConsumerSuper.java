@@ -1,4 +1,4 @@
-package com.ma;
+package ma;
 
 import java.util.ArrayList;
 import java.util.List;

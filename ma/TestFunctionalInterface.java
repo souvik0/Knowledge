@@ -1,4 +1,4 @@
-package com.ma;
+package ma;
 
 import java.io.File;
 import java.io.IOException;

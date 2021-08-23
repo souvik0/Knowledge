@@ -1,4 +1,4 @@
-package com.ma;
+package ma;
 
 @FunctionalInterface
 public interface MyFunctionallnterface {

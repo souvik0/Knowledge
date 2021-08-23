@@ -1,4 +1,4 @@
-package com.ma;
+package ma;
 
 public class Apple extends Fruit{
 
