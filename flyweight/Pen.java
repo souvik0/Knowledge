@@ -1,4 +1,4 @@
-package com.flyweight;
+package flyweight;
 
 public interface Pen {
 
