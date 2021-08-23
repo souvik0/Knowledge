@@ -1,4 +1,4 @@
-package com.builderpattern;
+package builderpattern;
 
 public class ComputerBuilderDecorator {
 
