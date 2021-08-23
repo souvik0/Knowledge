@@ -1,4 +1,4 @@
-package com.concurrency;
+package concurrency;
 
 public class ReadWriteLockTest {
 
