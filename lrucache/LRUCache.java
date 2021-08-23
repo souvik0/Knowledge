@@ -1,4 +1,4 @@
-package com.lrucache;
+package lrucache;
 /* LRU is a cache eviction policy
 /* Doubly linked list is used to maintain put operation at O(1) & 
  * Hash map used to maintain get operation at O(1).

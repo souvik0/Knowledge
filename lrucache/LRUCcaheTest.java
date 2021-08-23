@@ -1,4 +1,4 @@
-package com.lrucache;
+package lrucache;
 
 public class LRUCcaheTest {
 

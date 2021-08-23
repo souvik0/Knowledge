@@ -1,4 +1,4 @@
-package com.lrucache;
+package lrucache;
 
 // This class is basically representing Node of doubly linked-list
 public class EntryNode {
