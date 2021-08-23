@@ -1,4 +1,4 @@
-package com.chainofresponsibilitypattern;
+package chainofresponsibilitypattern;
 
 public class HundredRupeeDispenser extends PaperCurrencyDispenser {
 
