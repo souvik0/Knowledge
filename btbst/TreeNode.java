@@ -1,4 +1,4 @@
-package com.btbst;
+package btbst;
 
 // Any tree like data structure can be represented by it's representing node class
 /* Here TreeNode class can represent BinaryTree, BinarySerachTree, AVL Tree also doubly linked list uses same

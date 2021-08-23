@@ -1,4 +1,4 @@
-package com.btbst;
+package btbst;
 
 public class TestBinaryTree {
 

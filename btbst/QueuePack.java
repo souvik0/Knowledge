@@ -1,4 +1,4 @@
-package com.btbst;
+package btbst;
 
 /**
  * This object is required to maintain relationship between level & nodes.

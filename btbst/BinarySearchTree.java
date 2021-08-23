@@ -1,4 +1,4 @@
-package com.btbst;
+package btbst;
 
 import java.util.ArrayList;
 import java.util.HashMap;

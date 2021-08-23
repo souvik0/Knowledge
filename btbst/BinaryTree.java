@@ -1,4 +1,4 @@
-package com.btbst;
+package btbst;
 
 import java.util.LinkedList;
 import java.util.Queue;
