@@ -1,4 +1,4 @@
-package com.decoratorpattern;
+package decoratorpattern;
 
 public class RedShapeDecorator extends ShapeDecorator {
 
