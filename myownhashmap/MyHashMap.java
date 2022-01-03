@@ -1,4 +1,4 @@
-package com.myownhashmap;
+package myownhashmap;
 
 import java.io.Serializable;
 

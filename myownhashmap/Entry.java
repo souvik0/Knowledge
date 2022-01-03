@@ -1,4 +1,4 @@
-package com.myownhashmap;
+package myownhashmap;
 
 /* This class is basically representing Node of singly linked-list
  * In case of hashmap this entry object represents singly linked list 
