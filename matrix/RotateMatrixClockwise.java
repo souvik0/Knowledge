@@ -1,4 +1,4 @@
-package com.matrix;
+package matrix;
 
 /* This approach is applicable to square matrix only
  * 1. Transpose of matrix 

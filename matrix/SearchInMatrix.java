@@ -1,4 +1,4 @@
-package com.matrix;
+package matrix;
 
 // Search in a row-wise, column-wise sorted matrix
 public class SearchInMatrix {

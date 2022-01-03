@@ -1,4 +1,4 @@
-package com.objectpoolpattern;
+package objectpoolpattern;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

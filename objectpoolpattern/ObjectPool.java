@@ -1,4 +1,4 @@
-package com.objectpoolpattern;
+package objectpoolpattern;
 
 import java.time.Instant;
 import java.util.HashMap;
