@@ -1,4 +1,4 @@
-package com.stackQueue;
+package stackQueue;
 
 /* Ultimate result set will be in the tempStack.
    For ascending order popedElement > tempStack.peek().To reverse in tempStack.

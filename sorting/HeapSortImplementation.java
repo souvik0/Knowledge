@@ -1,4 +1,4 @@
-package com.sorting;
+package sorting;
 
 /* 1. Create Max Heap (General procedure O(nlogn)) from the given array using heapify algorithm.
  * Time complexity O(n).

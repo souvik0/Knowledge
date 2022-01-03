@@ -1,4 +1,4 @@
-package com.stackQueue;
+package stackQueue;
 
 public class ArrayQuue<T> {
 

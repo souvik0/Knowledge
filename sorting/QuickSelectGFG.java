@@ -1,4 +1,4 @@
-package com.sorting;
+package sorting;
 /*
  * The algorithm is similar to QuickSort.
  * The difference is, instead of recurring for both sides (after finding pivot),

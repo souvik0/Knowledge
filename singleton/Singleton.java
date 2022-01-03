@@ -1,4 +1,4 @@
-package com.singleton;
+package singleton;
 // Enum iS also by default singleton. Limitation is it always creates only one Object without Lazy loading
 // Enum constructors are handled by JVM to create object.
 

@@ -1,4 +1,4 @@
-package com.sorting;
+package sorting;
 
 public class QuickSelect {
 

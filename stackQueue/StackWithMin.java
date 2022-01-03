@@ -1,4 +1,4 @@
-package com.stackQueue;
+package stackQueue;
 // Similar algorithm to find out max element.
 import java.util.Stack;
 

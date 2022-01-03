@@ -1,4 +1,4 @@
-package com.stackQueue;
+package stackQueue;
 
 // Creating stack with the help of an array
 public class ArrayStack<T> {

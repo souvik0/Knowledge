@@ -1,4 +1,4 @@
-package com.sorting;
+package sorting;
 
 // Merge sort is based on divide & concquer rule
 /* Best case: O(nlogn)
