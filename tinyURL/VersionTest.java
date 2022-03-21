@@ -1,4 +1,4 @@
-package com.tinyURL;
+package tinyURL;
 
 public class VersionTest {
 

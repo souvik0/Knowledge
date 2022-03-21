@@ -1,4 +1,4 @@
-package com.tinyURL;
+package tinyURL;
 
 import java.util.HashMap;
 import java.util.Map;
