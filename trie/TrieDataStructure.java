@@ -1,4 +1,4 @@
-package com.trie;
+package trie;
 // Trie is used for phone book & dictionary kind of data structure. 
 // Also very much used data structure to build TypeAhead system.
 
