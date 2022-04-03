@@ -1,12 +1,12 @@
 package myownhashmap;
-
+//Originally Entry is static inner class, But here I kept it as different class for easy reference.
 import java.io.Serializable;
 
 public class MyHashMap<K, V> implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private int DEFAULT_BUCKET_SIZE = 20;
-    private transient Entry<K, V>[] table; // This is the bucket
+    private int DEFAULT_BUCKET_SIZE = 20; //To initialize bucket array inside default constructor
+    private transient Entry<K, V>[] table; //This is the bucket
 
     @SuppressWarnings("unchecked")
     public MyHashMap() {
@@ -45,7 +45,7 @@ public class MyHashMap<K, V> implements Serializable {
         }
 
         int tableIndex = getBucketIndexForKey(key);
-        Entry<K, V> entry = table[tableIndex];
+        Entry<K, V> entry = table[tableIndex]; // This will return first entry object of internal Linked list
 
         if (null != entry) {
             boolean done = false;
