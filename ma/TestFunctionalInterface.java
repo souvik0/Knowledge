@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 public class TestFunctionalInterface {
 
     public static void main(String[] args) throws IOException {
-        MyFunctionallnterface mfi = (name) -> {
+        MyFunctionallnterface<String> mfi = (name) -> {
             System.out.println("Hello : " + name);
         };
         mfi.display("souvik");

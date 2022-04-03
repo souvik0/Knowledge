@@ -1,10 +1,10 @@
 package ma;
 
 @FunctionalInterface
-public interface MyFunctionallnterface {
+public interface MyFunctionallnterface<T> {
 
     // Single abstract method
-    public void display(String name);
+    public void display(T name);
 
     default void move(){
         System.out.println("I am moving");
