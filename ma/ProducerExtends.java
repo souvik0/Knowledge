@@ -18,23 +18,23 @@ public class ProducerExtends {
 
         //We can assign a list of apples to a basket of fruits;
         //because apple is subtype of fruit
-        ///Narrowing the scope or covariance the scope
-        List<? extends Fruit> basket = applesList; // Any sub type of Fruit can be assigned
-        List<? extends Fruit> asianBasket = asianAppleList;
-        List<? extends Apple> asianAppleBasket = asianAppleList; // Any sub type of Apple can be assigned
+        //Narrowing the scope or covariance the scope
+        List<? extends Fruit> appleBasket = applesList; // Any sub type of Fruit can be assigned
+        List<? extends Fruit> asianAppleBasket1 = asianAppleList;
+        List<? extends Apple> asianAppleBasket2 = asianAppleList; // Any sub type of Apple can be assigned
         List<? extends Apple> fruitBasket = fruitList;
-        List<? extends Apple> appleBasket = applesList;
+        List<? extends Apple> appleBasket1 = applesList;
 
         appleBasket.add(new Apple()); //Compile time error
         appleBasket.add(new AsianApple());
-        appleBasket.add(new Mango());
+        fruitBasket.add(new Mango());
         appleBasket.add(new Fruit()); //Compile time error
 
-        basket.add(new Apple());
-        basket.add(new Fruit());
+        appleBasket.add(new Apple());
+        appleBasket.add(new Fruit());
 
-        asianAppleBasket.add(new AsianApple());
-        asianAppleBasket.add(new Apple());
-        asianAppleBasket.add(new Fruit());
+        asianAppleBasket1.add(new AsianApple());
+        asianAppleBasket2.add(new Apple());
+        asianAppleBasket1.add(new Fruit());
     }
 }
