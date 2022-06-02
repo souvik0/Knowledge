@@ -241,9 +241,9 @@ public class BinaryTree {
         } else {
             level++;
         }
-        // Looking at left subtree
+        // Traversing the complete left subtree
         int left = levelOfNode(root.left, nodeData, level);
-        // If left nodes doesn't exist
+        // If nodes doesn't exist at left subtree
         if (left == -1) {
             return levelOfNode(root.right, nodeData, level);
         }
@@ -258,6 +258,7 @@ public class BinaryTree {
         // Considering diameter passes through the root
         int lHeight = height(root.left);
         int rHeight = height(root.right);
+
         // Considering diameter when not passes through the root
         int lDiameter = diameterOfBinaryTree(root.left);
         int rDiameter = diameterOfBinaryTree(root.right);
@@ -492,7 +493,7 @@ public class BinaryTree {
         if (root1.data != root2.data) {
             return false;
         }
-        // Same Isomorphic(Identical tree) & cross Isomorphic(Cross Isomorphic)
+        // Same Isomorphic(Identical tree) & cross Isomorphic(Mirror Tree)
         if (root1.data == root2.data) {
             if ((isIsomorphic(root1.left, root2.left) && isIsomorphic(root1.right, root2.right)) ||
                 (isIsomorphic(root1.left, root2.right) && isIsomorphic(root1.right, root2.left))) {

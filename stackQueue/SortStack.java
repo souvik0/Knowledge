@@ -18,11 +18,11 @@ public class SortStack {
         input.push(23);
 
         // This is the temporary stack 
-        Stack<Integer> tmpStack = sortStack(input);
+        Stack<Integer> sortedStack = sortStack(input);
         System.out.println("Sorted numbers are:");
 
-        while (!tmpStack.empty()) { 
-            System.out.print(tmpStack.pop() + " "); 
+        while (!sortedStack.empty()) { 
+            System.out.print(sortedStack.pop() + " "); 
         }
     }
 

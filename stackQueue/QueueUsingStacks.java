@@ -4,12 +4,12 @@ import java.util.Stack;
 
 public class QueueUsingStacks {
 
+    Stack<Integer> stack;
+    Stack<Integer> tmpStack;
+
     public static void main(String[] args) {
         // TODO Auto-generated method stub
     }
-
-    Stack<Integer> stack ;
-    Stack<Integer> tmpStack ;
 
     public QueueUsingStacks () {
         stack = new Stack<Integer>();
