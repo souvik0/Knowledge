@@ -265,11 +265,11 @@ public class BinarySearchTree {
         }
         // If both the nodes present at left side
         if (root.data > a.data && root.data > b.data) {
-           return 1 + distanceBetweenTwoNodes(root.left, a, b);
+           return distanceBetweenTwoNodes(root.left, a, b);
         }
         // If both the nodes present at right side
         if (root.data < a.data && root.data < b.data) {
-           return 1 + distanceBetweenTwoNodes(root.right, a, b);
+           return distanceBetweenTwoNodes(root.right, a, b);
         }
         // If both the nodes present at different sides
         if ((root.data > a.data && root.data < b.data) ||
@@ -292,7 +292,7 @@ public class BinarySearchTree {
         if (left != null) {
             return left;
         }
-        // If kth element isn't present in left side
+        // If kth smallest element isn't present in left side
         countElementSmallest++;
         // root can be the kth element also
         if (countElementSmallest == k) {

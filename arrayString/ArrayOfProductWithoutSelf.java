@@ -22,7 +22,7 @@ public class ArrayOfProductWithoutSelf {
             left[i] = arr[i-1] * left[i-1];
         }
 
-        // Populate right array by multiplying individual elements of rightof the main array
+        // Populate right array by multiplying individual elements of right of the main array
         for (int j = n - 2; j >= 0; j--) {
             right[j] = arr[j+1] * right[j+1];
         }

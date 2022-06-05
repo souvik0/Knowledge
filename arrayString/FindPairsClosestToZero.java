@@ -25,6 +25,7 @@ public class FindPairsClosestToZero {
                 minSum = currentSum;
                 minleft = left;
                 minright = right;
+                System.out.println("Left: " + arr[minleft] + " : right: " + arr[minright]);
             }
             if (currentSum > 0) {
                 right--;
@@ -33,6 +34,5 @@ public class FindPairsClosestToZero {
                 left++;
             }
         }
-        System.out.println("Left: " + arr[minleft] + " : right: " + arr[minright]);
     }
 }

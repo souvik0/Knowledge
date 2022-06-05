@@ -18,8 +18,7 @@ public class LRUCache {
     }
 
     public LRUCache(int capacity) {
-        start = null;
-        end = null;
+        start = end = null;
         this.LRU_SIZE = capacity;
         tempMap = new HashMap<Integer, EntryNode>();
     }
@@ -79,8 +78,7 @@ public class LRUCache {
             newEntryObject.right = start;
             start = newEntryObject;
         } else {
-            start = newEntryObject;
-            end = start;
+            start = end = newEntryObject;
         }
     }
 

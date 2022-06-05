@@ -19,8 +19,7 @@ public class RunLength_Encoding {
             }
 
             // Print character and its count
-            System.out.println(str.charAt(i));
-            System.out.println(counter);
+            System.out.println(str.charAt(i) + ":" + counter);
         }
     }
 }

@@ -209,9 +209,9 @@ public class BinaryTree {
         printAllPathsFromRootToLeaf(root.right, path, level + 1);
     }
 
-    public static void  printArrayUtil(int[] path) {
+    public static void printArrayUtil(int[] path) {
         for (int i = 0; i < path.length; i++) {
-            System.out.print(" "+ path[i]);
+            System.out.println(" "+ path[i]);
         }
         System.out.println();
     }
@@ -375,12 +375,12 @@ public class BinaryTree {
 
             // Level order traversal up to for current level to get the node count
             while (nodeCount > 0) {
-                TreeNode tempNode = queue.poll();
-                if (tempNode.left != null) {
-                    queue.add(tempNode.left);
+                TreeNode poppedNode = queue.poll();
+                if (poppedNode.left != null) {
+                    queue.add(poppedNode.left);
                 }
-                if (tempNode.right != null) {
-                    queue.add(tempNode.right);
+                if (poppedNode.right != null) {
+                    queue.add(poppedNode.right);
                 }
                 nodeCount--;
             }
@@ -540,7 +540,7 @@ public class BinaryTree {
                 value = root.data;
             }
 
-            findDeepestLeftLevel(root.right, level, false);
+            findDeepestLeftLevel(root.right, level, !left);
         }
     }
 }

@@ -27,6 +27,7 @@ public class SegregateEvenOdd {
                 right--;
             }
 
+            // Swapping of elements
             if (left < right) {
                 int temp = arr[left];
                 arr[left] = arr[right];

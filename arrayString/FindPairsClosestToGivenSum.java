@@ -27,6 +27,7 @@ public class FindPairsClosestToGivenSum {
                 minDiff = diff;
                 minleft = left;
                 minright = right;
+                System.out.println("Left: " + arr[minleft] + " : right: " + arr[minright]);
             }
             if (arr[left] + arr[right] > givenSum) {
                 right--;
@@ -34,7 +35,6 @@ public class FindPairsClosestToGivenSum {
             if (arr[left] + arr[right] < givenSum) {
                 left++;
             }
-            System.out.println("Left: " + arr[minleft] + " : right: " + arr[minright]);
         }
     }
 }
