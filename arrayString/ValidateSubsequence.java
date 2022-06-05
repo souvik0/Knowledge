@@ -10,7 +10,7 @@ public class ValidateSubsequence {
 
     public static boolean validateSubsequenceArray(int[] array, int[] sequenceArray) {
        int counter = 0;
-       for (int i = 0; i< array.length; i++) {
+       for (int i = 0; i < array.length; i++) {
            int currentElement = array[i];
            // This check has to be on counter position
            if (sequenceArray[counter] == currentElement) {
@@ -21,6 +21,7 @@ public class ValidateSubsequence {
                return true;
            }
        }
+
        return false;
     }
 }
