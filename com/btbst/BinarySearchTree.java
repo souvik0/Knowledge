@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import linkedlist.SinglyLinkedListImpl;
+import com.linkedlist.SinglyLinkedListImpl;
 
 public class BinarySearchTree {
 
