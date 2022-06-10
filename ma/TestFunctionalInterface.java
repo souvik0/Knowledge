@@ -18,7 +18,7 @@ public class TestFunctionalInterface {
         MyFunctionallnterface<String> mfi = (name) -> {
             System.out.println("Hello : " + name);
         };
-        mfi.display("souvik");
+        mfi.display("souvik"); // Deducing from the context
         mfi.move();
         MyFunctionallnterface.moveAgain();
         System.out.println(mfi.toString());

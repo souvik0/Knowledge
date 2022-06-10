@@ -9,6 +9,7 @@ import java.io.Serializable;
 public class Singleton implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 1L;
+    // Singleton object needs to be volatile so that it can be at the main memory
     private static volatile Singleton eagerInstance = new Singleton();
     private static volatile Singleton lazyInstance = null; // Thread reads Singleton objects always from main memory
 
