@@ -5,7 +5,7 @@ public class KnightTourProblem {
     public static int N = 8;
 
     /* A utility function to check if i,j are
-       valid indexes for N*N chessboard */
+       valid indexes for N*N chessboard. Knight can traverse multiple times on a particular grid */
     public static boolean isSafe(int x, int y, int sol[][]) {
         return (x >= 0 && x < N && y >= 0 && y < N && sol[x][y] == -1);
     }
@@ -29,7 +29,7 @@ public class KnightTourProblem {
        Please note that there may be more than one
        solutions, this function prints one of the
        feasible solutions.  */
-    public static boolean solveKT() {
+    public static void solveKT() {
         int sol[][] = new int[N][N];
 
         /* Initialization of solution matrix */
@@ -51,13 +51,10 @@ public class KnightTourProblem {
            solveKTUtil() */
         if (!solveKTUtil(0, 0, 1, sol, xMove, yMove)) {
             System.out.println("Solution does not exist");
-            return false;
         }
         else {
             printSolution(sol);
         }
-
-        return true;
     }
 
     /* A recursive utility function to solve Knight

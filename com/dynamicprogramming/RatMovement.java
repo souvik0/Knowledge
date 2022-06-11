@@ -14,8 +14,8 @@ public class RatMovement {
 
         // VISITED ARRAY WILL KEEP TRACK OF VISIT BY RAT & HAVING SAME LENGTH OF ORIGINAL MAZE
         int[][] visited = new int[maze.length][maze[0].length];
-        for (int i = 0; i < maze.length; i++) {
-            for (int j = 0; j < maze[0].length; j++) {
+        for (int i = 0; i < visited.length; i++) {
+            for (int j = 0; j < visited[0].length; j++) {
                 visited[i][j] = 0;
             }
         }
@@ -43,6 +43,7 @@ public class RatMovement {
                     pathInMaze(maze, visited, rowNext, colNext, destRow, destCol, move);
                     // This is where we are doing backtracking.
                     // should go back to initial value of how visited array was created
+                    // This needs to be done to get multiple paths
                     move--;
                     visited[rowNext][colNext] = 0;
                 }
