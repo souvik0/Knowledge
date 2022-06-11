@@ -9,6 +9,7 @@ public class StringSubsequenceCheck {
         int largerStringlength = str2.length();
         System.out.println(isSubSequence(str1, str2, smallerStringlength, largerStringlength));
     }
+
     // Returns true if str1[] is a subsequence of str2[]
     // m is length of str1 and n is length of str2
     public static boolean isSubSequence(String str1, String str2, int smallerStringlength, int largerStringlength) {

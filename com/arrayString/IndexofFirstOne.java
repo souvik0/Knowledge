@@ -1,6 +1,7 @@
 package com.arrayString;
 
 // It is similar approach as quick sort
+// This will resolve where all 1's & 0's are together
 public class IndexofFirstOne {
 
     public static void main(String[] args) {

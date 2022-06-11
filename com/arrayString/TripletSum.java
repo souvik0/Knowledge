@@ -18,7 +18,7 @@ public class TripletSum {
         for (int i = 0; i < n-1; i++) {
             // consider x representing ith element of the array
             int x = arr[i];
-            // initialize left and right index
+            // initialize left (next to ith index) and right (last index) index
             int left = i + 1;
             int right = n - 1;
 

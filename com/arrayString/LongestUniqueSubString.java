@@ -6,7 +6,7 @@ import java.util.Map;
 public class LongestUniqueSubString {
 
     public static void main(String[] args) {
-        String s = "geeksforgeeks";
+        String s = "geeksgeeks";
         System.out.println("The input String is " + s);
         int length = longestUniqueSubsttr(s);
         System.out.println("The length of the longest non-repeating character substring is " + length);

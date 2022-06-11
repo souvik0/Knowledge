@@ -15,6 +15,7 @@ public class MoveElementsInArray {
         int left = 0;
         int right = array.length -1;
         while (left < right) {
+            // There is nothing to move
             while (left < right && array[right] == toMove) {
                   right--;
             }
