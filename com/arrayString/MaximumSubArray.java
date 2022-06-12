@@ -1,5 +1,6 @@
 package com.arrayString;
 
+// This will return maximum sum from an array contains negetive numbers also
 public class MaximumSubArray {
 
     public static void main(String[] args) {

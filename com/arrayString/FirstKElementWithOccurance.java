@@ -52,7 +52,7 @@ public class FirstKElementWithOccurance {
        // Print the top k elements by looping over the queue 
        for (int i = 0; i < k; i++) {
            Map.Entry<Integer, Integer> entry = priorityQueue.poll();
-           System.out.println("Elements : " + entry.getKey() + " : " + entry.getValue());
+           System.out.println("Element : " + entry.getKey() + " with occurance : " + entry.getValue());
        } 
     }
 }

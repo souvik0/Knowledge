@@ -1,10 +1,11 @@
 package com.arrayString;
+
 // Moving the specified element to the end of an array
 public class MoveElementsInArray {
 
     public static void main(String[] args) {
         int []arr = {1, 1, 3, 5, 6};
-        int K = 1;
+        int K = 3;
         int []ans = moveElement(arr, K);
 
         for(int i = 0; i < arr.length; i++)

@@ -8,7 +8,7 @@ public class ReverseSentence {
        // TODO Auto-generated method stub
        String s1 = "Welcome    to   geeksforgeeks";
        System.out.println(reverseSentence(s1));
-       System.out.println("Recusrion approach: " +reverseWithRecursion(s1));
+       System.out.println("Recusrion approach: " + reverseWithRecursion(s1));
 
        String s2 = "I   love    Java Programming";
        String s3 = "Souviuk";
@@ -32,7 +32,7 @@ public class ReverseSentence {
         return result;
     }
 
-    // Substring function exclude latsIndex. This property has been used here with space.
+    // Start reversing from last but one index. This property has been used here with space.
     public static String reverseWithRecursion(String str) {
         if ((str == null) || (str.length() <= 1)) {
             return "";
@@ -43,6 +43,7 @@ public class ReverseSentence {
     }
 
     // This applies for reversal of words
+    // Start reversing from first index character
     public static String reverse(String word) {
         if ((word == null) || (word.length() <= 1)) {
             return word;

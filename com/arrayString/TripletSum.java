@@ -12,7 +12,6 @@ public class TripletSum {
     }
 
     public static void find3Numbers(int[] arr, int n, int givenSum) {
-        boolean found = false; 
         // sort array elements
         Arrays.sort(arr);
         for (int i = 0; i < n-1; i++) {
@@ -25,12 +24,12 @@ public class TripletSum {
             while (left < right) {
                 if (x + arr[left] + arr[right] == givenSum) {
                     // print elements if it's sum is zero
+                	System.out.print("Triplet sum : ");
                     System.out.print(x + " ");
                     System.out.print(arr[left]+ " ");
                     System.out.println(arr[right]+ " ");
                     left++;
                     right--;
-                    found = true;
                 }
                 // If sum of three elements is less
                 // than zero then increment in left
@@ -43,10 +42,6 @@ public class TripletSum {
                     right--;
                 }
             }
-        }
-
-        if (found == false) {
-            System.out.println("No Triplet Found");
         }
     }
 }

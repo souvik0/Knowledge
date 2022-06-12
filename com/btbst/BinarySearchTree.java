@@ -204,11 +204,12 @@ public class BinarySearchTree {
     public TreeNode deleteNode(TreeNode root, int data) {
         if (root == null)
             return null;
+        // Traversing in both left & right direction
         if (root.data > data) {
             root.left = deleteNode(root.left, data);
-       } else if (root.data < data) {
+        } else if (root.data < data) {
             root.right = deleteNode(root.right, data);
-       } else {
+        } else {
             // if nodeToBeDeleted have both children
             if (root.left != null && root.right != null) {
                 // Finding minimum element from right

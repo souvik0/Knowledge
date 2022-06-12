@@ -142,10 +142,6 @@ public class BinaryTree {
         }
     }
 
-    public void boundaryOrderTraversal(TreeNode root) {
-        // Yet to come
-    }
-
     /**
      * level order traversal with max variable
     */
@@ -205,8 +201,8 @@ public class BinaryTree {
         if (root.left == null && root.right == null) {
             printArrayUtil(path);
         }
-        printAllPathsFromRootToLeaf(root.left, path, level + 1);
-        printAllPathsFromRootToLeaf(root.right, path, level + 1);
+        printAllPathsFromRootToLeaf(root.left, path, level ++);
+        printAllPathsFromRootToLeaf(root.right, path, level ++);
     }
 
     public static void printArrayUtil(int[] path) {

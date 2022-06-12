@@ -37,7 +37,7 @@ public class RatMovement {
                 int colNext = startCol + Path_Col[index];
                 // Rat can move only once in a cell while visiting
                 if (canRatMove(maze, visited, rowNext, colNext)) {
-                	movePointer++;
+                    movePointer++;
                     visited[rowNext][colNext] = movePointer;
                     pathInMaze(maze, visited, rowNext, colNext, destRow, destCol, movePointer);
                     // This is where we are doing backtracking.
