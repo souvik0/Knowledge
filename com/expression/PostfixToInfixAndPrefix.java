@@ -40,15 +40,11 @@ class PostfixToInfixAndPrefix {
          Stack<TreeNode> st = new Stack<TreeNode>(); 
          TreeNode root, left, right; 
 
-        // Traverse through every character of 
-        // input expression 
+        // Traverse through every character of input expression 
         for (int i = 0; i < postfixExpression.length; i++) {
 
              // If operand, simply push into stack 
-             if (!isOperator(postfixExpression[i])) {
-                 root = new TreeNode(postfixExpression[i]);
-                 st.push(root); 
-             } else {
+             if (isOperator(postfixExpression[i])) {
                  root = new TreeNode(postfixExpression[i]);
 
                  // Pop two top nodes 
@@ -62,6 +58,9 @@ class PostfixToInfixAndPrefix {
 
                  // Add this subexpression to stack 
                  st.push(root);
+             } else {
+                 root = new TreeNode(postfixExpression[i]);
+                 st.push(root); 
              }
      }
 
@@ -80,5 +79,5 @@ class PostfixToInfixAndPrefix {
      System.out.println("");
      System.out.println("Prefix expression is: ");
      et.preOrder(root);
-     } 
+     }
 } 
