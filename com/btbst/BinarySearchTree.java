@@ -49,6 +49,7 @@ public class BinarySearchTree {
     }
 
     /* In this method, we construct from leaves to root. 
+     * LinkedList sorted in ascending order.
      * The idea is to insert nodes in BST in the same order as they appear in Linked List so 
      * that the tree can be constructed in O(n) time complexity. We first count the number 
      * of nodes in the given Linked List. Let the count be n. After counting nodes, 

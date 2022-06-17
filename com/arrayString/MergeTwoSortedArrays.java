@@ -3,9 +3,9 @@ package com.arrayString;
 public class MergeTwoSortedArrays {
 
     public static void main(String[] args) {
-        int[] arr1 = {1, 3, 5, 7, 20}; 
-        int n1 = arr1.length; 
-        int[] arr2 = {2, 4, 6, 8, 11, 51}; 
+        int[] arr1 = {1, 3, 5, 7, 20};
+        int n1 = arr1.length;
+        int[] arr2 = {2, 4, 6, 8, 11, 51};
         int n2 = arr2.length;
         int[] arr = mergeArrays(arr1, arr2, n1, n2);
         System.out.println("Array after merging");
@@ -21,7 +21,7 @@ public class MergeTwoSortedArrays {
         int k = 0; // index of merged array
 
         int[] mergedArray = new int[n1 + n2];
- 
+
         while (i < n1 && j < n2) {
             if (arr1[i] < arr2[j]) {
                 mergedArray[k] = arr1[i];

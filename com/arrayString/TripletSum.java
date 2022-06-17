@@ -22,9 +22,10 @@ public class TripletSum {
             int right = n - 1;
 
             while (left < right) {
-                if (x + arr[left] + arr[right] == givenSum) {
+                int currentSum = x+ arr[left] + arr[right];
+                if (currentSum == givenSum) {
                     // print elements if it's sum is zero
-                	System.out.print("Triplet sum : ");
+                    System.out.print("Triplet sum : ");
                     System.out.print(x + " ");
                     System.out.print(arr[left]+ " ");
                     System.out.println(arr[right]+ " ");
@@ -33,7 +34,7 @@ public class TripletSum {
                 }
                 // If sum of three elements is less
                 // than zero then increment in left
-                else if (x + arr[left] + arr[right] < givenSum) {
+                else if (currentSum < givenSum) {
                     left++;
                 }
                 // if sum is greater than zero than

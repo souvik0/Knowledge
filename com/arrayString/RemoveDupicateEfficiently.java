@@ -30,7 +30,7 @@ public class RemoveDupicateEfficiently {
         // Shouldn't consider the last element, otherwise it will throw ArrayIndexOutOfBoundException
         for (int i = 0; i < arr.length - 1 ; i++) {
              if (arr[i] != arr[i+1]) {
-                 tempArr[j++] = arr[i];;
+                 tempArr[j++] = arr[i];
              }
         }
 

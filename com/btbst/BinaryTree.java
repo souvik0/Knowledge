@@ -490,13 +490,8 @@ public class BinaryTree {
             return false;
         }
         // Same Isomorphic(Identical tree) & cross Isomorphic(Mirror Tree)
-        if (root1.data == root2.data) {
-            if ((isIsomorphic(root1.left, root2.left) && isIsomorphic(root1.right, root2.right)) ||
-                (isIsomorphic(root1.left, root2.right) && isIsomorphic(root1.right, root2.left))) {
-                 return true;
-            }
-        }
-        return false;
+        return (isIsomorphic(root1.left, root2.left) && isIsomorphic(root1.right, root2.right)) ||
+               (isIsomorphic(root1.left, root2.right) && isIsomorphic(root1.right, root2.left));
     }
 
     // Same algorithm to find depth of the tree
@@ -507,6 +502,7 @@ public class BinaryTree {
         return value;
     }
 
+    // inOrder traversal
     public void findDeepestLevel(TreeNode root, int level) {
         if (root != null) {
             findDeepestLevel(root.left, level++);

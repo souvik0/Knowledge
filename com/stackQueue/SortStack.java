@@ -29,12 +29,12 @@ public class SortStack {
     // This function return the sorted stack 
     public static Stack<Integer> sortStack(Stack<Integer> inputStack) {
         Stack<Integer> sortedStack = new Stack<Integer>();
-        while(!inputStack.isEmpty()) {
+        while (!inputStack.isEmpty()) {
             // pop out the first element 
             int popedElement = inputStack.pop();
             // while temporary stack is not empty and
             // top of stack is greater than temp
-            while (!sortedStack.isEmpty() && popedElement < sortedStack.peek() ) {
+            while (!sortedStack.isEmpty() && popedElement < sortedStack.peek()) {
                 inputStack.push(sortedStack.pop());
             }
 
