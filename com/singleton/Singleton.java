@@ -11,6 +11,12 @@ public class Singleton implements Serializable, Cloneable {
     private static final long serialVersionUID = 1L;
     // Singleton object needs to be volatile so that it can be at the main memory
     private static volatile Singleton eagerInstance = new Singleton();
+
+    // This will work if early instance created. Otherwise it will return null
+    public static Singleton getSingletonEagerInstance() {
+        return eagerInstance;
+    }
+
     private static volatile Singleton lazyInstance = null; // Thread reads Singleton objects always from main memory
 
     // Default private constructor
@@ -19,11 +25,6 @@ public class Singleton implements Serializable, Cloneable {
         if (lazyInstance != null) {
             throw new RuntimeException("Prventing object created by reflection");
         }
-    }
-
-    // This will work if early instance created. Otherwise it will return null
-    public static Singleton getSingletonEagerInstance() {
-        return eagerInstance;
     }
 
     // Lazy Instantiation with Double checking thread safety implemented
