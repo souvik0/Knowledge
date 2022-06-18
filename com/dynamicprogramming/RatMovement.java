@@ -3,10 +3,10 @@ package com.dynamicprogramming;
 public class RatMovement {
 
     public static void main(String[] args) {
-        int maze[][] = {{1, 1, 0, 1 },
-                        {0, 1, 1, 1 },
-                        {0, 1, 0, 1 },
-                        {0, 1, 1, 1 }};
+        int maze[][] = {{1, 1, 0, 1},
+                        {0, 1, 1, 1},
+                        {0, 1, 0, 1},
+                        {0, 1, 1, 1}};
 
         // VISITED ARRAY WILL KEEP TRACK OF VISIT BY RAT & HAVING SAME LENGTH OF ORIGINAL MAZE
         int[][] visited = new int[maze.length][maze[0].length];
@@ -63,9 +63,9 @@ public class RatMovement {
 
     public static void printSolution(int visited[][]) { 
         for (int i = 0; i < visited.length; i++) { 
-            for (int j = 0; j < visited[0].length; j++) 
-                System.out.print(
-                    " " + visited[i][j] + " "); 
+            for (int j = 0; j < visited[0].length; j++) {
+                System.out.print(" " + visited[i][j] + " "); 
+            }
             System.out.println(); 
         }
         System.out.println("////////////////////////");
