@@ -34,12 +34,12 @@ public class TestFunctionalInterface {
                                   .get();
         System.out.println("Maximum number: " +maxNumber);
 
-        String dirLocation = "D:/checkin/Gitlab/amc";
+        String dirLocation = "C:/Users/Admin/Dropbox";
 
         List<File> filesFrom = Files.list(Paths.get(dirLocation))
-                .filter(path -> path.toFile().isHidden())
-                .map(Path::toFile)
-                .collect(Collectors.toList());
+                                    .map(Path::toFile)
+                                    .filter(File::isHidden)
+                                    .collect(Collectors.toList());
 
         List<File> files = Files.list(Paths.get(dirLocation))
                 .filter(Files::isRegularFile)
@@ -57,12 +57,5 @@ public class TestFunctionalInterface {
         } catch (IOException e) {
             // Error while reading the directory
         }
-
-        String anotherDate = "04 Apr 2016";
-
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd MM yyyy");
-        LocalDate random = LocalDate.parse(anotherDate, df);
-
-        System.out.println(anotherDate + " parses as " + random);
     }
 }

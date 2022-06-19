@@ -46,8 +46,7 @@ public class SinglyLinkedListImpl<T> {
         Node<T> nptr = new Node<T>(data);
         // if the list is empty
         if (isEmptyList()) {
-            start = nptr;
-            end = start;
+            start = end = nptr;
         } else {
             nptr.next = start;
             start = nptr;
@@ -59,8 +58,7 @@ public class SinglyLinkedListImpl<T> {
         Node<T> nptr = new Node<T>(data);
         // if the list is empty
         if (isEmptyList()) {
-            start = nptr;
-            end = start;
+            start = end = nptr;
         } else {
             end.next = nptr;
             end = nptr;
@@ -302,7 +300,7 @@ public class SinglyLinkedListImpl<T> {
 
             // Last Node points back to start node
             current.next = start;
-            // Start node should be next node of kth Node
+            // Start node should be next node of kth Node to move k position
             start = kthNode.next;
             // kth Node should point to null to to break the list at this point & make kthNode as last node
             kthNode.next = null;
