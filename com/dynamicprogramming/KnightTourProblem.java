@@ -41,15 +41,15 @@ public class KnightTourProblem {
         /* xMove[] and yMove[] define next move of Knight.
            xMove[] is for next value of x coordinate
            yMove[] is for next value of y coordinate */
-        int xMove[] = {2, 1, -1, -2, -2, -1, 1, 2};
-        int yMove[] = {1, 2, 2, 1, -1, -2, -2, -1};
+        int rowMove[] = {2, 1, -1, -2, -2, -1, 1, 2};
+        int colMove[] = {1, 2, 2, 1, -1, -2, -2, -1};
 
         // Since the Knight is initially at the first block
         sol[0][0] = 0;
 
         /* Start from 0,0 and explore all tours using
            solveKTUtil() */
-        if (!solveKTUtil(0, 0, 1, sol, xMove, yMove)) {
+        if (!solveKTUtil(0, 0, 1, sol, rowMove, colMove)) {
             System.out.println("Solution does not exist");
         }
         else {
@@ -59,24 +59,24 @@ public class KnightTourProblem {
 
     /* A recursive utility function to solve Knight
        Tour problem */
-    public static boolean solveKTUtil(int x, int y, int movei, int sol[][], int xMove[], int yMove[]) {
-        if (movei == N * N) {
+    public static boolean solveKTUtil(int row, int col, int movePointer, int sol[][], int rowMove[], int colMove[]) {
+        if (movePointer == N * N) {
             return true;
         }
 
         /* Try all next moves from the current coordinate x, y */
-        for (int k = 0; k < xMove.length; k++) {
-            int next_x = x + xMove[k];
-            int next_y = y + yMove[k];
+        for (int k = 0; k < rowMove.length; k++) {
+            int next_row = row + rowMove[k];
+            int next_col = col + colMove[k];
 
-            if (isSafe(next_x, next_y, sol)) {
-                sol[next_x][next_y] = movei;
-                movei++;
-                if (solveKTUtil(next_x, next_y, movei, sol, xMove, yMove)) {
+            if (isSafe(next_row, next_col, sol)) {
+                sol[next_row][next_col] = movePointer;
+                movePointer++;
+                if (solveKTUtil(next_row, next_col, movePointer, sol, rowMove, colMove)) {
                     return true;
                 }
                 else {// backtracking. Initialize with the initial value
-                  sol[next_x][next_y] = -1;
+                  sol[next_row][next_col] = -1;
                 }
             }
         }

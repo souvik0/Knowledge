@@ -42,23 +42,23 @@ public class QuickSelectGFG {
      * kth smallest element in the array.
      * ASSUMPTION: all elements in arr[] are distinct
     */
-    public static int kthSmallest(int[] arr, int low, int high, int k) {
+    public static int kthElement(int[] arr, int low, int high, int k) {
         int partitionIndex = partition(arr, low, high);
 
-        if (partitionIndex == k - 1) {
+        if (partitionIndex == k) {
             return arr[partitionIndex];
-        } else if (partitionIndex < k - 1) {
+        } else if (partitionIndex < k) {
             // element present at right side
-            return kthSmallest(arr, partitionIndex + 1, high, k);
+            return kthElement(arr, partitionIndex + 1, high, k);
         } else {
-            return kthSmallest(arr, low, partitionIndex - 1, k);
+            return kthElement(arr, low, partitionIndex - 1, k);
         }
     }
 
      public static void main(String[] args) {
-         int[] array = new int[] {10, 4, 5, 8, 6, 11, 26};
+         int[] array = new int[] {10, 4, 5, 8, 6, 11, 26, 52};
 
-         // Looking for 2nd smallest element
+         // Looking for 3rd largest element in this array
          int kPosition = 6;
          int length = array.length;
 
@@ -66,7 +66,7 @@ public class QuickSelectGFG {
              System.out.println("Index out of bound");
          }
          else {
-             System.out.println("K-th smallest element in array : " + kthSmallest(array, 0, length - 1, kPosition - 1));
+             System.out.println("K-th smallest element in array : " + kthElement(array, 0, length - 1, kPosition - 1));
          }
       }
 }

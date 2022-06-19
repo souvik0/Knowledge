@@ -1,6 +1,6 @@
 package com.sorting;
 
-// Merge sort is based on divide & concquer rule
+// Merge sort is based on divide & conquer rule
 /* Best case: O(nlogn)
    Average case: O(nlogn)
    Worst case: O(nlogn)
@@ -40,25 +40,34 @@ public class MergeSortImplementation {
         int[] tempArray = new int[arr.length];
         int tempArrayStartIndex = start;
 
+        // For original array
         int startIndex = start;
         int midIndex = mid + 1;
 
         while (startIndex <= mid && midIndex <= end) {
             // Need to compare each element starting from 0th index of the given array to fill up tempArray
             if (arr[startIndex] < arr[midIndex]) {
-                tempArray[tempArrayStartIndex++] = arr[startIndex++];
+                tempArray[tempArrayStartIndex] = arr[startIndex];
+                tempArrayStartIndex++;
+                startIndex++;
             } else {
-                tempArray[tempArrayStartIndex++] = arr[midIndex++];
+                tempArray[tempArrayStartIndex] = arr[midIndex];
+                tempArrayStartIndex++;
+                midIndex++;
             }
         }
 
         // Adjust rest of the elements
         while (startIndex <= mid) {
-            tempArray[tempArrayStartIndex++] = arr[startIndex++];
+            tempArray[tempArrayStartIndex] = arr[startIndex];
+            tempArrayStartIndex++;
+            startIndex++;
         }
 
         while (midIndex <= end) {
-            tempArray[tempArrayStartIndex++] = arr[midIndex++];
+            tempArray[tempArrayStartIndex] = arr[midIndex];
+            tempArrayStartIndex++;
+            midIndex++;
         }
 
         // Copy tempArray to actual array after sorting 
