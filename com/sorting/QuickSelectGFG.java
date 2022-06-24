@@ -48,7 +48,7 @@ public class QuickSelectGFG {
         if (partitionIndex == k) {
             return arr[partitionIndex];
         } else if (partitionIndex < k) {
-            // element present at right side
+            // element present at right side of partitionIndex
             return kthElement(arr, partitionIndex + 1, high, k);
         } else {
             return kthElement(arr, low, partitionIndex - 1, k);
@@ -58,7 +58,7 @@ public class QuickSelectGFG {
      public static void main(String[] args) {
          int[] array = new int[] {10, 4, 5, 8, 6, 11, 26, 52};
 
-         // Looking for 3rd largest element in this array
+         // Looking for 3rd (arr.length - 1 -k) largest element in this array
          int kPosition = 6;
          int length = array.length;
 

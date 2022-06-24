@@ -309,6 +309,8 @@ public class SinglyLinkedListImpl<T> {
         }
     }
 
+    // This problem is similar to reverse in pairs or rotate in pairs
+    // Here only difference is swapping will take place based on value of k
     public Node<T> rotateLinkedListInGroupOfK(Node<T> start, int k) {
         if (isEmptyList()) {
             return null;
