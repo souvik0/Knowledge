@@ -1,6 +1,8 @@
 package com.btbst;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -494,6 +496,22 @@ public class BinaryTree {
                (isIsomorphic(root1.left, root2.right) && isIsomorphic(root1.right, root2.left));
     }
 
+    // From AlgoExpert
+    public void invertBinaryTree(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        swapLeftAndRight(root);
+        invertBinaryTree(root.left);
+        invertBinaryTree(root.right);
+    }
+
+    public void swapLeftAndRight(TreeNode root) {
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+    }
+
     // Same algorithm to find depth of the tree
     public int findDeepestLevelAndNode(TreeNode root) {
         findDeepestLevel(root, 0);
@@ -534,5 +552,23 @@ public class BinaryTree {
 
             findDeepestLeftLevel(root.right, level, !left);
         }
+    }
+
+    public List<Integer> branchSum(TreeNode root) {
+        List<Integer> branchSumList = new ArrayList<Integer>();
+        calculateBranchSum(root, 0, branchSumList);
+        return branchSumList;
+    }
+
+    public void calculateBranchSum(TreeNode root, int newBranchSum, List<Integer> branchSumList) {
+       if (root == null) {
+           return;
+       }
+       newBranchSum = newBranchSum + root.data;
+       if (root.left == null & root.right == null) {
+           branchSumList.add(newBranchSum);
+       }
+       calculateBranchSum(root.left, newBranchSum, branchSumList);
+       calculateBranchSum(root.right, newBranchSum, branchSumList);
     }
 }

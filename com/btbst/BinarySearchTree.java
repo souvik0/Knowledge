@@ -211,7 +211,7 @@ public class BinarySearchTree {
         } else if (root.data < data) {
             root.right = deleteNode(root.right, data);
         } else {
-            // if nodeToBeDeleted have both children
+            // if nodeToBeDeleted have both children Here finding out inOrder successor
             if (root.left != null && root.right != null) {
                 // Finding minimum element from right
                 TreeNode minNodeFromRight = minElementInBST(root.right);
