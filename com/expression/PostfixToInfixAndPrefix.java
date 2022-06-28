@@ -68,16 +68,16 @@ class PostfixToInfixAndPrefix {
      return st.pop(); 
 } 
 
- public static void main(String args[]) {
+    public static void main(String args[]) {
 
-     PostfixToInfixAndPrefix et = new PostfixToInfixAndPrefix(); 
-     String postfix = "ab+ef*g*-"; 
-     char[] charArray = postfix.toCharArray(); 
-     TreeNode root = et.constructExpressionTree(charArray); 
-     System.out.println("infix expression is: "); 
-     et.inorder(root);
-     System.out.println("");
-     System.out.println("Prefix expression is: ");
-     et.preOrder(root);
-     }
+        PostfixToInfixAndPrefix et = new PostfixToInfixAndPrefix(); 
+        String postfix = "ab+ef*g*-"; 
+        char[] charArray = postfix.toCharArray(); 
+        TreeNode root = et.constructExpressionTree(charArray); 
+        System.out.println("infix expression is: "); 
+        et.inorder(root);
+        System.out.println("");
+        System.out.println("Prefix expression is: ");
+        et.preOrder(root);
+    }
 } 

@@ -326,6 +326,8 @@ public class SinglyLinkedListImpl<T> {
             Node<T> nextNode = current.next;
             current.next = previous;
             previous = current;
+            // Till the above step swapping between nodes in the group.
+            // Next step creates head of the group.
             current = nextNode;
         }
 

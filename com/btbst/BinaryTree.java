@@ -564,11 +564,38 @@ public class BinaryTree {
        if (root == null) {
            return;
        }
+
        newBranchSum = newBranchSum + root.data;
        if (root.left == null & root.right == null) {
            branchSumList.add(newBranchSum);
        }
+
        calculateBranchSum(root.left, newBranchSum, branchSumList);
        calculateBranchSum(root.right, newBranchSum, branchSumList);
+    }
+
+    // Flattening of binary tree means converting a binary tree into array or Doubly LinkedList
+    public TreeNode flattenTheBinaryTree(TreeNode root) {
+        List<TreeNode> inOrderNodes = getNodesInOrder(root, new ArrayList<TreeNode>());
+        // Needs to flatten linked List structure
+        for (int i = 0; i < inOrderNodes.size(); i++) {
+            TreeNode leftNode = inOrderNodes.get(i);
+            TreeNode rightNode = inOrderNodes.get(i+1);
+
+            leftNode.right = rightNode;
+            rightNode.left = leftNode;
+        }
+
+        // Head of the Linked List should return to check flattening structure
+        return inOrderNodes.get(0);
+    }
+
+    public List<TreeNode> getNodesInOrder(TreeNode root, List<TreeNode> nodeList) {
+        if (root != null) {
+            getNodesInOrder(root.left, nodeList);
+            nodeList.add(root);
+            getNodesInOrder(root.right, nodeList);
+        }
+        return nodeList;
     }
 }
