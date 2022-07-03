@@ -325,4 +325,27 @@ public class BinarySearchTree {
         // look for right side
         return kthLargestElementInBST(root.left, k);
     }
+
+    public void findClosestValueInBST(TreeNode root, int target) {
+        // Assuming initially root.data is the closest
+        findClosestValueInBST(root, target, root.data);
+    }
+
+    public int findClosestValueInBST(TreeNode root, int target, int closest) {
+        if (root == null) {
+            return -1;
+        }
+
+        if (Math.abs(target - closest) > Math.abs(target - root.data)) {
+            closest = root.data;
+        }
+        if (root.data > target && root.left != null) {
+            return findClosestValueInBST(root.left, target, closest);
+        }
+        if (root.data < target && root.right != null) {
+            return findClosestValueInBST(root.right, target, closest);
+        }
+
+        return closest;
+    }
 }

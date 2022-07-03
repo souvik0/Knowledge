@@ -10,10 +10,6 @@ public class BinaryTree {
 
     int deepestLevel;
     int value;
-
-    // Pointing head of doubly Linked List
-    private TreeNode head = null;
-    static TreeNode previous = null;
     /**
      * All recursive approach used implicit stack
     */
@@ -229,7 +225,8 @@ public class BinaryTree {
     * level argument will remain 0 for all invocation
     * key is data associated with the node / identification of node of whose level needs to be find out
     * This is similar to search a node in Binary tree
-    */
+    * This also called depth of node 
+    **/
     public int levelOfNode(TreeNode root, int nodeData, int level) {
         if (root == null) {
             return -1;
@@ -426,32 +423,6 @@ public class BinaryTree {
         return level_no;
     }
 
-    // Using in order traversal.
-    /* 1. go to the left sub tree
-     * 2. Process the node in doubly linked list 
-     * 3. go the right sub tree*/
-    public TreeNode convertBTtoDoublyLinkedList(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-
-        // Reach left subtree
-        convertBTtoDoublyLinkedList(root.left);
-
-        // Process individual node
-        if (previous == null) {
-            head = root;
-        } else {
-            root.left = previous;
-            previous.right = root;
-        }
-
-        // Reach right subtree
-        convertBTtoDoublyLinkedList(root.right);
-        // previous is the head of the doubly linked list now
-        return previous;
-    }
-
     public boolean isMirrorTree(TreeNode root1, TreeNode root2) {
         if (root1 == null && root2 == null) {
             return true;
@@ -566,6 +537,7 @@ public class BinaryTree {
        }
 
        newBranchSum = newBranchSum + root.data;
+       // Recursion terminating condition
        if (root.left == null & root.right == null) {
            branchSumList.add(newBranchSum);
        }
@@ -597,5 +569,53 @@ public class BinaryTree {
             getNodesInOrder(root.right, nodeList);
         }
         return nodeList;
+    }
+
+    // The provided solution will only work if the node has a pointer to parent.
+    /* if right subtree exist, then find out farthest left ode rom the subtree, otherwise
+     * traverse towards parent to find out inOrder successor
+     */
+    public int findSuccessor(SpecialTreeNode root, SpecialTreeNode targetNode) {
+        if (root.right != null) {
+            return getLeftmostNodeFromRightSubtree(root.right);
+        } else {
+            return getRightmostParent(root);
+        }
+    }
+
+    public int getLeftmostNodeFromRightSubtree(SpecialTreeNode root) {
+        SpecialTreeNode current = root;
+        while (current != null) {
+            current = current.left;
+        }
+        return current != null ? current.data : -1;
+    }
+
+    public int getRightmostParent(SpecialTreeNode root) {
+        SpecialTreeNode current = root;
+        while (current.parent != null && current.parent.right == current) {
+            current = current.parent;
+        }
+        return current != null ? current.data : -1;
+    }
+
+    /*
+     * Left subtree of T is balanced 
+     * Right subtree of T is balanced
+     * The difference between heights of left subtree and the right subtree is not more than 1
+     */
+    public boolean isHeightBalamcedTree(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        int lHeight = height (root.left);
+        int rHeight = height (root.right);
+
+        if (Math.abs(lHeight - rHeight) <= 1 &&
+            isHeightBalamcedTree(root.left) &&
+            isHeightBalamcedTree(root.right)) {
+                return true;
+        }
+        return false;
     }
 }
