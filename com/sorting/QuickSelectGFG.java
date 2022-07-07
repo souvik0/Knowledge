@@ -58,15 +58,17 @@ public class QuickSelectGFG {
      public static void main(String[] args) {
          int[] array = new int[] {10, 4, 5, 8, 6, 11, 26, 52};
 
-         // Looking for 3rd (arr.length - 1 -k) largest element in this array
-         int kPosition = 6;
+         // Looking for 3rd (arr.length - k + 1) smallest element in this array
+         int kPosition = 7;
          int length = array.length;
 
          if (kPosition > length) {
              System.out.println("Index out of bound");
          }
          else {
-             System.out.println("K-th smallest element in array : " + kthElement(array, 0, length - 1, kPosition - 1));
+             System.out.println(kPosition + " smallest element in array "+ " or "
+                                +(array.length-kPosition+1) + " largest element in array " +
+                                kthElement(array, 0, length - 1, kPosition - 1));
          }
       }
 }

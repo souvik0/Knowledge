@@ -147,18 +147,9 @@ public class SinglyLinkedListImpl<T> {
 
     public T detectFirstLoopNode() {
         Node<T> fastPointer = start;
-        Node<T> slowPointer = start;
-        boolean ifLoopExist = false;
+        Node<T> slowPointer = null;
 
-        while (fastPointer != null && fastPointer.next != null) {
-            fastPointer = fastPointer.next.next;
-            slowPointer = slowPointer.next;
-            if (slowPointer == fastPointer) {
-                ifLoopExist = true;
-            }
-        }
-
-        if (ifLoopExist) {
+        if (ifLoopExist()) {
            slowPointer = start;
            while (fastPointer != slowPointer) {
                fastPointer = fastPointer.next;
@@ -172,18 +163,9 @@ public class SinglyLinkedListImpl<T> {
     public boolean deleteLoopNode() {
         Node<T> fastPointer = start;
         Node<T> slowPointer = start;
-        boolean ifLoopExist = false;
         boolean deleted = false;
 
-        while (fastPointer != null) {
-            fastPointer = fastPointer.next.next;
-            slowPointer = slowPointer.next;
-            if (slowPointer == fastPointer) {
-                ifLoopExist = true;
-            }
-        }
-
-        if (ifLoopExist) {
+        if (ifLoopExist()) {
            slowPointer = start;
            while (fastPointer != slowPointer) {
                fastPointer = fastPointer.next;
@@ -427,8 +409,8 @@ public class SinglyLinkedListImpl<T> {
     Node<Integer> newHead = null;
     int carry = 0;
 
-	public Node<Integer> addTwoNumbersInLinkedList(Node<Integer> head1, Node<Integer> head2) {
-        int totalNodesFromList1 = getTotalIntegerNodes(head1);	
+    public Node<Integer> addTwoNumbersInLinkedList(Node<Integer> head1, Node<Integer> head2) {
+        int totalNodesFromList1 = getTotalIntegerNodes(head1);
         int totalNodesFromList2 = getTotalIntegerNodes(head2);
 
         // Motive is to keep on adding 0 at the starting of the list whose length is smaller

@@ -190,6 +190,7 @@ public class BinaryTree {
     }
 
     // level will be 0 while invoking to denote root level
+    // Printing all the branches of tree
     public void printAllPathsFromRootToLeaf(TreeNode root, int[] path, int level) {
         if (root == null) {
             return;
@@ -572,7 +573,7 @@ public class BinaryTree {
     }
 
     // The provided solution will only work if the node has a pointer to parent.
-    /* if right subtree exist, then find out farthest left ode rom the subtree, otherwise
+    /* if right subtree exist, then find out farthest left node from the subtree, otherwise
      * traverse towards parent to find out inOrder successor
      */
     public int findSuccessor(SpecialTreeNode root, SpecialTreeNode targetNode) {

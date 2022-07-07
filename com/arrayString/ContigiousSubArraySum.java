@@ -74,7 +74,7 @@ public class ContigiousSubArraySum {
         if (right == -1) { 
             System.out.println("No subarray with given sum exists"); 
         } else { 
-            System.out.println("Negtive with Sum found between indexes " + left + " to " + right); 
+            System.out.println("Negtive with Sum found between indexes " + left + " to " + right);
         } 
     }
 }

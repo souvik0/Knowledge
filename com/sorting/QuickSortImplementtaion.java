@@ -1,6 +1,7 @@
 package com.sorting;
 
-/* Worst case: O(n^2)
+/* 
+ * Worst case: O(n^2)
  * Average case: O(nlogn)
  * Best Case: O(n)
 */

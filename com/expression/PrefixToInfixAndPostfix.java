@@ -15,7 +15,7 @@ public class PrefixToInfixAndPostfix {
             case '/':
             case '^':
                 return true;
-        } 
+        }
     return false;
     }
 

@@ -25,7 +25,7 @@ public class TrieNode {
             for (TrieNode eachChild : childNodeList) {
                  if (eachChild.data == data) {
                      return eachChild;
-                 }
+                }
             }
         }
         return null;

@@ -14,8 +14,8 @@ public class PeakElement {
         int mid = left + (right - left)/2;
 
         // Compare middle element with its neighbours (if neighbours exist) 
-        if ((mid == 0 || arr[mid - 1] <= arr[mid]) &&
-            (mid == n - 1 || arr[mid + 1] <= arr[mid])) {
+        if ((mid == 0 || arr[mid - 1] < arr[mid]) &&
+            (mid == n - 1 || arr[mid + 1] < arr[mid])) {
             return mid; 
         }
 
@@ -42,7 +42,7 @@ public class PeakElement {
     }
 
     public static void main(String[] args) { 
-        int arr[] = {1, 3, 20, 4, 1, 0};
+        int arr[] = {1, 3, 20, 29, 87, 78, 216, 104};
         int n = arr.length; 
         System.out.println("Index of a peak point is " + findPeak(arr, n));
         System.out.println("Peak element: " + arr[findPeak(arr, n)]);

@@ -13,7 +13,7 @@ public class SuffixTrieConstruction {
     }
 
     public static class TrieNode {
-        Map<Character, TrieNode> children = new HashMap<Character, TrieNode> ();
+        Map<Character, TrieNode> children = new HashMap<Character, TrieNode>();
     }
 
     public static class SuffixTrie {
@@ -41,7 +41,7 @@ public class SuffixTrieConstruction {
 
         public boolean search(String str) {
             TrieNode node = root;
-            for (int j= 0; j < str.length(); j++) {
+            for (int j = 0; j < str.length(); j++) {
                 char letter = str.charAt(j);
                 if (!node.children.containsKey(letter)) {
                     return false;
