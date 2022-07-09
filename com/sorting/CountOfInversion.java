@@ -1,17 +1,19 @@
 package com.sorting;
 
+import java.util.Arrays;
+
 public class CountOfInversion {
 
     public static void main(String[] args) {
-        int[] arr = {100,20,15,30,5,75,40};
-        System.out.println(mergeSortAndCount(arr, 0, arr.length));
+        int[] arr = {100, 20, 15, 30, 5, 75, 40};
+        System.out.println(mergeSortAndCount(arr, 0, arr.length - 1));
     }
 
     public static int mergeSortAndCount(int[] arr, int left, int right) {
         int count = 0;
 
         if (left < right) {
-            int mid = left + (right-left)/2;
+            int mid = (left + right)/2;
             // Divide left side of element of the array up to single element array creation
             count+= mergeSortAndCount(arr, left, mid);
             // Divide right side of element of the array up to single element array creation
@@ -23,47 +25,30 @@ public class CountOfInversion {
     }
 
     public static int mergeAndCount(int[] arr, int start, int mid, int end) {
-        int[] tempArray = new int[arr.length];
-        int tempArrayStartIndex = start;
-        int inversion = 0;
+        // Left subarray
+        int[] left = Arrays.copyOfRange(arr, start, mid + 1);
+  
+        // Right subarray
+        int[] right = Arrays.copyOfRange(arr, mid + 1, end + 1);
 
-        // For original array
-        int startIndex = start;
-        int midIndex = mid + 1;
+        int i = 0, j = 0, k = start, swaps = 0;
 
-        while (startIndex <= mid && midIndex <= end) {
-            // Need to compare each element starting from 0th index of the given array to fill up tempArray
-            if (arr[startIndex] < arr[midIndex]) {
-                tempArray[tempArrayStartIndex] = arr[startIndex];
-                tempArrayStartIndex++;
-                startIndex++;
-            } else {
-                tempArray[tempArrayStartIndex] = arr[midIndex];
-                tempArrayStartIndex++;
-                midIndex++;
-                inversion++;
+        while (i < left.length && j < right.length) {
+            if (left[i] <= right[j])
+                arr[k++] = left[i++];
+            else {
+                arr[k++] = right[j++];
+                swaps += (mid + 1) - (start + i);
             }
         }
 
-        // Adjust rest of the elements
-        while (startIndex <= mid) {
-            tempArray[tempArrayStartIndex] = arr[startIndex];
-            tempArrayStartIndex++;
-            startIndex++;
+        while (i < left.length) {
+            arr[k++] = left[i++];
+        }
+        while (j < right.length) {
+            arr[k++] = right[j++];
         }
 
-        while (midIndex <= end) {
-            tempArray[tempArrayStartIndex] = arr[midIndex];
-            tempArrayStartIndex++;
-            midIndex++;
-        }
-
-        // Copy tempArray to actual array after sorting 
-        for (int i = start; i <= end; i++) {
-             arr[i] = tempArray[i];
-        }
-
-        return inversion;
+    return swaps;
     }
-
 }

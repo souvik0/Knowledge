@@ -3,6 +3,7 @@ package com.arrayString;
 /* O(log n) time complexity
    This problem can be solved with leader in array approach also, 
    but that imposes O(n) time complexity for worst case.
+   This algorithm applies for strictly increasing or decreasing order array.
  */
 
 public class PeakElement { 
@@ -42,7 +43,7 @@ public class PeakElement {
     }
 
     public static void main(String[] args) { 
-        int arr[] = {1, 3, 20, 29, 87, 78, 216, 104};
+        int arr[] = {10, 20, 15, 2, 23, 90, 67};
         int n = arr.length; 
         System.out.println("Index of a peak point is " + findPeak(arr, n));
         System.out.println("Peak element: " + arr[findPeak(arr, n)]);
