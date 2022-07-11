@@ -6,25 +6,32 @@ import java.util.Map;
 public class LongestUniqueSubString {
 
     public static void main(String[] args) {
-        String s = "geeksgeeks";
+        String s = "geeksforgeeks";
         System.out.println("The input String is " + s);
-        int length = longestUniqueSubsttr(s);
-        System.out.println("The length of the longest non-repeating character substring is " + length);
+        String result = longestUniqueSubsttr(s);
+        System.out.println("The longest unique substring is: " + result);
     }
 
-    public static int longestUniqueSubsttr(String str) {
-        Map<Character, Integer> seen = new HashMap<Character, Integer>();
-        int maximum_length = 0;
-        int start = 0;
+    public static String longestUniqueSubsttr(String str) {
+        Map<Character, Integer> lastSeen = new HashMap<Character, Integer>();
+        int[] longest = new int[] {0, 1};
+        int startIdx = 0;
 
         for (int i = 0; i < str.length(); i++) {
-            if (seen.containsKey(i)) {
-                // Forwarding start pointer further
-                start = Math.max(start, seen.get(str.charAt(i)) + 1);
+            char ch = str.charAt(i);
+            if (lastSeen.containsKey(ch)) {
+                // Formation of startIdx of every substring
+                startIdx = Math.max(startIdx, lastSeen.get(ch) + 1);
             }
-            seen.put(str.charAt(i), i);
-            maximum_length = Math.max(maximum_length, (i - start +1));
+            // Checking the length of the substring
+            if (longest[1] - longest[0] < (i + 1 - startIdx)) {
+                longest = new int[] {startIdx, i + 1};
+            }
+            lastSeen.put(ch, i);
         }
-        return maximum_length;
+
+        String result = str.substring(longest[0], longest[1]);
+
+        return result;
     }
 }

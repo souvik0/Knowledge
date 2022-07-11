@@ -33,17 +33,50 @@ public class BinarySearchTree {
         }
     }
 
+    // Minimum Height BST construction
     public TreeNode convertSortedArrayToBST(int[] arr, int start, int end) {
         int mid = (start + end)/2 ;
         TreeNode root = new TreeNode(arr[mid]);
 
         // Left will lies from start to mid -1
-        TreeNode left = convertSortedArrayToBST(arr, start, mid - 1);
-        root.left = left;
+        TreeNode leftSubtree = convertSortedArrayToBST(arr, start, mid - 1);
+        root.left = leftSubtree;
 
         // Right will lies from mid + 1 to end
-        TreeNode right = convertSortedArrayToBST(arr, mid + 1, end);
-        root.right = right;
+        TreeNode rightSubtree = convertSortedArrayToBST(arr, mid + 1, end);
+        root.right = rightSubtree;
+
+        return root;
+    }
+
+    /*
+     * Find out right subtree root index to determine the last value of left subtree or first value from
+     * array for right subtree
+     */
+    public TreeNode reconstructBST(List<Integer> preOrderList) {
+        if (preOrderList.size() == 0) {
+            return null;
+        }
+
+        int rootNodeValue = preOrderList.get(0);
+        TreeNode root = new TreeNode(rootNodeValue);
+
+        // Assume it's a right skewed tree
+        int rightSubtreeRoot = preOrderList.size();
+
+        for (int i = 0; i < preOrderList.size(); i++) {
+             int value = preOrderList.get(i);
+             if (value >= rightSubtreeRoot) {
+                 rightSubtreeRoot = i;
+                 break;
+             }
+        }
+
+        TreeNode leftSubtree = reconstructBST(preOrderList.subList(1, rightSubtreeRoot - 1));
+        TreeNode rightSubtree = reconstructBST(preOrderList.subList(rightSubtreeRoot, preOrderList.size()));
+
+        root.left = leftSubtree;
+        root.right = rightSubtree;
 
         return root;
     }
@@ -203,8 +236,10 @@ public class BinarySearchTree {
 
     // value stands for data of the node to be deleted
     public TreeNode deleteNode(TreeNode root, int data) {
-        if (root == null)
+        if (root == null) {
             return null;
+        }
+
         // Traversing in both left & right direction
         if (root.data > data) {
             root.left = deleteNode(root.left, data);

@@ -49,7 +49,7 @@ public class KnightTourProblem {
 
         /* Start from 0,0 and explore all tours using
            solveKTUtil() */
-        if (!solveKTUtil(0, 0, 1, sol, rowMove, colMove)) {
+        if (!solveKTUtil(0, 0, 0, sol, rowMove, colMove)) {
             System.out.println("Solution does not exist");
         }
         else {
@@ -60,6 +60,7 @@ public class KnightTourProblem {
     /* A recursive utility function to solve Knight
        Tour problem */
     public static boolean solveKTUtil(int row, int col, int movePointer, int sol[][], int rowMove[], int colMove[]) {
+        // Recursion break condition
         if (movePointer == N * N) {
             return true;
         }
@@ -70,8 +71,8 @@ public class KnightTourProblem {
             int next_col = col + colMove[k];
 
             if (isSafe(next_row, next_col, sol)) {
-                sol[next_row][next_col] = movePointer;
                 movePointer++;
+                sol[next_row][next_col] = movePointer;
                 if (solveKTUtil(next_row, next_col, movePointer, sol, rowMove, colMove)) {
                     return true;
                 }

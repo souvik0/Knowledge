@@ -41,6 +41,7 @@ public class ContinuousMedian {
         if (minHeap.isEmpty() && maxHeap.isEmpty()) {
             return 0.0;
         }
-        return minHeap.size() == maxHeap.size() ? (minHeap.peek() + maxHeap.peek())/2.0 : minHeap.peek();
+        return minHeap.size() == maxHeap.size() ? (minHeap.peek() + maxHeap.peek())/2.0 : 
+                                                   minHeap.peek();
     }
 }

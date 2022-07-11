@@ -11,9 +11,9 @@ public class CountOfInversion {
 
     public static int mergeSortAndCount(int[] arr, int left, int right) {
         int count = 0;
+        int mid = (left + right)/2;
 
         if (left < right) {
-            int mid = (left + right)/2;
             // Divide left side of element of the array up to single element array creation
             count+= mergeSortAndCount(arr, left, mid);
             // Divide right side of element of the array up to single element array creation
