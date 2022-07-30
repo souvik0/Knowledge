@@ -28,7 +28,8 @@ public class SuffixTrieConstruction {
 
         public void insertSubstringStartingAt(int i, String str) {
             TrieNode node = root;
-            for (int j= i; j < str.length(); j++) {
+
+            for (int j = i; j < str.length(); j++) {
                  char letter = str.charAt(j);
                  if (!node.children.containsKey(letter)) {
                      TrieNode newNode = new TrieNode();
@@ -36,6 +37,7 @@ public class SuffixTrieConstruction {
                  }
                  node = node.children.get(letter);
             }
+
             node.children.put(endSymbol, null);
         }
 

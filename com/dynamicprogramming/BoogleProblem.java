@@ -17,7 +17,7 @@ public class BoogleProblem {
             System.out.println(word);
         }
 
-        for (int index = 0 ; index < Path_Row.length; index++) {
+        for (int index = 0; index < Path_Row.length; index++) {
              int rowNew = startRow + Path_Row[index];
              int colNew = startCol + Path_Col[index];
              if (isValidMove(rowNew, colNew, visited, board)) {

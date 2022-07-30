@@ -200,8 +200,8 @@ public class BinaryTree {
         if (root.left == null && root.right == null) {
             printArrayUtil(path);
         }
-        printAllPathsFromRootToLeaf(root.left, path, level ++);
-        printAllPathsFromRootToLeaf(root.right, path, level ++);
+        printAllPathsFromRootToLeaf(root.left, path, level++);
+        printAllPathsFromRootToLeaf(root.right, path, level++);
     }
 
     public static void printArrayUtil(int[] path) {
@@ -555,6 +555,7 @@ public class BinaryTree {
             TreeNode leftNode = inOrderNodes.get(i);
             TreeNode rightNode = inOrderNodes.get(i+1);
 
+            // Here converting to Doubly linked List
             leftNode.right = rightNode;
             rightNode.left = leftNode;
         }

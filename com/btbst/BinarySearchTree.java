@@ -67,7 +67,7 @@ public class BinarySearchTree {
         for (int i = 0; i < preOrderList.size(); i++) {
              int value = preOrderList.get(i);
              if (value >= rightSubtreeRoot) {
-                 rightSubtreeRoot = i;
+                 rightSubtreeRoot = i; // determining index of right subtree
                  break;
              }
         }
@@ -148,7 +148,7 @@ public class BinarySearchTree {
     }
 
     /**
-    * In vertical view , need to print all the nodes are present in one level
+    * In vertical view, need to print all the nodes are present in one level
     * Vertical view approach applicable for all kinds of tree
     * Vertical view problem applies very popular hashing mechanism
     */

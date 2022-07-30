@@ -34,9 +34,9 @@ public class CountOfInversion {
         int i = 0, j = 0, k = start, swaps = 0;
 
         while (i < left.length && j < right.length) {
-            if (left[i] <= right[j])
+            if (left[i] <= right[j]) {
                 arr[k++] = left[i++];
-            else {
+            } else {
                 arr[k++] = right[j++];
                 swaps += (mid + 1) - (start + i);
             }

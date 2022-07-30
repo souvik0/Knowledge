@@ -31,6 +31,7 @@ public class ThreeNumberSort {
                  thirdArrayIndex--;
              }
         }
+
         return arr;
     }
 
