@@ -4,7 +4,7 @@ public class EquilibriumPoint {
 
     public static void main(String[] args) {
        EquilibriumPoint equi = new EquilibriumPoint();
-        int arr[] = { -7, 1, 5, 2, -4, 3, 0 };
+        int arr[] = {-7, 1, 5, 2, -4, 3, 0};
         int arr_size = arr.length;
         System.out.println("First equilibrium index is " +
                           equi.equilibrium(arr, arr_size));
@@ -15,14 +15,16 @@ public class EquilibriumPoint {
         int leftsum = 0; // initialize leftsum
 
         /* Find sum of the whole array */
-        for (int i = 0; i < n; ++i)
+        for (int i = 0; i < n; ++i) {
             sum += arr[i];
+        }
 
         for (int i = 0; i < n; ++i) {
             sum -= arr[i]; // sum is now right sum for index i
 
-            if (leftsum == sum)
+            if (leftsum == sum) {
                 return i;
+            }
 
             leftsum += arr[i];
         }

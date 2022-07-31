@@ -1,5 +1,6 @@
 package com.arrayString;
-
+/* 
+Shifted Binary Search */
 /*Using Binary Search:
     Step 1: Find index of pivot element (Index of minimum element)
     Step 2: Apply Binary Search on the sub array based on following conditions:
