@@ -1,8 +1,10 @@
 package com.trie;
-// Trie is used for phone book & dictionary kind of data structure. 
-// Also very much used data structure to build TypeAhead system.
-// Search operation happens at O(L) time complexity as L stands for length of the word. This is the major
-// advantage of using Trie.
+
+/* Trie is used for phone book & dictionary kind of data structure. 
+   Also very much used data structure to build TypeAhead system.
+   Search operation happens at O(L) time complexity as L stands for length of the word. This is the major
+   advantage of using Trie.*/
+/* This is standard Trie or prefix trie */
 
 public class TrieDataStructure {
 

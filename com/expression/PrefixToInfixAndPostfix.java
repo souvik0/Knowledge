@@ -35,7 +35,7 @@ public class PrefixToInfixAndPostfix {
                 String result = "(" + operand1 + prefixExpression.charAt(i) + operand2 + ")";
                 tempStack.push(result); 
             } else { 
-                // To make character to string 
+                // To make character to string added additional space
                 tempStack.push(prefixExpression.charAt(i) + "");
             }
         }

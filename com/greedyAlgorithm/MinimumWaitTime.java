@@ -10,6 +10,7 @@ public class MinimumWaitTime {
     }
 
     public static int minimumWaitTime(int[] quiries) {
+        // Sorting the array will help to reach minimum time for the last query execution
         Arrays.sort(quiries);
 
         int totalWaitingTime = 0;

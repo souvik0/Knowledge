@@ -13,7 +13,7 @@ public class SuffixTrieConstruction {
     }
 
     public static class TrieNode {
-        Map<Character, TrieNode> children = new HashMap<Character, TrieNode>();
+        Map<Character, TrieNode> childNodeMap = new HashMap<Character, TrieNode>();
     }
 
     public static class SuffixTrie {
@@ -27,30 +27,33 @@ public class SuffixTrieConstruction {
         }
 
         public void insertSubstringStartingAt(int i, String str) {
-            TrieNode node = root;
+            TrieNode current = root;
 
             for (int j = i; j < str.length(); j++) {
                  char letter = str.charAt(j);
-                 if (!node.children.containsKey(letter)) {
+                 if (!current.childNodeMap.containsKey(letter)) {
                      TrieNode newNode = new TrieNode();
-                     node.children.put(letter, newNode);
+                     current.childNodeMap.put(letter, newNode);
                  }
-                 node = node.children.get(letter);
+                 // Moving to the next pointer
+                 current = current.childNodeMap.get(letter);
             }
 
-            node.children.put(endSymbol, null);
+            current.childNodeMap.put(endSymbol, null);
         }
 
         public boolean search(String str) {
-            TrieNode node = root;
+            TrieNode current = root;
+
             for (int j = 0; j < str.length(); j++) {
                 char letter = str.charAt(j);
-                if (!node.children.containsKey(letter)) {
+                if (!current.childNodeMap.containsKey(letter)) {
                     return false;
                 }
-                node = node.children.get(letter);
+                current = current.childNodeMap.get(letter);
             }
-            return node.children.containsKey(endSymbol);
+
+            return current.childNodeMap.containsKey(endSymbol);
         }
     }
 }

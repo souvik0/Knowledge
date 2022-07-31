@@ -1,6 +1,5 @@
 package com.arrayString;
-/* 
-Shifted Binary Search */
+/*Shifted Binary Search */
 /*Using Binary Search:
     Step 1: Find index of pivot element (Index of minimum element)
     Step 2: Apply Binary Search on the sub array based on following conditions:
@@ -25,7 +24,7 @@ public class FindElementSortedRotatedArray {
 
     private static void findElementInSortedRotatedArrayTest(int[] array, int numberToBeSerached) {
         int index = findElementInSortedRotatedArray(array, numberToBeSerached);
-        System.out.println("Element " + numberToBeSerached + (index >= 0 ? (" found at index " + index) : " not found!"));
+        System.out.println("Element " + numberToBeSerached + (index >= 0 ? ("found at index " + index) : " not found!"));
     }
 
     // Returning the index of the elements
@@ -90,5 +89,37 @@ public class FindElementSortedRotatedArray {
         }
 
         return -1;
+    }
+
+    // Approach without finding pivot
+    public static int search(int arr[], int low, int high, int key) {
+        if (low > high) {
+            return -1;
+        }
+
+        int mid = (low + high) / 2;
+        if (arr[mid] == key) {
+            return mid;
+        }
+
+        /* If arr[l...mid] first subarray is sorted */
+        if (arr[low] <= arr[mid]) {
+            /* As this subarray is sorted, we can quickly check if key lies in half or other half */
+            if (key >= arr[low] && key <= arr[mid]) {
+                return search(arr, low, mid - 1, key);
+            } else {
+                /*If key not lies in first half subarray, Divide other half  into two subarrays,
+                such that we can quickly check if key lies in other half */
+                return search(arr, mid + 1, high, key);
+            }
+        }
+
+        /* If arr[l..mid] first subarray is not sorted, 
+         * then arr[mid... h] must be sorted subarray*/
+        if (key >= arr[mid] && key <= arr[high]) {
+            return search(arr, mid + 1, high, key);
+        } else {
+            return search(arr, low, mid - 1, key);
+        }
     }
 }
