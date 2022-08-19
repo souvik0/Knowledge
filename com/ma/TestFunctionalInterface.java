@@ -32,18 +32,20 @@ public class TestFunctionalInterface {
                                   .map(Integer::valueOf)
                                   .max(Integer::compareTo)
                                   .get();
-        System.out.println("Maximum number: " +maxNumber);
+        System.out.println("Maximum number: " + maxNumber);
 
         String dirLocation = "C:/Users/Admin/Dropbox";
 
+        // Getting hidden files
         List<File> filesFrom = Files.list(Paths.get(dirLocation))
                                     .map(Path::toFile)
                                     .filter(File::isHidden)
                                     .collect(Collectors.toList());
 
+        // Getting files with specific extension
         List<File> files = Files.list(Paths.get(dirLocation))
+                .filter(eachPath -> eachPath.toString().endsWith(".java"))
                 .filter(Files::isRegularFile)
-                .filter(path -> path.toString().endsWith(".java"))
                 .map(Path::toFile)
                 .collect(Collectors.toCollection(ArrayList::new));
 

@@ -17,7 +17,7 @@ public class SunsetView {
             buildingPosition.push(buildingHeight[0]);
             sunsetViewBuilding.add(0);
             for (int i = 1; i < buildingHeight.length; i++) {
-                 if (! buildingPosition.isEmpty() && buildingHeight[i] > buildingPosition.peek()) {
+                 if (!buildingPosition.isEmpty() && buildingHeight[i] > buildingPosition.peek()) {
                      sunsetViewBuilding.add(i);
                  }
             }

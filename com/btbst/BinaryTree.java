@@ -196,7 +196,7 @@ public class BinaryTree {
             return;
         }
         path[level] = root.data;
-        // root is the only node in tree & that is the lead node
+        // root is the only node in the tree & that is the lead node
         if (root.left == null && root.right == null) {
             printArrayUtil(path);
         }
@@ -485,6 +485,7 @@ public class BinaryTree {
     }
 
     // Same algorithm to find depth of the tree
+    // Perform inorder traversal
     public int findDeepestLevelAndNode(TreeNode root) {
         findDeepestLevel(root, 0);
         System.out.println("Deepest level: " + deepestLevel);

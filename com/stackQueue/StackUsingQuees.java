@@ -6,7 +6,6 @@ import java.util.Queue;
 public class StackUsingQuees {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         StackUsingQuees stackUsingQueue = new StackUsingQuees();
         stackUsingQueue.push(1);
         stackUsingQueue.push(2);

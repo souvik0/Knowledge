@@ -1,5 +1,6 @@
 package com.dynamicprogramming;
 
+// Here the graph isn't directed one
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

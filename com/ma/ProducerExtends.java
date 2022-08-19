@@ -25,6 +25,8 @@ public class ProducerExtends {
         List<? extends Apple> fruitBasket = fruitList;
         List<? extends Apple> appleBasket1 = applesList;
 
+        // List<Apple extends Fruit>
+
         appleBasket.add(new Apple()); //Compile time error
         appleBasket.add(new AsianApple());
         fruitBasket.add(new Mango());

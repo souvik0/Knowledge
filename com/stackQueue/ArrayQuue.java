@@ -9,8 +9,7 @@ public class ArrayQuue<T> {
     protected int front, rear, size;
 
     public ArrayQuue(int n) {
-        front = -1;
-        rear = -1;
+        front = rear = -1;
         size = 0;
         arr = new Object[n];
     }
@@ -49,7 +48,7 @@ public class ArrayQuue<T> {
     }
 
     public Object deQueue() {
-        Object element = 0;
+        Object element = null;
         if (isEmpty()) {
             System.out.println("Queue is Empty");
         } else {
