@@ -6,38 +6,40 @@ package com.lrucache;
 
 import java.util.HashMap;
 
-public class LRUCache {
+public class LRUCache<K, V> {
 
-    private HashMap<Integer, EntryNode> tempMap; // Temporary hash map to maintain get operation at O(1)
-    private EntryNode start, end; // Start & End pointer for doubly linked-list
+    private HashMap<K, EntryNode<K, V>> tempMap; // Temporary hash map to maintain get operation at O(1)
+    private EntryNode<K, V> start, end; // Start & End pointer for doubly linked-list
     private int LRU_SIZE = 4;
 
+    @SuppressWarnings("unchecked")
     public LRUCache() {
         start = end = null;
-        tempMap = new HashMap<Integer, EntryNode>();
+        tempMap = (HashMap<K, EntryNode<K, V>>) new HashMap<K, V>();
     }
 
+    @SuppressWarnings("unchecked")
     public LRUCache(int capacity) {
         start = end = null;
         this.LRU_SIZE = capacity;
-        tempMap = new HashMap<Integer, EntryNode>();
+        tempMap = (HashMap<K, EntryNode<K, V>>) new HashMap<K, V>();
     }
 
-    public void putEntry(int key, int data) {
+    public void putEntry(K key, V data) {
         /* if already entry object exist, then update the value of entry object with new value & 
            remove the node from it's current position in doubly linked list.
            As this point of time entry object node becomes least recently accesses, So put this at the starting of
            doubly linked list. 
         */
         if (tempMap.containsKey(key)) {
-            EntryNode entry = tempMap.get(key);
+            EntryNode<K, V> entry = tempMap.get(key);
             entry.data = data;
             removeNode(entry);
             addAtFirst(entry);
             // no need to put separately in tempMap as the entry object is already there in map.
         } else {
             // Create new entry object
-            EntryNode newEntryObject = new EntryNode();
+            EntryNode<K, V> newEntryObject = new EntryNode<K, V>();
             newEntryObject.left = null;
             newEntryObject.right = null;
             newEntryObject.key = key;
@@ -59,19 +61,19 @@ public class LRUCache {
         }
     }
 
-    public int getEntry(int key) {
+    public V getEntry(K key) {
         if (tempMap.containsKey(key)) {
-            EntryNode entry = tempMap.get(key);
+            EntryNode<K, V> entry = tempMap.get(key);
             //As this object becomes last accessed, so remove it's from it's current position in linked list
             removeNode(entry);
             //Add this object as first node in linked list
             addAtFirst(entry);
             return entry.data;
         }
-        return -1;
+        return null;
     }
 
-    public void addAtFirst(EntryNode newEntryObject) {
+    public void addAtFirst(EntryNode<K, V> newEntryObject) {
         //If the node is not the first entry in the linked list
         if (start != null) {
             start.left = newEntryObject;
@@ -82,7 +84,7 @@ public class LRUCache {
         }
     }
 
-    public void removeNode(EntryNode node) {
+    public void removeNode(EntryNode<K, V> node) {
         // Below if-else block specify first/middle node to be removed
         if (node.left != null) {
             node.left.right = node.right;

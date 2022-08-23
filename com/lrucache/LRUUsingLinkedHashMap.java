@@ -1,42 +1,45 @@
 package com.lrucache;
 
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class LRUUsingLinkedHashMap {
+public class LRUUsingLinkedHashMap<K, V> extends LinkedHashMap<K, V>
+       implements Serializable {
 
-    private LinkedHashMap<Integer, Integer> cacheMap;
+    private static final long serialVersionUID = -1L;
+    int capacity;
 
     public LRUUsingLinkedHashMap(int capacity) {
-        cacheMap = new LinkedHashMap<Integer, Integer>(capacity, 0.75f, true) {
-            private static final long serialVersionUID = 1L;
-            protected boolean removeEldestEntry(Map.Entry eldest) {
-                return size() > capacity;
-            }
-        };
+        super(capacity, 0.75f, true); // True for access order, false for insertion order
+        this.capacity = capacity;
     }
 
     // This method works in O(1)
-    public int get(int key) {
-        return cacheMap.getOrDefault(key, -1);
+    public V getEntry(K key) {
+        return super.get(key);
     }
 
     // This method works in O(1)
-    public void set(int key, int value) {
-        cacheMap.put(key, value);
+    public void putEntry(K key, V value) {
+        super.put(key, value);
+    }
+
+    protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+        return size() > capacity;
     }
 
     public static void main(String[] args) {
-        LRUUsingLinkedHashMap lrucache = new LRUUsingLinkedHashMap(4);
-        lrucache.set(1, 100);
-        lrucache.set(10, 99);
-        lrucache.set(15, 98);
-        lrucache.set(10, 97);
-        lrucache.set(12, 96);
-        lrucache.set(18, 95);
-        lrucache.set(1, 94);
-        System.out.println(lrucache.get(1));
-        System.out.println(lrucache.get(10));
-        System.out.println(lrucache.get(15));
+        LRUUsingLinkedHashMap<Integer, Integer> lrucache = new LRUUsingLinkedHashMap<Integer, Integer>(4);
+        lrucache.putEntry(1, 100);
+        lrucache.putEntry(10, 99);
+        lrucache.putEntry(15, 98);
+        lrucache.putEntry(10, 97);
+        lrucache.putEntry(12, 96);
+        lrucache.putEntry(18, 95);
+        lrucache.putEntry(1, 94);
+        System.out.println(lrucache.getEntry(1));
+        System.out.println(lrucache.getEntry(10));
+        System.out.println(lrucache.getEntry(15));
     }
 }

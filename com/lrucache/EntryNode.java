@@ -1,12 +1,12 @@
 package com.lrucache;
 
 // This class is basically representing Node of doubly linked-list
-public class EntryNode {
+public class EntryNode<K, V> {
 
-    int key; // identification key
+    K key; // identification key
 
     // property representing doubly linked list
-    int data;
-    EntryNode left;
-    EntryNode right;
+    V data;
+    EntryNode<K, V> left;
+    EntryNode<K, V> right;
 }
