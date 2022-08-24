@@ -2,6 +2,7 @@ package com.concurrency;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorCompletionService;
@@ -12,10 +13,10 @@ import java.util.concurrent.Future;
 public class ExecutionCompletionServiceaMain {
 
     public static void main(String[] args) {
-        MultiplyingTask multiplyingTask1= new MultiplyingTask("Task 1", 10, 20, 2000l);
-        MultiplyingTask multiplyingTask2= new MultiplyingTask("Task 2", 30, 40, 4000l);
-        MultiplyingTask multiplyingTask3= new MultiplyingTask("Task 3", 40, 50, 3000l);
-        MultiplyingTask multiplyingTask4= new MultiplyingTask("Task 4", 50, 60, 1000l);
+        Callable<Integer> multiplyingTask1= new MultiplyingTask<Integer>("Task 1", 10, 20, 2000l);
+        Callable<Integer> multiplyingTask2= new MultiplyingTask<Integer>("Task 2", 30, 40, 4000l);
+        Callable<Integer> multiplyingTask3= new MultiplyingTask<Integer>("Task 3", 40, 50, 3000l);
+        Callable<Integer> multiplyingTask4= new MultiplyingTask<Integer>("Task 4", 50, 60, 1000l);
 
         ExecutorService executorService = Executors.newFixedThreadPool(4);
         CompletionService<Integer> executorCompletionService = 

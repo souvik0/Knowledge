@@ -2,7 +2,7 @@ package com.concurrency;
 
 import java.util.concurrent.Callable;
 
-public class MultiplyingTask implements Callable {
+public class MultiplyingTask<Integer> implements Callable<Integer> {
 
     int a;
     int b;
@@ -17,9 +17,9 @@ public class MultiplyingTask implements Callable {
     }
 
     @Override
-    public Integer call() throws Exception {
+    public int call() throws Exception {
         System.out.println("Started taskName: "+taskName);
-        int result=a*b;
+        int result = a * b;
         Thread.sleep(sleepTime);
         System.out.println("Completed taskName: "+taskName);
         return result;
