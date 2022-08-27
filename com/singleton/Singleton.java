@@ -13,7 +13,7 @@ public class Singleton implements Serializable, Cloneable {
     private static volatile Singleton eagerInstance = new Singleton();
 
     // This will work if early instance created. Otherwise it will return null
-    public static Singleton getSingletonEagerInstance() {
+    public static Singleton getEagerInstance() {
         return eagerInstance;
     }
 
@@ -28,7 +28,7 @@ public class Singleton implements Serializable, Cloneable {
     }
 
     // Lazy Instantiation with Double checking thread safety implemented
-    public static Singleton getSingletonLazyInstance() {
+    public static Singleton getLazyInstance() {
         if (lazyInstance == null) {
             synchronized(Singleton.class) {
                 // Introducing double checking
@@ -47,7 +47,7 @@ public class Singleton implements Serializable, Cloneable {
 
     // Serialization Proofing
     protected Singleton readResolve() {
-        return getSingletonLazyInstance();
+        return getLazyInstance();
     }
 
     // Implementation of BillPugh singleton

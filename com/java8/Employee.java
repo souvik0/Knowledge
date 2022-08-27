@@ -29,17 +29,6 @@ public class Employee {
         }; 
         numberList.stream().forEach(action);
 
-        // Here map method convert this to internal collection which creates one to many relationship
-        /*try {
-             Stream <String> lines = Files.lines(Paths.get("c:\\demo.txt"))
-                                          .map(eachLine-> eachLine.split("[\\s]+"))
-                                          .flatMap(Arrays::stream).distinct();
-             lines.forEach(System.out::println);
-             lines.close();
-         } catch (IOException e) {
-             e.printStackTrace();
-        } */
-
         HashMap<Integer, String> map1 = new HashMap<>();
         map1.put(1, "A");
         map1.put(2, "B");
@@ -53,7 +42,7 @@ public class Employee {
         map2.put(4, "D");   //A new pair to be added
 
         mergeMap(map1, map2);
-        
+
         String minChar = Stream.of("H", "T", "D", "I", "J")
                                .min(String::compareTo)
                                .get();
@@ -70,7 +59,7 @@ public class Employee {
         ConcurrentHashMap<Object, Boolean> cmap = new ConcurrentHashMap<Object, Boolean>(16, 0.9f, 1);
         return t -> {
             final List<?> distinctKeys = Arrays.stream(keyExtractor)
-                                               .map(ke -> ke.apply(t))
+                                               .map(eachKeyExtractor -> eachKeyExtractor.apply(t))
                                                .collect(Collectors.toList());
             return cmap.putIfAbsent(distinctKeys, Boolean.TRUE) == null;
        };

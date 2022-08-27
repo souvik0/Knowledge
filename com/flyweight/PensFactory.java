@@ -7,7 +7,7 @@ public class PensFactory {
 
     public static Map<String, Pen> pensMap = new HashMap<String, Pen>();
 
-    public static Pen getThickPen (String color) {
+    public static Pen getThickPen(String color) {
         String key = "THICK-" + color;
         Pen pen = pensMap.get(key);
 
@@ -21,7 +21,7 @@ public class PensFactory {
         return pen;
     }
 
-    public static Pen getThinPen (String color) {
+    public static Pen getThinPen(String color) {
         String key = "THIN-" + color ;
         Pen pen = pensMap.get(key);
 
@@ -35,7 +35,7 @@ public class PensFactory {
         return pen;
     }
 
-    public static Pen getMediumPen (String color) {
+    public static Pen getMediumPen(String color) {
         String key = "MEDIUM-" + color ;
         Pen pen = pensMap.get(key);
 

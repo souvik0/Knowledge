@@ -28,16 +28,16 @@ public class ExtractDistinctWords {
          //The source directory
          String directory = "C:/Users/Admin/Dropbox";
 
-         // Reading only files from the directory
+         // Reading only files from the directory while traversing the directory
          try {
-           List<File> files = Files.list(Paths.get(directory))
-                                   .map(Path::toFile)
-                                   .filter(File::isFile)
-                                   .collect(Collectors.toList());
+             List<File> fileList = Files.list(Paths.get(directory))
+                                     .map(Path::toFile)
+                                     .filter(File::isFile)
+                                     .collect(Collectors.toList());
 
-           files.forEach(System.out::println);
+             fileList.forEach(System.out::println);
          } catch (IOException e) {
-              e.printStackTrace();
+             e.printStackTrace();
          }
 
          System.out.println("///////////////////////");

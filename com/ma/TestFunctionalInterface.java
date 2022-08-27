@@ -37,19 +37,20 @@ public class TestFunctionalInterface {
         String dirLocation = "C:/Users/Admin/Dropbox";
 
         // Getting hidden files
-        List<File> filesFrom = Files.list(Paths.get(dirLocation))
-                                    .map(Path::toFile)
-                                    .filter(File::isHidden)
-                                    .collect(Collectors.toList());
+        List<File> hiddenFilesList = Files.list(Paths.get(dirLocation))
+                                          .map(Path::toFile)
+                                          .filter(File::isHidden)
+                                          .collect(Collectors.toList());
+        hiddenFilesList.forEach(System.out::println);
 
         // Getting files with specific extension
-        List<File> files = Files.list(Paths.get(dirLocation))
-                .filter(eachPath -> eachPath.toString().endsWith(".java"))
-                .filter(Files::isRegularFile)
-                .map(Path::toFile)
-                .collect(Collectors.toCollection(ArrayList::new));
+        List<File> regularFileList = Files.list(Paths.get(dirLocation))
+                                          .filter(eachPath -> eachPath.toString().endsWith(".java"))
+                                          .filter(Files::isRegularFile)
+                                          .map(Path::toFile)
+                                          .collect(Collectors.toCollection(ArrayList::new));
 
-        files.forEach(System.out::println);
+        regularFileList.forEach(System.out::println);
 
         try {
             for (Path path : Files.newDirectoryStream(Paths.get(dirLocation), path -> path.toFile().isFile())) {
