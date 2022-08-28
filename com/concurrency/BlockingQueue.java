@@ -18,7 +18,7 @@ public class BlockingQueue<E> {
         }
  
         queue.add(item);
-        if (this.queue.size() >= 1) {
+        if (this.queue.size() < this.limit) {
             notifyAll();
         }
     }

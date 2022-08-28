@@ -17,7 +17,7 @@ public class MultiplyingTask<Integer> implements Callable<Integer> {
     }
 
     @Override
-    public int call() throws Exception {
+    public Integer call() throws Exception {
         System.out.println("Started taskName: "+taskName);
         int result = a * b;
         Thread.sleep(sleepTime);
