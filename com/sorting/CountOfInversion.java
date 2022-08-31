@@ -38,6 +38,7 @@ public class CountOfInversion {
                 arr[k++] = left[i++];
             } else {
                 arr[k++] = right[j++];
+                // Here inversion took place
                 swaps += (mid + 1) - (start + i);
             }
         }

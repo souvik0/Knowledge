@@ -26,8 +26,7 @@ public class ContinuousMedian {
         Double median = 0.0;
 
         if (minHeap.size() == maxHeap.size()) {
-            maxHeap.add(element);
-            minHeap.add(maxHeap.remove());
+            minHeap.add(element);
         } else {
             minHeap.add(element);
             maxHeap.add(minHeap.remove());

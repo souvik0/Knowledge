@@ -13,7 +13,7 @@ public class CaeserCipherEncrypter {
         for (int i = 0; i < str.length(); i++) {
              newLetter[i] = getNewLetter(str.charAt(i), newKey);
         }
-    return new String(newLetter);
+        return new String(newLetter);
     }
 
     public static char getNewLetter(char letter, int key) {

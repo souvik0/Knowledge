@@ -3,6 +3,7 @@ package com.arrayString;
 // It gives only one sub array which is the first one
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ContigiousSubArraySum {
 
@@ -47,7 +48,7 @@ public class ContigiousSubArraySum {
         int currentSum = 0;
 
         // This map hold currentSum as key & array index of the currentSum as value
-        HashMap<Integer, Integer> hashMap = new HashMap<>();  //Keeping sum & index of that sum
+        Map<Integer, Integer> hashMap = new HashMap<>();  //Keeping sum & index of that sum
 
         for (int i = 0; i < arr.length; i++) {
             currentSum = currentSum + arr[i];
@@ -70,11 +71,11 @@ public class ContigiousSubArraySum {
             hashMap.put(currentSum, i);
         }
 
-        // if end is -1 : means we have reached end without the sum 
-        if (right == -1) { 
-            System.out.println("No subarray with given sum exists"); 
-        } else { 
+        // if end is -1 : means we have reached end without the sum
+        if (right == -1) {
+            System.out.println("No subarray with given sum exists");
+        } else {
             System.out.println("Negtive with Sum found between indexes " + left + " to " + right);
-        } 
+        }
     }
 }

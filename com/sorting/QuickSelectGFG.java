@@ -58,7 +58,7 @@ public class QuickSelectGFG {
      public static void main(String[] args) {
          int[] array = new int[] {10, 4, 5, 8, 6, 11, 26, 52};
 
-         // Looking for 3rd (arr.length - k + 1) smallest element in this array
+         // Looking for 3rd (arr.length - k + 1) largest element in this array
          int kPosition = 7;
          int length = array.length;
 

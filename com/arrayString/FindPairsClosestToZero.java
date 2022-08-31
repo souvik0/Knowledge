@@ -6,10 +6,10 @@ import java.util.Arrays;
 
 public class FindPairsClosestToZero {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         int arr[] = {1, 60, -10, 70, -80, 85};
         findPairs(arr);
-	}
+    }
 
     public static void findPairs(int[] arr) {
         int left = 0;

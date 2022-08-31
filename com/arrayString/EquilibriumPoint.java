@@ -16,17 +16,17 @@ public class EquilibriumPoint {
 
         /* Find sum of the whole array */
         for (int i = 0; i < n; ++i) {
-            sum += arr[i];
+            sum = sum + arr[i];
         }
 
         for (int i = 0; i < n; ++i) {
-            sum -= arr[i]; // sum is now right sum for index i
+            sum = sum - arr[i]; // This represent right sum
 
             if (leftsum == sum) {
                 return i;
             }
 
-            leftsum += arr[i];
+            leftsum = leftsum + arr[i];
         }
 
         /* If no equilibrium index found, then return 0 */

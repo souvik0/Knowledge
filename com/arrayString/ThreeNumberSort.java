@@ -17,17 +17,17 @@ public class ThreeNumberSort {
         int thirdOrderValue = order[2];
 
         int firstArrayIndex = 0;
-        for (int i = 0; i < arr.length; i++) {
-             if (arr[i] == firstOrderValue) {
-                 swap(arr, firstArrayIndex, i);
+        for (int index = 0; index < arr.length; index++) {
+             if (arr[index] == firstOrderValue) {
+                 swap(arr, firstArrayIndex, index);
                  firstArrayIndex++;
              }
         }
 
         int thirdArrayIndex = arr.length - 1;
-        for (int i = arr.length - 1 ; i >= 0; i--) {
-             if (arr[i] == thirdOrderValue) {
-                 swap(arr, thirdArrayIndex, i);
+        for (int index = arr.length - 1 ; index >= 0; index--) {
+             if (arr[index] == thirdOrderValue) {
+                 swap(arr, thirdArrayIndex, index);
                  thirdArrayIndex--;
              }
         }
