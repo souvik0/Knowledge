@@ -1,6 +1,7 @@
 package com.arrayString;
 
-// It is similar approach as quick sort
+// It is similar approach as binary search
+// The given is sorted in nature containing only 0 & 1.
 // This will resolve where all 1's & 0's are together
 public class IndexofFirstOne {
 

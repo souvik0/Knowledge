@@ -3,7 +3,7 @@ package com.arrayString;
 public class LongestCommonPrefix {
 
     public static void main(String[] args) {
-        String[] strArr={"java2blog","javaworld","javabean","javatemp"};
+        String[] strArr = {"java2blog","javaworld","javabean","javatemp"};
         System.out.println(longestCommonPrefix(strArr));
     }
 

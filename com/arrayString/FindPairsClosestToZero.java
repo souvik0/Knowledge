@@ -1,7 +1,7 @@
 package com.arrayString;
 
-// wHILE FINDING CLOSEST TO ZERO, TRY TP FIND OUT MINIMUM SUM
-//THis operation will be performed after sorting the array
+// While finding closest to zero, try finding the minimum sum
+// This operation will be performed after sorting the array
 import java.util.Arrays;
 
 public class FindPairsClosestToZero {

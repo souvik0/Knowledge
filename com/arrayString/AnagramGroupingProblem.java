@@ -12,8 +12,8 @@ import java.util.Map;
 public class AnagramGroupingProblem {
 
     public static void main(String[] args) {
-       String[] strings = {"eat","tea","tan","ate","nat","bat","tab","abt"};
-       findAnagramGroup(strings);
+       String[] strArr = {"eat","tea","tan","ate","nat","bat","tab","abt"};
+       findAnagramGroup(strArr);
     }
 
     //Common property between words are ascii
