@@ -25,6 +25,7 @@ public class LRUUsingLinkedHashMap<K, V> extends LinkedHashMap<K, V>
         super.put(key, value);
     }
 
+    @Override
     protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
         return size() > capacity;
     }

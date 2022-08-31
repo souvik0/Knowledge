@@ -10,9 +10,7 @@ public class BinaryTree {
 
     int deepestLevel;
     int value;
-    /**
-     * All recursive approach used implicit stack
-    */
+    // All recursive approach used implicit stack
     /* This pre order traversal is also DFS (Depth First Search */
     public void preOrderRecursiveTraversal(TreeNode root) {
         if (root != null) {
@@ -303,7 +301,7 @@ public class BinaryTree {
         TreeNode lcaNode = lca(root, a, b);
         // Calculating respective level of a node from lca node
         int d1 = levelOfNode(lcaNode, a.data, 0);
-       // Calculating respective level of b node from lca node
+        // Calculating respective level of b node from lca node
         int d2 = levelOfNode(lcaNode, b.data, 0);
 
         return d1 + d2;
@@ -336,9 +334,9 @@ public class BinaryTree {
             return root.data;
         }
         // Traversing left subtree
-        int left = maxNodeAtGivenLevel(root.left, level-1);
+        int left = maxNodeAtGivenLevel(root.left, level--);
         // Traversing right subtree
-        int right = maxNodeAtGivenLevel(root.right, level-1);
+        int right = maxNodeAtGivenLevel(root.right, level--);
 
         return Math.max(left, right);
     }
@@ -468,7 +466,7 @@ public class BinaryTree {
                (isIsomorphic(root1.left, root2.right) && isIsomorphic(root1.right, root2.left));
     }
 
-    // From AlgoExpert
+    // Inversion of nodes of a binary tree
     public void invertBinaryTree(TreeNode root) {
         if (root == null) {
             return;
@@ -550,11 +548,11 @@ public class BinaryTree {
 
     // Flattening of binary tree means converting a binary tree into array or Doubly LinkedList
     public TreeNode flattenTheBinaryTree(TreeNode root) {
-        List<TreeNode> inOrderNodes = getNodesInOrder(root, new ArrayList<TreeNode>());
+        List<TreeNode> listOfInOrderNodes = getNodesInOrder(root, new ArrayList<TreeNode>());
         // Needs to flatten linked List structure
-        for (int i = 0; i < inOrderNodes.size(); i++) {
-            TreeNode leftNode = inOrderNodes.get(i);
-            TreeNode rightNode = inOrderNodes.get(i+1);
+        for (int i = 0; i < listOfInOrderNodes.size(); i++) {
+            TreeNode leftNode = listOfInOrderNodes.get(i);
+            TreeNode rightNode = listOfInOrderNodes.get(i+1);
 
             // Here converting to Doubly linked List
             leftNode.right = rightNode;
@@ -562,7 +560,7 @@ public class BinaryTree {
         }
 
         // Head of the Linked List should return to check flattening structure
-        return inOrderNodes.get(0);
+        return listOfInOrderNodes.get(0);
     }
 
     public List<TreeNode> getNodesInOrder(TreeNode root, List<TreeNode> nodeList) {
@@ -611,8 +609,8 @@ public class BinaryTree {
         if (root == null) {
             return true;
         }
-        int lHeight = height (root.left);
-        int rHeight = height (root.right);
+        int lHeight = height(root.left);
+        int rHeight = height(root.right);
 
         if (Math.abs(lHeight - rHeight) <= 1 &&
             isHeightBalamcedTree(root.left) &&

@@ -34,8 +34,7 @@ class PostfixToInfixAndPrefix {
          } 
      }
 
-     // Returns root of constructed tree for given 
-     // postfix expression 
+     // Returns root of constructed tree for given postfix expression 
      public TreeNode constructExpressionTree(char[] postfixExpression) {
          Stack<TreeNode> st = new Stack<TreeNode>(); 
          TreeNode root, left, right; 
@@ -64,20 +63,20 @@ class PostfixToInfixAndPrefix {
              }
      }
 
-     // only element will be root of expression  tree  
+     // only element will be root of expression tree  
      return st.pop(); 
 } 
 
     public static void main(String args[]) {
 
-        PostfixToInfixAndPrefix et = new PostfixToInfixAndPrefix(); 
+        PostfixToInfixAndPrefix expressionTree = new PostfixToInfixAndPrefix();
         String postfix = "ab+ef*g*-"; 
         char[] charArray = postfix.toCharArray(); 
-        TreeNode root = et.constructExpressionTree(charArray); 
-        System.out.println("infix expression is: "); 
-        et.inorder(root);
+        TreeNode root = expressionTree.constructExpressionTree(charArray);
+        System.out.println("infix expression is: ");
+        expressionTree.inorder(root);
         System.out.println("");
         System.out.println("Prefix expression is: ");
-        et.preOrder(root);
+        expressionTree.preOrder(root);
     }
 } 

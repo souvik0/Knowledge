@@ -5,10 +5,11 @@ package com.lrucache;
  */
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class LRUCache<K, V> {
 
-    private HashMap<K, EntryNode<K, V>> tempMap; // Temporary hash map to maintain get operation at O(1)
+    private Map<K, EntryNode<K, V>> tempMap; // Temporary hash map to maintain get operation at O(1)
     private EntryNode<K, V> start, end; // Start & End pointer for doubly linked-list
     private int LRU_SIZE = 4;
 

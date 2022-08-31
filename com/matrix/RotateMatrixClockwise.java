@@ -35,6 +35,7 @@ public class RotateMatrixClockwise {
         for (int i = 0; i < mat.length; i++) {
             k = mat.length - 1;
             for (int j = 0; j < k; j++) {
+                // Substitution used to take place
                 int temp = mat[i][j];
                 mat[i][j] = mat[i][k];
                 mat[i][k] = temp;

@@ -50,8 +50,8 @@ public class BinarySearchTree {
     }
 
     /*
-     * Find out right subtree root index to determine the last value of left subtree or first value from
-     * array for right subtree
+     * Find out right subtree root index to determine the last value of left subtree 
+     * or first value from array for right subtree
      */
     public TreeNode reconstructBST(List<Integer> preOrderList) {
         if (preOrderList.size() == 0) {
@@ -64,7 +64,7 @@ public class BinarySearchTree {
         // Assume it's a right skewed tree
         int rightSubtreeRoot = preOrderList.size();
 
-        for (int i = 0; i < preOrderList.size(); i++) {
+        for (int i = 1; i < preOrderList.size(); i++) {
              int value = preOrderList.get(i);
              if (value >= rightSubtreeRoot) {
                  rightSubtreeRoot = i; // determining index of right subtree
@@ -176,7 +176,7 @@ public class BinarySearchTree {
     }
 
     /*
-    * In top view,need to print first node that encounter in level order traversal
+    * In top view, need to print first node that encounter in level order traversal
     * Top view approach applicable for all kinds of tree
     * unlike ArrayList<TreeNode> as value in map, we are taking only first node appear at each level
     * Level Order traversal with QueuePack object
@@ -235,16 +235,16 @@ public class BinarySearchTree {
     }
 
     // value stands for data of the node to be deleted
-    public TreeNode deleteNode(TreeNode root, int data) {
+    public TreeNode deleteNode(TreeNode root, int nodeData) {
         if (root == null) {
             return null;
         }
 
         // Traversing in both left & right direction
-        if (root.data > data) {
-            root.left = deleteNode(root.left, data);
-        } else if (root.data < data) {
-            root.right = deleteNode(root.right, data);
+        if (root.data > nodeData) {
+            root.left = deleteNode(root.left, nodeData);
+        } else if (root.data < nodeData) {
+            root.right = deleteNode(root.right, nodeData);
         } else {
             // if nodeToBeDeleted have both children Here finding out inOrder successor
             if (root.left != null && root.right != null) {
@@ -286,35 +286,6 @@ public class BinarySearchTree {
         } else {
             return -1;
         }
-    }
-
-    public int distanceBetweenTwoNodes(TreeNode root, TreeNode a, TreeNode b) {
-        if (root == null) {
-            return -1;
-        }
-        // if one of the node is root
-        if (root.data == a.data) {
-            return distanceFromRoot(root, b);
-        }
-        // if one of the node is root
-        if (root.data == b.data) {
-            return distanceFromRoot(root, a);
-        }
-        // If both the nodes present at left side
-        if (root.data > a.data && root.data > b.data) {
-           return distanceBetweenTwoNodes(root.left, a, b);
-        }
-        // If both the nodes present at right side
-        if (root.data < a.data && root.data < b.data) {
-           return distanceBetweenTwoNodes(root.right, a, b);
-        }
-        // If both the nodes present at different sides
-        if ((root.data > a.data && root.data < b.data) ||
-            (root.data > b.data && root.data < a.data)) {
-            return distanceFromRoot(root, a) +
-                   distanceFromRoot(root, b);
-        }
-        return -1;
     }
 
     /* inOrder traversal starting from left of the tree

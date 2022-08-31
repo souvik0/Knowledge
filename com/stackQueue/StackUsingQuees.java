@@ -32,14 +32,16 @@ public class StackUsingQuees {
              * dequeue all the elements to 
              * temporary queue tmp */
             int lengthOfQueue = queue.size();
-            for (int i = 0; i < lengthOfQueue; i++)
+            for (int i = 0; i < lengthOfQueue; i++) {
                 tempQueue.add(queue.poll());
+            }
             /* Adding 2nd element onwards in the queue */
             queue.add(element);
             /* dequeue all the elements from
              * temporary queue tmp to q */
-            for (int i = 0; i < lengthOfQueue; i++)
+            for (int i = 0; i < lengthOfQueue; i++) {
                 queue.add(tempQueue.poll());
+            }
         }
         size ++;
     }
