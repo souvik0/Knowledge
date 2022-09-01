@@ -16,7 +16,7 @@ public class MoveElementsInArray {
         int left = 0;
         int right = array.length -1;
         while (left < right) {
-            // There is nothing to move
+            // There is nothing to move if the target element is the right most one
             while (left < right && array[right] == toMove) {
                   right--;
             }

@@ -1,6 +1,6 @@
 package com.arrayString;
 
-// This program will also cater majority problem, where occurance of an element is more than n/2
+// This program will also cater majority problem, where occurrence of an element is more than n/2
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -27,7 +27,7 @@ public class OddOccuranceNumber {
         Iterator<Entry<Integer, Integer>> itr = hmap.entrySet().iterator();
 
         while (itr.hasNext()) {
-            Entry<Integer, Integer> entry = (Entry<Integer, Integer>) itr.next();
+            Map.Entry<Integer, Integer> entry = (Map.Entry<Integer, Integer>) itr.next();
             if (entry.getValue() % 2 == 1) {
                  System.out.println("Key: " + entry.getKey());
             }

@@ -7,10 +7,10 @@ public class MergeOverlappingIntervals {
 
     public static void main(String[] args) {
         Interval arr[]=new Interval[4];
-        arr[0]=new Interval(6,8);
-        arr[1]=new Interval(1,9);
-        arr[2]=new Interval(2,4);
-        arr[3]=new Interval(4,7);
+        arr[0] = new Interval(6,8);
+        arr[1] = new Interval(1,9);
+        arr[2] = new Interval(2,4);
+        arr[3] = new Interval(4,7);
         mergeIntervals(arr);
     }
 
@@ -18,7 +18,7 @@ public class MergeOverlappingIntervals {
     // overlapping intervals and prints the result 
     public static void mergeIntervals(Interval arr[]) { 
         // Sort Intervals in increasing order of start time 
-        Arrays.sort(arr,new Comparator<Interval>() {
+        Arrays.sort(arr, new Comparator<Interval>() {
             public int compare(Interval i1,Interval i2) {
                 return i1.start - i2.start;
             }
@@ -47,7 +47,6 @@ public class MergeOverlappingIntervals {
         }
     }
 }
-
 
 class Interval {
     int start,end;
