@@ -81,7 +81,8 @@ public class BinarySearchTree {
         return root;
     }
 
-    /* In this method, we construct from leaves to root. 
+    /* Sorted LinkedList means inOrder LinkedList.
+     * In this method, we construct from leaves to root.
      * LinkedList sorted in ascending order.
      * The idea is to insert nodes in BST in the same order as they appear in Linked List so 
      * that the tree can be constructed in O(n) time complexity. We first count the number 
@@ -173,6 +174,8 @@ public class BinarySearchTree {
 
         verticalView(root.left, level - 1);
         verticalView(root.right, level + 1);
+
+        verticalViewMap.entrySet().stream().forEach(System.out::println);
     }
 
     /*

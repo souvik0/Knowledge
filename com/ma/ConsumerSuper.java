@@ -16,8 +16,8 @@ public class ConsumerSuper {
         List<AsianApple> asianAppleList = new ArrayList<AsianApple>();
         asianAppleList.add(new AsianApple());
 
-       //We can assign a list of apples to a basket of apples
-       //Widening the scope or Contra-variance the scope
+       // We can assign a list of apples to a basket of apples
+       // Widening the scope or Contra-variance the scope
        List<? super Apple> basket = applesList;
        List<? super Apple> fruitBasket = fruitList;
        List<? super Apple> asianAppleBasket = asianAppleList; // Compile time error because sub type can't assigned to super

@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 public class ExtractDistinctWords {
 
     public static void main(String[] args) throws IOException {
+         // Finding out distinct words from a file
          try {
              Files.lines(Paths.get("c:\\demo.txt"))
                   .map(eachLine -> eachLine.split("[\\s]+"))
@@ -25,15 +26,16 @@ public class ExtractDistinctWords {
          }
 
          System.out.println("////////////////////////");
-         //The source directory
+         // The source directory
          String directory = "C:/Users/Admin/Dropbox";
 
          // Reading only files from the directory while traversing the directory
+         // Files.list returns Stream<Path>
          try {
              List<File> fileList = Files.list(Paths.get(directory))
-                                     .map(Path::toFile)
-                                     .filter(File::isFile)
-                                     .collect(Collectors.toList());
+                                        .map(Path::toFile)
+                                        .filter(File::isFile)
+                                        .collect(Collectors.toList());
 
              fileList.forEach(System.out::println);
          } catch (IOException e) {

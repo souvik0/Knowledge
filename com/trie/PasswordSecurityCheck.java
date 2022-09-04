@@ -14,7 +14,7 @@ public class PasswordSecurityCheck {
         System.out.println(hexValue.equalsIgnoreCase(pcCheck.toHex(pcCheck.getEncryptedAnswer(checker))));
     }
 
-	private byte[] getEncryptedAnswer (String securityAnswer) throws NoSuchAlgorithmException {
+	private byte[] getEncryptedAnswer(String securityAnswer) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         return md.digest(securityAnswer.getBytes(StandardCharsets.UTF_8));
     }

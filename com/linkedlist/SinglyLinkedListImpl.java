@@ -83,6 +83,7 @@ public class SinglyLinkedListImpl<T> {
         size++;
     }
 
+    // Move fastPointer two times & simultaneously move 2nd pointer 1 time
     public T findMiddleElement(Node<T> start) {
         Node<T> fastPointer = start;
         Node<T> slowPointer = start;
@@ -162,7 +163,7 @@ public class SinglyLinkedListImpl<T> {
 
     public boolean deleteLoopNode() {
         Node<T> fastPointer = start;
-        Node<T> slowPointer = start;
+        Node<T> slowPointer = null;
         boolean deleted = false;
 
         if (ifLoopExist()) {
@@ -244,13 +245,13 @@ public class SinglyLinkedListImpl<T> {
         if (start == null || start.next == null) {
             return start;
         } else {
-            //nextNode points to 6 & start points to 5
+            // nextNode points to 6 & start points to 5
             Node<T> nextNode = start.next;
             // establish a connection between start(5) & 7 node
             start.next = nextNode.next;
             //make nextNode as new head
             nextNode.next = start;
-            //Recursively calling for next pairs
+            // Recursively calling for next pairs
             if (start.next != null) {
                 start.next = reverseLinkedListInPairs(start.next);
             }

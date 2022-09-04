@@ -6,7 +6,7 @@ import java.util.List;
 public class BlockingQueue<E> {
 
     private List<E> queue = new LinkedList<E>();
-    private int  limit;
+    private int limit;
 
     public BlockingQueue(int limit){
         this.limit = limit;
@@ -16,20 +16,21 @@ public class BlockingQueue<E> {
         while (this.queue.size() == this.limit) {
             wait();
         }
- 
-        queue.add(item);
         if (this.queue.size() < this.limit) {
+            queue.add(item);
             notifyAll();
         }
     }
 
     public synchronized E dequeue() throws InterruptedException{
+        E item = null;
         while (this.queue.size() == 0){
             wait();
         }
         if (this.queue.size() > 0){
+            item = this.queue.remove(0);
             notifyAll();
         }
-        return this.queue.remove(0);
+        return item;
     }
 }

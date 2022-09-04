@@ -34,9 +34,10 @@ public class SuffixTrieConstruction {
                  if (!current.childNodeMap.containsKey(letter)) {
                      TrieNode newNode = new TrieNode();
                      current.childNodeMap.put(letter, newNode);
+                 } else {
+                     // Moving to the next pointer
+                     current = current.childNodeMap.get(letter);
                  }
-                 // Moving to the next pointer
-                 current = current.childNodeMap.get(letter);
             }
 
             current.childNodeMap.put(endSymbol, null);
@@ -49,8 +50,9 @@ public class SuffixTrieConstruction {
                 char letter = str.charAt(j);
                 if (!current.childNodeMap.containsKey(letter)) {
                     return false;
+                } else {
+                    current = current.childNodeMap.get(letter);
                 }
-                current = current.childNodeMap.get(letter);
             }
 
             return current.childNodeMap.containsKey(endSymbol);

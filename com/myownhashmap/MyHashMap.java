@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class MyHashMap<K, V> implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private int DEFAULT_BUCKET_SIZE = 20; //To initialize bucket array inside default constructor
-    private transient Entry<K, V>[] table; //This is the bucket
+    private int DEFAULT_BUCKET_SIZE = 20; // To initialize bucket array inside default constructor
+    private transient Entry<K, V>[] table; // This is the bucket
 
     @SuppressWarnings("unchecked")
     public MyHashMap() {

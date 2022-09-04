@@ -49,7 +49,6 @@ public class TestFunctionalInterface {
                                           .filter(Files::isRegularFile)
                                           .map(Path::toFile)
                                           .collect(Collectors.toCollection(ArrayList::new));
-
         regularFileList.forEach(System.out::println);
 
         try {
