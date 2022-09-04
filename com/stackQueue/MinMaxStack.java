@@ -42,10 +42,10 @@ public class MinMaxStack {
 
     //Get the minimum at any point with O(1) time complexity
     public int getMin() {
-      if (minstk.isEmpty()) {
-          return -1;
-      }
-      return minstk.pop();
+        if (minstk.isEmpty()) {
+            return -1;
+        }
+        return minstk.pop();
     }
 
     public int getMax() {

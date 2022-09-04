@@ -37,7 +37,6 @@ public class SortStack {
             while (!sortedStack.isEmpty() && popedElement < sortedStack.peek()) {
                 inputStack.push(sortedStack.pop());
             }
-
             sortedStack.push(popedElement);
         }
         return sortedStack;
