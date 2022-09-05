@@ -35,7 +35,7 @@ public class QuickSelectGFG {
         arr[pivotLocation] = temp;
 
         return pivotLocation;
-        }
+    }
 
     /* Finds the kth position (of the sorted array) in a given unsorted array i.e this function
      * can be used to find both kth largest and
@@ -67,7 +67,7 @@ public class QuickSelectGFG {
          }
          else {
              System.out.println(kPosition + " smallest element in array "+ " or "
-                                +(array.length - kPosition + 1) + " largest element in array " +
+                                + (array.length - kPosition + 1) + " largest element in array " +
                                 kthElement(array, 0, length - 1, kPosition - 1));
          }
       }

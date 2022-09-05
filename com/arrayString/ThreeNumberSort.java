@@ -25,7 +25,7 @@ public class ThreeNumberSort {
         }
 
         int thirdArrayIndex = arr.length - 1;
-        for (int index = arr.length - 1 ; index >= 0; index--) {
+        for (int index = arr.length - 1; index >= 0; index--) {
              if (arr[index] == thirdOrderValue) {
                  swap(arr, thirdArrayIndex, index);
                  thirdArrayIndex--;
@@ -35,7 +35,7 @@ public class ThreeNumberSort {
         return arr;
     }
 
-    public static void swap (int[] arr, int i, int j) {
+    public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;

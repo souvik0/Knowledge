@@ -23,15 +23,15 @@ class PostfixToInfixAndPrefix {
              inorder(root.left); 
              System.out.print(root.data + " "); 
              inorder(root.right); 
-         } 
+         }
      }
      // Utility function to do preorder traversal to convert to prefix expression
      public void preOrder(TreeNode root) { 
          if (root != null) { 
              System.out.print(root.data + " ");
              preOrder(root.left);
-             preOrder(root.right); 
-         } 
+             preOrder(root.right);
+         }
      }
 
      // Returns root of constructed tree for given postfix expression 
@@ -65,7 +65,7 @@ class PostfixToInfixAndPrefix {
 
      // only element will be root of expression tree  
      return st.pop(); 
-} 
+}
 
     public static void main(String args[]) {
 
