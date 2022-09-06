@@ -1,7 +1,7 @@
 package com.arrayString;
 
 /* Always performs on a sorted array.
-   To find out which index of the array is holding the item  
+   To find out which index of the array is holding the item
  */
 public class BinarySearch {
 

@@ -12,7 +12,7 @@ public class IndexofFirstOne {
         System.out.println(indexOfFirstOne(arr, left, right)); 
     }
 
-    public static int indexOfFirstOne(int arr[], int left, int right) { 
+    public static int indexOfFirstOne(int arr[], int left, int right) {
         while (left <= right) {
             int mid = (left + right)/2; 
              // if true, then 'mid' is the index of first '1' 

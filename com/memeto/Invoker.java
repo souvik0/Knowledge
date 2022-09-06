@@ -8,12 +8,12 @@ public class Invoker {
         System.out.println(article);
 
         //Creating immutable memento from original object
-        ArticleMemento memento = article.createMemento(); 
+        ArticleMemento memento = article.createMemento();
 
         article.setContent("123");    //changed content
         System.out.println(article);
 
-        article.restore(memento);   //UNDO change
+        article.restore(memento);   //UNDO recent changes
         System.out.println(article);  //original content
     }
 }

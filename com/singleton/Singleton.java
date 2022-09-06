@@ -1,9 +1,11 @@
 package com.singleton;
-// Enum iS also by default singleton. Limitation is it always creates only one Object without Lazy loading
-// Enum constructors are handled by JVM to create object.
+/* Enum is also by default singleton.
+ * Limitation is it always creates only one Object without Lazy loading
+ * Enum constructors are handled by JVM to create object.
+ * This class shows singleton object creation method by Lazy instantiation & Bill Pugh approach
+ * This implements Reflection. Serialization & clone proofing along with thread safety
+ */
 
-// This class shows singleton object creation method by Lazy instantiation & Bill Pugh approach
-// This implements Reflection. Serialization & clone proofing along with thread safety
 import java.io.Serializable;
 
 public class Singleton implements Serializable, Cloneable {

@@ -1,11 +1,11 @@
 package com.builderpattern;
 
-/* Builder pattern creates immutable objects with large set of state parameters. So, there will not be any setter 
- * method. 
+/* Builder pattern creates immutable objects with large set of state parameters.
+ * So,there will not be any setter method. 
  * Separate the construction of a complex object from its representation so that the
  * same construction process can create different representation.
  * It creates objects always with complete state 
-*/
+ */
 public final class Computer {
 
     // Mandatory Properties
