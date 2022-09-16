@@ -319,7 +319,7 @@ public class SinglyLinkedListImpl<T> {
         }
 
         /* previous node is the head node of every group of k nodes
-           So, previous node becomes head node of first group of k nodes also 
+           So, previous node becomes head node of first group of k nodes also
         */
         return previous;
     }

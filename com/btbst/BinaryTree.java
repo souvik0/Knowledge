@@ -11,7 +11,7 @@ public class BinaryTree {
     int deepestLevel;
     int value;
     // All recursive approach used implicit stack
-    /* This pre order traversal is also DFS (Depth First Search */
+    /* This pre order traversal is also DFS (Depth First Search) */
     public void preOrderRecursiveTraversal(TreeNode root) {
         if (root != null) {
             System.out.println(root.data);
@@ -531,19 +531,19 @@ public class BinaryTree {
         return branchSumList;
     }
 
-    public void calculateBranchSum(TreeNode root, int newBranchSum, List<Integer> branchSumList) {
+    public void calculateBranchSum(TreeNode root, int currentSum, List<Integer> branchSumList) {
        if (root == null) {
            return;
        }
 
-       newBranchSum = newBranchSum + root.data;
+       currentSum = currentSum + root.data;
        // Recursion terminating condition
        if (root.left == null & root.right == null) {
-           branchSumList.add(newBranchSum);
+           branchSumList.add(currentSum);
        }
 
-       calculateBranchSum(root.left, newBranchSum, branchSumList);
-       calculateBranchSum(root.right, newBranchSum, branchSumList);
+       calculateBranchSum(root.left, currentSum, branchSumList);
+       calculateBranchSum(root.right, currentSum, branchSumList);
     }
 
     // Flattening of binary tree means converting a binary tree into array or Doubly LinkedList
