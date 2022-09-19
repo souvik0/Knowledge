@@ -34,7 +34,7 @@ public class SortStack {
             int popedElement = inputStack.pop();
             // while temporary stack is not empty and
             // top of stack is greater than temp
-            while (!sortedStack.isEmpty() && popedElement < sortedStack.peek()) {
+            while (!sortedStack.isEmpty() && popedElement > sortedStack.peek()) {
                 inputStack.push(sortedStack.pop());
             }
             sortedStack.push(popedElement);

@@ -22,17 +22,18 @@ public class FindPairsClosestToGivenSum {
         Arrays.sort(arr);
 
         while (left < right) {
-            int diff = (arr[left] + arr[right]) - givenSum;
+            int currentSum = arr[left] + arr[right];
+            int diff = (currentSum - givenSum);
             if (Math.abs(diff) < Math.abs(minDiff)) {
                 minDiff = diff;
                 minleft = left;
                 minright = right;
                 System.out.println("Left: " + arr[minleft] + " : right: " + arr[minright]);
             }
-            if (arr[left] + arr[right] > givenSum) {
+            if (currentSum > givenSum) {
                 right--;
             }
-            if (arr[left] + arr[right] < givenSum) {
+            if (currentSum < givenSum) {
                 left++;
             }
         }

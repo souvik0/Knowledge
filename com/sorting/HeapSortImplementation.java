@@ -84,9 +84,9 @@ public class HeapSortImplementation {
            If current node isn't largest adjust the position in array 
         */
         if (largestIndex != i) {
-            //Exchange between ith element & largest element
+            // Exchange between ith element & largest element
             exchange(array, i, largestIndex);
-            //Due to this swapping max heap property gets disturbed, so heapify once again
+            // Due to this swapping max heap property gets disturbed, so heapify once again
             heapify(array, largestIndex, sizeOfHeap);
         }
     }

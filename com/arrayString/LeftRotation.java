@@ -1,6 +1,6 @@
 package com.arrayString;
 
-/* Time Complexity : O(n*d)
+/*  Time Complexity : O(n*d)
     Space Complexity : O(1)
 */
 public class LeftRotation {
@@ -23,7 +23,7 @@ public class LeftRotation {
     public static void leftRotateUtil(int[] arr) {
         int temp = arr[0];
         int i;
-        for (i = 0; i < arr.length - 1 ; i++) {
+        for (i = 0; i < arr.length - 1; i++) {
              // Replace every element with next element
              arr[i] = arr[i+1];
         }

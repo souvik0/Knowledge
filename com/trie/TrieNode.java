@@ -1,5 +1,5 @@
 package com.trie;
-
+// Standard Trie definition
 import java.util.LinkedList;
 import java.util.List;
 

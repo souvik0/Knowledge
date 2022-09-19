@@ -7,7 +7,7 @@ public class Entry<K, V> {
 
     private final K key;
     private volatile V value;
-    //Creates Singly LinkedList of Entry Objects
+    // Creates Singly LinkedList of Entry Objects
     private Entry<K, V> next;
 
     public Entry(K key, V value) {

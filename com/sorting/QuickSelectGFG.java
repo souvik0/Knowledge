@@ -2,7 +2,7 @@ package com.sorting;
 /*
  * The algorithm is similar to QuickSort.
  * The difference is, instead of recurring for both sides (after finding pivot),
- * it recurs only for the part that contains the k-th smallest element.
+ * it recurs only for the part that contains the k-th smallest/ largest element.
  * The logic is simple, if index of partitioned element is more than k,
  * then we recur for left part. If index is same as k,
  * we have found the k-th smallest element and we return.
@@ -55,7 +55,7 @@ public class QuickSelectGFG {
         }
     }
 
-     public static void main(String[] args) {
+    public static void main(String[] args) {
          int[] array = new int[] {10, 4, 5, 8, 6, 11, 26, 52};
 
          // Looking for 3rd (arr.length - k + 1) largest element in this array
@@ -70,5 +70,5 @@ public class QuickSelectGFG {
                                 + (array.length - kPosition + 1) + " largest element in array " +
                                 kthElement(array, 0, length - 1, kPosition - 1));
          }
-      }
+    }
 }

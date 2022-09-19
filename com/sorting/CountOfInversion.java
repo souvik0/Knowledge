@@ -21,6 +21,7 @@ public class CountOfInversion {
             // Concur all the sub arrays
             count+= mergeAndCount(arr, left, mid, right);
         }
+
         return count;
     }
 

@@ -36,14 +36,14 @@ public class MergeTwoSortedArrays {
 
         // Handle rest of the elements of arr1
         while (i < n1) {
-            mergedArray[k]= arr1[i];
+            mergedArray[k] = arr1[i];
             i++;
             k++;
         }
 
         // Handle rest of the elements of arr2
         while (j < n2) {
-            mergedArray[k]= arr2[j];
+            mergedArray[k] = arr2[j];
             j++;
             k++;
         }
