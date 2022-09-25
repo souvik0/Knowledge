@@ -33,8 +33,8 @@ public class PrefixToInfixAndPostfix {
                 String operand2 = tempStack.pop();
                 // Concat the operands and operator  
                 String result = "(" + operand1 + prefixExpression.charAt(i) + operand2 + ")";
-                tempStack.push(result); 
-            } else { 
+                tempStack.push(result);
+            } else {
                 // To make character to string added additional space
                 tempStack.push(prefixExpression.charAt(i) + "");
             }
@@ -46,7 +46,7 @@ public class PrefixToInfixAndPostfix {
     public static String convertToPostfix(String prefixExpression) {
         Stack<String> tempStack = new Stack<>(); 
         // Length of expression  
-        int expressionLength = prefixExpression.length(); 
+        int expressionLength = prefixExpression.length();
         // Reading from right to left  
         for (int i = expressionLength - 1; i >= 0; i--) {
              if (isOperator(prefixExpression.charAt(i))) {
@@ -54,7 +54,7 @@ public class PrefixToInfixAndPostfix {
                 String operand2 = tempStack.pop();
                 // Concat the operands and operator  
                 String result = operand1 + operand2 + prefixExpression.charAt(i);
-                tempStack.push(result); 
+                tempStack.push(result);
             } else { 
                 // To make character to string 
                 tempStack.push(prefixExpression.charAt(i) + "");

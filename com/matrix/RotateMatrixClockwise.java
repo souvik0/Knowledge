@@ -50,7 +50,7 @@ public class RotateMatrixClockwise {
             for (int j = 0; j < mat.length; j++) {
                 System.out.print(mat[i][j] + " ");
             }
-        System.out.print("\n");
+            System.out.print("\n");
         }
     }
 }

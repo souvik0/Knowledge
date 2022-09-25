@@ -313,7 +313,7 @@ public class BinaryTree {
         }
 
         int distance = -1;
-        // Check if x is present at root or in left  
+        // Check if x is present at root or in left
         // subtree or right subtree.
         if ((root.data == a.data) ||
            (distance = findDistanceFromRootToNode(root.left, a)) >= 0 ||
@@ -528,6 +528,7 @@ public class BinaryTree {
     public List<Integer> branchSum(TreeNode root) {
         List<Integer> branchSumList = new ArrayList<Integer>();
         calculateBranchSum(root, 0, branchSumList);
+        System.out.println(branchSumList.toString());
         return branchSumList;
     }
 
@@ -617,6 +618,7 @@ public class BinaryTree {
             isHeightBalamcedTree(root.right)) {
                 return true;
         }
+
         return false;
     }
 }

@@ -36,8 +36,9 @@ public class QueueUsingStacks {
             stack.push(data);
             /* pop all elements from stack tmp and
              * push them to stack s */
-            for (int i = 0; i < lengthOfStack; i++)
+            for (int i = 0; i < lengthOfStack; i++) {
                 stack.push(tmpStack.pop());
+            }
         }
     }
 

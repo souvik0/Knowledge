@@ -17,14 +17,14 @@ public class PeakElement {
         // Compare middle element with its neighbors (if neighbors exist) 
         if ((mid == 0 || arr[mid - 1] < arr[mid]) &&
             (mid == n - 1 || arr[mid + 1] < arr[mid])) {
-            return mid; 
+            return mid;
         }
 
         /* If middle element is not peak and its left neighbor is greater than it, then left half 
            must have a peak element
         */ 
         else if (mid > 0 && arr[mid - 1] > arr[mid]) {
-            return findPeakUtil(arr, left, (mid - 1), n); 
+            return findPeakUtil(arr, left, (mid - 1), n);
         }
 
         /* If middle element is not peak and its right neighbor is greater than it, then right

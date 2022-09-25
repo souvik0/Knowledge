@@ -63,7 +63,7 @@ class PostfixToInfixAndPrefix {
              }
      }
 
-     // only element will be root of expression tree  
+     // only element will be root of expression tree
      return st.pop(); 
 }
 

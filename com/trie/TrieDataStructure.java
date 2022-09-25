@@ -70,7 +70,7 @@ public class TrieDataStructure {
         }
 
         /* Mark last but one char node of the word false to signify the word not present,
-           it signifies that it is not completing a word 
+           it signifies that it is not completing a word
         */
         current.isEnd = false;
     }

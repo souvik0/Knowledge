@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class QuickSortImplementtaion {
 
     public static void main(String a[]){
-        int[] inputArray = {33,21,45,64,55,34,11,8,3,5,1};
+        int[] inputArray = {33, 21, 45, 64, 55, 34, 11, 8, 3, 5, 1};
         System.out.println("Before Sorting: ");
         System.out.println(Arrays.toString(inputArray));
 

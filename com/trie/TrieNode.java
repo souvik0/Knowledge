@@ -6,7 +6,7 @@ import java.util.List;
 public class TrieNode {
 
     char data;
-    // count will represent if the node is leaf node or not. If count is 1 , then it is leaf node
+    // Count will represent if the node is leaf node or not. If count is 1, then it is leaf node
     int count;
     // isEnd is used to represent a valid word constructed by the letters
     boolean isEnd;
