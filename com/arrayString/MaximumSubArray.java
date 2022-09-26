@@ -20,7 +20,7 @@ public class MaximumSubArray {
             max_so_far = Math.max(max_so_far, curr_sum); 
         }
 
-        return max_so_far; 
+        return max_so_far;
     }
 }
 // To find maximum sub array range, can be used sub array with negetive number approach.

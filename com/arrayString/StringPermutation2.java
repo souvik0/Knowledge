@@ -16,7 +16,7 @@ public class StringPermutation2 {
 
         // check if string is null
         if (str == null) {
-          return null;
+            return null;
         } else if (str.length() == 0) {
           // terminating condition for recursion
           permutations.add("");
@@ -32,7 +32,7 @@ public class StringPermutation2 {
         // make recursive call to getPermutation()
         Set<String> words = getPermutation(sub);
 
-        // access each element from words
+        // Access each element from words
         for (String strNew : words) {
             for (int i = 0; i <= strNew.length(); i++){
                 // insert the permutation to the set

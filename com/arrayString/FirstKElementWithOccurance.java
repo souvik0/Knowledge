@@ -1,11 +1,11 @@
 package com.arrayString;
 
 /* Find k numbers with most occurrences in the given array
-   Given an array of n numbers and a positive integer k. 
-   The problem is to find k numbers with most occurrences, i.e., 
-   the top k numbers having the maximum frequency. 
-   If two numbers have the same frequency then the larger number should be given preference. 
-   The numbers should be displayed in decreasing order of their frequencies. 
+   Given an array of n numbers and a positive integer k.
+   The problem is to find k numbers with most occurrences, i.e.,
+   the top k numbers having the maximum frequency.
+   If two numbers have the same frequency then the larger number should be given preference.
+   The numbers should be displayed in decreasing order of their frequencies.
    It is assumed that the array consists of k numbers with most occurrences. */
 
 import java.util.HashMap;

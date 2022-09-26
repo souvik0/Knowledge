@@ -24,26 +24,26 @@ public class MergeOverlappingIntervals {
             }
         });
 
-        int index = 0; // Stores index of last element in output array (modified arr[]) 
+        int index = 0; // Stores index of last element in output array (modified arr[])
 
         // Traverse all input Intervals 
-        for (int i = 1; i < arr.length; i++) { 
-            // If this is not first Interval and overlaps 
-            // with the previous one 
-            if (arr[index].end >= arr[i].start) { 
-                // Merge previous and current Intervals 
-                arr[index].end = Math.max(arr[index].end, arr[i].end); 
-            } 
+        for (int i = 1; i < arr.length; i++) {
+            // If this is not first Interval and overlaps
+            // with the previous one
+            if (arr[index].end >= arr[i].start) {
+                // Merge previous and current Intervals
+                arr[index].end = Math.max(arr[index].end, arr[i].end);
+            }
             else {
                 index++;
-                arr[index] = arr[i]; 
+                arr[index] = arr[i];
             }
         }
 
-        // Now arr[0..index-1] stores the merged Intervals 
+        // Now arr[0..index-1] stores the merged Intervals
         System.out.print("The Merged Intervals are: ");
         for (int j = 0; j <= index; j++) {
-            System.out.print("[" + arr[j].start + "," + arr[j].end + "]"); 
+            System.out.print("[" + arr[j].start + "," + arr[j].end + "]");
         }
     }
 }
@@ -52,7 +52,7 @@ class Interval {
     int start,end;
 
     Interval(int start, int end) {
-        this.start=start;
-        this.end=end;
+        this.start = start;
+        this.end = end;
     }
 }

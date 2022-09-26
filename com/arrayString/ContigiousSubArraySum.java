@@ -67,7 +67,7 @@ public class ContigiousSubArraySum {
                 break;
             }
 
-            //if value is not present then add to hashMap 
+            //if value is not present then add to hashMap
             hashMap.put(currentSum, i);
         }
 
