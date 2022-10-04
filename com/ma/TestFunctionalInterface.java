@@ -46,8 +46,8 @@ public class TestFunctionalInterface {
         // Getting files with specific extension
         List<File> regularFileList = Files.list(Paths.get(dirLocation))
                                           .filter(eachPath -> eachPath.toString().endsWith(".java"))
-                                          .filter(Files::isRegularFile)
                                           .map(Path::toFile)
+                                          .filter(File::isFile)
                                           .collect(Collectors.toCollection(ArrayList::new));
         regularFileList.forEach(System.out::println);
 

@@ -1,6 +1,6 @@
 package com.dynamicprogramming;
-//Java program to print BFS traversal from a given source vertex. 
-//BFS(int s) traverses vertices reachable from s.
+// Java program to print BFS traversal from a given source vertex.
+// BFS(int s) traverses vertices reachable from s.
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class Graph {
         while (!queue.isEmpty()) {
             // Dequeue a vertex from queue and print it
             s = queue.poll();
-            System.out.print(s+" ");
+            System.out.print(s + " ");
 
             // Get all adjacent vertices of the dequeued vertex s
             // If a adjacent has not been visited, then mark it
@@ -73,28 +73,28 @@ public class Graph {
  
         // Recur for all the vertices adjacent to this
         // vertex
-        Iterator<Integer> i = adj[v].listIterator();
-        while (i.hasNext()) {
-            int n = i.next();
+        Iterator<Integer> itr = adj[v].listIterator();
+        while (itr.hasNext()) {
+            int n = itr.next();
             if (!visited[n])
                 dfsUtil(n, visited);
         }
     }
 
     public static void main(String[] args) {
-        Graph g = new Graph(4);
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(2, 3);
-        g.addEdge(3, 3);
+        Graph graph = new Graph(4);
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 2);
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 0);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 3);
         System.out.println("Following is Breadth First Traversal "+
                            "(starting from vertex 2)");
-        g.bfs(2);
+        graph.bfs(2);
 
         System.out.println("Following is Depth First Traversal");
-        g.dfs();
+        graph.dfs();
     }
 }
 

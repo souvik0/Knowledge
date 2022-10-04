@@ -39,7 +39,7 @@ public class ReverseSentence {
         if ((word == null) || (word.length() <= 1)) {
             return word;
         } else {
-            return reverse(word.substring(1)) + 
+            return reverse(word.substring(1)) +
                    word.charAt(0);
         }
     }

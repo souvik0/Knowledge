@@ -19,9 +19,9 @@ public class RatMovement {
         pathInMaze(maze, visited, 1, 2, 2, 1, 1);
     }
 
-    public static void pathInMaze(int[][] maze, int[][] visited, int startRow, int startCol, 
+    public static void pathInMaze(int[][] maze, int[][] visited, int startRow, int startCol,
                                    int destRow, int destCol, int movePointer) {
-        if ((startRow == 0) && (startCol ==0)) {
+        if ((startRow == 0) && (startCol == 0)) {
             visited[startRow][startCol] = movePointer;
         }
 
@@ -53,7 +53,7 @@ public class RatMovement {
     public static boolean canRatMove(int[][] maze, int[][] visited, int rowNext, int colNext) {
         // If any cell in maze marked as 0, then that is not movable cell.
         // If already visited a cell in visited matrix, then it can't be visited twice
-        if ((rowNext >= 0) && (rowNext < maze.length) && (colNext >= 0) && (colNext < maze[0].length) && 
+        if ((rowNext >= 0) && (rowNext < maze.length) && (colNext >= 0) && (colNext < maze[0].length) &&
             maze[rowNext][colNext] == 1 && visited[rowNext][colNext] == 0) {
                 return true;
         } else {

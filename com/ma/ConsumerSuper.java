@@ -26,6 +26,6 @@ public class ConsumerSuper {
        basket.add(new Apple());
        basket.add(new AsianApple());
        basket.add(new Mango()); // compile time error because of disjointed type
-       basket.add(new Fruit()); // Compile time error
+       basket.add(new Fruit()); // compile time error
     }
 }

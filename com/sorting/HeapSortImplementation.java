@@ -6,7 +6,7 @@ package com.sorting;
       a. delete from root
       b. put deleted element at free space in array(ideally last position onwards)
       c. reduce the heap size
-      d. adjust to maintain max Heap property even after elements gets deleted 
+      d. adjust to maintain max Heap property even after elements gets deleted
 */
 import java.util.Arrays;
 

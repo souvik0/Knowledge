@@ -66,15 +66,18 @@ public class StringDivisibility {
         if (s == null || s.length() == 0 || t == null || t.length() == 0) {
             return -1;
         }
+
         // If they're not divisible return -1
         if (s.length() % t.length() != 0) {
             return -1;
         }
+
         int l2 = t.length();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) != t.charAt(i % l2))
                return -1;
         }
+
         return count(t);
     }
 
