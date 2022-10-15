@@ -357,4 +357,63 @@ public class BinarySearchTree {
 
         return closest;
     }
+
+    public TreeNode inOrderSuccessor(TreeNode root, int key) {
+        if (root == null) {
+            return null;
+        }
+
+        TreeNode current = null;
+        /* If key is greater than root node,
+           set the successor as root
+           search recursively into left subtree */
+        if (root.data > key) {
+            current = root;
+            inOrderSuccessor(root.left, key);
+        }
+
+        /* if key is found then,
+           If its right subtree is not null
+           The successor will be the left most child
+           of right subtree or right child itself. */
+        if (root.data == key) {
+            if (root.right != null) {
+                current = root.right;
+                while (current.left != null) {
+                    current = current.left;
+                }
+            }
+        }
+
+        return current;
+    }
+
+    public TreeNode inOrderPredecessor(TreeNode root, int key) {
+    	if (root == null) {
+            return null;
+        }
+
+        TreeNode current = null;
+        /* If key is smaller than root node,
+           set the predecessor as root
+           search recursively into right subtree */
+        if (root.data < key) {
+            current = root;
+            inOrderPredecessor(root.right, key);
+        }
+
+        /* if key is found then,
+           If its left subtree is not null
+           The predecessor will be the right most child
+           of left subtree or left child itself. */
+        if (root.data == key) {
+            if (root.left != null) {
+                current = root.left;
+                while (current.right != null) {
+                    current = current.right;
+                }
+            }
+        }
+        return current;
+    }
 }
