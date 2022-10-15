@@ -29,7 +29,7 @@ public class MyHashMap<K, V> implements Serializable {
 
         /* Here traversing over every linked list element.
          * A bucket location can contain multiple entry objects in LinkedList format
-         * Null check is to check if we reached at the last of internal LinkedList or not 
+         * Null check is to check if we reached at the last of internal LinkedList or not
          */
         while (entry != null && !key.equals(entry.getKey())) {
             entry = entry.getNext();

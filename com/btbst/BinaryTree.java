@@ -596,6 +596,7 @@ public class BinaryTree {
     public int getRightmostParent(SpecialTreeNode root) {
         SpecialTreeNode current = root;
         while (current.parent != null && current.parent.right == current) {
+            // Traversing towards the parent
             current = current.parent;
         }
         return current != null ? current.data : -1;

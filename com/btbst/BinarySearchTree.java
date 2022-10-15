@@ -84,13 +84,13 @@ public class BinarySearchTree {
     /* Sorted LinkedList means inOrder LinkedList.
      * In this method, we construct from leaves to root.
      * LinkedList sorted in ascending order.
-     * The idea is to insert nodes in BST in the same order as they appear in Linked List so 
-     * that the tree can be constructed in O(n) time complexity. We first count the number 
-     * of nodes in the given Linked List. Let the count be n. After counting nodes, 
-     * we take left n/2 nodes and recursively construct the left subtree. 
-     * After left subtree is constructed, we allocate memory for root and link the 
-     * left subtree with root. Finally, we recursively construct the right subtree and link it with root. 
-     * While constructing the BST, we also keep moving the list head pointer to next so that we have 
+     * The idea is to insert nodes in BST in the same order as they appear in Linked List so
+     * that the tree can be constructed in O(n) time complexity. We first count the number
+     * of nodes in the given Linked List. Let the count be n. After counting nodes,
+     * we take left n/2 nodes and recursively construct the left subtree.
+     * After left subtree is constructed, we allocate memory for root and link the
+     * left subtree with root. Finally, we recursively construct the right subtree and link it with root.
+     * While constructing the BST, we also keep moving the list head pointer to next so that we have
      * the appropriate pointer in each recursive call.
      * */
     public TreeNode convertSortedLinkedListToBST(int n) {
@@ -336,7 +336,7 @@ public class BinarySearchTree {
     }
 
     public void findClosestValueInBST(TreeNode root, int target) {
-        // Assuming initially root.data is the closest
+        // Assuming root.data is the closest
         findClosestValueInBST(root, target, root.data);
     }
 

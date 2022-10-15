@@ -24,10 +24,7 @@ public class Singleton implements Serializable, Cloneable {
     // Default private constructor
     private Singleton() {
         // Reflection Proofing
-        if (lazyInstance != null) {
-            throw new RuntimeException("Prventing object created by reflection");
-        }
-        if (eagerInstance != null) {
+        if (lazyInstance != null || eagerInstance != null) {
             throw new RuntimeException("Prventing object created by reflection");
         }
     }

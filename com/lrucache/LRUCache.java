@@ -34,8 +34,8 @@ public class LRUCache<K, V> {
         */
         if (tempMap.containsKey(key)) {
             EntryNode<K, V> entry = tempMap.get(key);
-            entry.data = data;
             removeNode(entry);
+            entry.data = data;
             addAtFirst(entry);
             // no need to put separately in tempMap as the entry object is already there in map.
         } else {
@@ -57,6 +57,7 @@ public class LRUCache<K, V> {
                    // Add the newEntry at first as it is most recently accessed
                    addAtFirst(newEntryObject);
                }
+
             // Irrespective of size check have to put entry object to map
             tempMap.put(key, newEntryObject);
         }

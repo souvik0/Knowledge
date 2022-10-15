@@ -187,11 +187,11 @@ public class SinglyLinkedListImpl<T> {
         // deleting node from 1st position
 
         if (relativePos == 0) {
-           start = start.next;
-           size--;
+            start = start.next;
+            size--;
         }
 
-        //delete from last position 
+        // delete from last position 
         else if (relativePos == getSize()-1) {
             Node<T> t = start;
             Node<T> s = start;

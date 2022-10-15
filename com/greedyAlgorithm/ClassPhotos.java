@@ -19,7 +19,7 @@ public class ClassPhotos {
 
        String frontRowShirtColor = (redShirtStudentHeight.get(0) < blueShirtStudentHeight.get(0)) ?
                                    "RED" : "BLUE";
-       for (int i = 0 ; i < blueShirtStudentHeight.size(); i++) {
+       for (int i = 1 ; i < blueShirtStudentHeight.size(); i++) {
             int redShirtHeight = redShirtStudentHeight.get(i);
             int blueShirtHeight = blueShirtStudentHeight.get(i);
 
