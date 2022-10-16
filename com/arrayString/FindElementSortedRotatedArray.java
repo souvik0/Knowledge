@@ -19,8 +19,8 @@ public class FindElementSortedRotatedArray {
 
     public static void main(String[] args) {
         int array[] = {156, 235, 457, 21, 32, 43, 74, 75, 86, 97, 108, 149};
-        //findElementInSortedRotatedArrayTest(array, 74);
-        System.out.println(search(array, 0, array.length, 74));
+        //findElementInSortedRotatedArrayTest(array, 108);
+        System.out.println(search(array, 0, array.length, 108));
     }
 
     private static void findElementInSortedRotatedArrayTest(int[] array, int numberToBeSerached) {
@@ -92,7 +92,7 @@ public class FindElementSortedRotatedArray {
         return -1;
     }
 
-    // Approach without finding pivot
+    // Approach without finding pivot. This is known as shifted binary search
     public static int search(int arr[], int low, int high, int key) {
         if (low > high) {
             return -1;
@@ -113,14 +113,12 @@ public class FindElementSortedRotatedArray {
                 such that we can quickly check if key lies in other half */
                 return search(arr, mid + 1, high, key);
             }
-        } else {
-            /* If arr[l..mid] first subarray is not sorted, 
-             * then arr[mid... h] must be sorted subarray */
-            if (key >= arr[mid] && key <= arr[high]) {
-                return search(arr, mid + 1, high, key);
-            } else {
-                return search(arr, low, mid - 1, key);
-            }
         }
+        /* If arr[l..mid] first subarray is not sorted, 
+         * then arr[mid... h] must be sorted subarray */
+        if (key >= arr[mid] && key <= arr[high]) {
+            return search(arr, mid + 1, high, key);
+        }
+        return search(arr, low, mid - 1, key);
     }
 }

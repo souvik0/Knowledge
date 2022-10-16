@@ -1,4 +1,4 @@
-package com.dynamicprogramming;
+package com.graph;
 // Java program to print BFS traversal from a given source vertex.
 // BFS(int s) traverses vertices reachable from s.
 import java.util.Iterator;
@@ -6,22 +6,23 @@ import java.util.LinkedList;
 import java.util.List;
 
 //This class represents a directed graph using adjacency list representation
-public class Graph {
+public class BreadthFirstSearch {
 
     private int V; // No. of vertices
     private List<Integer>[] adj; // Adjacency Lists represents neighbour of a vertices
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    public Graph(int v) {
+    public BreadthFirstSearch(int v) {
         this.V = v;
+        adj = new LinkedList[v];
         for (int i = 0; i < v; i++) {
              adj[i] = new LinkedList();
         }
     }
 
     // Function to add an edge into the graph
-    public void addEdge(int v, int w) {
-        adj[v].add(w);
+    public void addEdge(int v, int edge) {
+        adj[v].add(edge);
     }
 
     // prints BFS traversal from a given source s
@@ -55,34 +56,8 @@ public class Graph {
         }
     }
 
-    public void dfs() {
-        // Mark all the vertices as not visited(By default set as false)
-        boolean visited[] = new boolean[V];
-
-        for (int i = 0; i < V; i++) {
-            if (!visited[i]) {
-                dfsUtil(i, visited);
-            }
-        }
-    }
-
-    public void dfsUtil(int v, boolean visited[]) {
-        // Mark the current node as visited and print it
-        visited[v] = true;
-        System.out.print(v + " ");
- 
-        // Recur for all the vertices adjacent to this
-        // vertex
-        Iterator<Integer> itr = adj[v].listIterator();
-        while (itr.hasNext()) {
-            int n = itr.next();
-            if (!visited[n])
-                dfsUtil(n, visited);
-        }
-    }
-
     public static void main(String[] args) {
-        Graph graph = new Graph(4);
+        BreadthFirstSearch graph = new BreadthFirstSearch(4);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(1, 2);
@@ -92,9 +67,6 @@ public class Graph {
         System.out.println("Following is Breadth First Traversal "+
                            "(starting from vertex 2)");
         graph.bfs(2);
-
-        System.out.println("Following is Depth First Traversal");
-        graph.dfs();
     }
 }
 

@@ -17,7 +17,7 @@ public class MaximumSubArray {
             // Calculate maximum current sum for particular iteration
             curr_sum = Math.max(arr[i], curr_sum);
             // Finding out maximum sum so far including all iteration
-            max_so_far = Math.max(max_so_far, curr_sum); 
+            max_so_far = Math.max(max_so_far, curr_sum);
         }
 
         return max_so_far;
