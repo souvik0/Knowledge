@@ -461,7 +461,7 @@ public class BinaryTree {
         if (root1.data != root2.data) {
             return false;
         }
-        // Same Isomorphic(Identical tree) & cross Isomorphic(Mirror Tree)
+        // Same Isomorphic(Identical tree) or cross Isomorphic(Mirror Tree)
         return (isIsomorphic(root1.left, root2.left) && isIsomorphic(root1.right, root2.right)) ||
                (isIsomorphic(root1.left, root2.right) && isIsomorphic(root1.right, root2.left));
     }

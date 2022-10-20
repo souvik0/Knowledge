@@ -23,15 +23,15 @@ public class PrefixToInfixAndPostfix {
      *  Always needs to traverse from end to first
     */
     public static String convertToInfix(String prefixExpression) {
-        Stack<String> tempStack = new Stack<>(); 
+        Stack<String> tempStack = new Stack<>();
         // Length of expression  
-        int expressionLength = prefixExpression.length(); 
+        int expressionLength = prefixExpression.length();
         // Reading from right to left  
         for (int i = expressionLength - 1; i >= 0; i--) {
              if (isOperator(prefixExpression.charAt(i))) {
                 String operand1 = tempStack.pop();
                 String operand2 = tempStack.pop();
-                // Concat the operands and operator  
+                // Concat the operands and operator
                 String result = "(" + operand1 + prefixExpression.charAt(i) + operand2 + ")";
                 tempStack.push(result);
             } else {
@@ -52,11 +52,11 @@ public class PrefixToInfixAndPostfix {
              if (isOperator(prefixExpression.charAt(i))) {
                 String operand1 = tempStack.pop();
                 String operand2 = tempStack.pop();
-                // Concat the operands and operator  
+                // Concat the operands and operator
                 String result = operand1 + operand2 + prefixExpression.charAt(i);
                 tempStack.push(result);
             } else { 
-                // To make character to string 
+                // To make character to string
                 tempStack.push(prefixExpression.charAt(i) + "");
             }
         }
@@ -66,7 +66,7 @@ public class PrefixToInfixAndPostfix {
 
     // Driver code 
     public static void main(String[] args) {
-        String exp = "*-A/BC-/AKL"; 
+        String exp = "*-A/BC-/AKL";
         System.out.println("Infix : " + convertToInfix(exp));
         System.out.println("Postfix : " + convertToPostfix(exp));
     }

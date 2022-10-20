@@ -1,15 +1,20 @@
 package com.graph;
-// Java program to print BFS traversal from a given source vertex.
-// BFS(int s) traverses vertices reachable from s.
+/* Java program to print BFS traversal from a given source vertex.
+   BFS(int s) traverses vertices reachable from s.
+   This represents weighted undirected graph
+   Important point to note that Level order traversal in tree is BFS. */
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 //This class represents a directed graph using adjacency list representation
 public class BreadthFirstSearch {
 
     private int V; // No. of vertices
-    private List<Integer>[] adj; // Adjacency Lists represents neighbour of a vertices
+    // This is adjacency List representation. This representation is actually stands as
+    // List<LinkedList<Integer>>
+    private List<Integer>[] adj;
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public BreadthFirstSearch(int v) {
@@ -21,36 +26,36 @@ public class BreadthFirstSearch {
     }
 
     // Function to add an edge into the graph
-    public void addEdge(int v, int edge) {
-        adj[v].add(edge);
+    public void addEdge(int v, int w) {
+        adj[v].add(w);
     }
 
     // prints BFS traversal from a given source s
-    public void bfs(int s) {
+    public void bfs(int source) {
         // Mark all the vertices as not visited(By default set as false)
         boolean visited[] = new boolean[V];
 
         // Create a queue for BFS
-        LinkedList<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<Integer>();
 
         // Mark the current node as visited and enqueue it
-        visited[s]=true;
-        queue.add(s);
+        visited[source]=true;
+        queue.add(source);
 
         while (!queue.isEmpty()) {
             // Dequeue a vertex from queue and print it
-            s = queue.poll();
-            System.out.print(s + " ");
+            source = queue.poll();
+            System.out.print(source + " ");
 
             // Get all adjacent vertices of the dequeued vertex s
             // If a adjacent has not been visited, then mark it
             // visited and enqueue it
-            Iterator<Integer> itr = adj[s].listIterator();
+            Iterator<Integer> itr = adj[source].listIterator();
             while (itr.hasNext()) {
-                  int n = itr.next();
-                  if (!visited[n]) {
-                      visited[n] = true;
-                      queue.add(n);
+                  int neighbour = itr.next();
+                  if (!visited[neighbour]) {
+                      visited[neighbour] = true;
+                      queue.add(neighbour);
                   }
             }
         }

@@ -4,3 +4,9 @@
 /DFS.class
 /BreadthFirstSearch.class
 /DepthFirstTraversal.class
+/BFSAlgoExpert$Node.class
+/BFSAlgoExpert.class
+/DFSAlgoExpert$Node.class
+/DFSAlgoExpert.class
+/DetectCycle.class
+/PrintAllPaths.class

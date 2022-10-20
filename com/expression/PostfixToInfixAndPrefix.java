@@ -64,7 +64,7 @@ class PostfixToInfixAndPrefix {
      }
 
      // only element will be root of expression tree
-     return st.pop(); 
+     return st.pop();
 }
 
     public static void main(String args[]) {

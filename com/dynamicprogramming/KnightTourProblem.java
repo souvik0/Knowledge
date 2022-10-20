@@ -5,7 +5,7 @@ public class KnightTourProblem {
     public static int N = 8;
 
     /* A utility function to check if i,j are
-       valid indexes for N*N chessboard. Knight can traverse multiple times on a particular grid */
+       valid indexes for N*N chess board. Knight can traverse multiple times on a particular grid */
     public static boolean isSafe(int x, int y, int sol[][]) {
         return (x >= 0 && x < N && y >= 0 && y < N && sol[x][y] == -1);
     }
@@ -76,6 +76,7 @@ public class KnightTourProblem {
                 if (solveKTUtil(next_row, next_col, movePointer, sol, rowMove, colMove)) {
                     return true;
                 }
+                // Backtracking will take place once it is reached to end of board.
                 else {// backtracking. Initialize with the initial value
                   sol[next_row][next_col] = -1;
                 }

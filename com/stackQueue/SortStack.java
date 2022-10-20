@@ -33,7 +33,7 @@ public class SortStack {
             // pop out the first element 
             int popedElement = inputStack.pop();
             // while temporary stack is not empty and
-            // top of stack is greater than temp
+            // top of stack is less than temp
             while (!sortedStack.isEmpty() && popedElement > sortedStack.peek()) {
                 inputStack.push(sortedStack.pop());
             }

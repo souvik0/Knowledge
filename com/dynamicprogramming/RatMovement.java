@@ -1,5 +1,10 @@
 package com.dynamicprogramming;
 // Here rat can move in left, right, bottom & up direction by 1 step each
+// This is adjacency matrix representation of a graph.
+// This problem can be solved using DFS traversal along with backtracking
+// Backtracking is required to determine next set of paths.
+// This is determining paths between source & destination vertex.
+
 public class RatMovement {
 
     public static void main(String[] args) {
@@ -29,6 +34,7 @@ public class RatMovement {
         if ((startRow == destRow) && (startCol == destCol)) {
             printSolution(visited);
         } else {
+            // Determine rat's possible movements
             int[] Path_Row = {0, 0, 1, -1};
             int[] Path_Col = {1, -1, 0, 0};
 
@@ -66,7 +72,7 @@ public class RatMovement {
             for (int j = 0; j < visited[0].length; j++) {
                 System.out.print(" " + visited[i][j] + " "); 
             }
-            System.out.println(); 
+            System.out.println();
         }
         System.out.println("////////////////////////");
     }

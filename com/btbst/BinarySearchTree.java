@@ -172,8 +172,8 @@ public class BinarySearchTree {
             verticalViewMap.put(level, treeNodeList);
         }
 
-        verticalView(root.left, level - 1);
-        verticalView(root.right, level + 1);
+        verticalView(root.left, level--);
+        verticalView(root.right, level++);
 
         verticalViewMap.entrySet().stream().forEach(System.out::println);
     }
@@ -414,6 +414,7 @@ public class BinarySearchTree {
                 }
             }
         }
+
         return current;
     }
 }

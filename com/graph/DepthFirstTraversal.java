@@ -1,16 +1,19 @@
 package com.graph;
 
+// This represents weighted undirected graph
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 public class DepthFirstTraversal {
 
     private int V; // No. of vertices
-    private LinkedList<Integer> adj[];
+    // This is adjacency List representation. This representation is actually stands as
+    // List<LinkedList<Integer>>
+    private List<Integer> adj[];
 
-    // Constructor
-    @SuppressWarnings({ "unchecked", "rawtypes" }) 
-    public DepthFirstTraversal (int v) {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public DepthFirstTraversal(int v) {
         this.V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; ++i)
@@ -18,38 +21,35 @@ public class DepthFirstTraversal {
     }
 
     // Function to add an edge into the graph
-    public void addEdge(int v, int edge) {
-        adj[v].add(edge); // Add w to v's list.
+    public void addEdge(int v, int w) {
+        adj[v].add(w); // Add w to v's list.
     }
 
     // The function to do DFS traversal.
     // It uses recursive
     // DFSUtil()
-    public void DFS(int v) {
+    public void DFS(int source) {
         // Mark all the vertices as
-        // not visited(set as
-        // false by default in java)
+        // not visited(set as false by default in java)
         boolean visited[] = new boolean[V];
 
-        // Call the recursive helper
-        // function to print DFS
-        // traversal
-        DFSUtil(v, visited);
+        // Call the recursive helper function to print DFS traversal
+        DFSUtil(source, visited);
     }
 
     // A function used by DFS
-    public void DFSUtil(int v, boolean visited[]) {
+    public void DFSUtil(int source, boolean visited[]) {
         // Mark the current node as visited and print it
-        visited[v] = true;
-        System.out.print(v + " ");
+        visited[source] = true;
+        System.out.print(source + " ");
 
         // Recur for all the vertices adjacent to this
         // vertex
-        Iterator<Integer> itr = adj[v].listIterator();
+        Iterator<Integer> itr = adj[source].listIterator();
         while (itr.hasNext()) {
-            int n = itr.next();
-            if (!visited[n])
-                DFSUtil(n, visited);
+            int neighbour = itr.next();
+            if (!visited[neighbour])
+                DFSUtil(neighbour, visited);
         }
     }
 
