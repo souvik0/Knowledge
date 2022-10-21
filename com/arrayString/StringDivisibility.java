@@ -1,5 +1,6 @@
 package com.arrayString;
 
+// This problem tries to figure out how many divisors present between two strings
 public class StringDivisibility {
 
     public static int findSmallestDivisor(String s, String t) {
@@ -7,10 +8,13 @@ public class StringDivisibility {
            return -1;
         }
 
+        // If they're not divisible return -1
         if (s.length() % t.length() != 0) {
             return -1;
         }
 
+        // Check for repeat. 
+        //There must be at least one concatenation to get the divisbility successful.
         int l2 = t.length();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) != t.charAt(i % l2))
@@ -56,10 +60,10 @@ public class StringDivisibility {
                     + "ejckrnghqsyswhczwdicltjdndaebrtgcysulydcsbupkzogewkqpwtfzvjameircaloaqstsoiepynuvxmmt"
                     + "hrsdcvrhdijgvzgmtzeijkzixtfxhrqpllspijwnsitnjazd";
 
-        System.out.println(findSmallestDivisor(s1, s2));
+        //System.out.println(findSmallestDivisor(s1, s2));
         System.out.println(findSmallestDivisor(s3, s4));
-        System.out.println(findSmallestDivisor(s5, s6));
-        System.out.println(findSmallestDivisor(s7, s8));
+        //System.out.println(findSmallestDivisor(s5, s6));
+        //System.out.println(findSmallestDivisor(s7, s8));
     }
 
     public static int solution(String s, String t) {
@@ -72,6 +76,8 @@ public class StringDivisibility {
             return -1;
         }
 
+        // Check for repeat
+        //There must be at least one concatenation to get the divisbility successful.
         int l2 = t.length();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) != t.charAt(i % l2))
@@ -82,9 +88,8 @@ public class StringDivisibility {
     }
 
     public static int count(String t) {
-        if (t.substring(0, t.length()/2).contentEquals
-           (t.substring(t.length()/2, t.length()))) {
-                return count(t.substring(0, t.length()/2));
+        if (t.substring(0, t.length()/2).contentEquals(t.substring(t.length()/2, t.length()))) {
+            return count(t.substring(0, t.length()/2));
         } else {
             return t.length();
         }
