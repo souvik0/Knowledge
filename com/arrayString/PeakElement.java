@@ -39,7 +39,7 @@ public class PeakElement {
     public static int findPeak(int arr[], int n) {
         int left = 0;
         int right = n-1;
-        return findPeakUtil(arr, left, right, n); 
+        return findPeakUtil(arr, left, right, n);
     }
 
     public static void main(String[] args) { 
