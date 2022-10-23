@@ -1,5 +1,10 @@
 package com.graph;
 
+/* This involves backtracking as it needs to provide multiple results.
+ * This is similar to rat in maze problem, but dosen't require any direction as there is no
+ * moving pointer like rat.
+ * Direct DFS is enough to get the desired results.
+ */
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

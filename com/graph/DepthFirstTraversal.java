@@ -8,11 +8,14 @@ import java.util.List;
 public class DepthFirstTraversal {
 
     private int V; // No. of vertices
-    // This is adjacency List representation. This representation is actually stands as
-    // List<LinkedList<Integer>>
+
+    /* This is adjacency List representation. This representation is actually stands as
+       List<List<Integer>>.
+       Actual structure looks like LinkedList<LinkedList<Integer>>
+    */
     private List<Integer> adj[];
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public DepthFirstTraversal(int v) {
         this.V = v;
         adj = new LinkedList[v];
@@ -21,8 +24,8 @@ public class DepthFirstTraversal {
     }
 
     // Function to add an edge into the graph
-    public void addEdge(int v, int w) {
-        adj[v].add(w); // Add w to v's list.
+    public void addEdge(int vertex, int edge) {
+        adj[vertex].add(edge); // Add w to v's list.
     }
 
     // The function to do DFS traversal.

@@ -1,5 +1,10 @@
 package com.arrayString;
 /*Shifted Binary Search */
+
+/* Time Complexity: O(logN)
+ * Space Complexity: O(1)
+ */
+
 /*Using Binary Search:
     Step 1: Find index of pivot element (Index of minimum element)
     Step 2: Apply Binary Search on the sub array based on following conditions:
@@ -20,7 +25,7 @@ public class FindElementSortedRotatedArray {
     public static void main(String[] args) {
         int array[] = {156, 235, 457, 21, 32, 43, 74, 75, 86, 97, 108, 149};
         //findElementInSortedRotatedArrayTest(array, 108);
-        System.out.println(search(array, 0, array.length, 108));
+        System.out.println(search(array, 0, array.length - 1, 74));
     }
 
     private static void findElementInSortedRotatedArrayTest(int[] array, int numberToBeSerached) {
@@ -106,7 +111,7 @@ public class FindElementSortedRotatedArray {
         /* If arr[l...mid] first subarray is sorted */
         if (arr[low] <= arr[mid]) {
             /* As this subarray is sorted, we can quickly check if key lies in half or other half */
-            if (key >= arr[low] && key <= arr[mid]) {
+            if (key >= arr[low] && key < arr[mid]) {
                 return search(arr, low, mid - 1, key);
             } else {
                 /*If key not lies in first half subarray, Divide other half  into two subarrays,
@@ -116,7 +121,7 @@ public class FindElementSortedRotatedArray {
         }
         /* If arr[l..mid] first subarray is not sorted, 
          * then arr[mid... h] must be sorted subarray */
-        if (key >= arr[mid] && key <= arr[high]) {
+        if (key > arr[mid] && key <= arr[high]) {
             return search(arr, mid + 1, high, key);
         }
         return search(arr, low, mid - 1, key);

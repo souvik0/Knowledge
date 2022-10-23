@@ -45,6 +45,7 @@ public class RatMovement {
                 if (canRatMove(maze, visited, rowNext, colNext)) {
                     movePointer++;
                     visited[rowNext][colNext] = movePointer;
+                    // This is the recursive DFS call
                     pathInMaze(maze, visited, rowNext, colNext, destRow, destCol, movePointer);
                     // This is where we are doing backtracking.
                     // should go back to initial value of how visited array was created

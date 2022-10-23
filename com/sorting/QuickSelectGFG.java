@@ -1,5 +1,8 @@
 package com.sorting;
 /*
+ * Best Case : O(n)
+ * Average case : O(n)
+ * Worst Case : O(n^2)
  * The algorithm is similar to QuickSort.
  * The difference is, instead of recurring for both sides (after finding pivot),
  * it recurs only for the part that contains the k-th smallest/ largest element.

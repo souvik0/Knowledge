@@ -13,9 +13,9 @@ public class LongestUniqueSubString {
     }
 
     public static String longestUniqueSubsttr(String str) {
-        // Keeps each character from String & count of every character
+        // Keeps each character from String & count of every character to foresee the uniqueness
         Map<Character, Integer> lastSeen = new HashMap<Character, Integer>();
-        int[] longest = new int[] {0, 1};
+        int[] longest = new int[] {0, 1}; // To mesaure the length of the unique substring
         int startIdx = 0; // Denotes start index of every substring
 
         for (int i = 0; i < str.length(); i++) {
