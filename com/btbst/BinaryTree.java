@@ -20,6 +20,7 @@ public class BinaryTree {
         }
     }
 
+    // inOrder traversal on BST will always gives sorted data structure in return.
     public void inOrderRecursiveTraversal(TreeNode root) {
         if (root != null) {
             inOrderRecursiveTraversal(root.left);
@@ -462,8 +463,7 @@ public class BinaryTree {
             return false;
         }
         // Same Isomorphic(Identical tree) or cross Isomorphic(Mirror Tree)
-        return (isIsomorphic(root1.left, root2.left) && isIsomorphic(root1.right, root2.right)) ||
-               (isIsomorphic(root1.left, root2.right) && isIsomorphic(root1.right, root2.left));
+        return isIdenticalTree(root1, root2) || isMirrorTree(root1, root2);
     }
 
     // Inversion of nodes of a binary tree
@@ -606,6 +606,7 @@ public class BinaryTree {
      * Left subtree of T is balanced 
      * Right subtree of T is balanced
      * The difference between heights of left subtree and the right subtree is not more than 1
+     * The same can be asked to check a BT/BST is AVL as well or not.
      */
     public boolean isHeightBalamcedTree(TreeNode root) {
         if (root == null) {

@@ -50,7 +50,7 @@ public class BinarySearchTree {
     }
 
     /*
-     * Find out right subtree root index to determine the last value of left subtree 
+     * Find out right subtree root index to determine the last value of left subtree
      * or first value from array for right subtree
      */
     public TreeNode reconstructBST(List<Integer> preOrderList) {
@@ -64,6 +64,10 @@ public class BinarySearchTree {
         // Assume it's a right skewed tree
         int rightSubtreeRoot = preOrderList.size();
 
+        /* Starting point of rightSubtree will always have higher have higher value than
+           ending point of left subtree.
+           Applying the above value >= rightSubtreeRoot
+        */
         for (int i = 1; i < preOrderList.size(); i++) {
              int value = preOrderList.get(i);
              if (value >= rightSubtreeRoot) {

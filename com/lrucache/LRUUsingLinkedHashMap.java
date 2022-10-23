@@ -1,6 +1,6 @@
 package com.lrucache;
 
-/* Access order needs to be maintained. to get things at par with LRUCache to get
+/* Access order needs to be maintained, to get things at par with LRUCache to get
  * least recently accessed object first
  */
 import java.io.Serializable;

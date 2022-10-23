@@ -328,7 +328,7 @@ public class SinglyLinkedListImpl<T> {
         boolean isListPalindrome = true;
         T middleNodeData = findMiddleElement(start);
         Node<T> middleNode = new Node<T>(middleNodeData);
-        //Breaking the list in two parts
+        // Breaking the list in two parts
         Node<T> secondPartStart = middleNode.next;
         middleNode.next = null;
         // Finding out reverse head of the 2nd part of list
