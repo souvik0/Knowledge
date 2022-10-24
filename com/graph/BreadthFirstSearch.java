@@ -26,8 +26,8 @@ public class BreadthFirstSearch {
     }
 
     // Function to add an edge into the graph
-    public void addEdge(int v, int w) {
-        adj[v].add(w);
+    public void addEdge(int vertex, int edge) {
+        adj[vertex].add(edge);
     }
 
     // prints BFS traversal from a given source s
@@ -39,7 +39,7 @@ public class BreadthFirstSearch {
         Queue<Integer> queue = new LinkedList<Integer>();
 
         // Mark the current node as visited and enqueue it
-        visited[source]=true;
+        visited[source] = true;
         queue.add(source);
 
         while (!queue.isEmpty()) {

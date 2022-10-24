@@ -35,10 +35,10 @@ public class PrintAllPaths {
     public void printAllPaths(int source, int destination) {
         boolean[] visited = new boolean[V];
         ArrayList<Integer> pathList = new ArrayList<>();
- 
+
         // add source to path[]
         pathList.add(source);
- 
+
         // Call recursive utility
         printAllPathsUtil(source, destination, visited, pathList);
     }
@@ -72,7 +72,7 @@ public class PrintAllPaths {
     // Driver program
     public static void main(String[] args) {
         // Create a sample graph
-    	PrintAllPaths g = new PrintAllPaths(4);
+        PrintAllPaths g = new PrintAllPaths(4);
         g.addEdge(0, 1);
         g.addEdge(0, 2);
         g.addEdge(0, 3);

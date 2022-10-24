@@ -14,3 +14,8 @@
 /TransitiveClosure.class
 /LargestRegion.class
 /BipartiteCheck.class
+/LookForMotherVertex.class
+/isPathExist.class
+/DetectCycleDirectedGraph.class
+/SnakeLadderProblem$qentry.class
+/SnakeLadderProblem.class
