@@ -44,7 +44,7 @@ public class SnakeLadderProblem {
                (or cell numbers reachable through a dice throw)
             */
             for (int j = v + 1; j <= (v + 6) && j < n; ++j) {
-                // If this cell is already visited, then ignore
+                // If the cell is unvisited
                 if (visited[j] == 0) {
                     // Otherwise calculate its distance and  mark it as visited
                     qentry a = new qentry();

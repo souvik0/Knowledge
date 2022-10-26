@@ -58,6 +58,7 @@ public class HeapSortImplementation {
         /*  While building heap using heapify, always starts from the last index of array.
             individual leaf nodes (index of array) are heap by default.
             last non-leaf node will be at (array.length -1)/2
+            Omitting all leaf nodes, which drastically reduces time complexity.
         */
         for (int i = (sizeOfHeap/2); i >= 0; i--) {
             heapify(array, i, sizeOfHeap);
