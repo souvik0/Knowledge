@@ -1,17 +1,18 @@
 package com.ma;
-
+// Using during method invocation is the most common use case.
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConsumerSuper {
 
     public static void main(String[] args) {
-        //List of apples
-        List<Apple> applesList = new ArrayList<Apple>();
-        applesList.add(new Apple());
 
         List<Fruit> fruitList = new ArrayList<Fruit>();
         fruitList.add(new Fruit());
+
+        //List of apples
+        List<Apple> applesList = new ArrayList<Apple>();
+        applesList.add(new Apple());
 
         List<AsianApple> asianAppleList = new ArrayList<AsianApple>();
         asianAppleList.add(new AsianApple());
