@@ -12,6 +12,7 @@ public class BlockingQueue<E> {
         this.limit = limit;
     }
 
+    // Simulation of put operation
     public synchronized void enqueue(E item) throws InterruptedException {
         while (this.queue.size() == this.limit) {
             wait();
@@ -22,7 +23,8 @@ public class BlockingQueue<E> {
         }
     }
 
-    public synchronized E dequeue() throws InterruptedException{
+    // Simulation of get operation
+    public synchronized E dequeue() throws InterruptedException {
         E item = null;
         while (this.queue.size() == 0){
             wait();

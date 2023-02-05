@@ -18,7 +18,7 @@ public class Writer implements Runnable{
         sharedList.add(number);
 
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
             System.out.println("-> put: " + number);
         } catch (InterruptedException ie) {
             ie.printStackTrace();

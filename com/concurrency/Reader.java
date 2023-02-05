@@ -14,10 +14,9 @@ public class Reader implements Runnable {
         int index = random.nextInt(sharedList.size());
         Integer number = sharedList.get(index);
 
-        System.out.println("-> get: " + number);
-
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
+            System.out.println("-> get: " + number);
         } catch (InterruptedException ie ) { 
             ie.printStackTrace();
         }

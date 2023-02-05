@@ -11,3 +11,14 @@
 /PersonalLoanBankFactory.class
 /RaederJson.class
 /Axis.class
+/AbstractFactoryClient.class
+/Car.class
+/CarFactory.class
+/CarType.class
+/DefaultCarFactory.class
+/INDIACarFactory.class
+/Location.class
+/LuxuryCar.class
+/MicroCar.class
+/MiniCar.class
+/USACarFactory.class

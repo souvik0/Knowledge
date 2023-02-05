@@ -17,6 +17,7 @@ public final class Computer {
     public final boolean isGraphicsEnabled;
     public final DisplayType displayType;
 
+    // Private constructor should be present, so that it can't be invoked from outside
     private Computer(ComputerBuilder builder) {
          this.RAM = builder.RAM;
          this.ROM = builder.ROM;
