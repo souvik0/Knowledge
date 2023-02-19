@@ -4,6 +4,7 @@ package com.bridgepattern;
 
 public class FileDownloaderAbstractionImpl implements FileDownloaderAbstraction {
 
+    // Bridge Object is being used here
     FileDownloaderImplementor provider;
 
     public FileDownloaderAbstractionImpl(FileDownloaderImplementor provider) {

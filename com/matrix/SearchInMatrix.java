@@ -22,7 +22,7 @@ public class SearchInMatrix {
         while (i < row && j >= 0) {
             // Considering top right element
             if (matrix[i][j] == number) {
-               System.out.println("Row: " + i + " column: " +j);
+               System.out.println("Row: " + i + " column: " + j);
                return true;
             } else if (matrix[i][j] > number) {
                 j--;

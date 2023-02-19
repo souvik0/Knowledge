@@ -203,7 +203,7 @@ public class BinarySearchTree {
                int lvl = queuePack.level;
                TreeNode tempNode = queuePack.tNode;
 
-               // if the level is already present , then don't add new treeNode
+               // if the level is already present, then don't add new treeNode
                if (topViewNMap.containsKey(lvl)) {
                    // do Nothing
                } else {
@@ -211,6 +211,7 @@ public class BinarySearchTree {
                    topViewNMap.put(lvl, tempNode);
                }
 
+               // Here it is doing level order traversal
                if (tempNode.left != null) {
                    queue.add(new QueuePack(level - 1, tempNode.left));
                } else if (tempNode.right != null) {
@@ -377,7 +378,7 @@ public class BinarySearchTree {
         }
 
         /* if key is found then,
-           If its right subtree is not null
+           If its right subtree of the node is not null
            The successor will be the left most child
            of right subtree or right child itself. */
         if (root.data == key) {
@@ -393,7 +394,7 @@ public class BinarySearchTree {
     }
 
     public TreeNode inOrderPredecessor(TreeNode root, int key) {
-    	if (root == null) {
+        if (root == null) {
             return null;
         }
 

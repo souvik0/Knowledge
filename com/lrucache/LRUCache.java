@@ -46,17 +46,17 @@ public class LRUCache<K, V> {
             newEntryObject.key = key;
             newEntryObject.data = data;
 
-                // Validate against LRU cache size
-               if (tempMap.size() >= LRU_SIZE) {
-                   // Removing end node from temporary map as well from the doubly linked list
-                   tempMap.remove(end.key);
-                   removeNode(end);
-                   // Add the newEntry at first as it is most recently accessed
-                   addAtFirst(newEntryObject);
-               } else {
-                   // Add the newEntry at first as it is most recently accessed
-                   addAtFirst(newEntryObject);
-               }
+            // Validate against LRU cache size
+            if (tempMap.size() >= LRU_SIZE) {
+                // Removing end node from temporary map as well from the doubly linked list
+                tempMap.remove(end.key);
+                removeNode(end);
+                // Add the newEntry at first as it is most recently accessed
+                addAtFirst(newEntryObject);
+            } else {
+                // Add the newEntry at first as it is most recently accessed
+                addAtFirst(newEntryObject);
+            }
 
             // Irrespective of size check have to put entry object to map
             tempMap.put(key, newEntryObject);

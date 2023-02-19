@@ -18,7 +18,7 @@ public class MyBlockingQueue<E> {
     public synchronized void enqueue(E item) throws InterruptedException {
         if (this.queue.size() == this.limit) {
             wait();
-        } else if (this.queue.size() == 0) {
+        } else if (this.queue.size() > 0 && this.queue.size() != this.limit) {
             notifyAll();
         }
         this.queue.add(item);
@@ -29,7 +29,7 @@ public class MyBlockingQueue<E> {
         while (this.queue.size() == 0) {
             wait();
         }
-        if (this.queue.size() == this.limit) {
+        if (this.queue.size() < this.limit && this.queue.size() != 0) {
             notifyAll();
         }
         return this.queue.remove(0);

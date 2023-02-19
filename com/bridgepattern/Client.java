@@ -1,5 +1,6 @@
 package com.bridgepattern;
 
+// Bridge Pattern prefers Composition over Inheritance.
 public class Client {
 
     public static void main(String[] args) {

@@ -40,7 +40,7 @@ public class BinaryTree {
     /**
      * All iterative approach used explicit stack. 
      * right child should get into stack prior to left as stack is of LIFO nature
-     * This algorithm also used for reverse level order traversal.
+     * This algorithm also used as reverse level order traversal.
      * Reverse level order traversal with stack
      */
     public void preOrderIterativeTraversal(TreeNode root) {

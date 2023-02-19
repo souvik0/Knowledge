@@ -8,3 +8,7 @@
 /BSTPreSuc.class
 /InOrderSuccessor.class
 /InOrderSuccessorAndPredecessor.class
+/BinaryTreeNode.class
+/PostOrderIterative.class
+/LowestCommonAncestor.class
+/PrintAllPathsFromRootToLeaf.class
