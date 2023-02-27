@@ -3,7 +3,7 @@ package com.arrayString;
 public class EquilibriumPoint {
 
     public static void main(String[] args) {
-       EquilibriumPoint equi = new EquilibriumPoint();
+        EquilibriumPoint equi = new EquilibriumPoint();
         int arr[] = {-7, 1, 5, 2, -4, 3, 0};
         int arr_size = arr.length;
         System.out.println("Equilibrium index is " +

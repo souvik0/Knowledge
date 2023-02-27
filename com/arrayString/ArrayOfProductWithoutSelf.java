@@ -5,7 +5,7 @@ public class ArrayOfProductWithoutSelf {
     public static void main(String[] args) {
         int arr[] = {10, 3, 5, 6, 2};
         int n = arr.length;
-        System.out.println("The product array is : ");
+        System.out.println("The product array is: ");
         productArray(arr, n);
     }
 

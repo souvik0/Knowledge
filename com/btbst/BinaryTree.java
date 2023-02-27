@@ -20,6 +20,21 @@ public class BinaryTree {
         }
     }
 
+    public static ArrayList<Integer> preorder(BinaryTreeNode root) {
+        ArrayList<Integer> nodeList = new ArrayList<Integer>();
+        getPreOrderNodes(root, nodeList);
+        return nodeList;
+    }
+
+     public static ArrayList<Integer> getPreOrderNodes(BinaryTreeNode root, ArrayList<Integer> nodeList) {
+         if (root != null) {
+             nodeList.add(root.value);
+             getPreOrderNodes(root.left, nodeList);
+             getPreOrderNodes(root.right, nodeList);
+         }
+         return nodeList;
+     }
+
     // inOrder traversal on BST will always gives sorted data structure in return.
     public void inOrderRecursiveTraversal(TreeNode root) {
         if (root != null) {
@@ -29,6 +44,21 @@ public class BinaryTree {
         }
     }
 
+    public static ArrayList<Integer> inorder(BinaryTreeNode root) {
+        ArrayList<Integer> nodeList = new ArrayList<Integer>();
+        getInOrderNodes(root, nodeList);
+        return nodeList;
+    }
+
+    public static ArrayList<Integer> getInOrderNodes(BinaryTreeNode root, ArrayList<Integer> nodeList) {
+        if (root != null) {
+            getInOrderNodes(root.left, nodeList);
+            nodeList.add(root.value);
+            getInOrderNodes(root.right, nodeList);
+        }
+        return nodeList;
+    }
+
     public void postOrderRecursiveTraversal(TreeNode root) {
         if (root != null) {
             postOrderRecursiveTraversal(root.left);
@@ -36,6 +66,21 @@ public class BinaryTree {
             System.out.println(root.data);
         }
     }
+
+    public static ArrayList<Integer> postorder(BinaryTreeNode root) {
+        ArrayList<Integer> nodeList = new ArrayList<Integer>();
+        getPostOrderNodes(root, nodeList);
+        return nodeList;
+     }
+
+     public static ArrayList<Integer> getPostOrderNodes(BinaryTreeNode root, ArrayList<Integer> nodeList) {
+         if (root != null) {
+             getPostOrderNodes(root.left, nodeList);
+             getPostOrderNodes(root.right, nodeList);
+             nodeList.add(root.value);
+         }
+         return nodeList;
+     }
 
     /**
      * All iterative approach used explicit stack. 
@@ -248,7 +293,7 @@ public class BinaryTree {
     // diameter/ width is nothing but longest distance between two edge nodes of tree
     public int diameterOfBinaryTree(TreeNode root) {
         if (root == null) {
-            return 0;
+            return -1;
         }
         // Considering diameter passes through the root
         int lHeight = height(root.left);
@@ -258,7 +303,7 @@ public class BinaryTree {
         int lDiameter = diameterOfBinaryTree(root.left);
         int rDiameter = diameterOfBinaryTree(root.right);
 
-        return Math.max(1 + lHeight + rHeight, Math.max(lDiameter, rDiameter));
+        return 1 + Math.max(1 + lHeight + rHeight, Math.max(lDiameter, rDiameter));
     }
 
     // Measure both subtree height & return the max
@@ -466,7 +511,10 @@ public class BinaryTree {
         return isIdenticalTree(root1, root2) || isMirrorTree(root1, root2);
     }
 
-    // Inversion of nodes of a binary tree
+    /* Inversion of nodes of a binary tree
+       Creating mirror image of binary tree.
+       Same can be used to construct mirror tree.
+    */
     public void invertBinaryTree(TreeNode root) {
         if (root == null) {
             return;

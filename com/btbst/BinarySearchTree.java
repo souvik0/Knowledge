@@ -85,36 +85,32 @@ public class BinarySearchTree {
         return root;
     }
 
-    /* Sorted LinkedList means inOrder LinkedList.
-     * In this method, we construct from leaves to root.
-     * LinkedList sorted in ascending order.
-     * The idea is to insert nodes in BST in the same order as they appear in Linked List so
-     * that the tree can be constructed in O(n) time complexity. We first count the number
-     * of nodes in the given Linked List. Let the count be n. After counting nodes,
-     * we take left n/2 nodes and recursively construct the left subtree.
-     * After left subtree is constructed, we allocate memory for root and link the
-     * left subtree with root. Finally, we recursively construct the right subtree and link it with root.
-     * While constructing the BST, we also keep moving the list head pointer to next so that we have
-     * the appropriate pointer in each recursive call.
-     * */
-    public TreeNode convertSortedLinkedListToBST(int n) {
-        SinglyLinkedListImpl<Integer> linkedList = constructSortedLinkedList();
-        TreeNode left = convertSortedLinkedListToBST(n/2);
-        TreeNode root = new TreeNode(linkedList.start.data);
-        root.left = left;
-        linkedList.start = linkedList.start.next;
-        root.right = convertSortedLinkedListToBST(n - n/2 -1);
-        return root;
-    }
+    public BinaryTreeNode sorted_list_to_bst(LinkedListNode head) {
+        if (head == null) {
+            return null;
+        }
+        // Create dummy node & make it haed of linked list
+        LinkedListNode dummy = new LinkedListNode(0);
+        dummy.next = head;
 
-    public SinglyLinkedListImpl<Integer> constructSortedLinkedList() {
-        SinglyLinkedListImpl<Integer> linkedList = new SinglyLinkedListImpl<Integer>();
-        linkedList.insertAtLast(10);
-        linkedList.insertAtLast(20);
-        linkedList.insertAtLast(30);
-        linkedList.insertAtLast(40);
-        linkedList.insertAtLast(50);
-        return linkedList;
+        // Finding out mid of LinkedList which supposed to be root of BST
+        LinkedListNode pre = null;
+        LinkedListNode slow = dummy;
+        LinkedListNode fast = dummy;
+        while (fast != null && fast.next != null){
+            pre = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // Breaking the list in two halves
+        pre.next = null;
+        BinaryTreeNode root = new BinaryTreeNode(slow.value);
+        // Left of mid supposed to be left subtree
+        root.left = sorted_list_to_bst(dummy.next);
+        // Right of mid supposed to be right subtree
+        root.right = sorted_list_to_bst(slow.next);
+        return root;
     }
 
     public boolean concludeBSTFromBT(TreeNode root) {
@@ -361,65 +357,5 @@ public class BinarySearchTree {
         }
 
         return closest;
-    }
-
-    public TreeNode inOrderSuccessor(TreeNode root, int key) {
-        if (root == null) {
-            return null;
-        }
-
-        TreeNode current = null;
-        /* If key is greater than root node,
-           set the successor as root
-           search recursively into left subtree */
-        if (root.data > key) {
-            current = root;
-            inOrderSuccessor(root.left, key);
-        }
-
-        /* if key is found then,
-           If its right subtree of the node is not null
-           The successor will be the left most child
-           of right subtree or right child itself. */
-        if (root.data == key) {
-            if (root.right != null) {
-                current = root.right;
-                while (current.left != null) {
-                    current = current.left;
-                }
-            }
-        }
-
-        return current;
-    }
-
-    public TreeNode inOrderPredecessor(TreeNode root, int key) {
-        if (root == null) {
-            return null;
-        }
-
-        TreeNode current = null;
-        /* If key is smaller than root node,
-           set the predecessor as root
-           search recursively into right subtree */
-        if (root.data < key) {
-            current = root;
-            inOrderPredecessor(root.right, key);
-        }
-
-        /* if key is found then,
-           If its left subtree is not null
-           The predecessor will be the right most child
-           of left subtree or left child itself. */
-        if (root.data == key) {
-            if (root.left != null) {
-                current = root.left;
-                while (current.right != null) {
-                    current = current.right;
-                }
-            }
-        }
-
-        return current;
     }
 }

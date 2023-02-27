@@ -45,9 +45,9 @@ public class AnagramGroupingProblem {
              }
         }
 
-        for (Map.Entry<Integer, List<String>> entry : anagramMap.entrySet()) {
+        for (Map.Entry<Integer, List<String>> entry: anagramMap.entrySet()) {
              System.out.println(entry.getKey());
-             System.out.println("Anagram group :" + entry.getValue().toString());
+             System.out.println("Anagram group: " + entry.getValue().toString());
         }
     }
 }

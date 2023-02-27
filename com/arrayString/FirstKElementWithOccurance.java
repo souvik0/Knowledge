@@ -35,12 +35,12 @@ public class FirstKElementWithOccurance {
             }
         }
 
-       // Create a Priority Queue to sort based on the count 
-       // or on the key if the count is same 
-       // Here priority queue is storing most frequent element first & then 
+       // Create a Priority Queue to sort based on the count
+       // or on the key if the count is same
+       // Here priority queue is storing most frequent element first & then
        // in order of integer of same frequency element
        PriorityQueue<Map.Entry<Integer, Integer>> priorityQueue = new PriorityQueue<Map.Entry<Integer, Integer>> (
-           (a, b) -> a.getValue().equals(b.getValue()) ? Integer.compare(b.getKey(), a.getKey()) :
+           (a, b) -> a.getValue().equals(b.getValue()) ? Integer.compare(b.getKey(), a.getKey()):
                                                          Integer.compare(b.getValue(), a.getValue())
        );
 
@@ -52,7 +52,7 @@ public class FirstKElementWithOccurance {
        // Print the top k elements by looping over the queue 
        for (int i = 0; i < k; i++) {
            Map.Entry<Integer, Integer> entry = priorityQueue.poll();
-           System.out.println("Element : " + entry.getKey() + " with occurance : " + entry.getValue());
+           System.out.println("Element: " + entry.getKey() + " with occurance: " + entry.getValue());
        } 
     }
 }

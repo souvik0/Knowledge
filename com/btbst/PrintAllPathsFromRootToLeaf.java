@@ -34,12 +34,12 @@ public class PrintAllPathsFromRootToLeaf {
             return ansList;
         }
 
-        ArrayList<Integer> arr = new ArrayList<Integer>();
+        ArrayList<Integer> pathList = new ArrayList<Integer>();
         /*
          * arr is a list which will have one unique path from root to leaf at a time. arr
          * will be updated recursively
          */
-        allPathsofTreeHelper(root, arr, ansList);
+        allPathsofTreeHelper(root, pathList, ansList);
         /*
          * after helper function call our ans list updated with paths so we will return ans
          * list
