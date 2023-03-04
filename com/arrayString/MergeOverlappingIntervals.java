@@ -19,7 +19,7 @@ public class MergeOverlappingIntervals {
     public static void mergeIntervals(Interval arr[]) { 
         // Sort Intervals in increasing order of start time 
         Arrays.sort(arr, new Comparator<Interval>() {
-            public int compare(Interval i1,Interval i2) {
+            public int compare(Interval i1, Interval i2) {
                 return i1.start - i2.start;
             }
         });
@@ -36,12 +36,13 @@ public class MergeOverlappingIntervals {
             }
             else {
                 index++;
+                // To compare with the next Interval object
                 arr[index] = arr[i];
             }
         }
 
         // Now arr[0..index-1] stores the merged Intervals
-        System.out.print("The Merged Intervals are: ");
+        System.out.print("All merged Intervals are: ");
         for (int j = 0; j <= index; j++) {
             System.out.print("[" + arr[j].start + "," + arr[j].end + "]");
         }

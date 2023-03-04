@@ -1,5 +1,6 @@
 package com.arrayString;
 
+// This method is used to find out prime numbers in a given range
 import java.util.Arrays;
 
 public class SievePrimeNumbers {

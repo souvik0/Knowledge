@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
+import java.util.Vector;
 
 import com.linkedlist.SinglyLinkedListImpl;
 
 public class BinarySearchTree {
 
-    static int countElementLargest = 0;
-    static int countElementSmallest = 0;
+    public static int countElementLargest = 0;
+    public static int countElementSmallest = 0;
 
     public TreeNode maxElementInBST(TreeNode root) {
         // If no node present at right side, then root is maximum node
@@ -357,5 +358,71 @@ public class BinarySearchTree {
         }
 
         return closest;
+    }
+
+    /* Convert Binary Search Tree to Doubly Circular Linked List */
+    // Function to perform In-Order traversal of the
+    // tree and store the nodes in a vector
+    public void inorder(BinaryTreeNode root, Vector<Integer> v) {
+        if (root == null) {
+            return;
+        }
+        /* first recur on left child */
+        inorder(root.left, v);
+        /* append the data of node in vector */
+        v.add(root.value);
+        /* now recur on right child */
+        inorder(root.right, v);
+    }
+
+    // Function to convert Binary Tree to Circular
+    // Doubly Linked list using the vector which stores
+    // In-Order traversal of the Binary Tree
+    public BinaryTreeNode bTreeToCList(BinaryTreeNode root) {
+        // Base cases
+        if (root == null) {
+            return null;
+        }
+
+        // Vector to be used for storing the nodes
+        // of tree in In-order form
+        Vector<Integer> v = new Vector<>();
+
+        // Calling the In-Order traversal function
+        inorder(root, v);
+
+        // Create the head of the linked list pointing
+        // to the root of the tree
+        BinaryTreeNode head_ref = new BinaryTreeNode(v.get(0));
+
+        // Create a current pointer to be used in traversal
+        BinaryTreeNode curr = head_ref;
+
+        // Traversing the nodes of the tree starting
+        // from the second elements
+        for (int i = 1; i < v.size(); i++) {
+
+            // Create a temporary pointer
+            // pointing to current
+            BinaryTreeNode temp = curr;
+
+            // Current's right points to the current
+            // node in traversal
+            curr.right = new BinaryTreeNode(v.get(i));
+
+            // Current points to its right
+            curr = curr.right;
+
+            // Current's left points to temp
+            curr.left = temp;
+        }
+        // Current's right points to head of the list
+        curr.right = head_ref;
+
+        // Head's left points to current
+        head_ref.left = curr;
+
+        // Return head of the list
+        return head_ref;
     }
 }

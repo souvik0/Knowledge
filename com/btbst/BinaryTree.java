@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.Vector;
 
 public class BinaryTree {
 
@@ -133,14 +134,14 @@ public class BinaryTree {
         queue.add(root);
 
         while (!queue.isEmpty()) {
-            TreeNode popedNode = queue.poll();
-            System.out.println(popedNode.data);
+            TreeNode polledNode = queue.poll();
+            System.out.println(polledNode.data);
 
-            if (popedNode.left != null) {
-                queue.add(popedNode.left);
+            if (polledNode.left != null) {
+                queue.add(polledNode.left);
             }
-            if (popedNode.right != null) {
-                queue.add(popedNode.right);
+            if (polledNode.right != null) {
+                queue.add(polledNode.right);
             }
         }
     }
@@ -240,7 +241,7 @@ public class BinaryTree {
             return;
         }
         path[level] = root.data;
-        // root is the only node in the tree & that is the lead node
+        // root is the only node in the tree & that is the leaf node
         if (root.left == null && root.right == null) {
             printArrayUtil(path);
         }
@@ -670,5 +671,52 @@ public class BinaryTree {
         }
 
         return false;
+    }
+
+    // Find out paths which has sum equal to given sum exist or not
+    public Boolean path_sum_EqualK(BinaryTreeNode root, Integer givenSum) {
+        /* If the tree is empty there is no way the reqd sum
+         * will be there. */
+        if (root == null) {
+            return false;
+        }
+
+        boolean ans = false;
+        int subSum = givenSum - root.value;
+
+        if (subSum == 0 && root.left == null && root.right == null) {
+            return (ans = true);
+        }
+
+        if (root.left != null) {
+            // ans || hasPathSum... has no utility if the
+            // ans is false
+            ans = ans || path_sum_EqualK(root.left, subSum);
+        }
+
+        if (root.right != null) {
+            ans = ans || path_sum_EqualK(root.right, subSum);
+        }
+
+        return ans;
+    }
+
+    public BinaryTreeNode flip_upside_down(BinaryTreeNode root) {
+        if (root == null) {
+            return root;
+        }
+
+        if (root.left == null && root.right ==null) {
+            return root;
+        }
+
+        // recursively call the same method
+        BinaryTreeNode flippedRoot = flip_upside_down(root.left);
+
+        //  rearranging main root Node after returning from recursive call
+        root.left.left = root.right;
+        root.left.right = root;
+        root.left = root.right = null;
+        return flippedRoot;
     }
 }

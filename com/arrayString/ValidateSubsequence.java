@@ -1,5 +1,5 @@
 package com.arrayString;
-// Sam logic can also be applicable for sub array check.
+// Same logic can also be applicable for sub array check.
 public class ValidateSubsequence {
 
     public static void main(String[] args) {

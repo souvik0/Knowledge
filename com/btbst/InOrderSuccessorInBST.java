@@ -3,7 +3,7 @@ package com.btbst;
 public class InOrderSuccessorInBST {
 
     public static void main(String[] args) {
-        int[] keys = { 15, 10, 20, 8, 12, 16, 25 };
+        int[] keys = { 15, 10, 20, 8, 12, 16, 25};
 
          /* Construct the following tree
                     15
@@ -66,15 +66,23 @@ public class InOrderSuccessorInBST {
             return succ;
         }
 
+         // if a node with the desired value is found, the successor is the minimum
+        // value node in its right subtree (if any)
         if (root.data == key) {
             if (root.right != null) {
                 return findMinimum(root.right);
             }
-        } else if (key < root.data) {
+        }
+        // if the given key is more than the root node, recur for the right subtree
+        else if (key > root.data){
+            return findSuccessor(root.right, succ, key);
+        }
+        // if the given key is less than the root node, recur for the left subtree
+        else {
+            // update successor to the current node before recursing
+            // in the right subtree
             succ = root;
             return findSuccessor(root.left, succ, key);
-        } else {
-            return findSuccessor(root.right, succ, key);
         }
         return succ;
     }

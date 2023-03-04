@@ -1,7 +1,7 @@
 package com.myownhashmap;
 
 /* This class is basically representing Node of singly linked-list
- * In case of hashmap this entry object represents singly linked list 
+ * In case of hashmap this entry object represents singly linked list
  */
 public class Entry<K, V> {
 

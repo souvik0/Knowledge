@@ -25,7 +25,7 @@ public class TripletSum {
                 int currentSum = x + arr[left] + arr[right];
                 if (currentSum == givenSum) {
                     // print elements if it's sum is zero
-                    System.out.print("Triplet sum : ");
+                    System.out.print("Triplet sum: ");
                     System.out.print(x + " ");
                     System.out.print(arr[left]+ " ");
                     System.out.println(arr[right]+ " ");
