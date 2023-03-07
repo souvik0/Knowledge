@@ -19,3 +19,6 @@
 /DetectCycleDirectedGraph.class
 /SnakeLadderProblem$qentry.class
 /SnakeLadderProblem.class
+/BreadthFirstTraversal.class
+/DetectCycleUndirectedGraphBFS.class
+/DetectCycleDirectedGraphBFS.class

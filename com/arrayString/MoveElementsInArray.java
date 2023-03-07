@@ -1,12 +1,14 @@
 package com.arrayString;
 
 // Moving the specified element to the end of an array
+// This is basically swapping between the target element & last element
+
 public class MoveElementsInArray {
 
     public static void main(String[] args) {
-        int []arr = {1, 1, 3, 5, 6};
+        int[] arr = {1, 1, 3, 5, 6};
         int K = 3;
-        int []ans = moveElement(arr, K);
+        int[] ans = moveElement(arr, K);
 
         for(int i = 0; i < arr.length; i++)
            System.out.print(ans[i] + " ");
@@ -21,7 +23,7 @@ public class MoveElementsInArray {
                   right--;
             }
             if (array[left] == toMove) {
-                // swap first & last element
+                // swap target & last element
                 array = swap(array, left, right);
             }
             left++;

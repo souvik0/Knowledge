@@ -1,7 +1,5 @@
 package com.arrayString;
 
-import java.util.ArrayList;
-
 /* Time Complexity : O(nlogn)
 
  * logn factor is coming because of additional sorting introduced in first approach.
@@ -11,7 +9,6 @@ import java.util.ArrayList;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class FindPairsEqualsToGivenSum {
@@ -57,7 +54,6 @@ public class FindPairsEqualsToGivenSum {
              int temp = givenSum - arr[i];
              if (hset.contains(temp)) {
                  System.out.println("Pairs are: " + temp + " & " + arr[i]);
-                 break;
              }
              hset.add(arr[i]);
         }

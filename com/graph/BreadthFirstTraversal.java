@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Queue;
 
 //This class represents a directed graph using adjacency list representation
-public class BreadthFirstSearch {
+public class BreadthFirstTraversal {
 
     private int V; // No. of vertices
     // This is adjacency List representation. This representation is actually stands as
@@ -17,7 +17,7 @@ public class BreadthFirstSearch {
     private List<Integer>[] adj;
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    public BreadthFirstSearch(int v) {
+    public BreadthFirstTraversal(int v) {
         this.V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; i++) {
@@ -62,7 +62,7 @@ public class BreadthFirstSearch {
     }
 
     public static void main(String[] args) {
-        BreadthFirstSearch graph = new BreadthFirstSearch(4);
+        BreadthFirstTraversal graph = new BreadthFirstTraversal(4);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(1, 2);
@@ -77,5 +77,5 @@ public class BreadthFirstSearch {
 
 /* Complexity Analysis: 
 Time complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
-Space Complexity: O(V), since an extra visited array of size V is required.
+Space Complexity: O(V + E), since an extra visited array of size V is required.
 */

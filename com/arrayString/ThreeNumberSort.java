@@ -3,7 +3,7 @@ package com.arrayString;
 public class ThreeNumberSort {
 
     public static void main(String[] args) {
-        int arr[] = {9, 9, 9, 7, 9, 7, 9, 9, 7, 9};
+        int arr[] = {9, 9, 9, 7, 11, 9, 7, 9, 9, 11, 7, 9};
         int order[] = {7, 11, 9};
         int sortedOrderedArray[] = sortArray(arr, order);
         for (int i = 0; i < sortedOrderedArray.length; i++) {

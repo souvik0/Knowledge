@@ -28,7 +28,7 @@ public class CountOfInversion {
     public static int mergeAndCount(int[] arr, int start, int mid, int end) {
         // Left subarray
         int[] left = Arrays.copyOfRange(arr, start, mid + 1);
-  
+
         // Right subarray
         int[] right = Arrays.copyOfRange(arr, mid + 1, end + 1);
 
@@ -51,6 +51,6 @@ public class CountOfInversion {
             arr[k++] = right[j++];
         }
 
-    return swaps;
+        return swaps;
     }
 }

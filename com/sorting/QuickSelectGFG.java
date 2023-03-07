@@ -3,7 +3,7 @@ package com.sorting;
  * On the contrary, it is used to find out (n-k+1)th largest element in the array/list.
  * Best Case : O(n)
  * Average case : O(n)
- * Worst Case : O(n^2)
+ * Worst Case (In case of skewed Tree) : O(n^2)
  * The algorithm is similar to QuickSort.
  * The difference is, instead of recurring for both sides (after finding pivot),
  * it recurs only for the part that contains the k-th smallest/ largest element.
@@ -46,32 +46,51 @@ public class QuickSelectGFG {
      * kth smallest element in the array.
      * ASSUMPTION: all elements in arr[] are distinct
     */
-    public static int kthElement(int[] arr, int low, int high, int k) {
+    public static int kthSmallestElement(int[] arr, int low, int high, int k) {
         int partitionIndex = partition(arr, low, high);
 
         if (partitionIndex == k) {
             return arr[partitionIndex];
         } else if (partitionIndex < k) {
             // element present at right side of partitionIndex
-            return kthElement(arr, partitionIndex + 1, high, k);
+            return kthSmallestElement(arr, partitionIndex + 1, high, k);
         } else {
-            return kthElement(arr, low, partitionIndex - 1, k);
+            return kthSmallestElement(arr, low, partitionIndex - 1, k);
+        }
+    }
+
+    public static int kthLargestElement(int arr[], int low, int high, int k) {
+        int partitionIndex = partition(arr, low, high);
+
+        if (partitionIndex - low == k) {
+            return arr[partitionIndex];
+        } else if (partitionIndex - low > k) {
+            return kthLargestElement(arr, low, partitionIndex - 1, k);
+        } else {
+            return kthLargestElement(arr, partitionIndex + 1, high, k - partitionIndex + low - 1);
         }
     }
 
     public static void main(String[] args) {
          int[] array = new int[] {10, 4, 5, 8, 6, 11, 26, 52};
 
-         int kPosition = 7;
+         int kPosition = 2;
          int length = array.length;
 
          if (kPosition > length) {
              System.out.println("Index out of bound");
          }
          else {
-             System.out.println(kPosition + " smallest element in array "+ " or "
-                                + (array.length - kPosition + 1) + " largest element in array " +
-                                kthElement(array, 0, length - 1, kPosition - 1));
+             System.out.println(kPosition + "nd smallest element in array "+
+                                kthSmallestElement(array, 0, length - 1, kPosition - 1));
+         }
+
+         if (kPosition > length) {
+             System.out.println("Index out of bound");
+         }
+         else {
+             System.out.println(kPosition + "nd largest element in array "+
+                                kthLargestElement(array, 0, length - 1, kPosition - 1));
          }
     }
 }

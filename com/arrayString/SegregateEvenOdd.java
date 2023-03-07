@@ -8,7 +8,7 @@ public class SegregateEvenOdd {
     public static void main(String[] args) {
         int arr[] = {12, 34, 45, 9, 8, 90, 3};
         segregateEvenOdd(arr);
-        System.out.print("Array after segregation ");
+        System.out.print("Array after segregation: ");
         for (int i = 0; i < arr.length; i++)
             System.out.print(arr[i]+" ");
     }

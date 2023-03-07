@@ -11,14 +11,14 @@ public class MergeOverlappingIntervals {
         arr[1] = new Interval(1,6);
         arr[2] = new Interval(2,4);
         arr[3] = new Interval(4,7);
-        mergeIntervals(arr);
+        mergeOverlappingIntervals(arr);
     }
 
     // Function that takes a set of intervals, merges 
     // overlapping intervals and prints the result 
-    public static void mergeIntervals(Interval arr[]) { 
+    public static void mergeOverlappingIntervals(Interval[] intervalArr) { 
         // Sort Intervals in increasing order of start time 
-        Arrays.sort(arr, new Comparator<Interval>() {
+        Arrays.sort(intervalArr, new Comparator<Interval>() {
             public int compare(Interval i1, Interval i2) {
                 return i1.start - i2.start;
             }
@@ -27,24 +27,24 @@ public class MergeOverlappingIntervals {
         int index = 0; // Stores index of last element in output array (modified arr[])
 
         // Traverse all input Intervals 
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 1; i < intervalArr.length; i++) {
             // If this is not first Interval and overlaps
             // with the previous one
-            if (arr[index].end >= arr[i].start) {
+            if (intervalArr[index].end >= intervalArr[i].start) {
                 // Merge previous and current Intervals
-                arr[index].end = Math.max(arr[index].end, arr[i].end);
+            	intervalArr[index].end = Math.max(intervalArr[index].end, intervalArr[i].end);
             }
             else {
                 index++;
                 // To compare with the next Interval object
-                arr[index] = arr[i];
+                intervalArr[index] = intervalArr[i];
             }
         }
 
         // Now arr[0..index-1] stores the merged Intervals
         System.out.print("All merged Intervals are: ");
         for (int j = 0; j <= index; j++) {
-            System.out.print("[" + arr[j].start + "," + arr[j].end + "]");
+            System.out.print("[" + intervalArr[j].start + "," + intervalArr[j].end + "]");
         }
     }
 }

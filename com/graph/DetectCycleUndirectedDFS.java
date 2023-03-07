@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 // This will detect presence of cycle using DFS in an undirected graph
-public class DetectCycle {
+public class DetectCycleUndirectedDFS {
 
      private int V; // No. of vertices
     // This is adjacency List representation. This representation is actually stands as
@@ -13,7 +13,7 @@ public class DetectCycle {
     private List<Integer> adj[];
 
     @SuppressWarnings({ "unchecked", "rawtypes"})
-    public DetectCycle(int v) {
+    public DetectCycleUndirectedDFS(int v) {
         this.V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; ++i)
@@ -79,7 +79,7 @@ public class DetectCycle {
     // Driver method to test above methods
     public static void main(String args[]) {
         // Create a graph given in the above diagram
-        DetectCycle g1 = new DetectCycle(5);
+        DetectCycleUndirectedDFS g1 = new DetectCycleUndirectedDFS(5);
         g1.addEdge(1, 0);
         g1.addEdge(0, 2);
         g1.addEdge(2, 1);
@@ -91,7 +91,7 @@ public class DetectCycle {
             System.out.println("Graph doesn't contain cycle");
         }
 
-        DetectCycle g2 = new DetectCycle(3);
+        DetectCycleUndirectedDFS g2 = new DetectCycleUndirectedDFS(3);
         g2.addEdge(0, 1);
         g2.addEdge(1, 2);
         if (g2.isCyclic()) {
