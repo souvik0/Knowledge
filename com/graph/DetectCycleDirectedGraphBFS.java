@@ -20,7 +20,7 @@ import java.util.Vector;
 
 public class DetectCycleDirectedGraphBFS {
 
-	private int V;
+    private int V;
     private List<Integer> adj[];
 
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -66,38 +66,38 @@ public class DetectCycleDirectedGraphBFS {
         }
 
         // Create an queue and enqueue all vertices with in-degree 0
-        Queue<Integer> q = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<Integer>();
         for (int i = 0; i < V; i++) {
             if (in_degree[i] == 0) {
-                q.add(i);
+                queue.add(i);
             }
         }
 
         // Initialize count of visited vertices
-        int cnt = 0;
+        int visitedCount = 0;
 
         // Create a vector to store result (A topological ordering of the vertices)
         Vector<Integer> top_order = new Vector<>();
 
-        while (!q.isEmpty()) {
+        while (!queue.isEmpty()) {
 
             // Extract front of queue (or perform dequeue)
             // and add it to topological order
-            int u = q.poll();
+            int u = queue.poll();
             top_order.add(u);
 
-            // Iterate through all its neighbouring nodes of dequeued node u and 
+            // Iterate through all its neighboring nodes of dequeued node u and 
             // decrease their in-degree by 1
             for (int itr : adj[u]) {
                 if (--in_degree[itr] == 0) {
-                    q.add(itr);
+                    queue.add(itr);
                 }
             }
-            cnt++;
+            visitedCount++;
         }
 
         // Check if there was a cycle
-        if (cnt != this.V) {
+        if (visitedCount != this.V) {
             return true;
         } else {
             return false;

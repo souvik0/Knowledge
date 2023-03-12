@@ -22,3 +22,13 @@
 /BreadthFirstTraversal.class
 /DetectCycleUndirectedGraphBFS.class
 /DetectCycleDirectedGraphBFS.class
+/DetectCycleDirectedGraphDFS.class
+/DetectCycleUndirectedGraphDFS.class
+/TopologicalSort.class
+/FindLargestIslands.class
+/FloodFill.class
+/KruskalsMST$1.class
+/KruskalsMST$Edge.class
+/KruskalsMST$Subset.class
+/KruskalsMST.class
+/IsATree.class

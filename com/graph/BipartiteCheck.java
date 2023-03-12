@@ -1,5 +1,7 @@
 package com.graph;
 
+import java.util.Arrays;
+
 // Application of BFS
 // Here the graph is represented as adjacency matrix
 
@@ -31,9 +33,7 @@ public class BipartiteCheck {
            is assigned and value 0 indicates second color is assigned.
         */
         int colorArr[] = new int[V];
-        for (int i = 0; i < V; ++i) {
-            colorArr[i] = -1;
-        }
+        Arrays.fill(colorArr, -1);
 
         // Assign first color to source
         colorArr[source] = 1;
@@ -55,7 +55,7 @@ public class BipartiteCheck {
 
             // Find all non-colored adjacent vertices
             for (int v = 0; v < V; ++v) {
-                // An edge from u to v exists
+                // An edge from source to v exists (That means neighbor of Source)
                 // and destination v is not colored
                 if (G[source][v] == 1 && colorArr[v] == -1) {
                     // Assign alternate color to this adjacent v of u
@@ -63,7 +63,7 @@ public class BipartiteCheck {
                     queue.add(v);
                 }
 
-                // An edge from u to v exists and destination v is colored with same color as u
+                // An edge from source to v exists and destination v is colored with same color as u
                 else if (G[source][v] == 1 && colorArr[v] == colorArr[source]) {
                     return false;
                 }

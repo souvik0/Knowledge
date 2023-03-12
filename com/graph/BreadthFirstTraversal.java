@@ -2,7 +2,8 @@ package com.graph;
 /* Java program to print BFS traversal from a given source vertex.
    BFS(int s) traverses vertices reachable from s.
    This represents weighted undirected graph
-   Important point to note that Level order traversal in tree is BFS. */
+   Important point to note that Level order traversal in tree is BFS.
+*/
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -44,18 +45,18 @@ public class BreadthFirstTraversal {
 
         while (!queue.isEmpty()) {
             // Dequeue a vertex from queue and print it
-            source = queue.poll();
-            System.out.print(source + " ");
+            int polledVertex = queue.poll();
+            System.out.print(polledVertex + " ");
 
             // Get all adjacent vertices of the dequeued vertex s
             // If a adjacent has not been visited, then mark it
             // visited and enqueue it
-            Iterator<Integer> itr = adj[source].listIterator();
+            Iterator<Integer> itr = adj[polledVertex].listIterator();
             while (itr.hasNext()) {
-                  int neighbour = itr.next();
-                  if (!visited[neighbour]) {
-                      visited[neighbour] = true;
-                      queue.add(neighbour);
+                  int neighbor = itr.next();
+                  if (!visited[neighbor]) {
+                      visited[neighbor] = true;
+                      queue.add(neighbor);
                   }
             }
         }

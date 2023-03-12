@@ -42,10 +42,10 @@ public class KthLargestFromStream {
                  min.add(val);
              }
 
-             /* otherwise, first we compare the current value with the min heap TOP value
+             /* otherwise, first we compare the current value with the max heap TOP value
               * if TOP val > current element, no need to remove TOP, because it will be
               * the largest kth element anyhow.
-              * else  we need to update the kth largest element
+              * else we need to update the kth largest element
               * by removing the top lowest element 
               */
              else {

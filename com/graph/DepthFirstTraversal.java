@@ -50,9 +50,9 @@ public class DepthFirstTraversal {
         // vertex
         Iterator<Integer> itr = adj[source].listIterator();
         while (itr.hasNext()) {
-            int neighbour = itr.next();
-            if (!visited[neighbour])
-                DFSUtil(neighbour, visited);
+            int neighbor = itr.next();
+            if (!visited[neighbor])
+                DFSUtil(neighbor, visited);
         }
     }
 

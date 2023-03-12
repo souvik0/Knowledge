@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class DetectCycleDirectedGraph {
+public class DetectCycleDirectedGraphDFS {
 
     private int V; // No. of vertices
     // This is adjacency List representation. This representation is actually stands as
@@ -12,7 +12,7 @@ public class DetectCycleDirectedGraph {
     private List<Integer>[] adj;
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    public DetectCycleDirectedGraph(int v) {
+    public DetectCycleDirectedGraphDFS(int v) {
         this.V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; i++) {
@@ -57,13 +57,12 @@ public class DetectCycleDirectedGraph {
         }
 
         visited[source] = true;
-
         recStack[source] = true;
         Iterator<Integer> itr = adj[source].iterator();
 
         while (itr.hasNext()) {
-            Integer neighbour = itr.next();
-            if (isCyclicUtil(neighbour, visited, recStack)) {
+            Integer neighbor = itr.next();
+            if (isCyclicUtil(neighbor, visited, recStack)) {
                 return true;
             }
         }
@@ -74,7 +73,7 @@ public class DetectCycleDirectedGraph {
     }
 
     public static void main(String[] args) {
-        DetectCycleDirectedGraph graph = new DetectCycleDirectedGraph(4);
+        DetectCycleDirectedGraphDFS graph = new DetectCycleDirectedGraphDFS(4);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(1, 2);

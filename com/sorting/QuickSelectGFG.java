@@ -59,16 +59,26 @@ public class QuickSelectGFG {
         }
     }
 
-    public static int kthLargestElement(int arr[], int low, int high, int k) {
-        int partitionIndex = partition(arr, low, high);
-
-        if (partitionIndex - low == k) {
-            return arr[partitionIndex];
-        } else if (partitionIndex - low > k) {
-            return kthLargestElement(arr, low, partitionIndex - 1, k);
-        } else {
-            return kthLargestElement(arr, partitionIndex + 1, high, k - partitionIndex + low - 1);
+    public static int KthLargestElement(int arr[], int n, int k) {
+        if (n == 1) {
+            return arr[0];
         }
+
+        int left = 0;
+        int right = n - 1;
+        int target = n - k;
+        while (left <= right) {
+            int pivot = partition(arr, left, right); // Initializing pivot with the value returned by partition function
+            if (pivot < target) {// If the pivot is less than the target, then we have to go to the right side
+                left = pivot + 1;
+            } else if (pivot > target) {// If the pivot is greater than the target, then we have to go to the left side
+                right = pivot - 1;
+            } else { // If the pivot is equal to the target, return arr[pivot]
+                return arr[pivot];
+            }
+        }
+
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -85,12 +95,7 @@ public class QuickSelectGFG {
                                 kthSmallestElement(array, 0, length - 1, kPosition - 1));
          }
 
-         if (kPosition > length) {
-             System.out.println("Index out of bound");
-         }
-         else {
-             System.out.println(kPosition + "nd largest element in array "+
-                                kthLargestElement(array, 0, length - 1, kPosition - 1));
-         }
+         System.out.println(kPosition + "nd Largest element in array " + 
+                            KthLargestElement(array, array.length, kPosition));
     }
 }

@@ -1,7 +1,6 @@
 package com.sorting;
 
-/* 
- * Worst case (In case of Skewed Tree): O(n^2)
+/* Worst case (In case of Skewed Tree): O(n^2)
  * Average case: O(nlogn)
  * Best Case: O(n)
 */

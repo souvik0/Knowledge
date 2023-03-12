@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 // This will detect presence of cycle using DFS in an undirected graph
-public class DetectCycleUndirectedDFS {
+public class DetectCycleUndirectedGraphDFS {
 
      private int V; // No. of vertices
     // This is adjacency List representation. This representation is actually stands as
@@ -13,7 +13,7 @@ public class DetectCycleUndirectedDFS {
     private List<Integer> adj[];
 
     @SuppressWarnings({ "unchecked", "rawtypes"})
-    public DetectCycleUndirectedDFS(int v) {
+    public DetectCycleUndirectedGraphDFS(int v) {
         this.V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; ++i)
@@ -53,22 +53,22 @@ public class DetectCycleUndirectedDFS {
     public Boolean isCyclicUtil(int source, boolean visited[], int parent){
         // Mark the current node as visited
         visited[source] = true;
-        Integer i;
+        Integer neighbor;
 
         // Recur for all the vertices adjacent to this vertex
         Iterator<Integer> itr = adj[source].iterator();
         while (itr.hasNext()) {
-            i = itr.next();
+            neighbor = itr.next();
 
             // If an adjacent is not visited, then recur for that adjacent
-            if (!visited[i]) {
-                if (isCyclicUtil(i, visited, source)) {
+            if (!visited[neighbor]) {
+                if (isCyclicUtil(neighbor, visited, source)) {
                     return true;
                 }
             }
 
             // If an adjacent is visited and not parent of current vertex, then there is a cycle.
-            else if (i != parent) {
+            else if (neighbor != parent) {
                 return true;
             }
 
@@ -79,7 +79,7 @@ public class DetectCycleUndirectedDFS {
     // Driver method to test above methods
     public static void main(String args[]) {
         // Create a graph given in the above diagram
-        DetectCycleUndirectedDFS g1 = new DetectCycleUndirectedDFS(5);
+        DetectCycleUndirectedGraphDFS g1 = new DetectCycleUndirectedGraphDFS(5);
         g1.addEdge(1, 0);
         g1.addEdge(0, 2);
         g1.addEdge(2, 1);
@@ -91,7 +91,7 @@ public class DetectCycleUndirectedDFS {
             System.out.println("Graph doesn't contain cycle");
         }
 
-        DetectCycleUndirectedDFS g2 = new DetectCycleUndirectedDFS(3);
+        DetectCycleUndirectedGraphDFS g2 = new DetectCycleUndirectedGraphDFS(3);
         g2.addEdge(0, 1);
         g2.addEdge(1, 2);
         if (g2.isCyclic()) {

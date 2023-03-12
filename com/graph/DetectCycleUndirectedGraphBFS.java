@@ -6,6 +6,7 @@ package com.graph;
  * If we don’t find such an adjacent for any vertex, we say that there is no cycle.
  */
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -13,7 +14,7 @@ import java.util.Queue;
 public class DetectCycleUndirectedGraphBFS {
 
     private int V;
-    private List<Integer> adj[];
+    private List<Integer>[] adj;
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     public DetectCycleUndirectedGraphBFS(int v) {
@@ -44,10 +45,10 @@ public class DetectCycleUndirectedGraphBFS {
     public boolean isCyclicDisconntected() {
         // Mark all the vertices as not visited
         boolean visited[] = new boolean[V];
-        Arrays.fill(visited,false);
+        Arrays.fill(visited, false);
 
-        for (int i = 0; i < V; i++) {
-            if (!visited[i] && isCyclicConntected(i, visited)) {
+        for (int source = 0; source < V; source++) {
+            if (!visited[source] && isCyclicConntected(source, visited)) {
                 return true;
             }
         }
@@ -58,26 +59,28 @@ public class DetectCycleUndirectedGraphBFS {
         // Set parent vertex for every vertex as -1.
         int parent[] = new int[V];
         Arrays.fill(parent, -1);
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> queue = new LinkedList<>();
          // Mark the current node as visited and enqueue it
         visited[source] = true;
-        q.add(source);
+        queue.add(source);
 
-        while (!q.isEmpty()) {
+        while (!queue.isEmpty()) {
             // Dequeue a vertex from queue and print it
-            int u = q.poll();
+            int polledVertex = queue.poll();
 
             // Get all adjacent vertices of the dequeued vertex u.
             // If a adjacent has not been visited, then mark it visited and enqueue it.
             // We also mark parent so that parent is not considered for cycle.
-            for (int i = 0; i < adj[u].size(); i++) {
-                int v = adj[u].get(i);
-                if (!visited[v]) {
-                    visited[v] = true;
-                    q.add(v);
-                    parent[v] = u;
-                } else if (parent[u] != v)
-                    return true;
+            Iterator<Integer> itr = adj[polledVertex].listIterator();
+            while (itr.hasNext()) {
+                  int neighbor = itr.next();
+                  if (!visited[neighbor]) {
+                      visited[neighbor] = true;
+                      queue.add(neighbor);
+                      parent[neighbor] = polledVertex;
+                  } else if (parent[polledVertex] != neighbor) {
+                      return true;
+                  }
             }
         }
         return false;

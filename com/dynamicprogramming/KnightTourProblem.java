@@ -60,7 +60,7 @@ public class KnightTourProblem {
     /* A recursive utility function to solve Knight
        Tour problem */
     public static boolean solveKTUtil(int row, int col, int movePointer, int sol[][], int rowMove[], int colMove[]) {
-        // Recursion break condition
+        // Recursion break condition to reach end of chess board
         if (movePointer == N * N) {
             return true;
         }
