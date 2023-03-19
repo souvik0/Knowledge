@@ -22,12 +22,12 @@ public class BankLoanObjectExchange {
              System.out.println(bankObject.loanAndBankWiseInterestRate());
              break;
          case EDUCATIONALLOAN:
-        	 EducationalLoanBankFactory educationalLoanBankFactory = new EducationalLoanBankFactory();
+             EducationalLoanBankFactory educationalLoanBankFactory = new EducationalLoanBankFactory();
              bankObject = educationalLoanBankFactory.getBank(bank);
              System.out.println(bankObject.getBankName());
              System.out.println(bankObject.loanAndBankWiseInterestRate());
              break;
          }
-		return bankObject;
+         return bankObject;
     }
 }

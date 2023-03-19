@@ -8,6 +8,6 @@ public class LuxuryCar extends Car {
 
     @Override
     public void construct() {
-        System.out.println("Constructing to luxury car");
+        System.out.println("Constructing to luxury car from car factory at: " + location.toString());
     }
 }

@@ -2,9 +2,8 @@ package com.abstractfactorypattern;
 
 public class CarFactory {
 
-    public static Car buildCar(CarType model) {
+    public static Car constructCar(CarType model, Location location) {
         Car car = null;
-        Location location = Location.INDIA;
         switch(location) {
             case USA:
                 car = USACarFactory.buildCar(model);

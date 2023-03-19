@@ -6,7 +6,7 @@ import java.util.Set;
 public class StringPermutation {
 
     public static void main(String[] args) {
-        String str = "pupu";
+        String str = "pupusona";
         System.out.println(getPermutation(str).toString());
     }
 

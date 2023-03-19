@@ -6,13 +6,13 @@ public class USACarFactory {
         Car car = null;
         switch(model) {
             case MICRO:
-                car = new MicroCar(Location.INDIA);
+                car = new MicroCar(Location.USA);
                 break;
             case MINI:
-                car = new MiniCar(Location.INDIA);
+                car = new MiniCar(Location.USA);
                 break;
             case LUXURY:
-                car = new LuxuryCar(Location.INDIA);
+                car = new LuxuryCar(Location.USA);
                 break;
                 default:
                 break;

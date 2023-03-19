@@ -8,6 +8,6 @@ public class MiniCar extends Car {
 
     @Override
     public void construct() {
-        System.out.println("Constructing to Mini Car");
+        System.out.println("Constructing to Mini Car from car factory at: " + location.toString());
     }
 }
