@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class MergeOverlappingIntervals {
 
     public static void main(String[] args) {
-        Interval arr[] = new Interval[4];
+        Interval[] arr = new Interval[4];
         arr[0] = new Interval(6,8);
         arr[1] = new Interval(1,6);
         arr[2] = new Interval(2,4);
@@ -32,9 +32,8 @@ public class MergeOverlappingIntervals {
             // with the previous one
             if (intervalArr[index].end >= intervalArr[i].start) {
                 // Merge previous and current Intervals
-            	intervalArr[index].end = Math.max(intervalArr[index].end, intervalArr[i].end);
-            }
-            else {
+                intervalArr[index].end = Math.max(intervalArr[index].end, intervalArr[i].end);
+            } else {
                 index++;
                 // To compare with the next Interval object
                 intervalArr[index] = intervalArr[i];

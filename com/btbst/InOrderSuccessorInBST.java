@@ -84,6 +84,7 @@ public class InOrderSuccessorInBST {
             succ = root;
             return findSuccessor(root.left, succ, key);
         }
+
         return succ;
     }
 }

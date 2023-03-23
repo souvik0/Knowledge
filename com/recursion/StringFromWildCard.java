@@ -15,11 +15,13 @@ public class StringFromWildCard {
         if (pattern == null || pattern.length == 0) {
             return;
         }
-        // base case
+
+        // base case or recursion break condition
         if (i == pattern.length) {
             System.out.println(pattern);
             return;
         }
+
         // if the current character is '?'
         if (pattern[i] == '?') {
             for (char ch = '0'; ch <= '1'; ch++) {
@@ -29,7 +31,7 @@ public class StringFromWildCard {
                 // recur for the remaining pattern
                 printAllCombinations(pattern, i + 1);
 
-                // backtrack
+                // backtrack to find out next combination
                 pattern[i] = '?';
             }
         } else {

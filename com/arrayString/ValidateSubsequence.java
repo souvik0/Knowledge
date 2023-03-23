@@ -16,10 +16,11 @@ public class ValidateSubsequence {
            if (sequenceArray[counter] == currentElement) {
                counter++;
            }
-           // This check has to be here to check end the loop as soon as we reach end of sequence array
-           if (counter == sequenceArray.length) {
-               return true;
-           }
+       }
+
+       // This check has to be here to check end the loop as soon as we reach end of sequence array
+       if (counter == sequenceArray.length) {
+           return true;
        }
 
        return false;

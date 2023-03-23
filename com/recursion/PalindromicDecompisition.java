@@ -34,10 +34,6 @@ public class PalindromicDecompisition {
         String str = "";
         ArrayList<String> current = new ArrayList<>(temp);
 
-        if (index == 0) {
-            temp.clear();
-        }
-
         // Iterate over the string
         for (int i = index; i < len; ++i) {
             str = str + s.charAt(i);
@@ -68,7 +64,7 @@ public class PalindromicDecompisition {
         int len = str.length();
         len--;
 
-        for (int i=0; i<len; i++) {
+        for (int i = 0; i < len; i++) {
             if (str.charAt(i) != str.charAt(len)) {
                 return false;
             }

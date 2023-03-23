@@ -1,5 +1,7 @@
 package com.btbst;
 
+// This is same problem as invert binary tree.
+
 public class ConstructMirrorTree {
 
     public static void main(String[] args) {

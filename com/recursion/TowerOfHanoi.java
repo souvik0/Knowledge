@@ -3,7 +3,7 @@ package com.recursion;
 public class TowerOfHanoi {
 
     public static void main(String args[]) {
-        int n = 3; // Number of disks
+        int n = 5; // Number of disks
         towerOfHanoi(n, 'A', 'B', 'C');
     }
 

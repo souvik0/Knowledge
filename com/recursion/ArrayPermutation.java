@@ -7,7 +7,7 @@ public class ArrayPermutation {
 
     public static void main(String[] args) {
         ArrayPermutation pa = new ArrayPermutation();
-        int[] arr= {10, 20, 30};
+        int[] arr = {10, 20, 30};
 
         List<List<Integer>> permute = pa.permute(arr);
 
@@ -26,7 +26,7 @@ public class ArrayPermutation {
     }
 
     private void permuteHelper(List<List<Integer>> list, List<Integer> resultList, int [] arr){
-        // Base case
+        // Base case or recursion break condition
         if (resultList.size() == arr.length){
             list.add(new ArrayList<>(resultList));
         }

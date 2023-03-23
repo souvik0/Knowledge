@@ -11,7 +11,7 @@ public class LRUUsingLinkedHashMap<K, V> extends LinkedHashMap<K, V>
        implements Serializable {
 
     private static final long serialVersionUID = -1L;
-    int capacity;
+    private int capacity;
 
     public LRUUsingLinkedHashMap(int capacity) {
         super(capacity, 0.75f, true); // True for access order, false for insertion order

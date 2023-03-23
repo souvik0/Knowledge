@@ -74,14 +74,14 @@ public class BinaryTree {
         return nodeList;
      }
 
-     public static ArrayList<Integer> getPostOrderNodes(BinaryTreeNode root, ArrayList<Integer> nodeList) {
-         if (root != null) {
-             getPostOrderNodes(root.left, nodeList);
-             getPostOrderNodes(root.right, nodeList);
-             nodeList.add(root.value);
-         }
-         return nodeList;
-     }
+    public static ArrayList<Integer> getPostOrderNodes(BinaryTreeNode root, ArrayList<Integer> nodeList) {
+        if (root != null) {
+            getPostOrderNodes(root.left, nodeList);
+            getPostOrderNodes(root.right, nodeList);
+            nodeList.add(root.value);
+        }
+        return nodeList;
+    }
 
     /**
      * All iterative approach used explicit stack. 
@@ -689,8 +689,7 @@ public class BinaryTree {
         }
 
         if (root.left != null) {
-            // ans || hasPathSum... has no utility if the
-            // ans is false
+            // ans || hasPathSum... has no utility if the ans is false
             ans = ans || path_sum_EqualK(root.left, subSum);
         }
 
@@ -713,7 +712,7 @@ public class BinaryTree {
         // recursively call the same method
         BinaryTreeNode flippedRoot = flip_upside_down(root.left);
 
-        //  rearranging main root Node after returning from recursive call
+        // rearranging main root Node after returning from recursive call
         root.left.left = root.right;
         root.left.right = root;
         root.left = root.right = null;

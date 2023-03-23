@@ -32,7 +32,8 @@ public class CountOfInversion {
         // Right subarray
         int[] right = Arrays.copyOfRange(arr, mid + 1, end + 1);
 
-        int i = 0, j = 0, k = start, swaps = 0;
+        int i = 0, j = 0, swaps = 0;
+        int k = start;
 
         while (i < left.length && j < right.length) {
             if (left[i] <= right[j]) {

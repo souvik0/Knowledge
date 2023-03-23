@@ -9,13 +9,13 @@ public class MonotonicArrayCheck {
     }
 
     public static boolean isMonotonic(int[] arr) {
-        boolean isIncrementing = true;
-        boolean isDecrementing = true;
+        boolean isIncrementing = false;
+        boolean isDecrementing = false;
         for (int i = 0 ; i < arr.length - 1; i++) {
              if (arr[i] > arr[i+1]) {
-                 isIncrementing = false;
+                 isDecrementing = true;
              } else if (arr[i+1] > arr[i]){
-                 isDecrementing = false;
+                 isIncrementing = true;
              }
         }
         return isIncrementing || isDecrementing;

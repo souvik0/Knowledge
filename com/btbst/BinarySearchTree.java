@@ -86,6 +86,8 @@ public class BinarySearchTree {
         return root;
     }
 
+    // Finding out middle node of LinkedList & then creates root of BST
+    // This can be considered as inOrder list also.
     public BinaryTreeNode sorted_list_to_bst(LinkedListNode head) {
         if (head == null) {
             return null;
@@ -98,6 +100,8 @@ public class BinarySearchTree {
         LinkedListNode pre = null;
         LinkedListNode slow = dummy;
         LinkedListNode fast = dummy;
+
+        // Finding out middle node of a linked list
         while (fast != null && fast.next != null){
             pre = slow;
             slow = slow.next;
@@ -111,6 +115,7 @@ public class BinarySearchTree {
         root.left = sorted_list_to_bst(dummy.next);
         // Right of mid supposed to be right subtree
         root.right = sorted_list_to_bst(slow.next);
+
         return root;
     }
 

@@ -3,12 +3,13 @@ package com.recursion;
 public class PossibleBSTCountFromKey {
 
     public static void main(String[] args) {
-        System.out.println("Total BST: " + countBST(12));
+        System.out.println("Total BST: " + countBST(3));
     }
 
     public static int countBST(int n) {
         int result = 0;
 
+        // base case
         if (n == 0 || n == 1) {
             return 1;
         }

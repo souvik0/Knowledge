@@ -44,7 +44,7 @@ public class PeakElement {
     }
 
     public static void main(String[] args) { 
-        int arr[] = {10, 20, 15, 2, 23, 90, 67};
+        int arr[] = {10, 20, 15, 23, 90, 67};
         int n = arr.length; 
         System.out.println("Index of a peak point is " + findPeak(arr, n));
         System.out.println("Peak element: " + arr[findPeak(arr, n)]);

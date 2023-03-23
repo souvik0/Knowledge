@@ -10,7 +10,7 @@ public class GenerateSubsetsFromString {
         List<List<Character>> subsets = subsets(str.toCharArray());
  
         for (List<Character> subset: subsets) {
-            System.out.println(subset);
+            System.out.println(subset.toString());
         }
     }
 
@@ -23,12 +23,13 @@ public class GenerateSubsetsFromString {
     private static void subsetsHelper(List<List<Character>> list , List<Character> resultList,
                                char [] nums, int start){
         list.add(new ArrayList<>(resultList));
-        for(int i = start; i < nums.length; i++){
-           // add element
+
+        for (int i = start; i < nums.length; i++){
+            // add element
             resultList.add(nums[i]);
-           // Explore
+            // Explore
             subsetsHelper(list, resultList, nums, i + 1);
-           // remove
+            // Backtracking
             resultList.remove(resultList.size() - 1);
         }
     }

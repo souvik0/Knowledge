@@ -9,8 +9,8 @@ public class FindCombination {
 
     public static void main(String[] args) {
         // given number
-        int n = 5;
-        int k = 2;
+        int n = 5; // Range
+        int k = 2; // Digits in the number
         ans = makeCombi(n, k);
     }
 
@@ -34,8 +34,7 @@ public class FindCombination {
         for (int i = left; i <= n; ++i) {
             tmp.add(i);
             makeCombiUtil(n, i + 1, k - 1);
-            // Popping out last inserted element
-            // from the vector
+            // Popping out last inserted element from the vector using Backtracking
             tmp.remove(tmp.size() - 1);
         }
     }

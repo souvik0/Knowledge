@@ -7,10 +7,11 @@ import java.util.List;
 public class LetterCasePermutation {
 
     public static void main(String[] args) {
-        
+        List<String> resultList = letterCasePermutation("A1C");
+        System.out.println(resultList.toString());
     }
 
-    public List<String> letterCasePermutation(String str) {
+    public static List<String> letterCasePermutation(String str) {
         int letterCount = 0;
         for (char letter: str.toCharArray()) {
             if (Character.isLetter(letter)) {
@@ -18,7 +19,7 @@ public class LetterCasePermutation {
             }
         }
 
-        List<String> ans = new ArrayList<String>();
+        List<String> resultList = new ArrayList<String>();
 
         for (int bits = 0; bits < 1 << letterCount; bits++) {
             int b = 0;
@@ -26,6 +27,7 @@ public class LetterCasePermutation {
 
             for (char letter: str.toCharArray()) {
                 if (Character.isLetter(letter)) {
+                    // Checking the conversion logic
                     if (((bits >> b++) & 1) == 1) {
                         word.append(Character.toLowerCase(letter));
                     } else {
@@ -36,9 +38,9 @@ public class LetterCasePermutation {
                 }
             }
 
-            ans.add(word.toString());
+            resultList.add(word.toString());
         }
 
-        return ans;
+        return resultList;
     }
 }
