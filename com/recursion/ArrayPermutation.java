@@ -25,21 +25,22 @@ public class ArrayPermutation {
         return list;
     }
 
-    private void permuteHelper(List<List<Integer>> list, List<Integer> resultList, int [] arr){
+    private void permuteHelper(List<List<Integer>> finalList, List<Integer> resultList, int [] arr){
         // Base case or recursion break condition
         if (resultList.size() == arr.length){
-            list.add(new ArrayList<>(resultList));
+            finalList.add(new ArrayList<>(resultList));
         }
         else {
             for (int i = 0; i < arr.length; i++){
 
+                // To maintain uniqueness
                 if (resultList.contains(arr[i])) {
                     // If element already exists in the list then skip
                     continue;
                 }
                 // Choose element
                 resultList.add(arr[i]);
-                permuteHelper(list, resultList, arr);
+                permuteHelper(finalList, resultList, arr);
 
                 // Backtracking of elements to get more number of different combinations
                 resultList.remove(resultList.size() - 1);

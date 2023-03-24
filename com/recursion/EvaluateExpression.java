@@ -29,9 +29,9 @@ public class EvaluateExpression {
     // expressions
     public static void getExpressionUtil(ArrayList<String> resultList,
                                          String curExp, String input,
-                                         int target, int pos, int curVal, int last) {
+                                         int target, int start, int curVal, int last) {
         // true if whole input is processed with some operators
-        if (pos == input.length()) {
+        if (start == input.length()) {
             // if current value is equal to target then only add to final solution
             // if question is : all possible o/p then just push_back without condition
             if (curVal == target) {
@@ -41,20 +41,20 @@ public class EvaluateExpression {
         }
 
         // loop to put operator at all positions
-        for (int i = pos; i < input.length(); i++) {
+        for (int i = start; i < input.length(); i++) {
             // ignoring case which start with 0 as they are useless for evaluation
-            if (i != pos && input.charAt(pos) == '0') {
+            if (i != start && input.charAt(start) == '0') {
                 break;
             }
 
             // take part of input from pos to i
-            String part = input.substring(pos, i + 1);
+            String part = input.substring(start, i + 1);
 
             // take numeric value of part
             int cur = Integer.parseInt(part);
 
-            // if pos is 0 then just send numeric value for next recursion
-            if (pos == 0) {
+            // if start is 0 then just send numeric value for next recursion
+            if (start == 0) {
                 getExpressionUtil(resultList, curExp + part, input, target, i + 1, cur, cur);
             }
             // try all given binary operator for evaluation

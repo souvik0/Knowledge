@@ -38,8 +38,9 @@ public class IsATree {
             return false;
         }
 
-        // If we find a vertex which is not reachable from 0/ root
-        // (not marked by isCyclicUtil(), then we return false
+        // If we find a vertex which is not reachable from 0/root
+        // (not marked by isCyclicUtil(), then we return false.
+        // This represents connected/Unconnected vertex.
         for (int u = 0; u < V; u++) {
              if (!visited[u]) {
                  return false;

@@ -67,13 +67,14 @@ public class QuickSelectGFG {
         int left = 0;
         int right = n - 1;
         int target = n - k;
+
         while (left <= right) {
-            int pivot = partition(arr, left, right); // Initializing pivot with the value returned by partition function
-            if (pivot < target) {// If the pivot is less than the target, then we have to go to the right side
+            int pivot = partition(arr, left, right);
+            if (pivot < target) {
                 left = pivot + 1;
-            } else if (pivot > target) {// If the pivot is greater than the target, then we have to go to the left side
+            } else if (pivot > target) {
                 right = pivot - 1;
-            } else { // If the pivot is equal to the target, return arr[pivot]
+            } else {
                 return arr[pivot];
             }
         }

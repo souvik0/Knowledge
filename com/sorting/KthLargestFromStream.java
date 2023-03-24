@@ -12,7 +12,7 @@ public class KthLargestFromStream {
     public static void main(String[] args) {
         min = new PriorityQueue<Integer>();
         int k = 3;
-        int arr[] = {1, 2, 3, 4, 5, 6};
+        //int arr[] = {1, 2, 3, 4, 5, 6};
         ArrayList<Integer> initial_stream = new ArrayList<Integer>();
         initial_stream.add(4);
         initial_stream.add(6);
@@ -20,11 +20,12 @@ public class KthLargestFromStream {
         append_stream.add(5);
         append_stream.add(2);
         append_stream.add(20);
-        kth_largest(2, initial_stream, append_stream);
-        // Function call
-        List<Integer> res = getAllKthNumber(arr, k);
 
-        for (int x : res) {
+        List<Integer> resultList = kth_largest(k, initial_stream, append_stream);
+
+        //List<Integer> res = getAllKthNumber(arr, k);
+
+        for (int x : resultList) {
              System.out.println("Kth largest element is " + x);
         }
     }
@@ -77,11 +78,12 @@ public class KthLargestFromStream {
             if (min_ik.size() < k) {
                 min_ik.add(val);
              } else {
-                 if (min_ik.peek() < val ) {
-                     min_ik.poll();
+                 if (min_ik.peek() < val) {
+                     min_ik.poll(); // Polling the peak element from the Heap
                      min_ik.add(val);
                  }
              }
+
              if (min_ik.size() >= k) {
                  finalList.add(min_ik.peek());
              } else {

@@ -1,7 +1,6 @@
 package com.graph;
 
 // Always take place in DAG(Directed Acyclic Graph)
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -43,7 +42,6 @@ public class TopologicalSort {
 
         // Mark all the vertices as not visited
         boolean visited[] = new boolean[V];
-        Arrays.fill(visited, false);
 
         // Call the recursive helper function to store Topological Sort starting
         // from all vertices one by one

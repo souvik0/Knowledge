@@ -39,17 +39,18 @@ public class LookForMotherVertex {
                 DFSUtil(i, visited);
                 v = i;
             }
-       }
+        }
 
         /* If there exist mother vertex (or vertices) in the given graph, then v must be one
-        (or one of them).
+           (or one of them).
 
-        Now check if v is actually a mother vertex (or graph has a mother vertex).
-        We basically check if every vertex is reachable from v or not.
+           Now check if v is actually a mother vertex (or graph has a mother vertex).
+           We basically check if every vertex is reachable from v or not. Here will apply
+           DFS once again.
 
-        Reset all values in visited[] as false and do DFS beginning from v to check
-        if all vertices are reachable from it or not.
-     */
+           Reset all values in visited[] as false and do DFS beginning from v to check
+           if all vertices are reachable from it or not.
+        */
 
         boolean[] check = new boolean[V];
         DFSUtil(v, check);
@@ -63,8 +64,8 @@ public class LookForMotherVertex {
             }
         }
 
-      motherVertexList.add(v);
-      return motherVertexList;
+        motherVertexList.add(v);
+        return motherVertexList;
     }
 
     public void DFSUtil(int source, boolean[] visited) {

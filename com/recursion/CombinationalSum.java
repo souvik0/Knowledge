@@ -1,9 +1,9 @@
 package com.recursion;
 
 /*
- * Time Complexity: O(n log n) for sorting, O(2^n) for generating a number of combinations.
+ * Time Complexity: O(nlogn) for sorting, O(2^n) for generating a number of combinations.
  * If ‘k’ is the avg length of every combination then adding it to the resultant list would 
- * take O(k x 2^n). Total complexity is O(n log n)+O(k x 2^n).
+ * take O(k x 2^n). Total complexity is O(nlogn) + O(k x 2^n).
  */
 import java.util.Arrays;
 import java.util.Collections;
@@ -37,14 +37,9 @@ public class CombinationalSum {
             System.out.print("{");
 
             for (int i = 0; i < local.size(); i++) {
-                if (i != 0) {
-                    System.out.print(" ");
-                }
-
                 System.out.print(local.get(i));
-
                 if (i != local.size() - 1) {
-                    System.out.print(", ");
+                    System.out.print(",");
                 }
             }
 

@@ -19,7 +19,7 @@ public class FindCombination {
         return ans;
     }
 
-    public static void makeCombiUtil(int n, int left, int k) {
+    public static void makeCombiUtil(int n, int start, int k) {
         // Pushing this vector to a vector of vector
         if (k == 0) {
             ans.add(tmp);
@@ -31,7 +31,7 @@ public class FindCombination {
         }
 
         // i iterates from left to n. First time left will be 1
-        for (int i = left; i <= n; ++i) {
+        for (int i = start; i <= n; ++i) {
             tmp.add(i);
             makeCombiUtil(n, i + 1, k - 1);
             // Popping out last inserted element from the vector using Backtracking

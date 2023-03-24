@@ -48,6 +48,7 @@ public class DetectCycleDirectedGraphDFS {
 
     private boolean isCyclicUtil(int source, boolean[] visited, boolean[] recStack) {
         // Mark the current node as visited and part of recursion stack
+        // Below two are the recursion break condition. 
         if (recStack[source]) {
             return true;
         }

@@ -51,7 +51,7 @@ public class PalindromicDecompisition {
                     v.add(temp);
                 }
 
-                // temp is reinitialize with the current i.
+                // temp is reinitialize with the current i as backtracking
                 temp = new ArrayList<>(current);
             }
         }
