@@ -46,8 +46,7 @@ public class DepthFirstTraversal {
         visited[source] = true;
         System.out.print(source + " ");
 
-        // Recur for all the vertices adjacent to this
-        // vertex
+        // Recur for all the vertices adjacent to this vertex
         Iterator<Integer> itr = adj[source].listIterator();
         while (itr.hasNext()) {
             int neighbor = itr.next();

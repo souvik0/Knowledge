@@ -38,8 +38,7 @@ public class IsATree {
             return false;
         }
 
-        // If we find a vertex which is not reachable from 0/root
-        // (not marked by isCyclicUtil(), then we return false.
+        // Checking if all vertex are being already visited at DFS traversal or not.
         // This represents connected/Unconnected vertex.
         for (int u = 0; u < V; u++) {
              if (!visited[u]) {

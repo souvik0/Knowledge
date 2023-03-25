@@ -45,7 +45,6 @@ public class DetectCycleUndirectedGraphBFS {
     public boolean isCyclicDisconntected() {
         // Mark all the vertices as not visited
         boolean visited[] = new boolean[V];
-        Arrays.fill(visited, false);
 
         for (int source = 0; source < V; source++) {
             if (!visited[source] && isCyclicConntected(source, visited)) {

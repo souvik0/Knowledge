@@ -14,18 +14,13 @@ public class FindLargestIslands {
 
     public static int findLargestIslands(int[][] M) {
         boolean[][] visited = new boolean[ROW][COL];
-        int countOfIslands = 0;
         int largestIsland = 0;
         for (int i = 0; i < ROW; ++i) {
             for (int j = 0; j < COL; ++j) {
                 if (M[i][j] == 1 && !visited[i][j]) { // If a cell with value 1 is not
                     // visited yet, then new island found, Visit all
                     // cells in this island and increment island count
-                    countOfIslands++;
-                    DFS(M, i, j, visited);
-                    if (countOfIslands > largestIsland) {
-                        largestIsland = countOfIslands;
-                    }
+                    largestIsland = Math.max(largestIsland, DFS(M, i, j, visited));
                 }
             }
         }
@@ -35,8 +30,9 @@ public class FindLargestIslands {
 
     // A utility function to do DFS for a 2D matrix.
     // It only considers the 8 neighbors as adjacent vertices
-    public static void DFS(int M[][], int startRow, int startCol, boolean visited[][]) {
+    public static int DFS(int M[][], int startRow, int startCol, boolean visited[][]) {
         // Mark the source cell as visited
+        int countOfIsland = 1;
         visited[startRow][startCol] = true;
         // These arrays are used to get row and column numbers
         // of 8 neighbors of a given cell
@@ -48,9 +44,10 @@ public class FindLargestIslands {
              int rowNext = startRow + Path_Row[k];
              int colNext = startCol + Path_Col[k];
              if (isSafe(M, rowNext, colNext, visited)) {
-                DFS(M, rowNext, colNext, visited);
+                 countOfIsland+= DFS(M, rowNext, colNext, visited);
             }
         }
+        return countOfIsland;
     }
 
     // A function to check if a given cell (row, col) can be included in DFS

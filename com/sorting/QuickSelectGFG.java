@@ -90,8 +90,7 @@ public class QuickSelectGFG {
 
          if (kPosition > length) {
              System.out.println("Index out of bound");
-         }
-         else {
+         } else {
              System.out.println(kPosition + "nd smallest element in array "+
                                 kthSmallestElement(array, 0, length - 1, kPosition - 1));
          }

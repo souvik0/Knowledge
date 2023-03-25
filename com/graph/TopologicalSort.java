@@ -61,13 +61,12 @@ public class TopologicalSort {
     public void topologicalSortUtil(int source, boolean visited[], Stack<Integer> stack) {
         // Mark the current node as visited.
         visited[source] = true;
-        Integer neighbor;
 
         // Recur for all the vertices adjacent
         // to this vertex
         Iterator<Integer> it = adj[source].iterator();
         while (it.hasNext()) {
-            neighbor = it.next();
+            Integer neighbor = it.next();
             if (!visited[neighbor])
                 topologicalSortUtil(neighbor, visited, stack);
         }

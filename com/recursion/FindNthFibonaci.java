@@ -3,15 +3,15 @@ package com.recursion;
 public class FindNthFibonaci {
 
     public static void main(String[] args) {
-        int n = 9;
+        int n = 2;
         System.out.println("F(n) = " + fibo(n));
     }
 
-    public static int fibo(int n) {
-        if (n <= 1) {
-            return n;
+    public static int fibo(int num) {
+        if (num == 0 || num == 1) {
+            return 1;
         }
 
-        return fibo(n - 1) + fibo(n - 2);
+        return fibo(num - 1) + fibo(num - 2);
     }
 }

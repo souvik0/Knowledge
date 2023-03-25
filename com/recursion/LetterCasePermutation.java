@@ -7,7 +7,7 @@ import java.util.List;
 public class LetterCasePermutation {
 
     public static void main(String[] args) {
-        List<String> resultList = letterCasePermutation("A1C");
+        List<String> resultList = letterCasePermutation("A1Cd");
         System.out.println(resultList.toString());
     }
 

@@ -12,7 +12,7 @@ public class DetectCycleUndirectedGraphDFS {
     // List<LinkedList<Integer>>
     private List<Integer> adj[];
 
-    @SuppressWarnings({ "unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public DetectCycleUndirectedGraphDFS(int v) {
         this.V = v;
         adj = new LinkedList[v];

@@ -2,7 +2,7 @@ package com.recursion;
 
 public class SolveNQueen {
 
-    final int N = 4;
+    final int QUEEN = 4;
 
     public static void main(String[] args) {
         SolveNQueen nQueenProblem = new SolveNQueen();
@@ -31,14 +31,14 @@ public class SolveNQueen {
         /* base case: If all queens are placed
            then return true
         */
-        if (col >= N) {
+        if (col >= QUEEN) {
             return true;
         }
 
         /* Consider this column and try placing
            this queen in all rows one by one 
         */
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < QUEEN; i++) {
             /* Check if the queen can be placed on
                board[i][col]
             */
@@ -89,7 +89,7 @@ public class SolveNQueen {
         }
 
         /* Check lower diagonal on left side */
-        for (i = row, j = col; j >= 0 && i < N; i++, j--) {
+        for (i = row, j = col; j >= 0 && i < QUEEN; i++, j--) {
             if (board[i][j] == 1) {
                 return false;
             }
@@ -100,8 +100,8 @@ public class SolveNQueen {
 
     /* A utility function to print solution */
     public void printSolution(int board[][]) {
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++)
+        for (int i = 0; i < QUEEN; i++) {
+            for (int j = 0; j < QUEEN; j++)
                 System.out.print(" " + board[i][j] + " ");
             System.out.println();
         }

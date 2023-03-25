@@ -10,34 +10,34 @@ public class StringFromWildCard {
         printAllCombinations(pattern, 0);
     }
 
-    private static void printAllCombinations(char[] pattern, int i) {
+    private static void printAllCombinations(char[] pattern, int start) {
         // base case
         if (pattern == null || pattern.length == 0) {
             return;
         }
 
         // base case or recursion break condition
-        if (i == pattern.length) {
+        if (start == pattern.length) {
             System.out.println(pattern);
             return;
         }
 
         // if the current character is '?'
-        if (pattern[i] == '?') {
+        if (pattern[start] == '?') {
             for (char ch = '0'; ch <= '1'; ch++) {
                 // replace '?' with 0 and 1
-                pattern[i] = ch;
+                pattern[start] = ch;
 
                 // recur for the remaining pattern
-                printAllCombinations(pattern, i + 1);
+                printAllCombinations(pattern, start + 1);
 
                 // backtrack to find out next combination
-                pattern[i] = '?';
+                pattern[start] = '?';
             }
         } else {
             // if the current character is 0 or 1, ignore it and
             // recur for the remaining pattern
-            printAllCombinations(pattern, i + 1);
+            printAllCombinations(pattern, start + 1);
         }
     }
 }

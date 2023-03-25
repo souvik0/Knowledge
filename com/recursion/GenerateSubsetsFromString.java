@@ -8,7 +8,7 @@ public class GenerateSubsetsFromString {
     public static void main(String[] args) {
         String str = "xy";
         List<List<Character>> subsets = subsets(str.toCharArray());
- 
+
         for (List<Character> subset: subsets) {
             System.out.println(subset.toString());
         }
@@ -20,7 +20,7 @@ public class GenerateSubsetsFromString {
         return finalList;
     }
 
-    private static void subsetsHelper(List<List<Character>> finalList , List<Character> resultList,
+    private static void subsetsHelper(List<List<Character>> finalList, List<Character> resultList,
                                char [] nums, int start){
         finalList.add(new ArrayList<>(resultList));
 

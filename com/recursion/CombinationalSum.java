@@ -15,25 +15,25 @@ public class CombinationalSum {
     public static void main(String[] args) {
         Integer[] arr = {10, 1, 2, 7, 6, 1, 5};
         Vector<Integer> A = new Vector<>(Arrays.asList(arr));
-        int K = 8;
+        int targetSum = 8;
         // Function call
-        Combination(A, K);
+        combination(A, targetSum);
     }
 
-    public static void Combination(Vector<Integer> A, int K) {
+    public static void combination(Vector<Integer> A, int targetSum) {
         // Sort the given elements
         Collections.sort(A);
         // To store combination
         Vector<Integer> local = new Vector<Integer>();
-        unique_combination(0, 0, K, local, A);
+        unique_combination(0, 0, targetSum, local, A);
     }
 
     // Function to find all unique combination of
     // given elements such that their sum is K
-    public static void unique_combination(int start, int currentSum, int K,
+    public static void unique_combination(int start, int currentSum, int targetSum,
                                           Vector<Integer> local, Vector<Integer> A) {
         // If a unique combination is found
-        if (currentSum == K) {
+        if (currentSum == targetSum) {
             System.out.print("{");
 
             for (int i = 0; i < local.size(); i++) {
@@ -50,7 +50,7 @@ public class CombinationalSum {
         // For all other combinations
         for (int i = start; i < A.size(); i++) {
             // Check if the sum exceeds K
-            if (currentSum + A.get(i) > K) {
+            if (currentSum + A.get(i) > targetSum) {
                 continue;
             }
 
@@ -63,7 +63,7 @@ public class CombinationalSum {
             local.add(A.get(i));
 
             // Recursive call
-            unique_combination(i + 1, currentSum + A.get(i), K, local, A);
+            unique_combination(i + 1, currentSum + A.get(i), targetSum, local, A);
 
             // Remove element from the combination for backtracking
             local.remove(local.size() - 1);

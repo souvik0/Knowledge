@@ -1,5 +1,6 @@
 package com.recursion;
 
+// Involvement of all 3 numbers are required.
 //Time Complexity : O(4^n)
 
 import java.util.ArrayList;
@@ -7,8 +8,8 @@ import java.util.ArrayList;
 public class EvaluateExpression {
 
     public static void main(String[] args) {
-        String input = "123";
-        int target = 6;
+        String input = "234";
+        int target = 10;
         ArrayList<String> res = getExprssion(input, target);
         printResult(res);
 
@@ -61,18 +62,23 @@ public class EvaluateExpression {
             else {
                 getExpressionUtil(resultList, curExp + "+" + part, input, target, i + 1,
                                   curVal + cur, cur);
+                /*getExpressionUtil(resultList, curExp + "-" + part, input, target, i + 1,
+                                  curVal - cur, -cur);*/
                 getExpressionUtil(resultList, curExp + "-" + part, input, target, i + 1,
-                                  curVal - cur, -cur);
+                                  curVal - cur, cur);
+                /*getExpressionUtil(resultList, curExp + "*" + part, input, target, i + 1,
+                                  curVal -last + last * cur, last * cur); */
                 getExpressionUtil(resultList, curExp + "*" + part, input, target, i + 1,
-                                  curVal - last + last * cur, last * cur);
+                                  curVal * cur, cur);
             }
         }
     }
 
     // method to print result
     public static void printResult(ArrayList<String> res) {
-        for (int i = 0; i < res.size(); i++)
-            System.out.print(res.get(i) + " ");
+        for (int i = 0; i < res.size(); i++) {
+             System.out.print(res.get(i) + " ");
+        }
         System.out.println();
     }
 }
