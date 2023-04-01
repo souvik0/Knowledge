@@ -112,9 +112,11 @@ public class BinarySearchTree {
         pre.next = null;
         BinaryTreeNode root = new BinaryTreeNode(slow.value);
         // Left of mid supposed to be left subtree
-        root.left = sorted_list_to_bst(dummy.next);
+        BinaryTreeNode leftSubTree = sorted_list_to_bst(dummy.next);
+        root.left = leftSubTree;
         // Right of mid supposed to be right subtree
-        root.right = sorted_list_to_bst(slow.next);
+        BinaryTreeNode rightSubTree = sorted_list_to_bst(dummy.next);
+        root.right = rightSubTree;
 
         return root;
     }

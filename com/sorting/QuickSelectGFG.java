@@ -1,6 +1,6 @@
 package com.sorting;
 /* This algorithm is used to find out kth smallest element in the array/ list.
- * On the contrary, it is used to find out (n-k+1)th largest element in the array/list.
+ * On the contrary, it is used to find out (n-k)th largest element in the array/list.
  * Best Case : O(n)
  * Average case : O(n)
  * Worst Case (In case of skewed Tree) : O(n^2)

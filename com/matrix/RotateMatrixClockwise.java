@@ -8,7 +8,8 @@ package com.matrix;
 public class RotateMatrixClockwise {
 
     public static void main(String[] args) {
-        int mat[][] = {{1,2,},{4,5,}};
+        int mat[][] = {{1, 2},
+                       {4, 5}};
         System.out.println("The matrix before rotation ");
         print_matrix(mat);
         System.out.println("Transpose of the matrix ");
