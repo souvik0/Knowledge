@@ -35,6 +35,10 @@ public class FindLargestBST {
             return true;
         }
 
+        if (node.left == null && node.right == null) {
+            return true;
+        }
+
         // if the node's value falls outside the valid range
         if (node.value < min || node.value > max) {
             return false;

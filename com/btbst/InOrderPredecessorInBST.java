@@ -3,7 +3,7 @@ package com.btbst;
 public class InOrderPredecessorInBST {
 
     public static void main(String[] args) {
-        int[] keys = { 15, 10, 20, 8, 12, 16, 25 };
+        int[] keys = { 15, 10, 20, 8, 12, 16, 25};
 
          /* Construct the following tree
                     15

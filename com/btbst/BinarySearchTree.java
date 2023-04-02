@@ -34,7 +34,7 @@ public class BinarySearchTree {
         }
     }
 
-    // Minimum Height BST construction
+    // Minimum Height BST construction / BST from inOrder traversal
     public TreeNode convertSortedArrayToBST(int[] arr, int start, int end) {
         int mid = (start + end)/2 ;
         TreeNode root = new TreeNode(arr[mid]);
@@ -65,7 +65,7 @@ public class BinarySearchTree {
         // Assume it's a right skewed tree
         int rightSubtreeRoot = preOrderList.size();
 
-        /* Starting point of rightSubtree will always have higher have higher value than
+        /* Starting point of rightSubtree will always have higher value than
            ending point of left subtree.
            Applying the above value >= rightSubtreeRoot
         */
@@ -115,7 +115,7 @@ public class BinarySearchTree {
         BinaryTreeNode leftSubTree = sorted_list_to_bst(dummy.next);
         root.left = leftSubTree;
         // Right of mid supposed to be right subtree
-        BinaryTreeNode rightSubTree = sorted_list_to_bst(dummy.next);
+        BinaryTreeNode rightSubTree = sorted_list_to_bst(slow.next);
         root.right = rightSubTree;
 
         return root;

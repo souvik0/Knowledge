@@ -1,5 +1,6 @@
 package com.arrayString;
 
+// This problem also known as Dutch national flag problem.
 public class SortArray012 {
 
     public static void main(String[] args) {

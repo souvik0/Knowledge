@@ -716,6 +716,7 @@ public class BinaryTree {
         root.left.left = root.right;
         root.left.right = root;
         root.left = root.right = null;
+
         return flippedRoot;
     }
 }
