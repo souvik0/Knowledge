@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class FirstKElementWithOccurance {
+public class TopKFrequentEkemnts {
 
     public static void main(String[] args) {
         int[] arr = {3, 1, 4, 4, 5, 2, 6, 1};

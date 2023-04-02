@@ -45,6 +45,7 @@ public class CountOfInversion {
             }
         }
 
+        // Continuing merge sort
         while (i < left.length) {
             arr[k++] = left[i++];
         }

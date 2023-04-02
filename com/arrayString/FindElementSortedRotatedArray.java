@@ -25,7 +25,7 @@ public class FindElementSortedRotatedArray {
     public static void main(String[] args) {
         int array[] = {156, 235, 457, 21, 32, 43, 74, 75, 86, 97, 108, 149};
         findElementInSortedRotatedArrayTest(array, 108);
-        System.out.println("Shifted binary search Index: " + shiftedSearch(array, 0, array.length - 1, 108));
+        System.out.println("Shifted binary search Index: " + shiftedBinarySearch(array, 0, array.length - 1, 108));
     }
 
     private static void findElementInSortedRotatedArrayTest(int[] array, int numberToBeSerached) {
@@ -98,12 +98,13 @@ public class FindElementSortedRotatedArray {
     }
 
     // Approach without finding pivot. This is known as shifted binary search
-    public static int shiftedSearch(int arr[], int low, int high, int key) {
+    public static int shiftedBinarySearch(int arr[], int low, int high, int key) {
         if (low > high) {
             return -1;
         }
 
         int mid = (low + high) / 2;
+
         if (arr[mid] == key) {
             return mid;
         }
@@ -112,18 +113,19 @@ public class FindElementSortedRotatedArray {
         if (arr[low] <= arr[mid]) {
             /* As this subarray is sorted, we can quickly check if key lies in half or other half */
             if (key >= arr[low] && key < arr[mid]) {
-                return shiftedSearch(arr, low, mid - 1, key);
+                return shiftedBinarySearch(arr, low, mid - 1, key);
             } else {
                 /*If key not lies in first half subarray, Divide other half  into two subarrays,
                 such that we can quickly check if key lies in other half */
-                return shiftedSearch(arr, mid + 1, high, key);
+                return shiftedBinarySearch(arr, mid + 1, high, key);
             }
         }
         /* If arr[l..mid] first subarray is not sorted, 
          * then arr[mid... h] must be sorted subarray */
         if (key > arr[mid] && key <= arr[high]) {
-            return shiftedSearch(arr, mid + 1, high, key);
+            return shiftedBinarySearch(arr, mid + 1, high, key);
         }
-        return shiftedSearch(arr, low, mid - 1, key);
+
+        return shiftedBinarySearch(arr, low, mid - 1, key);
     }
 }
