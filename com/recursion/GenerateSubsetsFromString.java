@@ -6,7 +6,7 @@ import java.util.List;;
 public class GenerateSubsetsFromString {
 
     public static void main(String[] args) {
-        String str = "xy";
+        String str = "xyxz";
         List<List<Character>> subsets = subsets(str.toCharArray());
 
         for (List<Character> subset: subsets) {
@@ -25,6 +25,10 @@ public class GenerateSubsetsFromString {
         finalList.add(new ArrayList<>(resultList));
 
         for (int i = start; i < nums.length; i++){
+            // Avoid duplicates
+            if (resultList.contains(nums[i])) {
+                continue;
+            }
             // add element
             resultList.add(nums[i]);
             // Explore

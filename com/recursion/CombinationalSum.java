@@ -50,11 +50,12 @@ public class CombinationalSum {
         // For all other combinations
         for (int i = start; i < A.size(); i++) {
             // Check if the sum exceeds K
-            if (currentSum + A.get(i) > targetSum) {
+            int cureentSum = currentSum + A.get(i);
+            if (cureentSum > targetSum) {
                 continue;
             }
 
-            // Check if it is repeated or not
+            // To maintain non-uniqueness
             if (i > start && A.get(i) == A.get(i - 1)) {
                 continue;
             }
@@ -63,7 +64,7 @@ public class CombinationalSum {
             local.add(A.get(i));
 
             // Recursive call
-            unique_combination(i + 1, currentSum + A.get(i), targetSum, local, A);
+            unique_combination(i + 1, cureentSum, targetSum, local, A);
 
             // Remove element from the combination for backtracking
             local.remove(local.size() - 1);

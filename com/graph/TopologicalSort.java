@@ -47,7 +47,7 @@ public class TopologicalSort {
         // from all vertices one by one
         for (int i = 0; i < V; i++) {
             if (!visited[i]) {
-                 topologicalSortUtil(i, visited, stack);
+                topologicalSortUtil(i, visited, stack);
             }
         }
 

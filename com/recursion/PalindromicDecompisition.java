@@ -46,9 +46,8 @@ public class PalindromicDecompisition {
 
                 if (i + 1 < len) {
                     // recurr to get all the palindromic partitions for the substrings
-                	finalList = addStrings(finalList, s, temp, i + 1);
-                }
-                else {
+                    finalList = addStrings(finalList, s, temp, i + 1);
+                } else {
                     // if end of the string is reached add temp to v
                     finalList.add(temp);
                 }

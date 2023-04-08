@@ -34,7 +34,7 @@ public class NumberPadString {
     }
 
     private static List<String> printWords(int[] numbers, int len, int start, String s) {
-        // Recursion break condition
+        // Validation condition
         if (len == start) {
             return new ArrayList<>(Collections.singleton(s));
         }

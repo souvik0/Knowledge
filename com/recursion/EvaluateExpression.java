@@ -9,7 +9,7 @@ public class EvaluateExpression {
 
     public static void main(String[] args) {
         String input = "234";
-        int target = 10;
+        int target = 24;
         ArrayList<String> res = getExprssion(input, target);
         printResult(res);
 
@@ -26,8 +26,7 @@ public class EvaluateExpression {
         return resultList;
     }
 
-     // Utility recursive method to generate all possible
-    // expressions
+    // Utility recursive method to generate all possible expressions
     public static void getExpressionUtil(ArrayList<String> resultList,
                                          String curExp, String input,
                                          int target, int start, int curVal, int last) {
@@ -77,7 +76,7 @@ public class EvaluateExpression {
     // method to print result
     public static void printResult(ArrayList<String> res) {
         for (int i = 0; i < res.size(); i++) {
-             System.out.print(res.get(i) + " ");
+             System.out.print(res.get(i) + " | ");
         }
         System.out.println();
     }
