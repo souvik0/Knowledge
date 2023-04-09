@@ -51,14 +51,4 @@ public class Singleton implements Serializable, Cloneable {
     protected Singleton readResolve() {
         return getLazyInstance();
     }
-
-    // Implementation of BillPugh singleton
-    private static class LazyHolder {
-        public static final Singleton INSTANCE = new Singleton();
-    }
-
-    // Static factory instance method. Here it is referring BillPugh
-    public static Singleton getLazyHolderInstance() {
-        return LazyHolder.INSTANCE;
-    }
 }

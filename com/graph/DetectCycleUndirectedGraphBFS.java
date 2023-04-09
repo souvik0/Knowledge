@@ -35,14 +35,14 @@ public class DetectCycleUndirectedGraphBFS {
         graph.addEdge(2, 0);
         graph.addEdge(2, 3);
 
-        if (graph.isCyclicDisconntected()) {
+        if (graph.isCyclic()) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
         }
     }
 
-    public boolean isCyclicDisconntected() {
+    public boolean isCyclic() {
         // Mark all the vertices as not visited
         boolean visited[] = new boolean[V];
 
@@ -71,6 +71,7 @@ public class DetectCycleUndirectedGraphBFS {
             // If a adjacent has not been visited, then mark it visited and enqueue it.
             // We also mark parent so that parent is not considered for cycle.
             Iterator<Integer> itr = adj[polledVertex].listIterator();
+
             while (itr.hasNext()) {
                   int neighbor = itr.next();
                   if (!visited[neighbor]) {
@@ -82,6 +83,7 @@ public class DetectCycleUndirectedGraphBFS {
                   }
             }
         }
+
         return false;
     }
 }

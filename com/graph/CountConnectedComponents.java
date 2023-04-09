@@ -30,11 +30,11 @@ public class CountConnectedComponents {
         g.addEdge(1, 5);
         g.addEdge(0, 2);
         g.addEdge(2, 4);
-        g.DFS();
-        System.out.println("Number of Conneceted Components: " + g.ConnecetedComponents());
+        g.countConnectedComponents();
+        System.out.println("Number of Conneceted Components: " + g.connecetedComponents());
     }
 
-    public void DFS() {
+    public void countConnectedComponents() {
         boolean[] visited = new boolean[V];
 
         for (int i = 0; i < V; i++) {
@@ -58,7 +58,7 @@ public class CountConnectedComponents {
         }
     }
 
-    public int ConnecetedComponents() {
+    public int connecetedComponents() {
         return components.size();
     }
 }

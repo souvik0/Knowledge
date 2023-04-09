@@ -23,7 +23,7 @@ public class BoogleProblem {
              if (isValidMove(rowNew, colNew, visited, board)) {
                  visited[rowNew][colNew] = true;
                  findWord(board, visited, rowNew, colNew, word + board[rowNew][colNew], englishDictionary);
-                 // Backtracking logic goes here
+                 // Backtracking logic goes here to validate multiple words
                  visited[rowNew][colNew] = false;
              }
         }
@@ -51,6 +51,7 @@ public class BoogleProblem {
         englishDictionary.add("GO");
 
         String word = "";
+
         for (int i = 0; i < board.length; i++) {
             for (int j = 0 ; j < board[0].length; j++) {
                  findWord(board, visited, 0, 0, word + board[i][j], englishDictionary);
