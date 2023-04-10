@@ -36,3 +36,7 @@
 /ZombieCluster.class
 /ShortestDistanceToAGuard.class
 /ShortestDistanceToAGuard$Node.class
+/ShortestPathInBinaryMaze.class
+/ShortestPath$AdjListNode.class
+/ShortestPath$Graph.class
+/ShortestPath.class

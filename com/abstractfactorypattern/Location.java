@@ -2,7 +2,7 @@ package com.abstractfactorypattern;
 
 public enum Location {
 
-    INDIA("INDIA"), 
+    INDIA("INDIA"),
     USA("USA"), 
     DEFAULT("DEFAULT");
 

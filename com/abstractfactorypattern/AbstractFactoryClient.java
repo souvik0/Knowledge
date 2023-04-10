@@ -1,5 +1,9 @@
 package com.abstractfactorypattern;
 
+/* This represents one by one invocation of families of objects, where
+ * invocation of 2nd family depends on the invocation of 1st family objects
+ */
+
 public class AbstractFactoryClient {
 
     public static void main(String[] args) {
