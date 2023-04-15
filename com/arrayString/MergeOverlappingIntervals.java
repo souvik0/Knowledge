@@ -28,8 +28,7 @@ public class MergeOverlappingIntervals {
 
         // Traverse all input Intervals 
         for (int i = 1; i < intervalArr.length; i++) {
-            // If this is not first Interval and overlaps
-            // with the previous one
+            // If this is not first Interval and overlaps with the previous one
             if (intervalArr[index].end >= intervalArr[i].start) {
                 // Merge previous and current Intervals
                 intervalArr[index].end = Math.max(intervalArr[index].end, intervalArr[i].end);
@@ -49,7 +48,7 @@ public class MergeOverlappingIntervals {
 }
 
 class Interval {
-    int start,end;
+    int start, end;
 
     Interval(int start, int end) {
         this.start = start;

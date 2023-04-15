@@ -20,6 +20,7 @@ public class LongestUniqueSubString {
 
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+            // The below maintains uniqueness
             if (lastSeen.containsKey(ch)) {
                 // Formation of startIdx of every substring
                 startIdx = Math.max(startIdx, lastSeen.get(ch) + 1);
