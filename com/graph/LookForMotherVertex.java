@@ -61,10 +61,13 @@ public class LookForMotherVertex {
         for (boolean val : check) {
             if (!val) {
                 motherVertexList.add(-1);
+            } else {
+                if (!motherVertexList.contains(v)) {
+                    motherVertexList.add(v);
+                }
             }
         }
 
-        motherVertexList.add(v);
         return motherVertexList;
     }
 

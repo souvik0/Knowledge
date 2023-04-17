@@ -45,6 +45,21 @@ public class RotateMatrixClockwise {
         }
     }
 
+    public static void reverse_col(int mat[][]) {
+        // Here while traversing, row needs to be fixed
+        int k;
+        for (int i = 0; i < mat.length; i++) {
+            k = mat.length - 1;
+            for (int j = 0; j < k; j++) {
+                // Substitution used to take place
+                int temp = mat[j][i];
+                mat[j][i] = mat[k][i];
+                mat[k][i] = temp;
+                k--;
+            }
+        }
+    }
+
     // Function to print the matrix
     public static void print_matrix(int mat[][]) {
         for (int i = 0; i < mat.length; i++) {

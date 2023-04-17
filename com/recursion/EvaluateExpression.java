@@ -42,11 +42,6 @@ public class EvaluateExpression {
 
         // loop to put operator at all positions
         for (int i = start; i < input.length(); i++) {
-            // ignoring case which start with 0 as they are useless for evaluation
-            if (i != start && input.charAt(start) == '0') {
-                break;
-            }
-
             // take part of input from pos to i
             String part = input.substring(start, i + 1);
 
@@ -61,12 +56,8 @@ public class EvaluateExpression {
             else {
                 getExpressionUtil(resultList, curExp + "+" + part, input, target, i + 1,
                                   curVal + cur, cur);
-                /*getExpressionUtil(resultList, curExp + "-" + part, input, target, i + 1,
-                                  curVal - cur, -cur);*/
                 getExpressionUtil(resultList, curExp + "-" + part, input, target, i + 1,
                                   curVal - cur, cur);
-                /*getExpressionUtil(resultList, curExp + "*" + part, input, target, i + 1,
-                                  curVal -last + last * cur, last * cur); */
                 getExpressionUtil(resultList, curExp + "*" + part, input, target, i + 1,
                                   curVal * cur, cur);
             }

@@ -21,15 +21,15 @@ public class AttendMeetings {
         System.out.println("Person can attend all the meetings: " + can_attend_all_meetings(meetingIntervals));
     }
 
-    public static boolean can_attend_all_meetings(int[][] intervals) {
-        Arrays.sort(intervals, new Comparator<int[]>() {
+    public static boolean can_attend_all_meetings(int[][] meetingIntervals) {
+        Arrays.sort(meetingIntervals, new Comparator<int[]>() {
                     public int compare(int[] i1, int[] i2) {
-                    return i1[0] - i2[0];
+                        return i1[0] - i2[0];
                     }
         });
 
-        for (int i = 0; i < intervals.length - 1; i++) {
-            if (intervals[i][1] > intervals[i + 1][0]) {
+        for (int i = 0; i < meetingIntervals.length - 1; i++) {
+            if (meetingIntervals[i][1] > meetingIntervals[i + 1][0]) {
                 return false;
             }
         }

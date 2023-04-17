@@ -38,18 +38,13 @@ public class KnightTourProblem {
                 sol[x][y] = -1;
             }
         }
-        /* xMove[] and yMove[] define next move of Knight.
-           xMove[] is for next value of x coordinate
-           yMove[] is for next value of y coordinate */
-        int rowMove[] = {2, 1, -1, -2, -2, -1, 1, 2};
-        int colMove[] = {1, 2, 2, 1, -1, -2, -2, -1};
 
         // Since the Knight is initially at the first block
         sol[0][0] = 0;
 
         /* Start from 0,0 and explore all tours using
            solveKTUtil() */
-        if (!solveKTUtil(0, 0, 0, sol, rowMove, colMove)) {
+        if (!solveKTUtil(0, 0, 0, sol)) {
             System.out.println("Solution does not exist");
         }
         else {
@@ -59,21 +54,28 @@ public class KnightTourProblem {
 
     /* A recursive utility function to solve Knight
        Tour problem */
-    public static boolean solveKTUtil(int row, int col, int movePointer, int sol[][], int rowMove[], int colMove[]) {
+    public static boolean solveKTUtil(int startRow, int startCol, int movePointer,
+                                      int sol[][]) {
         // Recursion break condition to reach end of chess board
         if (movePointer == N * N) {
             return true;
         }
 
+        /* xMove[] and yMove[] define next move of Knight.
+        xMove[] is for next value of x coordinate
+        yMove[] is for next value of y coordinate */
+        int rowMove[] = {2, 1, -1, -2, -2, -1, 1, 2};
+        int colMove[] = {1, 2, 2, 1, -1, -2, -2, -1};
+
         /* Try all next moves from the current coordinate x, y */
         for (int k = 0; k < rowMove.length; k++) {
-            int next_row = row + rowMove[k];
-            int next_col = col + colMove[k];
+            int next_row = startRow + rowMove[k];
+            int next_col = startCol + colMove[k];
 
             if (isSafe(next_row, next_col, sol)) {
                 movePointer++;
                 sol[next_row][next_col] = movePointer;
-                if (solveKTUtil(next_row, next_col, movePointer, sol, rowMove, colMove)) {
+                if (solveKTUtil(next_row, next_col, movePointer, sol)) {
                     return true;
                 }
                 // Backtracking will take place once it is reached to end of board.
