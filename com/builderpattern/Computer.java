@@ -1,4 +1,4 @@
-package com.builderpattern;
+\package com.builderpattern;
 
 /* Builder pattern creates immutable objects with large set of state parameters.
  * So,there will not be any setter method.
@@ -9,13 +9,13 @@ package com.builderpattern;
 public final class Computer {
 
     // Mandatory Properties
-    public final String RAM;
-    public final String ROM;
-    public final String HDD;
+    private final String RAM;
+    private final String ROM;
+    private final String HDD;
 
     // Optional Properties
-    public final boolean isGraphicsEnabled;
-    public final DisplayType displayType;
+    private final boolean isGraphicsEnabled;
+    private final DisplayType displayType;
 
     // Private constructor should be present, so that it can't be invoked from outside
     private Computer(ComputerBuilder builder) {
