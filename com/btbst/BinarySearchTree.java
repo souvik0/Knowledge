@@ -262,50 +262,6 @@ public class BinarySearchTree {
         }
     }
 
-    /* inOrder traversal starting from left of the tree
-     * This will flattening the tree in ascending order
-    */
-    public TreeNode kthSmallestElementInBST(TreeNode root, int k) {
-        // Flattening the tree using inOrder traversal
-        if (root == null) {
-            return null;
-        }
-        TreeNode left = kthSmallestElementInBST(root.left, k);
-        if (left != null) {
-            return left;
-        }
-        // If kth smallest element isn't present in left side
-        countElementSmallest++;
-        // root can be the kth element also
-        if (countElementSmallest == k) {
-            return root;
-        }
-        // look for right side
-        return kthSmallestElementInBST(root.right, k);
-    }
-
-    /* inOrder traversal starting from right of the tree
-     * This will flattening the tree in descending order
-     */
-    public TreeNode kthLargestElementInBST(TreeNode root, int k) {
-        // Flattening the tree using inOrder traversal
-        if (root == null) {
-            return null;
-        }
-        TreeNode right = kthLargestElementInBST(root.right, k);
-        if (right != null) {
-            return right;
-        }
-        // If kth element isn't present in left side
-        countElementLargest++;
-        // root can be the kth element also
-        if (countElementLargest == k) {
-            return root;
-        }
-        // look for right side
-        return kthLargestElementInBST(root.left, k);
-    }
-
     public void findClosestValueInBST(TreeNode root, int target) {
         // Assuming root.data is the closest
         findClosestValueInBST(root, target, root.data);

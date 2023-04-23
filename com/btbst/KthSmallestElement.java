@@ -60,12 +60,3 @@ public class KthSmallestElement {
         return kthSmallest(root.right, counter, k);
     }
 }
-
-class Node {
-    int data;
-    Node left, right;
- 
-    Node(int data) {
-        this.data = data;
-    }
-}
