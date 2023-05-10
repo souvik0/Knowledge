@@ -1,0 +1,12 @@
+/Client.class
+/Coin.class
+/DispenseState.class
+/HasMoneyState.class
+/IdleState.class
+/Inventory.class
+/Item.class
+/ItemShelf.class
+/ItemType.class
+/SelectionState.class
+/State.class
+/VendingMachine.class
