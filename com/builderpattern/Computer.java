@@ -1,4 +1,4 @@
-\package com.builderpattern;
+package com.builderpattern;
 
 /* Builder pattern creates immutable objects with large set of state parameters.
  * So,there will not be any setter method.

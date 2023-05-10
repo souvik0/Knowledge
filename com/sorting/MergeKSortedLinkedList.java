@@ -18,9 +18,8 @@ public class MergeKSortedLinkedList {
         // of the output list and tail points to its last node
         Node head = null, last = null;
 
-     // run till min-heap is empty
-        while (!pq.isEmpty())
-        {
+        // run till min-heap is empty
+        while (!pq.isEmpty()) {
             // extract the minimum node from the min-heap
             Node min = pq.poll();
 

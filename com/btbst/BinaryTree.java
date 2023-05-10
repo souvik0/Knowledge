@@ -360,8 +360,7 @@ public class BinaryTree {
         }
 
         int distance = -1;
-        // Check if x is present at root or in left
-        // subtree or right subtree.
+        // Check if x is present at root or in left subtree or right subtree.
         if ((root.data == a.data) ||
            (distance = findDistanceFromRootToNode(root.left, a)) >= 0 ||
            (distance = findDistanceFromRootToNode(root.right, a)) >= 0) {
@@ -531,8 +530,7 @@ public class BinaryTree {
         root.right = temp;
     }
 
-    // Same algorithm to find depth of the tree
-    // Perform inorder traversal
+    // Same algorithm to find depth of the tree perform in-order traversal
     public int findDeepestLevelAndNode(TreeNode root) {
         findDeepestLevel(root, 0);
         System.out.println("Deepest level: " + deepestLevel);

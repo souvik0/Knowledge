@@ -9,7 +9,7 @@ public abstract class Car {
        this.model = model;
     }
 
-    // abstract method to be implemented by subclasses
+    // Abstract method to be implemented by subclasses
     public abstract void construct();
 
     public CarType getModel() {

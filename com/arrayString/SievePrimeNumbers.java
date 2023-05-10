@@ -18,6 +18,7 @@ public class SievePrimeNumbers {
         // Finding out multipliers of the number with square root of range
         for (int j = 2; j < Math.sqrt(range); j++) {
             if (primeChecker[j] == true) {
+                // Looking for multiplier
                 for (int k = (j*j); k < range; k = k + j) {
                      primeChecker[k] = false;
                 }

@@ -17,7 +17,7 @@ public class ReverseStringWithSpecialChar {
                 i++;
             } else if (!Character.isLetter(strChar[j])) {
                 j--;
-            } else {
+            } else { // Reversal used to take place here
                 char temp = strChar[i];
                 strChar[i] = strChar[j];
                 strChar[j] = temp;
