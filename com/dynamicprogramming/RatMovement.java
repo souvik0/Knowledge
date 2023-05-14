@@ -68,7 +68,7 @@ public class RatMovement {
         }
     }
 
-    public static void printSolution(int visited[][]) { 
+    public static void printSolution(int visited[][]) {
         for (int i = 0; i < visited.length; i++) { 
             for (int j = 0; j < visited[0].length; j++) {
                 System.out.print(" " + visited[i][j] + " "); 

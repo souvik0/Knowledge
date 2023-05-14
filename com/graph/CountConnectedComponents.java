@@ -22,7 +22,6 @@ public class CountConnectedComponents {
 
     public void addEdge(int vertex, int edge) {
         adj[vertex].add(edge);
-        adj[edge].add(vertex);
     }
 
     public static void main(String[] args) {

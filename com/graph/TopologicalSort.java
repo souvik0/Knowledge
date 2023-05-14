@@ -9,7 +9,7 @@ import java.util.Stack;
 public class TopologicalSort {
 
     private int V;
-    private List<Integer> adj[];
+    private List<Integer>[] adj;
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     public TopologicalSort(int v) {

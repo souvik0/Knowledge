@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class MinStepKnightProblem {
 
-    static class Cell {
+    public static class Cell {
         int x;
         int y;
         // additional property to count steps
@@ -38,11 +38,6 @@ public class MinStepKnightProblem {
         Queue<Cell> queue = new LinkedList<Cell>();
 
         boolean[][] visited = new boolean[n+1][n+1];
-        for (int i= 0; i < n ; i++) {
-            for (int j = 0; j < n ; j++) {
-                visited[i][j] = false;
-            }
-        }
 
         // Adding starting cell in the queue & mark it true in visited array
         queue.add(new Cell(knightPosition[0], knightPosition[1], 0));

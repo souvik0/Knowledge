@@ -46,16 +46,14 @@ public class KnightTourProblem {
            solveKTUtil() */
         if (!solveKTUtil(0, 0, 0, sol)) {
             System.out.println("Solution does not exist");
-        }
-        else {
+        } else {
             printSolution(sol);
         }
     }
 
     /* A recursive utility function to solve Knight
        Tour problem */
-    public static boolean solveKTUtil(int startRow, int startCol, int movePointer,
-                                      int sol[][]) {
+    public static boolean solveKTUtil(int startRow, int startCol, int movePointer, int sol[][]) {
         // Recursion break condition to reach end of chess board
         if (movePointer == N * N) {
             return true;

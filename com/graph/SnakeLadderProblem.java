@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class SnakeLadderProblem {
 
-    public static class qentry {
+    public static class Qentry {
         int v; // Vertex number
         int dist; // Distance of this vertex from source
     }
@@ -18,11 +18,11 @@ public class SnakeLadderProblem {
        snake or ladder at i takes to.
      */
 
-    static int getMinDiceThrows(int move[], int n) {
+    public static int getMinDiceThrows(int move[], int n) {
         int visited[] = new int[n]; // By default it gets initialized with 0.
 
-        Queue<qentry> queue = new LinkedList<>();
-        qentry qe = new qentry();
+        Queue<Qentry> queue = new LinkedList<>();
+        Qentry qe = new Qentry();
         qe.v = 0;
         qe.dist = 0;
 
@@ -47,7 +47,7 @@ public class SnakeLadderProblem {
                 // If the cell is unvisited
                 if (visited[j] == 0) {
                     // Otherwise calculate its distance and  mark it as visited
-                    qentry a = new qentry();
+                    Qentry a = new Qentry();
                     a.dist = (qe.dist + 1);
                     visited[j] = 1;
 

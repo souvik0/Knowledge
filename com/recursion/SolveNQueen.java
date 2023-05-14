@@ -11,7 +11,7 @@ public class SolveNQueen {
         List<List<String>> queen = solveNQueens(N);
         int i = 1;
 
-        for (List < String > it: queen) {
+        for (List<String> it: queen) {
             System.out.println("Arrangement " + i);
             for (String s: it) {
                 System.out.println(s);
@@ -24,6 +24,7 @@ public class SolveNQueen {
     public static List<List<String>> solveNQueens(int n) {
         char[][] board = new char[n][n];
 
+        // Initialize board
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 board[i][j] = '.';
@@ -45,6 +46,7 @@ public class SolveNQueen {
             if (validate(board, row, col)) {
                 board[row][col] = 'Q';
                 dfs(col + 1, board, res);
+                // Here backtracking taking place to evaluate other combinations
                 board[row][col] = '.';
             }
         }
@@ -63,7 +65,9 @@ public class SolveNQueen {
         int duprow = row;
         int dupcol = col;
         while (row >= 0 && col >= 0) {
-            if (board[row][col] == 'Q') return false;
+            if (board[row][col] == 'Q') {
+                return false;
+            }
             row--;
             col--;
         }
@@ -71,14 +75,18 @@ public class SolveNQueen {
         row = duprow;
         col = dupcol;
         while (col >= 0) {
-            if (board[row][col] == 'Q') return false;
+            if (board[row][col] == 'Q') {
+                return false;
+            }
             col--;
         }
 
         row = duprow;
         col = dupcol;
         while (col >= 0 && row < board.length) {
-            if (board[row][col] == 'Q') return false;
+            if (board[row][col] == 'Q') {
+                return false;
+            }
             col--;
             row++;
         }

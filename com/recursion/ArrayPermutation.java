@@ -14,7 +14,7 @@ public class ArrayPermutation {
         System.out.println("Permuations of array : [10, 20, 30] are:");
         System.out.println("=========================================");
 
-        for(List<Integer> perm : permute) {
+        for (List<Integer> perm : permute) {
             System.out.println(perm);
         }
     }

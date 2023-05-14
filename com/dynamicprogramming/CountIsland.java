@@ -17,8 +17,7 @@ public class CountIsland {
         int count = 0;
         for (int i = 0; i < ROW; ++i) {
             for (int j = 0; j < COL; ++j) {
-                if (M[i][j] == 1 && !visited[i][j]) // If a cell with
-                { // value 1 is not
+                if (M[i][j] == 1 && !visited[i][j]) { // If a cell with value 1 is not
                     // visited yet, then new island found, Visit all
                     // cells in this island and increment island count
                     count++;

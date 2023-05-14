@@ -7,6 +7,8 @@ package com.lrucache;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.text.Position;
+
 public class LRUCache<K, V> {
 
     private Map<K, EntryNode<K, V>> tempMap; // Temporary hash map to maintain get operation at O(1)
@@ -76,7 +78,7 @@ public class LRUCache<K, V> {
     }
 
     public void addAtFirst(EntryNode<K, V> newEntryObject) {
-        //If the node is not the first entry in the linked list
+        // If the node is not the first entry in the linked list
         if (start != null) {
             start.left = newEntryObject;
             newEntryObject.right = start;
@@ -90,8 +92,10 @@ public class LRUCache<K, V> {
         // Below if-else block specify first/middle node to be removed
         if (node.left != null) {
             node.left.right = node.right;
-        // If it is first node of the linked list to be removed
         } else {
+            /* If it is first node of the linked list to be removed. So start pointer will move
+               to next Position 
+            */
             start = start.right;
         }
 

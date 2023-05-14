@@ -2,7 +2,7 @@ package com.graph;
 
 public class ShortestPathInBinaryMaze {
 
-    static boolean[][] visited;
+    public static boolean[][] visited;
     public static void main(String[] args) {
         int[][] mat = new int[][] {{1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
                                    {1, 0, 1, 0, 1, 1, 1, 0, 1, 1},

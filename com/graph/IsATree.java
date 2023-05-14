@@ -34,8 +34,10 @@ public class IsATree {
         // The call to isCyclicUtil serves multiple purposes
         // It returns true if graph reachable from vertex 0 is cyclic.
         // It also marks all vertices reachable from 0.
-        if (isCyclicUtil(0, visited, -1)) {
-            return false;
+        for (int source = 0; source < V; source++) {
+             if (isCyclicUtil(source, visited, -1)) {
+                 return false;
+            }
         }
 
         // Checking if all vertex are being already visited at DFS traversal or not.

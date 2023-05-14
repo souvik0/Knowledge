@@ -13,14 +13,15 @@ public class DepthFirstTraversal {
        List<List<Integer>>.
        Actual structure looks like LinkedList<LinkedList<Integer>>
     */
-    private List<Integer> adj[];
+    private List<Integer>[] adj;
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     public DepthFirstTraversal(int v) {
         this.V = v;
         adj = new LinkedList[v];
-        for (int i = 0; i < v; ++i)
-            adj[i] = new LinkedList();
+        for (int i = 0; i < v; ++i) {
+            adj[i] = new LinkedList(); // Blank LinkedList initialized in every location
+        }
     }
 
     // Function to add an edge into the graph

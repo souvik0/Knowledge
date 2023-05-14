@@ -33,7 +33,7 @@ public class SolveSuduku {
                             board[i][j] = c;
                             if (solveSudoku(board)) {
                                 return true;
-                            } else {
+                            } else { // Here backtracking took place
                                 board[i][j] = '.';
                             }
                         }
@@ -56,7 +56,7 @@ public class SolveSuduku {
             }
 
             if (board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c) {
-              return false;
+                return false;
             }
         }
 
