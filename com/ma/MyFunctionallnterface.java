@@ -6,11 +6,11 @@ public interface MyFunctionallnterface<T> {
     // Single abstract method
     public void display(T name);
 
-    default void move(){
+    public default void move(){
         System.out.println("I am moving");
     }
 
-    static void moveAgain() {
+    public static void moveAgain() {
         System.out.println("Moving again");
     }
 

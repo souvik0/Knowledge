@@ -56,20 +56,20 @@ public class MergeKSortedLinkedList {
 
         // an array to store the head nodes of the linked lists
         Node[] lists = new Node[k];
- 
+
         lists[0] = new Node(1);
         lists[0].next = new Node(5);
         lists[0].next.next = new Node(7);
- 
+
         lists[1] = new Node(2);
         lists[1].next = new Node(3);
         lists[1].next.next = new Node(6);
         lists[1].next.next.next = new Node(9);
- 
+
         lists[2] = new Node(4);
         lists[2].next = new Node(8);
         lists[2].next.next = new Node(10);
- 
+
         // Merge all lists into one
         Node head = mergeKLists(lists);
         printList(head);

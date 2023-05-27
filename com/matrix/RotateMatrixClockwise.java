@@ -15,7 +15,8 @@ public class RotateMatrixClockwise {
         System.out.println("Transpose of the matrix ");
         transpose_matrix(mat);
         System.out.println("The matrix after rotation ");
-        reverse_rows(mat);
+        //reverse_rows(mat);
+        reverse_col(mat);
         print_matrix(mat);
     }
 

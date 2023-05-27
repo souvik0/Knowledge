@@ -4,7 +4,6 @@ package com.sorting;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
 /*
  * Insert & re-balance every time starting from the max heap.
  * This way we only allow number of element difference between maxHeap & minHeap to be 1 max.

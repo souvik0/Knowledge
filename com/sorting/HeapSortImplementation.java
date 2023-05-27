@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class HeapSortImplementation {
 
     public static void main(String[] args) {
-        int[] arr= {1,10,16,19,3,5};
+        int[] arr= {1, 10, 16, 19, 3, 5};
         System.out.println("Before Heap Sort: ");
         System.out.println(Arrays.toString(arr));
         arr = heapSort(arr);
