@@ -700,7 +700,7 @@ public class BinaryTree {
 
     public BinaryTreeNode flip_upside_down(BinaryTreeNode root) {
         if (root == null) {
-            return root;
+            return null;
         }
 
         if (root.left == null && root.right ==null) {

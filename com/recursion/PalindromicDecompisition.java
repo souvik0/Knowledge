@@ -7,8 +7,8 @@ public class PalindromicDecompisition {
 
     public static void main(String[] args) {
         String s = "geeks";
-        ArrayList<ArrayList<String>> partitions = new ArrayList<>();
-        partition(s, partitions);
+        ArrayList<ArrayList<String>> finalList = new ArrayList<>();
+        partition(s, finalList);
     }
 
     // Generates all palindromic partitions of 's' and

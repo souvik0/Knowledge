@@ -20,7 +20,7 @@ public class ConstructBSTFromPreorder {
         // Push root
         s.push(root);
 
-        // Iterate through rest of the size-1 items of given preorder array
+        // Iterate through rest of the size-1 items of given pre-order array
         for (int i = 1; i < size; ++i) {
             TreeNode temp = null;
 
@@ -47,7 +47,7 @@ public class ConstructBSTFromPreorder {
         return root;
     }
 
-    // A utility function to print inorder traversal of a Binary Tree
+    // A utility function to print in-order traversal of a Binary Tree
     public void printInorder(TreeNode node) {
         if (node == null) {
             return;

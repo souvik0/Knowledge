@@ -19,8 +19,7 @@ public class KthLargestElement {
 
         if (result != null) {
             System.out.printf("%d'th largest node is %d", k, result.data);
-        }
-        else {
+        } else {
             System.out.printf("%d'th largest node does not exist.", k);
         }
     }
@@ -35,8 +34,8 @@ public class KthLargestElement {
         return kthLargest(root, counter, k);
     }
 
- // Recursive function to find the k'th smallest node
-    // in the BST (using inorder traversal)
+    // Recursive function to find the k'th smallest node
+    // in the BST (using in-order traversal)
     public static Node kthLargest(Node root, AtomicInteger counter, int k) {
         // base case
         if (root == null) {
@@ -65,7 +64,7 @@ public class KthLargestElement {
 class Node {
     int data;
     Node left, right;
- 
+
     Node(int data) {
         this.data = data;
     }

@@ -46,6 +46,8 @@ public class SolveSuduku {
       }
 
     public static boolean isValid(char[][] board, int row, int col, char c) {
+        // Row always modulo operation
+        // Column always division operation
         for (int i = 0; i < 9; i++) {
             if (board[i][col] == c) {
                 return false;
