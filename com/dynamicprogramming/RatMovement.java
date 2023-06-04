@@ -20,7 +20,7 @@ public class RatMovement {
                 visited[i][j] = 0;
             }
         }
-       // move marked as 1 denoted that rat in already in the starting cell
+        // move marked as 1 denoted that rat in already in the starting cell
         pathInMaze(maze, visited, 1, 2, 2, 1, 1);
     }
 

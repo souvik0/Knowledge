@@ -23,6 +23,7 @@ public class SnakeLadderProblem {
 
         Queue<Qentry> queue = new LinkedList<>();
         Qentry qe = new Qentry();
+        // Because game starts from (0, 0) position
         qe.v = 0;
         qe.dist = 0;
 

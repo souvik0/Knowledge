@@ -32,22 +32,22 @@ public class FloodFill {
         }
     }
 
-    public static void floodFill(int[][] screen, int sr, int sc, int row, int col,
-                                 int prevColor, int newColor) {
+    public static void floodFill(int[][] screen, int sourceRow, int sourceColumn,
+                                 int row, int col, int prevColor, int newColor) {
         // Condition for checking out of bounds
-        if (sr < 0 || sr >= row || sc < 0 || sc >= col) {
+        if (sourceRow < 0 || sourceRow >= row || sourceColumn < 0 || sourceColumn >= col) {
             return;
         }
-        if (screen[sr][sc] != prevColor) {
+        if (screen[sourceRow][sourceColumn] != prevColor) {
             return;
         }
 
         // Assigning new color
-        screen[sr][sc] = newColor;
+        screen[sourceRow][sourceColumn] = newColor;
 
-        floodFill(screen, sr - 1, sc, row, col, prevColor, newColor); // left
-        floodFill(screen, sr + 1, sc, row, col, prevColor, newColor); // right
-        floodFill(screen, sr, sc + 1, row, col, prevColor, newColor); // top
-        floodFill(screen, sr, sc - 1, row, col, prevColor, newColor); // bottom
+        floodFill(screen, sourceRow - 1, sourceColumn, row, col, prevColor, newColor); // left
+        floodFill(screen, sourceRow + 1, sourceColumn, row, col, prevColor, newColor); // right
+        floodFill(screen, sourceRow, sourceColumn + 1, row, col, prevColor, newColor); // top
+        floodFill(screen, sourceRow, sourceColumn - 1, row, col, prevColor, newColor); // bottom
     }
 }

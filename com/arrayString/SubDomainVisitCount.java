@@ -23,7 +23,7 @@ public class SubDomainVisitCount {
 
         List<String> domainCountList = printSubDomainCount(domains);
         for (String subDomainCount : domainCountList) {
-              System.out.println(subDomainCount);
+             System.out.println(subDomainCount);
         }
     }
 
@@ -38,6 +38,7 @@ public class SubDomainVisitCount {
              StringBuilder sb = new StringBuilder();
 
              for (int i = subDomains.length -1 ; i >= 0; i--) {
+                  // Data are getting inserted from the last
                   if (i == subDomains.length -1) {
                       sb.append(subDomains[i]);
                   } else {

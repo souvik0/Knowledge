@@ -69,7 +69,7 @@ public class MinStepKnightProblem {
     }
 
     public boolean isValidMove(int x, int y, int n, boolean[][] visited) {
-        if ((x >=1) && (x <= n) && (y >=1) && (y <= n) && !visited[x][y]) {
+        if ((x >= 1) && (x <= n) && (y >= 1) && (y <= n) && !visited[x][y]) {
             return true;
         }
         return false;
@@ -77,7 +77,7 @@ public class MinStepKnightProblem {
 
     public static void main(String[] args) {
         MinStepKnightProblem minStepKnightProblem = new MinStepKnightProblem();
-        int mimimumSteps = minStepKnightProblem.minMove(30, 4, 5, 16, 22);
+        int mimimumSteps = minStepKnightProblem.minMove(64, 4, 5, 16, 22);
         System.out.println("Minimum no of steps required : " + mimimumSteps);
     }
 }

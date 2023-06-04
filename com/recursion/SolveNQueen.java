@@ -31,21 +31,21 @@ public class SolveNQueen {
             }
         }
 
-        List<List<String>> res = new ArrayList <List<String>>();
-        dfs(0, board, res);
-        return res;
+        List<List<String>> resultList = new ArrayList <List<String>>();
+        dfs(0, board, resultList);
+        return resultList;
     }
 
-    public static void dfs(int col, char[][] board, List<List<String>> res) {
+    public static void dfs(int col, char[][] board, List<List<String>> resultList) {
         if (col == board.length) {
-            res.add(construct(board));
+            resultList.add(construct(board));
             return;
         }
 
         for (int row = 0; row < board.length; row++) {
             if (validate(board, row, col)) {
                 board[row][col] = 'Q';
-                dfs(col + 1, board, res);
+                dfs(col + 1, board, resultList);
                 // Here backtracking taking place to evaluate other combinations
                 board[row][col] = '.';
             }
@@ -53,12 +53,12 @@ public class SolveNQueen {
     }
 
     public static List<String> construct(char[][] board) {
-        List<String> res = new LinkedList<String>();
+        List<String> resultList = new LinkedList<String>();
         for (int i = 0; i < board.length; i++) {
             String s = new String(board[i]);
-            res.add(s);
+            resultList.add(s);
         }
-        return res;
+        return resultList;
     }
 
     public static boolean validate(char[][] board, int row, int col) {
