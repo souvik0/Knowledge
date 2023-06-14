@@ -2,8 +2,12 @@ package com.chainofresponsibilityLogging;
 
 public class ConsoleLogger implements Logger {
 
-    Logger nextLogger;
-    int level;
+    public Logger nextLogger;
+    public int level;
+
+    public ConsoleLogger(int level) {
+        this.level = level;
+    }
 
     @Override
     public void setNextLogger(Logger nextLogger) {

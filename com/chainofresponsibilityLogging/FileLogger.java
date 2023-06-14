@@ -2,8 +2,12 @@ package com.chainofresponsibilityLogging;
 
 public class FileLogger implements Logger {
 
-    Logger nextLogger;
-    int level;
+    public Logger nextLogger;
+    public int level;
+
+    public FileLogger(int level) {
+        this.level = level;
+    }
 
     @Override
     public void setNextLogger(Logger nextLogger) {
@@ -12,7 +16,7 @@ public class FileLogger implements Logger {
 
     @Override
     public void logMessage(int logLevel, String message) {
-        if (level <= logLevel){
+        if (this.level <= logLevel){
             write(message);
         }
         if (nextLogger !=null){
@@ -22,6 +26,6 @@ public class FileLogger implements Logger {
 
     @Override
     public void write(String message) {
-       System.out.println("Standard Console::Logger: " + message);
+       System.out.println("Standard File::Logger: " + message);
     }
 }
