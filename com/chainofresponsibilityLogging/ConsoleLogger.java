@@ -1,6 +1,6 @@
 package com.chainofresponsibilityLogging;
 
-public class ConsoleLogger implements Logger {
+public class ConsoleLogger extends AbstractLogObserver implements Logger {
 
     public Logger nextLogger;
     public int level;
@@ -26,6 +26,14 @@ public class ConsoleLogger implements Logger {
 
     @Override
     public void write(String message) {
-       System.out.println("Standard Console::Logger: " + message);
+        System.out.println("Standard Console::Logger: " + message);
+        notifyLogObserver();
+    }
+
+    @Override
+    public void notifyLogObserver() {
+        for (LogObserver logObserver : logObserverList) {
+             logObserver.updateObserver();
+        }
     }
 }

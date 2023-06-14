@@ -1,6 +1,6 @@
 package com.chainofresponsibilityLogging;
 
-public class FileLogger implements Logger {
+public class FileLogger extends AbstractLogObserver implements Logger {
 
     public Logger nextLogger;
     public int level;
@@ -26,6 +26,14 @@ public class FileLogger implements Logger {
 
     @Override
     public void write(String message) {
-       System.out.println("Standard File::Logger: " + message);
+        System.out.println("Standard File::Logger: " + message);
+        notifyLogObserver();
+    }
+
+    @Override
+    public void notifyLogObserver() {
+        for (LogObserver logObserver : logObserverList) {
+             logObserver.updateObserver();
+        }
     }
 }

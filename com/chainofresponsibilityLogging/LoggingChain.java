@@ -2,19 +2,28 @@ package com.chainofresponsibilityLogging;
 
 public class LoggingChain {
 
-   private static Logger getChainOfLoggers(int logLevel){
+   private static FileLogger getChainOfLoggers(int logLevel){
        if (logLevel == LogLevel.INFO) {
            FileLogger fileInfoLogger = new FileLogger(LogLevel.INFO);
            ConsoleLogger consoleInfoLogger = new ConsoleLogger(LogLevel.INFO);
+           Splunk splunk = new Splunk();
+
+           fileInfoLogger.registerLogObserver(splunk);
+           consoleInfoLogger.registerLogObserver(splunk);
 
            fileInfoLogger.setNextLogger(consoleInfoLogger);
            consoleInfoLogger.setNextLogger(null);
+
            return fileInfoLogger;
        }
 
        if (logLevel == LogLevel.DEBUG) {
            FileLogger fileDebugLogger = new FileLogger(LogLevel.DEBUG);
            ConsoleLogger consoleDebugLogger = new ConsoleLogger(LogLevel.DEBUG);
+           Kivana kivana = new Kivana();
+
+           fileDebugLogger.registerLogObserver(kivana);
+           consoleDebugLogger.registerLogObserver(kivana);
 
            fileDebugLogger.setNextLogger(consoleDebugLogger);
            consoleDebugLogger.setNextLogger(null);
@@ -24,6 +33,12 @@ public class LoggingChain {
        if (logLevel == LogLevel.ERROR) {
            FileLogger fileErrorLogger = new FileLogger(LogLevel.ERROR);
            ConsoleLogger consoleErrorLogger = new ConsoleLogger(LogLevel.ERROR);
+
+           Splunk splunk = new Splunk();
+           Kivana kivana = new Kivana();
+
+           fileErrorLogger.registerLogObserver(splunk);
+           consoleErrorLogger.registerLogObserver(kivana);
 
            fileErrorLogger.setNextLogger(consoleErrorLogger);
            consoleErrorLogger.setNextLogger(null);

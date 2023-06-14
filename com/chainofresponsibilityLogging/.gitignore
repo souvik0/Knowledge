@@ -3,3 +3,7 @@
 /LogLevel.class
 /Logger.class
 /LoggingChain.class
+/AbstractLogObserver.class
+/Kivana.class
+/LogObserver.class
+/Splunk.class
