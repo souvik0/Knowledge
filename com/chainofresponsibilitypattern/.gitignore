@@ -1,8 +1,6 @@
-/ATMWithdrawal.class
-/Client.class
-/FiftyRupeeDispenser.class
-/HundredRupeeDispenser.class
-/PaperCurrency.class
-/PaperCurrencyDispenser.class
-/TenRupeeDispenser.class
-/TwentyRupeeDispenser.class
+/ATMDispenseChain.class
+/Currency.class
+/DispenseChain.class
+/Dollar10Dispenser.class
+/Dollar20Dispenser.class
+/Dollar50Dispenser.class

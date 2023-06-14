@@ -1,4 +1,4 @@
-package com.chainofresponsibilitypattern2;
+package com.chainofresponsibilitypattern;
 
 import java.util.Scanner;
 
@@ -25,6 +25,7 @@ public class ATMDispenseChain {
             try (Scanner input = new Scanner(System.in)) {
                  amount = input.nextInt();
             }
+            // Validate the input
             if (amount % 10 != 0) {
                 System.out.println("Amount should be in multiple of 10s.");
             }

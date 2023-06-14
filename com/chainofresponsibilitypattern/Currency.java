@@ -1,11 +1,11 @@
-package com.chainofresponsibilitypattern2;
+package com.chainofresponsibilitypattern;
 
 public class Currency {
 
     private int amount;
 
-    public Currency(int amt){
-        this.amount=amt;
+    public Currency(int amount){
+        this.amount = amount;
     }
 
     public int getAmount(){

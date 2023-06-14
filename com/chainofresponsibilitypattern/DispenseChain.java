@@ -1,4 +1,4 @@
-package com.chainofresponsibilitypattern2;
+package com.chainofresponsibilitypattern;
 
 public interface DispenseChain {
 
