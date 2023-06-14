@@ -2,8 +2,8 @@ package com.flyweight;
 
 public class ThickPen implements Pen {
 
-    String brushSize = BrushSize.THICK.toString(); //Intrinsic shareable property
-    String color = null; // Extrinsic non-shareable property
+    String brushSize = BrushSize.THICK.toString(); //Intrinsic property
+    String color = null; // Extrinsic property
 
     @Override
     public void setColor(String color) {

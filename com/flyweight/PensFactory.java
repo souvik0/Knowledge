@@ -12,7 +12,7 @@ public class PensFactory {
         Pen pen = pensMap.get(key);
 
         if (pen != null) {
-           return pen;
+            return pen;
         } else {
             pen = new ThickPen();
             pen.setColor(color);
@@ -26,7 +26,7 @@ public class PensFactory {
         Pen pen = pensMap.get(key);
 
         if (pen != null) {
-           return pen;
+            return pen;
         } else {
             pen = new ThinPen();
             pen.setColor(color);
@@ -40,7 +40,7 @@ public class PensFactory {
         Pen pen = pensMap.get(key);
 
         if (pen != null) {
-           return pen;
+            return pen;
         } else {
             pen = new MediumPen();
             pen.setColor(color);

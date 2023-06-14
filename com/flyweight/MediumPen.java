@@ -2,8 +2,8 @@ package com.flyweight;
 
 public class MediumPen implements Pen {
 
-    String brushSize = BrushSize.MEDIUM.toString();
-    String color = null;
+    String brushSize = BrushSize.MEDIUM.toString(); // Intrinsic property
+    String color = null; // Extrinsic property
 
     @Override
     public void setColor(String color) {
