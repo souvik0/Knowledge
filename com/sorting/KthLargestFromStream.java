@@ -67,7 +67,7 @@ public class KthLargestFromStream {
         return list;
     }
 
-    static ArrayList<Integer> kth_largest(Integer k, ArrayList<Integer> initial_stream, ArrayList<Integer> append_stream) {
+    public static ArrayList<Integer> kth_largest(Integer k, ArrayList<Integer> initial_stream, ArrayList<Integer> append_stream) {
         ArrayList<Integer> finalList = new ArrayList<>();
 
         for (Integer val : initial_stream) {

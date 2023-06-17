@@ -161,7 +161,7 @@ public class BinarySearchTree {
         Queue<QueuePack> queue = new LinkedList<QueuePack>();
 
         if (root == null) {
-           return;
+            return;
         } else {
            queue.add(new QueuePack(level, root));
            while (!queue.isEmpty()) {
@@ -300,8 +300,7 @@ public class BinarySearchTree {
         inorder(root.right, v);
     }
 
-    // Function to convert Binary Tree to Circular
-    // Doubly Linked list using the vector which stores
+    // Function to convert Binary Tree to Circular Doubly Linked list using the vector which stores
     // In-Order traversal of the Binary Tree
     public BinaryTreeNode bTreeToCList(BinaryTreeNode root) {
         // Base cases

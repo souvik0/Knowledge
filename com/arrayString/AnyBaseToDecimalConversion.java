@@ -6,13 +6,11 @@ public class AnyBaseToDecimalConversion {
         String str = "1172";
         int base = 8;
         System.out.println("Decimal equivalent of " + str + " in base "+ base + " is "+ " " +
-                            toDeci(str, base));
+                           convertToDecimal(str, base));
     }
 
-    // Function to convert a
-    // number from given base
-    // 'b' to decimal
-    public static int toDeci(String str, int base) {
+    // Function to convert a number from given base 'b' to decimal
+    public static int convertToDecimal(String str, int base) {
         int len = str.length();
         int power = 1; // Initialize power of base
         int num = 0; // Initialize result

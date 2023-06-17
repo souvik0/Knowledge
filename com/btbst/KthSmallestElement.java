@@ -12,11 +12,11 @@ public class KthSmallestElement {
         root.left.right = new Node(12);
         root.right.left = new Node(16);
         root.right.right = new Node(25);
- 
+
         int k = 4;
         // find the k'th smallest node
         Node result = findKthSmallest(root, k);
- 
+
         if (result != null) {
             System.out.printf("%d'th smallest node is %d", k, result.data);
         }
@@ -35,7 +35,7 @@ public class KthSmallestElement {
     }
 
     // Recursive function to find the k'th smallest node
-    // in the BST (using inorder traversal)
+    // in the BST (using in-order traversal)
     public static Node kthSmallest(Node root, AtomicInteger counter, int k) {
         // base case
         if (root == null) {

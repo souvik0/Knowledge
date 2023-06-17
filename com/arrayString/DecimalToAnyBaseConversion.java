@@ -3,18 +3,18 @@ package com.arrayString;
 public class DecimalToAnyBaseConversion {
 
     public static void main(String[] args) {
-        int inputNum = 634, base = 8;
-        System.out.println("Equivalent of " + inputNum + " in base "+ base +" is " +
-                           fromDeci(base, inputNum));
+        int inputNum = 2206, targetBase = 16;
+        System.out.println("Equivalent of " + inputNum + " in base "+ targetBase +" is " +
+                           decimalToAny(targetBase, inputNum));
     }
 
-    public static String fromDeci(int base, int inputNum) {
+    public static String decimalToAny(int targetBase, int inputNum) {
         String result = "";
         // Convert input number is given base by repeatedly dividing it by base and 
         // taking remainder
         while (inputNum > 0) {
-            result += reVal(inputNum % base);
-            inputNum /= base;
+            result += reVal(inputNum % targetBase);
+            inputNum /= targetBase;
         }
 
         StringBuilder ix = new StringBuilder();

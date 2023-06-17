@@ -35,9 +35,8 @@ public class TopKFrequentEkemnts {
             }
         }
 
-       // Create a Priority Queue to sort based on the count
-       // or on the key if the count is same
-       // Here priority queue is storing most frequent element first & then
+       // Create a Priority Queue to sort based on the count or on the key if the count 
+       // is same. Here priority queue is storing most frequent element first & then
        // in order of integer of same frequency element
        PriorityQueue<Map.Entry<Integer, Integer>> priorityQueue = new PriorityQueue<Map.Entry<Integer, Integer>> (
            (a, b) -> a.getValue().equals(b.getValue()) ? Integer.compare(b.getKey(), a.getKey()):

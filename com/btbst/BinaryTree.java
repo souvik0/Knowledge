@@ -497,7 +497,7 @@ public class BinaryTree {
     }
 
     // Combination of identical & mirror tree condition
-    public boolean isIsomorphic(TreeNode root1, TreeNode root2) {
+    public boolean isIsomorphicTree(TreeNode root1, TreeNode root2) {
         if (root1 == null && root2 == null) {
             return true;
         }
@@ -580,18 +580,18 @@ public class BinaryTree {
     }
 
     public void calculateBranchSum(TreeNode root, int currentSum, List<Integer> branchSumList) {
-       if (root == null) {
-           return;
-       }
+        if (root == null) {
+            return;
+        }
 
-       currentSum = currentSum + root.data;
-       // Recursion terminating condition
-       if (root.left == null & root.right == null) {
-           branchSumList.add(currentSum);
-       }
+        currentSum = currentSum + root.data;
+        // Recursion terminating condition
+        if (root.left == null & root.right == null) {
+            branchSumList.add(currentSum);
+        }
 
-       calculateBranchSum(root.left, currentSum, branchSumList);
-       calculateBranchSum(root.right, currentSum, branchSumList);
+        calculateBranchSum(root.left, currentSum, branchSumList);
+        calculateBranchSum(root.right, currentSum, branchSumList);
     }
 
     // Flattening of binary tree means converting a binary tree into array or Doubly LinkedList
@@ -600,7 +600,7 @@ public class BinaryTree {
         // Needs to flatten linked List structure
         for (int i = 0; i < listOfInOrderNodes.size(); i++) {
             TreeNode leftNode = listOfInOrderNodes.get(i);
-            TreeNode rightNode = listOfInOrderNodes.get(i+1);
+            TreeNode rightNode = listOfInOrderNodes.get(i + 1);
 
             // Here converting to Doubly linked List
             leftNode.right = rightNode;
@@ -703,7 +703,7 @@ public class BinaryTree {
             return null;
         }
 
-        if (root.left == null && root.right ==null) {
+        if (root.left == null && root.right == null) {
             return root;
         }
 

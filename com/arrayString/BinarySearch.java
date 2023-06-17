@@ -24,11 +24,9 @@ public class BinarySearch {
             int midIndex = left + (right-left)/2;
             if (arr[midIndex] == numberToBeSearched) {
                return midIndex;
-            }
-            if (arr[midIndex] < numberToBeSearched) {
+            } else if (arr[midIndex] < numberToBeSearched) {
                 left = midIndex + 1;
-            }
-            if (arr[midIndex] > numberToBeSearched) {
+            }else if (arr[midIndex] > numberToBeSearched) {
                 right = midIndex -1;
             }
         }

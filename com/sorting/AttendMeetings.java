@@ -23,9 +23,9 @@ public class AttendMeetings {
 
     public static boolean can_attend_all_meetings(int[][] meetingIntervals) {
         Arrays.sort(meetingIntervals, new Comparator<int[]>() {
-                    public int compare(int[] i1, int[] i2) {
-                        return i1[0] - i2[0];
-                    }
+            public int compare(int[] i1, int[] i2) {
+                return i1[0] - i2[0];
+            }
         });
 
         for (int i = 0; i < meetingIntervals.length - 1; i++) {

@@ -1,7 +1,7 @@
 package com.sorting;
 
 /* 1. Create Max Heap (General procedure O(nlogn)) from the given array using heapify algorithm.
- * Time complexity O(n).
+ *    Time complexity O(n).
    2. Delete element one by one & put into the last index of the array
       a. delete from root
       b. put deleted element at free space in array(ideally last position onwards)
@@ -25,7 +25,7 @@ public class HeapSortImplementation {
     public static int[] heapSort(int[] array) {
         // Build heap from Array using heapify mechanism
         buildHeap(array);
-        int sizeOfHeap = array.length -1;
+        int sizeOfHeap = array.length - 1;
         /* start deleting elements from heap one by one & maintain heap property
            Delete element one by one 
            a. delete from root

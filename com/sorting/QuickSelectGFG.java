@@ -11,7 +11,7 @@ package com.sorting;
  * then we recur for left part. If index is same as k,
  * we have found the k-th smallest element and we return.
  * If index is less than k, then we recur for right part.
- * This reduces the expected complexity from O(nlogn) to O(n), with a worst case of O(n^2).
+ * This reduces the expected time complexity from O(nlogn) to O(n).
 */
 public class QuickSelectGFG {
 
@@ -45,7 +45,8 @@ public class QuickSelectGFG {
      * can be used to find both kth largest and
      * kth smallest element in the array.
      * ASSUMPTION: all elements in arr[] are distinct
-    */
+     */
+    // kth smallest element stands out to be (k-1)th target element
     public static int kthSmallestElement(int[] arr, int low, int high, int k) {
         int partitionIndex = partition(arr, low, high);
 
@@ -59,6 +60,7 @@ public class QuickSelectGFG {
         }
     }
 
+    // kth largest element stands as (n-k) target element
     public static int KthLargestElement(int arr[], int n, int k) {
         if (n == 1) {
             return arr[0];

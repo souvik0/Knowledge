@@ -24,28 +24,20 @@ public class MergeTwoSortedArrays {
 
         while (i < n1 && j < n2) {
             if (arr1[i] < arr2[j]) {
-                mergedArray[k] = arr1[i];
-                i++;
-                k++;
+                mergedArray[k++] = arr1[i++];
             } else if (arr2[j] < arr1[i]){
-                mergedArray[k] = arr2[j];
-                j++;
-                k++;
+                mergedArray[k++] = arr2[j++];
             }
         }
 
         // Handle rest of the elements of arr1
         while (i < n1) {
-            mergedArray[k] = arr1[i];
-            i++;
-            k++;
+            mergedArray[k++] = arr1[i++];
         }
 
         // Handle rest of the elements of arr2
         while (j < n2) {
-            mergedArray[k] = arr2[j];
-            j++;
-            k++;
+            mergedArray[k++] = arr2[j++];
         }
 
         return mergedArray;
