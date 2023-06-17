@@ -5,7 +5,7 @@ public class MaximumSubArray {
 
     public static void main(String[] args) {
         int arr[] = {-2, -1, 13, -2, -3, 6, 8};
-        System.out.println("Maximum subarray : " + maximumSubArray(arr));
+        System.out.println("Maximum subarray: " + maximumSubArray(arr));
     }
 
     public static int maximumSubArray(int[] arr) {

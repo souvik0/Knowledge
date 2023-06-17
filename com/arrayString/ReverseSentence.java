@@ -18,10 +18,6 @@ public class ReverseSentence {
         String[] strArr = pattern.split(str);
         String result = "";
 
-        if (str == " ") {
-           result = " ";
-        }
-
         for (int i = 0; i < strArr.length; i++) {
             if (i == strArr.length - 1) {
                 result = strArr[i] + result;

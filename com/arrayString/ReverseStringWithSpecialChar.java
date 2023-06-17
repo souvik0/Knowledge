@@ -3,7 +3,7 @@ package com.arrayString;
 public class ReverseStringWithSpecialChar {
 
     public static void main(String[] args) {
-        String str = "!abcd";
+        String str = "!#ab$cd";
         System.out.println(reverseString(str));
     }
 
@@ -13,11 +13,13 @@ public class ReverseStringWithSpecialChar {
         int j = strChar.length - 1;
 
         while (i < j) {
-            if (!Character.isLetter(strChar[i])) {
+            while (!Character.isLetter(strChar[i])) {
                 i++;
-            } else if (!Character.isLetter(strChar[j])) {
+            }
+            while (!Character.isLetter(strChar[j])) {
                 j--;
-            } else { // Reversal used to take place here
+            }
+            if (i < j) { // Reversal used to take place here
                 char temp = strChar[i];
                 strChar[i] = strChar[j];
                 strChar[j] = temp;

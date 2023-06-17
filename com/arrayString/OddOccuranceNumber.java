@@ -24,13 +24,10 @@ public class OddOccuranceNumber {
              }
         }
 
-        Iterator<Entry<Integer, Integer>> itr = hmap.entrySet().iterator();
-
-        while (itr.hasNext()) {
-            Map.Entry<Integer, Integer> entry = (Map.Entry<Integer, Integer>) itr.next();
+        for (Map.Entry<Integer, Integer> entry : hmap.entrySet()) {
             if (entry.getValue() % 2 == 1) {
-                 System.out.println("Key: " + entry.getKey());
-            }
+                System.out.println("Key: " + entry.getKey());
+           }
         }
     }
 }

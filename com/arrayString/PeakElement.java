@@ -1,10 +1,8 @@
 package com.arrayString;
 
-    /*  
-    O(log n) time complexity
-    This problem can be solved with leader in array approach also,
-    but that imposes O(n) time complexity for worst case.
-    This algorithm applies for strictly increasing or decreasing order array.
+    /* O(log n) time complexity
+       This problem can be solved with leader in array approach also,
+       but that imposes O(n) time complexity for worst case.
     */
 
 public class PeakElement { 
@@ -39,7 +37,7 @@ public class PeakElement {
     // A wrapper over recursive function
     public static int findPeak(int arr[], int n) {
         int left = 0;
-        int right = n-1;
+        int right = n - 1;
         return findPeakUtil(arr, left, right, n);
     }
 
