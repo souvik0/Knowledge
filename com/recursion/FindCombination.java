@@ -9,7 +9,7 @@ public class FindCombination {
 
     public static void main(String[] args) {
         // given number
-        int n = 5; // Range
+        int n = 5; // Range starting from 1
         int k = 3; // Digits in the number
         finalVector = makeCombi(n, k);
     }

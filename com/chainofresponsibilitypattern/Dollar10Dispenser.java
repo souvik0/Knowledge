@@ -5,22 +5,22 @@ public class Dollar10Dispenser implements DispenseChain {
     private DispenseChain chain;
 
     @Override
-    public void setNextChain(DispenseChain nextChain) {
-        this.chain=nextChain;
+    public void setNextChain(DispenseChain nextCurrency) {
+        this.chain = nextCurrency;
     }
 
     @Override
-    public void dispense(Currency cur) {
-        if (cur.getAmount() >= 10){
-            int num = cur.getAmount()/10;
-            int remainder = cur.getAmount() % 10;
+    public void dispense(Currency currency) {
+        if (currency.getAmount() >= 10){
+            int num = currency.getAmount()/10;
+            int remainder = currency.getAmount() % 10;
             System.out.println("Dispensing "+ num +" 10$ note");
             // Here it is going to next dispenser
             if (remainder != 0) {
-                this.chain.dispense(new Currency(remainder));
+                chain.dispense(new Currency(remainder));
             }
         } else { // Here also it is going to next dispenser if required
-            this.chain.dispense(cur);
+            chain.dispense(currency);
         }
     }
 }

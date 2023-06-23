@@ -17,10 +17,13 @@ public class StringPermutation {
         // check if string is null
         if (str == null) {
             return null;
-        } else if (str.length() == 0) {
-          // terminating condition for recursion
-          permutations.add("");
-          return permutations;
+        } else if (str.length() == 0 || str.isEmpty()) {
+            // terminating condition for recursion
+            permutations.add("");
+            return permutations;
+        } else if (str.length() == 1) {
+            permutations.add(str);
+            return permutations;
         }
 
         // get the first character

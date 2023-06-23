@@ -15,7 +15,7 @@ public class PossibleBSTCountFromKey {
         }
 
         for (int i = 1 ; i <= n ; i++) {
-             result += countBST(n - i) * countBST(i - 1);
+            result += countBST(n - i) * countBST(i - 1);
         }
 
         return result;

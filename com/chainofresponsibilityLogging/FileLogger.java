@@ -1,6 +1,6 @@
 package com.chainofresponsibilityLogging;
 
-public class FileLogger extends AbstractLogObserver implements Logger {
+public class FileLogger extends AbstractLogObservable implements Logger {
 
     public Logger nextLogger;
     public int level;
@@ -19,7 +19,7 @@ public class FileLogger extends AbstractLogObserver implements Logger {
         if (this.level <= logLevel){
             write(message);
         }
-        if (nextLogger !=null){
+        if (nextLogger != null){
             nextLogger.logMessage(logLevel, message);
         }
     }

@@ -12,14 +12,14 @@ public class LetterCasePermutation {
     }
 
     public static List<String> letterCasePermutation(String str) {
+        List<String> resultList = new ArrayList<String>();
+
         int letterCount = 0;
         for (char letter: str.toCharArray()) {
             if (Character.isLetter(letter)) {
                 letterCount++;
             }
         }
-
-        List<String> resultList = new ArrayList<String>();
 
         for (int bits = 0; bits < 1 << letterCount; bits++) {
             int b = 0;

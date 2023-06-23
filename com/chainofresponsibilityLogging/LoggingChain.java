@@ -8,12 +8,10 @@ public class LoggingChain {
            ConsoleLogger consoleInfoLogger = new ConsoleLogger(LogLevel.INFO);
            Splunk splunk = new Splunk();
 
-           fileInfoLogger.registerLogObserver(splunk);
-           consoleInfoLogger.registerLogObserver(splunk);
-
            fileInfoLogger.setNextLogger(consoleInfoLogger);
            consoleInfoLogger.setNextLogger(null);
 
+           fileInfoLogger.registerLogObserver(splunk);
            return fileInfoLogger;
        }
 
@@ -22,11 +20,10 @@ public class LoggingChain {
            ConsoleLogger consoleDebugLogger = new ConsoleLogger(LogLevel.DEBUG);
            Kivana kivana = new Kivana();
 
-           fileDebugLogger.registerLogObserver(kivana);
-           consoleDebugLogger.registerLogObserver(kivana);
-
            fileDebugLogger.setNextLogger(consoleDebugLogger);
            consoleDebugLogger.setNextLogger(null);
+
+           fileDebugLogger.registerLogObserver(kivana);
            return fileDebugLogger;
        }
 

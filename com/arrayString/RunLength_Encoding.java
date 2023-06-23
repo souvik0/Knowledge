@@ -14,7 +14,7 @@ public class RunLength_Encoding {
 
             // index of for loop needs to be increased to avoid recurrence
             // Also needs to check reach of i
-            while (i < length -1 && str.charAt(i) == str.charAt(i+1)) {
+            while (i < length -1 && str.charAt(i) == str.charAt(i + 1)) {
                 counter++;
                 i++;
             }

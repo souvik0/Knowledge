@@ -3,7 +3,7 @@ package com.chainofresponsibilityLogging;
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class AbstractLogObserver {
+public abstract class AbstractLogObservable {
 
     List<LogObserver> logObserverList = new ArrayList<LogObserver>();
 

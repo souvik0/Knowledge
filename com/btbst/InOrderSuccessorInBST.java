@@ -66,7 +66,7 @@ public class InOrderSuccessorInBST {
             return succ;
         }
 
-         // if a node with the desired value is found, the successor is the minimum
+        // if a node with the desired value is found, the successor is the minimum
         // value node in its right subtree (if any)
         if (root.data == key) {
             if (root.right != null) {

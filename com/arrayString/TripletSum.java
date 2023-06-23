@@ -8,12 +8,13 @@ public class TripletSum {
     public static void main(String[] args) {
         int A[] = {0, -1, 2, -3, 1};
         int arr_size = A.length;
-        find3Numbers(A, arr_size, 0);
+        findTripletSum(A, arr_size, 0);
     }
 
-    public static void find3Numbers(int[] arr, int n, int givenSum) {
+    public static void findTripletSum(int[] arr, int n, int givenSum) {
         // sort array elements
         Arrays.sort(arr);
+
         for (int i = 0; i < n-1; i++) {
             // consider x representing ith element of the array
             int x = arr[i];
