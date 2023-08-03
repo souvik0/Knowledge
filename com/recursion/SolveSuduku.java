@@ -3,7 +3,7 @@ package com.recursion;
 public class SolveSuduku {
 
     public static void main(String[] args) {
-        char[][] board= {
+        char[][] board = {
                 {'9', '5', '7', '.', '1', '3', '.', '8', '4'},
                 {'4', '8', '3', '.', '5', '7', '1', '.', '6'},
                 {'.', '1', '2', '.', '4', '9', '5', '3', '7'},

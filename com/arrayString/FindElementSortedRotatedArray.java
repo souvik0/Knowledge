@@ -8,8 +8,8 @@ package com.arrayString;
 /*Using Binary Search:
     Step 1: Find index of pivot element (Index of minimum element)
     Step 2: Apply Binary Search on the sub array based on following conditions:
-        1. If number lies between start element and element at pivot-1 position, then find number in array[start..pivot-1] using binary search
-        2. Else if number lies between pivot and last element, then find number in array[pivot..end] using binary search */
+            a) If number lies between start element and element at pivot-1 position, then find number in array[start..pivot-1] using binary search
+            b) Else if number lies between pivot and last element, then find number in array[pivot..end] using binary search */
 /* Algorithm for finding index of pivot element (Minimum element):
     1. If array[0] <= array[length of array - 1], it means the array is not rotated, so return 0.
     2. Initialize start = 0, end = length of array - 1.

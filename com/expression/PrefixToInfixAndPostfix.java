@@ -55,7 +55,7 @@ public class PrefixToInfixAndPostfix {
                 // Concat the operands and operator
                 String result = operand1 + operand2 + prefixExpression.charAt(i);
                 tempStack.push(result);
-            } else { 
+            } else {
                 // To make character to string
                 tempStack.push(prefixExpression.charAt(i) + "");
             }

@@ -326,12 +326,10 @@ public class BinarySearchTree {
         // from the second elements
         for (int i = 1; i < v.size(); i++) {
 
-            // Create a temporary pointer
-            // pointing to current
+            // Create a temporary pointer pointing to current
             BinaryTreeNode temp = curr;
 
-            // Current's right points to the current
-            // node in traversal
+            // Current's right points to the current node in traversal
             curr.right = new BinaryTreeNode(v.get(i));
 
             // Current points to its right

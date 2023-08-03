@@ -42,6 +42,7 @@ public class SubDomainVisitCount {
                   if (i == subDomains.length -1) {
                       sb.append(subDomains[i]);
                   } else {
+                      // insert is equivalent to consistently adding at the first position
                       sb.insert(0, ".");
                       sb.insert(0, subDomains[i]);
                   }
@@ -57,11 +58,11 @@ public class SubDomainVisitCount {
         }
 
         for (String subDomain : subDomainVisitCountMap.keySet()) {
-             StringBuilder subDomainResult = new StringBuilder();
-             subDomainResult.append(subDomainVisitCountMap.get(subDomain));
-             subDomainResult.append(" ");
-             subDomainResult.append(subDomain);
-             subDomainCountList.add(subDomainResult.toString());
+            StringBuilder subDomainResult = new StringBuilder();
+            subDomainResult.append(subDomainVisitCountMap.get(subDomain));
+            subDomainResult.append(" ");
+            subDomainResult.append(subDomain);
+            subDomainCountList.add(subDomainResult.toString());
         }
 
         return subDomainCountList;

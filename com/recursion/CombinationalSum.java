@@ -2,7 +2,7 @@ package com.recursion;
 
 /*
  * Time Complexity: O(nlogn) for sorting, O(2^n) for generating a number of combinations.
- * If ‘k’ is the avg length of every combination then adding it to the resultant list would 
+ * If ‘k’ is the avg length of every combination then adding it to the resultant list would
  * take O(k x 2^n). Total complexity is O(nlogn) + O(k x 2^n).
  */
 import java.util.Arrays;

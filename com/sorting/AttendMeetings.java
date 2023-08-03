@@ -15,8 +15,8 @@ import java.util.Comparator;
 public class AttendMeetings {
 
     public static void main(String[] args) {
-        int meetingIntervals[][] = new int[][] {{1, 5},
-                                                {3, 8},
+        int meetingIntervals[][] = new int[][] {{1, 2},
+                                                {3, 12},
                                                 {10, 15}};
         System.out.println("Person can attend all the meetings: " + can_attend_all_meetings(meetingIntervals));
     }

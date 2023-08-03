@@ -19,7 +19,7 @@ public class SievePrimeNumbers {
         for (int j = 2; j < Math.sqrt(range); j++) {
             if (primeChecker[j] == true) {
                 // Looking for multiplier
-                for (int k = (j*j); k < range; k = k + j) {
+                for (int k = (j * j); k < range; k = k + j) {
                      primeChecker[k] = false;
                 }
             }

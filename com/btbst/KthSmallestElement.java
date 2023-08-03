@@ -1,5 +1,6 @@
 package com.btbst;
 
+//This operation can only be performed on a BST.
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class KthSmallestElement {

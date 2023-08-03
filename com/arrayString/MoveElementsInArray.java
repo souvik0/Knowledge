@@ -10,8 +10,8 @@ public class MoveElementsInArray {
         int K = 3;
         int[] ans = moveElement(arr, K);
 
-        for(int i = 0; i < arr.length; i++)
-           System.out.print(ans[i] + " ");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(ans[i] + " ");
     }
 
     public static int[] moveElement(int[] array, int toMove) {

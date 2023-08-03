@@ -8,12 +8,12 @@ public class BalancedParenthesis {
         String expression = "(141[])(){waga}((51afaw))()hh()";
         String expression2 = "10()";
         String expression3 = "{{}}()[()]";
-        System.out.println(balancedParenthesis(expression));
-        System.out.println(balancedParenthesis(expression2));
-        System.out.println(balancedParenthesis(expression3));
+        System.out.println(isBalanced(expression));
+        System.out.println(isBalanced(expression2));
+        System.out.println(isBalanced(expression3));
     }
 
-    public static boolean balancedParenthesis(String expression) {
+    public static boolean isBalanced(String expression) {
         Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < expression.length(); i++) {
              char ch = expression.charAt(i);
