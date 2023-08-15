@@ -32,6 +32,7 @@ public class PalindromicDecompisition {
 
         int len = s.length();
         String str = "";
+        // The same will be used in future for backtracking
         ArrayList<String> current = new ArrayList<>(resultList);
 
         // Iterate over the string

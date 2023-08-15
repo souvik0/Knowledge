@@ -186,7 +186,7 @@ public class BinaryTree {
 
     /**
      * level order traversal with max variable
-    */
+     */
     public int findMaxElement(TreeNode root) {
         int max = Integer.MIN_VALUE;
         Queue<TreeNode> queue = new LinkedList<TreeNode>();

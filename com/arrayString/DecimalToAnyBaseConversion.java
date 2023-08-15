@@ -3,8 +3,9 @@ package com.arrayString;
 public class DecimalToAnyBaseConversion {
 
     public static void main(String[] args) {
-        int inputNum = 2206, targetBase = 16;
-        System.out.println("Equivalent of " + inputNum + " in base "+ targetBase +" is " +
+        int inputNum = 2206;
+        int targetBase = 16;
+        System.out.println("Equivalent of " + inputNum + " in base "+ targetBase + " is " +
                            decimalToAny(targetBase, inputNum));
     }
 

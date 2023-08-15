@@ -1,5 +1,7 @@
 package com.recursion;
 
+// Range always starts from 1
+
 import java.util.Vector;
 
 public class FindCombination {

@@ -16,7 +16,7 @@ public class IndexofFirstOne {
         while (left <= right) {
             int mid = (left + right)/2; 
              // if true, then 'mid' is the index of first '1' 
-            // Cater no '0' present condition also.
+             // Cater no '0' present condition also.
             if (arr[mid] == 1 && (mid == 0 || arr[mid - 1] == 0)) {
                 return mid; 
             } else if (arr[mid] == 1) {// first 1 lies at left of mid

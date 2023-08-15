@@ -5,9 +5,21 @@ package com.btbst;
 public class FindLargestBST {
 
     public static void main(String[] args) {
+    	BinaryTreeNode root = new BinaryTreeNode(10);
+
+        root.left = new BinaryTreeNode(15);
+        root.right = new BinaryTreeNode(8);
+
+        root.left.left = new BinaryTreeNode(12);
+        root.left.right = new BinaryTreeNode(20);
+
+        root.right.left = new BinaryTreeNode(5);
+        root.right.right = new BinaryTreeNode(2);
+
+        System.out.println("The size of the largest BST is " + find_largest_bst(root));
     }
 
-    public Integer find_largest_bst(BinaryTreeNode root) {
+    public static Integer find_largest_bst(BinaryTreeNode root) {
         if (isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE)) {
             return size(root);
         }
@@ -15,7 +27,7 @@ public class FindLargestBST {
     }
 
     // Recursive function to calculate the size of a given binary tree
-    public int size(BinaryTreeNode root) {
+    public static int size(BinaryTreeNode root) {
         // base case: empty tree has size 0
         if (root == null) {
             return 0;
@@ -29,7 +41,7 @@ public class FindLargestBST {
     // Recursive function to determine if a given binary tree is a BST or not
     // by keeping a valid range (starting from [-INFINITY, INFINITY]) and
     // keep shrinking it down for each node as we go down recursively
-    static boolean isBST(BinaryTreeNode node, int min, int max) {
+    public static boolean isBST(BinaryTreeNode node, int min, int max) {
         // base case
         if (node == null) {
             return true;
