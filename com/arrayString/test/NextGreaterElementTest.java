@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class NextGreaterElementTest {
 
-	@Test
+    @Test
     public void testFindNextGreaterElement() {
         // Test case: Example input [4, 5, 2, 25]
         int[] input1 = {4, 5, 2, 25};

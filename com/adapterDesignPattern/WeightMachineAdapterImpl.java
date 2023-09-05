@@ -12,7 +12,7 @@ public class WeightMachineAdapterImpl implements WeightMachineAdapter {
     public double getWeightInKg() {
         double weightInPound = weightMachine.getWeightInPound();
 
-        //Convert it to KGs
+        // Convert it to KGs
         double weightInKg = weightInPound * .45;
         return weightInKg;
     }

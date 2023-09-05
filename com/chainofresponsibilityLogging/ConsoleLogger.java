@@ -33,6 +33,7 @@ public class ConsoleLogger extends AbstractLogObservable implements Logger {
     @Override
     public void notifyLogObserver() {
         for (LogObserver logObserver : logObserverList) {
+             logObserver.setSubject(this);
              logObserver.updateObserver();
         }
     }

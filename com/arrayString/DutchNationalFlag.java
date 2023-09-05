@@ -1,7 +1,7 @@
 package com.arrayString;
 
 // This problem also known as Dutch national flag problem.
-public class SortArray012 {
+public class DutchNationalFlag {
 
     public static void main(String[] args) {
         int arr[] = {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1};

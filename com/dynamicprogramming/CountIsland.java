@@ -5,6 +5,7 @@ public class CountIsland {
     static final int ROW = 4, COL = 5;
 
     public static void main(String[] args) {
+        // Here adjacency matrix is given
         int M[][] = new int[][] {{1, 1, 0, 0, 0},
                                  {1, 1, 0, 0, 0},
                                  {0, 0, 1, 0, 0},
@@ -41,10 +42,11 @@ public class CountIsland {
         // Mark this cell as visited
         visited[row][col] = true;
  
-        // Recur for all connected neighbours
+        // Recur for all connected neighbors
         for (int k = 0; k < 4; k++)
-            if (isSafe(M, row + rowNbr[k], col + colNbr[k], visited))
+            if (isSafe(M, row + rowNbr[k], col + colNbr[k], visited)) {
                 DFS(M, row + rowNbr[k], col + colNbr[k], visited);
+            }
     }
 
      // A function to check if a given cell (row, col) can

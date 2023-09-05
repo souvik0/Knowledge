@@ -36,6 +36,7 @@ public class ShortestPathInBinaryMaze {
         visited = new boolean[row][col];
 
         int min_dist = Integer.MAX_VALUE;
+        // Initial starting distance is O
         min_dist = findShortestPath(mat, src[0], src[1], dest[0], dest[1], min_dist, 0);
 
         if (min_dist != Integer.MAX_VALUE) {

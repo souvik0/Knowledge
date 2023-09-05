@@ -2,19 +2,18 @@ package com.matrix;
 
 /* This approach is applicable to square matrix only
  * 1. Transpose of matrix 
- * 2. Reverse rows
+ * 2. Reverse rows / Reverse Column
  * This approach rotate matrix 90 degree only once
  * */
-public class RotateMatrixClockwise {
+public class RotateMatrixAllDirection {
 
     public static void main(String[] args) {
-        int mat[][] = {{1, 2},
-                       {4, 5}};
-        System.out.println("The matrix before rotation ");
-        print_matrix(mat);
-        System.out.println("Transpose of the matrix ");
-        transpose_matrix(mat);
+        int[][] mat = {{1, 2, 3},
+                       {4, 5, 6},
+                       {7, 8, 9}};
+
         System.out.println("The matrix after rotation ");
+        transpose_matrix(mat);
         //reverse_rows(mat);
         reverse_col(mat);
         print_matrix(mat);
@@ -32,31 +31,31 @@ public class RotateMatrixClockwise {
 
     // Function to reverse rows of the matrix
     public static void reverse_rows(int mat[][]) {
-        // Here while traversing, row needs to be fixed
-        int k;
-        for (int i = 0; i < mat.length; i++) {
-            k = mat.length - 1;
-            for (int j = 0; j < k; j++) {
-                // Substitution used to take place
-                int temp = mat[i][j];
-                mat[i][j] = mat[i][k];
-                mat[i][k] = temp;
-                k--;
+        int n = mat.length;
+        for (int i = 0; i < n; i++) {
+            int left = 0;
+            int right = n - 1;
+            while (left < right) {
+                int temp = mat[i][left];
+                mat[i][left] = mat[i][right];
+                mat[i][right] = temp;
+                left++;
+                right--;
             }
         }
     }
 
     public static void reverse_col(int mat[][]) {
-        // Here while traversing, row needs to be fixed
-        int k;
-        for (int i = 0; i < mat.length; i++) {
-            k = mat.length - 1;
-            for (int j = 0; j < k; j++) {
-                // Substitution used to take place
-                int temp = mat[j][i];
-                mat[j][i] = mat[k][i];
-                mat[k][i] = temp;
-                k--;
+        int n = mat.length;
+        for (int i = 0; i < n; i++) {
+            int left = 0;
+            int right = n - 1;
+            while (left < right) {
+                int temp = mat[left][i];
+                mat[left][i] = mat[right][i];
+                mat[right][i] = temp;
+                left++;
+                right--;
             }
         }
     }

@@ -7,40 +7,36 @@ import java.util.List;
 public class LetterCasePermutation {
 
     public static void main(String[] args) {
-        List<String> resultList = letterCasePermutation("A1Cd");
-        System.out.println(resultList.toString());
+        String input = "a1b2";
+        List<String> permutations = letterCasePermutation(input);
+        for (String permutation : permutations) {
+            System.out.println(permutation);
+        }
     }
 
-    public static List<String> letterCasePermutation(String str) {
-        List<String> resultList = new ArrayList<String>();
+    public static List<String> letterCasePermutation(String S) {
+        List<String> result = new ArrayList<>();
+        generatePermutations(S.toCharArray(), 0, result);
+        return result;
+    }
 
-        int letterCount = 0;
-        for (char letter: str.toCharArray()) {
-            if (Character.isLetter(letter)) {
-                letterCount++;
-            }
+    private static void generatePermutations(char[] chars, int index, List<String> result) {
+        if (index == chars.length) {
+            result.add(new String(chars));
+            return;
         }
 
-        for (int bits = 0; bits < 1 << letterCount; bits++) {
-            int b = 0;
-            StringBuilder word = new StringBuilder();
+        if (Character.isLetter(chars[index])) {
+            // Change the case of the current character and recurse
+            chars[index] = Character.toUpperCase(chars[index]);
+            generatePermutations(chars, index + 1, result);
 
-            for (char letter: str.toCharArray()) {
-                if (Character.isLetter(letter)) {
-                    // Checking the conversion logic
-                    if (((bits >> b++) & 1) == 1) {
-                        word.append(Character.toLowerCase(letter));
-                    } else {
-                        word.append(Character.toUpperCase(letter));
-                    }
-                } else {
-                    word.append(letter);
-                }
-            }
-
-            resultList.add(word.toString());
+            // Change the case of the current character and recurse
+            chars[index] = Character.toLowerCase(chars[index]);
+            generatePermutations(chars, index + 1, result);
+        } else {
+            // If the character is not a letter, just recurse without changing it
+            generatePermutations(chars, index + 1, result);
         }
-
-        return resultList;
     }
 }

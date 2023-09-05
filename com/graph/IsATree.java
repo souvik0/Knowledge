@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-/* Thre graph will be considered as Tree if it satisfies
+/* The graph will be considered as Tree if it satisfies
    1. There is no cycle. 
    2. The graph is connected.
 */
@@ -95,8 +95,7 @@ public class IsATree {
 
         if (g1.isTree()) {
             System.out.println("Graph is Tree");
-        }
-        else {
+        } else {
             System.out.println("Graph is not Tree");
         }
      }

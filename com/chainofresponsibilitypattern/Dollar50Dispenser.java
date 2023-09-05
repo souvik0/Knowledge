@@ -1,6 +1,6 @@
 package com.chainofresponsibilitypattern;
 
-public class Dollar50Dispenser implements DispenseChain{
+public class Dollar50Dispenser implements DispenseChain {
 
     private DispenseChain chain;
 
@@ -19,7 +19,7 @@ public class Dollar50Dispenser implements DispenseChain{
             if (remainder != 0) {
                 chain.dispense(new Currency(remainder));
             }
-        } else{ // Here also it is going to next dispenser if required
+        } else { // Here also it is going to next dispenser if required
             chain.dispense(currency);
         }
     }

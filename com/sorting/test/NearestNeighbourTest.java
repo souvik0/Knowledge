@@ -3,7 +3,6 @@ package com.sorting.test;
 import org.junit.jupiter.api.Test;
 import com.sorting.NearestNeighbour;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Assertions;
 
 public class NearestNeighbourTest {
 
@@ -30,18 +29,18 @@ public class NearestNeighbourTest {
 
     @Test
     void testExpectedException() {
-        IllegalArgumentException thrownByNull = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException thrownByNull = assertThrows(IllegalArgumentException.class, () -> {
             int[] arr = null;
             int target = 100;
             NearestNeighbour.findNearest(arr, target);
         });
-        Assertions.assertEquals("The input array is null or empty.", thrownByNull.getMessage());
+        assertEquals("The input array is null or empty.", thrownByNull.getMessage());
 
-        IllegalArgumentException thrownByEmpty = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException thrownByEmpty = assertThrows(IllegalArgumentException.class, () -> {
             int[] arr = {};
             int target = 100;
             NearestNeighbour.findNearest(arr, target);
         });
-        Assertions.assertEquals("The input array is null or empty.", thrownByEmpty.getMessage());
+        assertEquals("The input array is null or empty.", thrownByEmpty.getMessage());
     }
 }

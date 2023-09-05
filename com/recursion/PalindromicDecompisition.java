@@ -78,8 +78,8 @@ public class PalindromicDecompisition {
 
     // Prints the partition list
     public static void printSolution(ArrayList<ArrayList<String>> finalList) {
-        for(ArrayList<String> eachList: finalList) {
-            for(String j : eachList) {
+        for (ArrayList<String> eachList: finalList) {
+            for (String j : eachList) {
                 System.out.print(j + "|");
             }
             System.out.println();

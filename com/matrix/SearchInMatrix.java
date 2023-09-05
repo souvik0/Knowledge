@@ -12,6 +12,10 @@ public class SearchInMatrix {
     }
 
     public static boolean search(int[][] matrix, int number) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return false;
+        }
+
         int row = matrix.length;
         int column = matrix[0].length;
 

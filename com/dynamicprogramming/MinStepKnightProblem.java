@@ -37,7 +37,7 @@ public class MinStepKnightProblem {
         // Initializing queue & visited array with false
         Queue<Cell> queue = new LinkedList<Cell>();
 
-        boolean[][] visited = new boolean[n+1][n+1];
+        boolean[][] visited = new boolean[n + 1][n + 1];
 
         // Adding starting cell in the queue & mark it true in visited array
         queue.add(new Cell(knightPosition[0], knightPosition[1], 0));

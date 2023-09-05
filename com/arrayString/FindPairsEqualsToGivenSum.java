@@ -51,11 +51,11 @@ public class FindPairsEqualsToGivenSum {
     public static void findPairsByHashing(int[] arr, int givenSum) {
         Set<Integer> hset = new HashSet<Integer>();
         for (int i = 0; i < arr.length; i++) {
-             int temp = givenSum - arr[i];
-             if (hset.contains(temp)) {
-                 System.out.println("Pairs are: " + temp + " & " + arr[i]);
-             }
-             hset.add(arr[i]);
+            int temp = givenSum - arr[i];
+            if (hset.contains(temp)) {
+                System.out.println("Pairs are: " + temp + " & " + arr[i]);
+            }
+            hset.add(arr[i]);
         }
     }
 }

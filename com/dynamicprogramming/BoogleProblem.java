@@ -9,6 +9,7 @@ public class BoogleProblem {
     public static void findWord(char[][] board, boolean[][] visited, int startRow, int startCol, String word,
                          List<String> englishDictionary) {
 
+        visited[startRow][startCol] = true;
         // Define all possible move directions
         int[] Path_Row = {0, 0, 1, 1, -1, 1, -1, -1};
         int[] Path_Col = {1, -1, -1, 1, 1, 0, 0, -1};
