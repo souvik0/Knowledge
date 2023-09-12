@@ -32,12 +32,12 @@ public class LookForMotherVertex {
     public List<Integer> motherVertexList() {
         List<Integer> motherVertexList = new ArrayList<Integer>();
         boolean[] visited = new boolean[V];
-        int v = -1;
+        int v = -1; // This will hold potential mother vertex
 
         for (int i = 0 ; i < V; i++) {
             if (!visited[i]) {
                 DFSUtil(i, visited);
-                v = i;
+                v = i; // Figuring out potential mother vertex
             }
         }
 

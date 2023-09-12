@@ -8,32 +8,43 @@ public class LongestUniqueSubString {
     public static void main(String[] args) {
         String s = "geeksforgeeks";
         System.out.println("The input String is " + s);
-        String result = longestUniqueSubsttr(s);
+        String result = findLongestUniqueSubstring(s);
         System.out.println("The longest unique substring is: " + result);
     }
 
-    public static String longestUniqueSubsttr(String str) {
-        // Keeps each character from String & count of every character to foresee the uniqueness
-        Map<Character, Integer> lastSeen = new HashMap<Character, Integer>();
-        int[] longest = new int[] {10, 11}; // To measure the length of the unique substring
-        int startIdx = 0; // Denotes start index of every substring
-
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            // The below maintains uniqueness
-            if (lastSeen.containsKey(ch)) {
-                // Formation of startIdx of every substring
-                startIdx = Math.max(startIdx, lastSeen.get(ch) + 1);
-            }
-            // Checking the length of the substring
-            if (longest[1] - longest[0] < (i + 1 - startIdx)) {
-                longest = new int[] {startIdx, i + 1};
-            }
-            lastSeen.put(ch, i);
+    public static String findLongestUniqueSubstring(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
         }
 
-        String result = str.substring(longest[0], longest[1]);
+        int maxLength = 0; // Maximum length of unique substring found so far
+        int start = 0; // Starting index of the current unique substring
+        int maxStart = 0; // Starting index of the longest unique substring found so far
 
-        return result;
+        HashMap<Character, Integer> charIndexMap = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            // If the character is already in the substring, update the starting index
+            if (charIndexMap.containsKey(ch) && charIndexMap.get(ch) >= start) {
+                start = charIndexMap.get(ch) + 1;
+            }
+
+            // Update the character's index in the map
+            charIndexMap.put(ch, i);
+
+            // Calculate the current substring length
+            int currentLength = i - start + 1;
+
+            // If the current substring is longer than the maximum found so far, update the maximum
+            if (currentLength > maxLength) {
+                maxLength = currentLength;
+                maxStart = start;
+            }
+        }
+
+        // Extract and return the longest unique substring
+        return s.substring(maxStart, maxStart + maxLength);
     }
 }

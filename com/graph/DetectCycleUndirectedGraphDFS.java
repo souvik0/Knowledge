@@ -59,19 +59,16 @@ public class DetectCycleUndirectedGraphDFS {
         Iterator<Integer> itr = adj[source].iterator();
         while (itr.hasNext()) {
             neighbor = itr.next();
-
             // If an adjacent is not visited, then recur for that adjacent
             if (!visited[neighbor]) {
                 if (isCyclicUtil(neighbor, visited, source)) {
                     return true;
                 }
             }
-
             // If an adjacent is visited and not parent of current vertex, then there is a cycle.
             else if (neighbor != parent) {
                 return true;
             }
-
         }
         return false;
     }
