@@ -12,6 +12,6 @@ public class MediumPen implements Pen {
 
     @Override
     public void draw() {
-    	System.out.println("Drawing with " + color + " " + brushSize +"pen");
+        System.out.println("Drawing with " + color + " " + brushSize +"pen");
     }
 }

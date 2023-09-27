@@ -42,7 +42,8 @@ public class SubDomainVisitCount {
                   if (i == subDomains.length -1) {
                       sb.append(subDomains[i]);
                   } else {
-                      // insert is equivalent to consistently adding at the first position
+                      // insert at same position is equivalent to consistently adding at 
+                      // the first position or continuous append
                       sb.insert(0, ".");
                       sb.insert(0, subDomains[i]);
                   }

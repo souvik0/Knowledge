@@ -1,19 +1,18 @@
 package com.arrayString;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class LongestUniqueSubString {
 
     public static void main(String[] args) {
-        String s = "geeksforgeeks";
-        System.out.println("The input String is " + s);
-        String result = findLongestUniqueSubstring(s);
+        String str = "geeksforgeeks";
+        System.out.println("The input String is " + str);
+        String result = findLongestUniqueSubstring(str);
         System.out.println("The longest unique substring is: " + result);
     }
 
-    public static String findLongestUniqueSubstring(String s) {
-        if (s == null || s.length() == 0) {
+    public static String findLongestUniqueSubstring(String str) {
+        if (str == null || str.length() == 0) {
             return "";
         }
 
@@ -23,8 +22,8 @@ public class LongestUniqueSubString {
 
         HashMap<Character, Integer> charIndexMap = new HashMap<>();
 
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
 
             // If the character is already in the substring, update the starting index
             if (charIndexMap.containsKey(ch) && charIndexMap.get(ch) >= start) {
@@ -45,6 +44,6 @@ public class LongestUniqueSubString {
         }
 
         // Extract and return the longest unique substring
-        return s.substring(maxStart, maxStart + maxLength);
+        return str.substring(maxStart, maxStart + maxLength);
     }
 }

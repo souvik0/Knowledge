@@ -54,7 +54,7 @@ public class BinarySearchTree {
         if (head == null) {
             return null;
         }
-        // Create dummy node & make it haed of linked list
+        // Create dummy node & make it head of linked list
         LinkedListNode dummy = new LinkedListNode(0);
         dummy.next = head;
 

@@ -53,9 +53,10 @@ public class BoogleProblem {
 
         String word = "";
 
+        // To start & check word formation from each & every coordinates
         for (int i = 0; i < board.length; i++) {
             for (int j = 0 ; j < board[0].length; j++) {
-                 findWord(board, visited, 0, 0, word + board[i][j], englishDictionary);
+                findWord(board, visited, 0, 0, word + board[i][j], englishDictionary);
             }
         }
     }

@@ -2,7 +2,7 @@ package com.chainofresponsibilityLogging;
 
 public class LoggingChain {
 
-   private static FileLogger getChainOfLoggers(int logLevel){
+   private static Logger getChainOfLoggers(int logLevel){
        if (logLevel == LogLevel.INFO) {
            FileLogger fileInfoLogger = new FileLogger(LogLevel.INFO);
            ConsoleLogger consoleInfoLogger = new ConsoleLogger(LogLevel.INFO);

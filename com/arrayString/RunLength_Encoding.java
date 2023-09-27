@@ -3,24 +3,34 @@ package com.arrayString;
 public class RunLength_Encoding {
 
     public static void main(String[] args) {
-        String str = "wwwwaaadexxxxxxywww";
-        printRLE(str);
+        String str = "wwwwaaadexxxxxxyww";
+        System.out.println(printRLE(str));
     }
 
-    public static void printRLE(String str) {
-        int length = str.length();
-        for (int i = 0; i < length; i++) {
-            int counter = 1;
-
-            // index of for loop needs to be increased to avoid recurrence
-            // Also needs to check reach of i
-            while (i < length -1 && str.charAt(i) == str.charAt(i + 1)) {
-                counter++;
-                i++;
-            }
-
-            // Print character and its count
-            System.out.println(str.charAt(i) + ":" + counter);
+    public static String printRLE(String input) {
+        if (input == null || input.isEmpty()) {
+            return "";
         }
+
+        StringBuilder result = new StringBuilder();
+        int counter = 1;
+
+        for (int i = 0; i < input.length() - 1; i++) {
+            if (input.charAt(i) == input.charAt(i + 1)) {
+                counter++;
+            } else {
+                result.append(input.charAt(i));
+                result.append(counter);
+
+                // get back to initial value of count
+                counter = 1;
+            }
+        }
+
+        // Append the last character and its count
+        result.append(input.charAt(input.length() - 1));
+        result.append(counter);
+
+        return result.toString();
     }
 }

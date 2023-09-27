@@ -16,9 +16,9 @@ public class ProducerExtends {
         List<AsianApple> asianAppleList = new ArrayList<AsianApple>();
         asianAppleList.add(new AsianApple());
 
-        //We can assign a list of apples to a basket of fruits;
-        //because apple is subtype of fruit
-        //Narrowing the scope or covariancing the scope
+        // We can assign a list of apples to a basket of fruits;
+        // because apple is subtype of fruit
+        // Narrowing the scope or covariancing the scope
         List<? extends Fruit> appleBasket = applesList; // Any sub type of Fruit can be assigned
         List<? extends Fruit> asianAppleBasket1 = asianAppleList;
         List<? extends Apple> asianAppleBasket2 = asianAppleList; // Any sub type of Apple can be assigned

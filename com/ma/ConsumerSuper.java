@@ -19,14 +19,14 @@ public class ConsumerSuper {
 
        // We can assign a list of apples to a basket of apples
        // Widening the scope or Contra-variance the scope
-       List<? super Apple> basket = applesList;
+       List<? super Apple> appleBasket = applesList;
        List<? super Apple> fruitBasket = fruitList;
        List<? super Apple> asianAppleBasket = asianAppleList; // Compile time error because sub type can't assigned to super
 
        // Can consume same or sub-type
-       basket.add(new Apple());
-       basket.add(new AsianApple());
-       basket.add(new Mango()); // compile time error because of disjointed type
-       basket.add(new Fruit()); // compile time error
+       appleBasket.add(new Apple());
+       appleBasket.add(new AsianApple());
+       appleBasket.add(new Mango()); // compile time error because of disjointed type
+       appleBasket.add(new Fruit()); // compile time error
     }
 }

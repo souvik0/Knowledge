@@ -44,7 +44,7 @@ public class FindLargestIslands {
              int rowNext = startRow + Path_Row[k];
              int colNext = startCol + Path_Col[k];
              if (isSafe(M, rowNext, colNext, visited)) {
-                 countOfIsland+= DFS(M, rowNext, colNext, visited);
+                 countOfIsland += DFS(M, rowNext, colNext, visited);
             }
         }
         return countOfIsland;

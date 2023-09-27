@@ -60,8 +60,9 @@ public class KnightTourProblem {
         }
 
         /* xMove[] and yMove[] define next move of Knight.
-        xMove[] is for next value of x coordinate
-        yMove[] is for next value of y coordinate */
+           xMove[] is for next value of x coordinate
+           yMove[] is for next value of y coordinate
+        */
         int rowMove[] = {2, 1, -1, -2, -2, -1, 1, 2};
         int colMove[] = {1, 2, 2, 1, -1, -2, -2, -1};
 

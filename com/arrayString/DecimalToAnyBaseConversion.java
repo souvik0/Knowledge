@@ -15,7 +15,7 @@ public class DecimalToAnyBaseConversion {
         // taking remainder
         while (inputNum > 0) {
             result += convertIntegerToCharacter(inputNum % targetBase);
-            inputNum /= targetBase;
+            inputNum = inputNum/ targetBase;
         }
 
         StringBuilder ix = new StringBuilder();

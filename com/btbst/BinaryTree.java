@@ -372,18 +372,39 @@ public class BinaryTree {
     // To find out maximum valued node at up to given level
     public int maxNodeAtGivenLevel(TreeNode root, int level) {
         if (root == null) {
-            return -1;
+            return Integer.MIN_VALUE; // Return the minimum possible value if the tree is empty.
         }
-        // At 0th level root is the maximum node
-        if (level == 0) {
-            return root.data;
-        }
-        // Traversing left subtree
-        int left = maxNodeAtGivenLevel(root.left, level--);
-        // Traversing right subtree
-        int right = maxNodeAtGivenLevel(root.right, level--);
 
-        return Math.max(left, right);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int currentLevel = 0;
+        int maxVal = Integer.MIN_VALUE;
+
+        while (!queue.isEmpty()) {
+            int nodeCount = queue.size();
+            while (nodeCount > 0) {
+                TreeNode poppedNode = queue.poll();
+
+                if (currentLevel == level) {
+                    maxVal = Math.max(maxVal, poppedNode.data);
+                }
+
+                if (poppedNode.left != null) {
+                    queue.add(poppedNode.left);
+                }
+                if (poppedNode.right != null) {
+                    queue.add(poppedNode.right);
+                }
+                nodeCount--;
+            }
+            currentLevel++;
+
+            if (currentLevel > level) {
+                break; // We've reached the desired level, no need to continue.
+            }
+        }
+
+        return maxVal;
     }
 
     /*
@@ -619,35 +640,6 @@ public class BinaryTree {
         return nodeList;
     }
 
-    // The provided solution will only work if the node has a pointer to parent.
-    /* if right subtree exist, then find out farthest left node from the subtree, otherwise
-     * traverse towards parent to find out inOrder successor
-     */
-    public int findSuccessor(SpecialTreeNode root, SpecialTreeNode targetNode) {
-        if (root.right != null) {
-            return getLeftmostNodeFromRightSubtree(root.right);
-        } else {
-            return getRightmostParent(root);
-        }
-    }
-
-    public int getLeftmostNodeFromRightSubtree(SpecialTreeNode root) {
-        SpecialTreeNode current = root;
-        while (current != null) {
-            current = current.left;
-        }
-        return current != null ? current.data : -1;
-    }
-
-    public int getRightmostParent(SpecialTreeNode root) {
-        SpecialTreeNode current = root;
-        while (current.parent != null && current.parent.right == current) {
-            // Traversing towards the parent
-            current = current.parent;
-        }
-        return current != null ? current.data : -1;
-    }
-
     /*
      * Left subtree of T is balanced 
      * Right subtree of T is balanced
@@ -695,25 +687,5 @@ public class BinaryTree {
         }
 
         return ans;
-    }
-
-    public BinaryTreeNode flip_upside_down(BinaryTreeNode root) {
-        if (root == null) {
-            return null;
-        }
-
-        if (root.left == null && root.right == null) {
-            return root;
-        }
-
-        // recursively call the same method
-        BinaryTreeNode flippedRoot = flip_upside_down(root.left);
-
-        // rearranging main root Node after returning from recursive call
-        root.left.left = root.right;
-        root.left.right = root;
-        root.left = root.right = null;
-
-        return flippedRoot;
     }
 }

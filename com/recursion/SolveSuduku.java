@@ -43,7 +43,7 @@ public class SolveSuduku {
             }
         }
         return true;
-      }
+    }
 
     public static boolean isValid(char[][] board, int row, int col, char ch) {
         // Row always modulo operation

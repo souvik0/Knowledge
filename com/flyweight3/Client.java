@@ -14,9 +14,9 @@ public class Client {
          */
 
         ILetter object1 = LetterFactory.crateLetter('t');
-        object1.display(0,0);
+        object1.display(0, 0);
 
         ILetter object2 = LetterFactory.crateLetter('t');
-        object2.display(0,6);
+        object2.display(0, 6);
     }
 }

@@ -5,7 +5,7 @@ package com.btbst;
 public class FindLargestBST {
 
     public static void main(String[] args) {
-    	BinaryTreeNode root = new BinaryTreeNode(10);
+        BinaryTreeNode root = new BinaryTreeNode(10);
 
         root.left = new BinaryTreeNode(15);
         root.right = new BinaryTreeNode(8);

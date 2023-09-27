@@ -2,8 +2,8 @@ package com.expression;
 
 import java.util.Stack;
 
-/* Java program for expression tree
-   Postfix & prefix expressions are very easy to convert to expression tree
+/*  Java program for expression tree
+    Postfix & prefix expressions are very easy to convert to expression tree
 */
 class PostfixToInfixAndPrefix {
 

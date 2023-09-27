@@ -29,7 +29,7 @@ public class ATMDispenseChain {
             if (amount % 10 != 0) {
                 System.out.println("Amount should be in multiple of 10s.");
             }
-            // process the request
+            // process the request to invoke
             atmDispenser.chain.dispense(new Currency(amount));
         }
     }

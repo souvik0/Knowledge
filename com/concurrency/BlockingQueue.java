@@ -30,7 +30,7 @@ public class BlockingQueue<E> {
             wait();
         }
         if (this.queue.size() > 0){
-            item = this.queue.remove(0);
+            item = this.queue.remove(0); // Queue follows FIFO
             notifyAll();
         }
         return item;

@@ -12,7 +12,7 @@ public enum BrushSize {
         this.brushSize = brushSize;
     }
 
-    public String toString () {
+    public String toString() {
         return brushSize;
     }
 }

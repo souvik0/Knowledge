@@ -17,8 +17,7 @@ public class RoboticFactory {
                 IRobot humanoidObject = new HumanoidRobot(robotType, humanoidSprite);
                 roboticObjectCache.put(robotType, humanoidObject);
                 return humanoidObject;
-            }
-            else if (robotType == "ROBOTICDOG"){
+            } else if (robotType == "ROBOTICDOG"){
                 Sprites roboticDogSprite = new Sprites();
                 IRobot roboticDogObject = new RoboticDog(robotType, roboticDogSprite);
                 roboticObjectCache.put(robotType, roboticDogObject);

@@ -33,7 +33,7 @@ public class QuickSortImplementtaion {
         int j = right;
 
         // Considering pivot element as mid element
-        int pivotElement = inputArray[left + (right-left)/2];
+        int pivotElement = inputArray[left + (right - left)/2];
 
         while (i <= j) {
             while (inputArray[i] < pivotElement) {
