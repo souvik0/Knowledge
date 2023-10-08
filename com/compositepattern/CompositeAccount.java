@@ -9,6 +9,6 @@ public class CompositeAccount extends Account {
         for (Account account : allAccounts) {
             totalBalance = totalBalance + account.getBalance();
         }
-		return totalBalance;
-	}
+        return totalBalance;
+    }
 }

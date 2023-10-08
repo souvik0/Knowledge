@@ -67,8 +67,9 @@ public class TopologicalSort {
         Iterator<Integer> it = adj[source].iterator();
         while (it.hasNext()) {
             Integer neighbor = it.next();
-            if (!visited[neighbor])
+            if (!visited[neighbor]) {
                 topologicalSortUtil(neighbor, visited, stack);
+            }
         }
 
         // Push current vertex to stack which stores result at the time when there is no

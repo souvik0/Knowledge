@@ -245,23 +245,6 @@ public class BinarySearchTree {
         return root;
     }
 
-    public int distanceFromRoot(TreeNode root, TreeNode a) {
-        if (root == null) {
-            return -1;
-        }
-        if (root.data == a.data) {
-            return 0;
-        }
-        // If the node exist at left or right side
-        if (root.data > a.data) {
-            return 1 + distanceFromRoot(root.left, a); // Adding 1 level every time
-        } else if (root.data < a.data) {
-            return 1 + distanceFromRoot(root.right, a);
-        } else {
-            return -1;
-        }
-    }
-
     public void findClosestValueInBST(TreeNode root, int target) {
         // Assuming root.data is the closest
         findClosestValueInBST(root, target, root.data);

@@ -22,7 +22,7 @@ public class Expression implements ArithmeticExpression {
                 value = leftExpression.evaluate() - rightExpression.evaluate();
                 break;
             case DIVIDE:
-                value = leftExpression.evaluate() / rightExpression.evaluate();
+                value = leftExpression.evaluate()/ rightExpression.evaluate();
                 break;
             case MULTIPLY:
                 value = leftExpression.evaluate() * rightExpression.evaluate();
