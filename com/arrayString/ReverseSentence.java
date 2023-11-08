@@ -16,6 +16,7 @@ public class ReverseSentence {
     public static String reverseSentence(String str) {
         Pattern pattern = Pattern.compile("\\s");
         String[] strArr = pattern.split(str);
+        //String[] strArr = str.split("\\.");
         String result = "";
 
         for (int i = 0; i < strArr.length; i++) {

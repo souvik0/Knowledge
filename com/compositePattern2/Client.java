@@ -15,8 +15,8 @@ public class Client {
          ArithmeticExpression one = new Number(1);
          ArithmeticExpression seven = new Number(7);
          ArithmeticExpression subExpression = new Expression(one,seven, Operation.ADD);
-         ArithmeticExpression parentExpression = new Expression(two,subExpression, Operation.MULTIPLY);
+         ArithmeticExpression finalExpression = new Expression(two,subExpression, Operation.MULTIPLY);
 
-         System.out.println(parentExpression.evaluate());
+         System.out.println(finalExpression.evaluate());
     }
 }

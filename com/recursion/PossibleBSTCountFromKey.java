@@ -12,6 +12,7 @@ public class PossibleBSTCountFromKey {
         }
 
         int count = 0;
+
         for (int i = 0; i < n; i++) {
             // Calculate the number of BSTs for the left subtree and right subtree
             int leftSubtrees = countBSTs(i);

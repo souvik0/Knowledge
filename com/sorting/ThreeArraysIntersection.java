@@ -21,7 +21,7 @@ public class ThreeArraysIntersection {
         while (i < arr1.length && j < arr2.length && k < arr3.length) {
             // If the current elements of all three arrays are the same, add it to the result
             if (arr1[i] == arr2[j] && arr2[j] == arr3[k]) {
-                result.add(arr1[i]);
+                result.add(arr2[j]);
                 i++;
                 j++;
                 k++;

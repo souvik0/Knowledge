@@ -3,6 +3,7 @@ package com.recursion;
 // Involvement of all 3 numbers are required.
 //Time Complexity : O(4^n)
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class EvaluateExpression {
@@ -10,7 +11,7 @@ public class EvaluateExpression {
     public static void main(String[] args) {
         String inputExp = "234";
         int target = 24;
-        ArrayList<String> res = getExprssion(inputExp, target);
+        List<String> res = getExprssion(inputExp, target);
         printResult(res);
 
         inputExp = "125";
@@ -20,14 +21,14 @@ public class EvaluateExpression {
     }
 
     // Below method returns all possible expression evaluating to target
-    public static ArrayList<String> getExprssion(String inputExp, int target) {
-        ArrayList<String> resultList = new ArrayList<String>();
+    public static List<String> getExprssion(String inputExp, int target) {
+        List<String> resultList = new ArrayList<String>();
         getExpressionUtil(resultList, "", inputExp, target, 0, 0, 0);
         return resultList;
     }
 
     // Utility recursive method to generate all possible expressions
-    public static void getExpressionUtil(ArrayList<String> resultList,
+    public static void getExpressionUtil(List<String> resultList,
                                          String curExp, String inputExp,
                                          int target, int start, int curVal, int last) {
         // true if whole input is processed with some operators
@@ -60,14 +61,16 @@ public class EvaluateExpression {
                                   curVal - cur, cur);
                 getExpressionUtil(resultList, curExp + "*" + part, inputExp, target, i + 1,
                                   curVal * cur, cur);
+                getExpressionUtil(resultList, curExp + "/" + part, inputExp, target, i + 1,
+                                  curVal / cur, cur);
             }
         }
     }
 
     // method to print result
-    public static void printResult(ArrayList<String> res) {
+    public static void printResult(List<String> res) {
         for (int i = 0; i < res.size(); i++) {
-             System.out.print(res.get(i) + " | ");
+            System.out.print(res.get(i) + " | ");
         }
         System.out.println();
     }

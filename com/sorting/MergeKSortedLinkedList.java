@@ -8,8 +8,7 @@ public class MergeKSortedLinkedList {
 
     public static Node mergeKLists(Node[] lists) {
         // create an empty min-heap using a comparison object for ordering the min-heap
-        PriorityQueue<Node> pq;
-        pq = new PriorityQueue<>(Comparator.comparingInt(a -> ((Node) a).data));
+        PriorityQueue<Node> pq = new PriorityQueue<Node>(Comparator.comparingInt(a -> ((Node) a).data));
 
         // push the first node of each list into the min-heap
         pq.addAll(Arrays.asList(lists).subList(0, lists.length));
@@ -80,6 +79,7 @@ public class MergeKSortedLinkedList {
 class Node {
     public int data;
     public Node next;
+
     public Node(int data) {
         this.data = data;
         this.next = null;

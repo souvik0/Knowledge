@@ -4,7 +4,7 @@ package com.recursion;
 
 import java.util.Vector;
 
-public class FindCombination {
+public class NChooseKCombination {
 
     public static Vector<Vector<Integer>> finalVector = new Vector<Vector<Integer>>();
     public static Vector<Integer> tmpVector = new Vector<Integer>();

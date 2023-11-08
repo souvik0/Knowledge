@@ -16,7 +16,7 @@ public class RemoveDupicateEfficiently {
 
          // printing array elements  
          for (int i = 0; i < tempArray.length; i++) {
-             System.out.print(tempArray[i]+" ");  
+             System.out.print(tempArray[i]+" ");
          }
      }
 

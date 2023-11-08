@@ -42,3 +42,6 @@
 /ShortestPath.class
 /SnakeLadderProblem$Qentry.class
 /TopologicalSortBFS.class
+/ReplaceOWithX.class
+/CourseSchedule.class
+/PrereuisiteTask.class
