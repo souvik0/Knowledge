@@ -16,7 +16,7 @@ public class MinimumPlatforms {
             throw new IllegalArgumentException("Invalid input");
         }
 
-        int n = arrival.length;
+        int n = arrival.length; // Arrival & departure array has same length
         int minPlatforms = 1; // At least one platform is required
         int result = 1;
         int i = 1;

@@ -23,7 +23,8 @@ public class LongestConsecutiveSubsequence {
         int longestStreak = 0;
 
         for (int num : numSet) {
-            // Check if the current number is the start of a sequence
+            // Check if the current number is already present or not.
+            // If not then it is becoming the starting point of the sequence
             if (!numSet.contains(num - 1)) {
                 int currentNum = num;
                 int currentStreak = 1;
