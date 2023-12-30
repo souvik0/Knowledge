@@ -20,23 +20,23 @@ public class LetterCasePermutation {
         return result;
     }
 
-    private static void generatePermutations(char[] chars, int start, List<String> result) {
-        if (start == chars.length) {
-            result.add(new String(chars));
+    private static void generatePermutations(char[] pattern, int start, List<String> result) {
+        if (start == pattern.length) {
+            result.add(new String(pattern));
             return;
         }
 
-        if (Character.isLetter(chars[start])) {
+        if (Character.isLetter(pattern[start])) {
             // Change the case of the current character and recurse
-            chars[start] = Character.toUpperCase(chars[start]);
-            generatePermutations(chars, start + 1, result);
+            pattern[start] = Character.toUpperCase(pattern[start]);
+            generatePermutations(pattern, start + 1, result);
 
             // Change the case of the current character and recurse
-            chars[start] = Character.toLowerCase(chars[start]);
-            generatePermutations(chars, start + 1, result);
+            pattern[start] = Character.toLowerCase(pattern[start]);
+            generatePermutations(pattern, start + 1, result);
         } else {
             // If the character is not a letter, just recurse without changing it
-            generatePermutations(chars, start + 1, result);
+            generatePermutations(pattern, start + 1, result);
         }
     }
 }

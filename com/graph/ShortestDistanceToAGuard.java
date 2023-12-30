@@ -1,7 +1,7 @@
 package com.graph;
 
 /*
- * O ==> Open Space 
+ * . ==> Open Space 
  * G ==> Guard
  * W ==> Wall
  */
@@ -10,92 +10,76 @@ import java.util.Queue;
 
 public class ShortestDistanceToAGuard {
 
-    int M = 5;
-    int N = 5;
-    int row[] = {-1, 0, 1, 0};
-    int col[] = {0, 1, 0, -1};
-
-    public class Node {
-        int i, j, dist;
-        Node(int i, int j, int dist) {
-            this.i = i;
-            this.j = j;
-            this.dist = dist;
-        }
-    }
-
     public static void main(String[] args) {
-        char matrix[][] = {{'O', 'O', 'O', 'O', 'G'},
-                           {'O', 'W', 'W', 'O', 'O'},
-                           {'O', 'O', 'O', 'W', 'O'},
-                           {'G', 'W', 'W', 'W', 'O'},
-                           {'O', 'O', 'O', 'O', 'G'}};
+        char[][] grid = {{'G', 'W', 'G', 'G', 'G'},
+                         {'W', 'W', 'W', 'W', 'W'},
+                         {'G', 'W', 'G', 'W', 'G'},
+                         {'G', 'W', 'W', 'W', 'G'},
+                         {'G', 'G', 'G', 'G', 'G'}};
 
-        ShortestDistanceToAGuard g = new ShortestDistanceToAGuard();
-        g.findDistance(matrix);
+        int result = shortestDistance(grid);
+        System.out.println("Shortest distance to a guard: " + result);
     }
 
-    public void findDistance(char[][] matrix) {
-        int output[][] = new int[M][N];
-        Queue<Node> q = new LinkedList<Node>();
+    public static int shortestDistance(char[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return -1; // Invalid input
+        }
 
-        // Finding Guards location and adding into queue
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                // Initialize each cell as -1
-                output[i][j] = -1;
-                if (matrix[i][j] == 'G') {
-                    q.add(new Node(i, j, 0));
-                    // Guard has 0 distance. So perform backtracking
-                    output[i][j] = 0;
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int[][] distance = new int[rows][cols];
+        int guardCount = 0;
+
+        // Find all guards and initialize the distance matrix
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] == 'G') {
+                    guardCount++;
+                    bfs(grid, distance, i, j);
                 }
             }
         }
 
-        // Do till queue is empty
-        while (!q.isEmpty()) {
-            // Get the front cell in the queue and update its adjacent cells
-            Node curr = q.peek();
-            int x = curr.i;
-            int y = curr.j;
-            int dist = curr.dist;
-            // Do for each adjacent cell
-            for (int i = 0; i < 4; i++) {
-                // If adjacent cell is valid, has path and not visited yet, en-queue it.
-                if (isValid(x + row[i], y + col[i])) {
-                    if (isSafe(x + row[i], y + col[i], matrix, output)) {
-                        output[x + row[i]][y + col[i]] = dist + 1;
-                        q.add(new Node(x + row[i], y + col[i], dist + 1));
-                    }
+        int minDistance = Integer.MAX_VALUE;
+
+        // Find the minimum distance to a guard from each empty cell
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] == '0' + guardCount && distance[i][j] > 0) {
+                    minDistance = Math.min(minDistance, distance[i][j]);
                 }
             }
-            // Dequeue the front cell as its distance is found. It is also backtracking
-            q.poll();
         }
 
-        // Print output matrix
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                System.out.print(output[i][j] + " ");
+        return minDistance == Integer.MAX_VALUE ? -1 : minDistance;
+    }
+
+    private static void bfs(char[][] grid, int[][] distance, int startX, int startY) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+        boolean[][] visited = new boolean[rows][cols];
+        Queue<int[]> queue = new LinkedList<>();
+
+        queue.offer(new int[]{startX, startY, 0});
+        visited[startX][startY] = true;
+
+        while (!queue.isEmpty()) {
+            int[] current = queue.poll();
+            int x = current[0];
+            int y = current[1];
+            int dist = current[2];
+
+            // Explore neighbors
+            int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+            for (int[] dir : directions) {
+                int newX = x + dir[0];
+                int newY = y + dir[1];
+                if (newX >= 0 && newX < rows && newY >= 0 && newY < cols && !visited[newX][newY] && grid[newX][newY] != 'W') {
+                    queue.offer(new int[]{newX, newY, dist + 1});
+                    visited[newX][newY] = true;
+                }
             }
-            System.out.println();
         }
-    }
-
-    // Return true if row number and column number is in range
-    public boolean isValid(int i, int j) {
-        if ((i < 0 || i > M - 1) || (j < 0 || j > N - 1)) {
-            return false;
-        }
-        return true;
-    }
-
-    // Return true if current cell is an open area and its distance
-    // from guard is not calculated yet
-    public boolean isSafe(int i, int j, char matrix[][], int output[][]) {
-         if (matrix[i][j] != 'O' || output[i][j] != -1) {
-             return false;
-         }
-         return true;
     }
 }

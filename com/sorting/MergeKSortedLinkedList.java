@@ -25,8 +25,7 @@ public class MergeKSortedLinkedList {
             // add the minimum node to the output list
             if (head == null) {
                 head = last = min;
-            }
-            else {
+            } else {
                 last.next = min;
                 last = min;
             }
