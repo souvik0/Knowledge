@@ -21,18 +21,18 @@ public class GenerateSubsetsFromString {
     }
 
     private static void subsetsHelper(List<List<Character>> finalList, List<Character> resultList,
-                               char [] nums, int start){
+                               char [] pattern, int start){
         finalList.add(new ArrayList<>(resultList));
 
-        for (int i = start; i < nums.length; i++){
+        for (int i = start; i < pattern.length; i++){
             // Avoid duplicates
-            if (resultList.contains(nums[i])) {
+            if (resultList.contains(pattern[i])) {
                 continue;
             }
             // add element
-            resultList.add(nums[i]);
+            resultList.add(pattern[i]);
             // Explore
-            subsetsHelper(finalList, resultList, nums, i + 1);
+            subsetsHelper(finalList, resultList, pattern, i + 1);
             // Backtracking
             resultList.remove(resultList.size() - 1);
         }

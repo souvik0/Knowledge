@@ -1,5 +1,7 @@
 package com.arrayString;
 
+// Adding Set covers negative scenario as well.
+
 import java.util.*;
 
 public class SubarrayWithZeroSum {

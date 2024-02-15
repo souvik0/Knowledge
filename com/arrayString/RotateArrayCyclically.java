@@ -15,14 +15,14 @@ public class RotateArrayCyclically {
     }
 
     public static void rotate(int[] arr) {
-        int i = 0;
-        int j = arr.length - 1;
+        int left = 0;
+        int right = arr.length - 1;
 
-        while (i != j) {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            i++;
+        while (left != right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
         }
     }
 }

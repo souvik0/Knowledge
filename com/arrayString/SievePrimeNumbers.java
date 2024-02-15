@@ -27,8 +27,8 @@ public class SievePrimeNumbers {
 
         System.out.println("List of prime numbers upto given range are: ");
         for (int i = 2; i < primeChecker.length; i++) {
-           if (primeChecker[i] == true) {
-               System.out.println(i);
+            if (primeChecker[i] == true) {
+                System.out.println(i);
            }
         }
     }

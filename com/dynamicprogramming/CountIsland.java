@@ -32,8 +32,7 @@ public class CountIsland {
 
     // A utility function to do DFS for a 2D matrix.
     // It only considers the 8 neighbors as adjacent vertices
-    public static void DFS(int M[][], int row, int col, boolean visited[][])
-    {
+    public static void DFS(int M[][], int row, int col, boolean visited[][]) {
         // These arrays are used to get row and column numbers
         // of 8 neighbors of a given cell
         int rowNbr[] = new int[] {-1, 0, 1, 0};

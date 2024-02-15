@@ -22,7 +22,7 @@ public class MaxOnesRow {
         int maxOnesRow = -1;
 
         for (int i = 0; i < rows; i++) {
-            // This value needs to reintialized after every row
+            // This value needs to reinitialized after every row
             int onesCount = 0;
 
             for (int j = 0; j < cols; j++) {

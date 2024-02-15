@@ -39,7 +39,7 @@ public class LookForMotherVertex {
                 DFSUtil(i, visited);
                 v = i; // Figuring out potential mother vertex
             }
-        }
+        
 
         /* If there exist mother vertex (or vertices) in the given graph, then v must be one
            (or one of them).
@@ -52,18 +52,19 @@ public class LookForMotherVertex {
            if all vertices are reachable from it or not.
         */
 
-        boolean[] check = new boolean[V];
-        DFSUtil(v, check);
-        /* If all the vertices are being visited from this vertex, then all elements must be
-         * true in check[]. If anyone of them is false, that means the vertex isn't 
-         * the mother vertex.
-         */
-        for (boolean val : check) {
-            if (!val) {
-                motherVertexList.add(-1);
-            } else {
-                if (!motherVertexList.contains(v)) {
-                    motherVertexList.add(v);
+            boolean[] check = new boolean[V];
+            DFSUtil(v, check);
+            /* If all the vertices are being visited from this vertex, then all elements must be
+             * true in check[]. If anyone of them is false, that means the vertex isn't 
+             * the mother vertex.
+             */
+            for (boolean val : check) {
+                if (!val) {
+                    // Do nothing
+                } else {
+                    if (!motherVertexList.contains(v)) {
+                        motherVertexList.add(v);
+                    }
                 }
             }
         }

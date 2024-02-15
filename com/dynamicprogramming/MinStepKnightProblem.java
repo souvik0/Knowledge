@@ -22,9 +22,9 @@ public class MinStepKnightProblem {
 
     public int minMove(int n, int startRow, int startColumn, int destRow, int destColumn) {
         // Single dimensional array to represent knight's starting position
-        int knightPosition[] = {startRow, startColumn};
+        int knightPosition[] = new int[] {startRow, startColumn};
         // Single dimensional array to represent knight's target position
-        int targetPosition[] = {destRow, destColumn};
+        int targetPosition[] = new int[] {destRow, destColumn};
 
         return getMinJumps(n, knightPosition, targetPosition);
     }

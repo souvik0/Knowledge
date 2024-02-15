@@ -53,13 +53,13 @@ public class ContigiousSubArraySum {
         for (int i = 0; i < arr.length; i++) {
             currentSum = currentSum + arr[i];
 
-            //the sub array is starting from index 0- so stop 
+            //the sub array is starting from index 0- so stop
             if (currentSum == givenSum) {
                 right = i;
                 break;
             }
 
-            //if hashMap already has the value, means we already  
+            //if hashMap already has the value, means we already
             //have sub Array with the sum - so stop 
             if (hashMap.containsKey(currentSum - givenSum)) {
                 left = hashMap.get(currentSum - givenSum) + 1;

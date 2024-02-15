@@ -7,8 +7,6 @@ package com.lrucache;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.text.Position;
-
 public class LRUCache<K, V> {
 
     private Map<K, EntryNode<K, V>> tempMap; // Temporary hash map to maintain get operation at O(1)

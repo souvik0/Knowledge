@@ -17,11 +17,6 @@ public class AnyBaseToDecimalConversion {
 
         // Decimal equivalent is str[len-1]*1 + str[len-2] * base + str[len-3]*(base^2) + ...
         for (int i = len - 1; i >= 0; i--) {
-            // A digit in input number must be less than number's base
-            if (convertCharToInteger(str.charAt(i)) >= givenBase) {
-                System.out.println("Invalid Number");
-                return -1;
-            }
             // Here successive multiplication takes place
             result += convertCharToInteger(str.charAt(i)) * power;
             power = power * givenBase;
