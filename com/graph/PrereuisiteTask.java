@@ -18,7 +18,7 @@ public class PrereuisiteTask {
     }
 
     public static boolean canFinish(int numTasks, int[][] prerequisites) {
-        // Build adjacency list representation of the graph
+        // Build adjacency list representation of the directed graph
         Map<Integer, List<Integer>> adjacencyList = new HashMap<>();
         for (int[] prerequisite : prerequisites) {
             int course = prerequisite[0];
@@ -65,6 +65,7 @@ public class PrereuisiteTask {
        }
 
        inPath[course] = false; // Backtrack
+       // no cycle present
        return false;
     }
 }

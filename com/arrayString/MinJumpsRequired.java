@@ -15,7 +15,7 @@ public class MinJumpsRequired {
 
         int n = nums.length;
         int maxReach = nums[0]; // Maximum index that can be reached from the current position
-        int steps = nums[0]; // Steps remaining at the current position
+        int remainSteps = nums[0]; // Steps remaining at the current position
         int jumps = 1; // Number of jumps needed to reach the end
 
         for (int i = 1; i < n; i++) {
@@ -24,9 +24,9 @@ public class MinJumpsRequired {
             }
 
             maxReach = Math.max(maxReach, i + nums[i]);
-            steps--;
+            remainSteps--;
 
-            if (steps == 0) {
+            if (remainSteps == 0) {
                 jumps++;
 
                 // Check if it's possible to reach the end from the current position
@@ -34,7 +34,7 @@ public class MinJumpsRequired {
                     return -1; // Cannot reach the end
                 }
 
-                steps = maxReach - i;
+                remainSteps = maxReach - i;
             }
         }
 
