@@ -16,7 +16,7 @@ public class TokenBucket {
         this.refill();
     }
 
-    public boolean tryConsume(){
+    public synchronized boolean tryConsume(){
         refill();
         if (this.numberOfTokenAvailable > 0){
             this.numberOfTokenAvailable --;

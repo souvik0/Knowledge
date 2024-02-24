@@ -10,7 +10,7 @@ public class TokenBucketTest {
          int numberOfConsumed = 0;
          long startTime = System.currentTimeMillis();
 
-         int totalTime = 2 * 1000;
+         int totalTime = 20 * 1000;
          while ((System.currentTimeMillis() - startTime) < totalTime){
              boolean consumeSuccess = tokenBucket.tryConsume();
              System.out.println("try consume = "+ consumeSuccess);
