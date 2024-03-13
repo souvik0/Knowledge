@@ -1,4 +1,4 @@
-package com.arrayString;
+	package com.arrayString;
 
 /*  Time Complexity : O(n*d)
     Space Complexity : O(1)

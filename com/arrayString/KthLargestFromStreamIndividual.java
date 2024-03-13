@@ -35,6 +35,7 @@ public class KthLargestFromStreamIndividual {
             if (val > minHeap.peek()) {
                 minHeap.poll();
                 minHeap.offer(val);
+            }
         }
 
         return minHeap.peek();
