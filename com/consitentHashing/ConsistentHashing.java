@@ -65,9 +65,9 @@ public class ConsistentHashing {
         md.update(key.getBytes());
         byte[] digest = md.digest();
         long hash = ((long) (digest[3] & 0xFF) << 24) |
-                ((long) (digest[2] & 0xFF) << 16) |
-                ((long) (digest[1] & 0xFF) << 8) |
-                ((long) (digest[0] & 0xFF));
+                    ((long) (digest[2] & 0xFF) << 16) |
+                    ((long) (digest[1] & 0xFF) << 8) |
+                    ((long) (digest[0] & 0xFF));
         return hash;
     }
 }

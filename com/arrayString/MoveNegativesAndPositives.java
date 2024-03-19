@@ -20,7 +20,7 @@ public class MoveNegativesAndPositives {
             if (arr[left] < 0 && arr[right] < 0) {
                 // Both numbers are negative, move the left pointer to the right
                 left++;
-            } else if (arr[left] >= 0 && arr[right] >= 0) {
+            } else if (arr[left] > 0 && arr[right] > 0) {
                 // Both numbers are positive, move the right pointer to the left
                 right--;
             } else if (arr[left] >= 0 && arr[right] < 0) {

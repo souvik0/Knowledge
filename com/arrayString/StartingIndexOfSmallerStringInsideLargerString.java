@@ -1,6 +1,6 @@
 package com.arrayString;
 
-public class StringSearch {
+public class StartingIndexOfSmallerStringInsideLargerString {
 
     public static void main(String[] args) {
         String smallerString = "abc";

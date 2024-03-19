@@ -118,7 +118,7 @@ public class SinglyLinkedListImpl<T> {
         Node<T> fastPointer = start;
         Node<T> slowPointer = start;
 
-        for (int i = 0; i < getSize()-n-1; i++) {
+        for (int i = 0; i < getSize()- n - 1; i++) {
              fastPointer = fastPointer.next;
         }
 

@@ -1,7 +1,5 @@
 package com.arrayString;
 
-import java.util.regex.Pattern;
-
 public class ReverseSentence {
 
     public static void main(String[] args) {
@@ -13,21 +11,26 @@ public class ReverseSentence {
        System.out.println(reverse(s2));
     }
 
-    public static String reverseSentence(String str) {
-        Pattern pattern = Pattern.compile("\\s");
-        String[] strArr = pattern.split(str);
-        //String[] strArr = str.split("\\.");
-        String result = "";
+    public static String reverseSentence(String sentence) {
+        if (sentence == null || sentence.isEmpty()) {
+            return sentence; // Return empty string or null if input is empty or null
+        }
 
-        for (int i = 0; i < strArr.length; i++) {
-            if (i == strArr.length - 1) {
-                result = strArr[i] + result;
-            } else {
-                result = " " + strArr[i] + result;
+        // Split the sentence into words using space as delimiter
+        String[] words = sentence.split("\\s+");
+
+        // Create a StringBuilder to build the reversed sentence
+        StringBuilder sb = new StringBuilder();
+
+        // Iterate through the words in reverse order and append them to the StringBuilder
+        for (int i = words.length - 1; i >= 0; i--) {
+            sb.append(words[i]);
+            if (i > 0) {
+                sb.append(" "); // Append space between words, except for the last word
             }
         }
 
-        return result;
+        return sb.toString();
     }
 
     // This applies for reversal of words

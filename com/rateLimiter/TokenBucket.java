@@ -31,6 +31,7 @@ public class TokenBucket {
         }
         this.lastRefillTime = System.currentTimeMillis();
         this.nextRefillTime = this.lastRefillTime + this.windowSizeForRateLimitInMilliSeconds;
-        this.numberOfTokenAvailable = Math.min(this.maxBucketSize, this.numberOfTokenAvailable + this.numberOfRequests);
+        this.numberOfTokenAvailable = Math.min(this.maxBucketSize,
+             this.numberOfTokenAvailable + this.numberOfRequests);
     }
 }

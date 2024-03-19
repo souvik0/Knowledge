@@ -18,7 +18,6 @@ public class MaximumProductSubarray {
         // Initialize variables to keep track of the maximum and minimum product ending at the current position
         int maxProduct = nums[0];
         int minProduct = nums[0];
-        int result = maxProduct; // Overall maximum product
 
         for (int i = 1; i < n; i++) {
             // Swap maxProduct and minProduct if the current element is negative
@@ -31,11 +30,8 @@ public class MaximumProductSubarray {
             // Update maxProduct and minProduct for the current position
             maxProduct = Math.max(nums[i], maxProduct * nums[i]);
             minProduct = Math.min(nums[i], minProduct * nums[i]);
-
-            // Update the overall result
-            result = Math.max(result, maxProduct);
         }
 
-        return result;
+        return maxProduct;
     }
 }

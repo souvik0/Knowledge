@@ -13,16 +13,17 @@ public class TokenBucketTest {
          int totalTime = 20 * 1000;
          while ((System.currentTimeMillis() - startTime) < totalTime){
              boolean consumeSuccess = tokenBucket.tryConsume();
-             System.out.println("try consume = "+ consumeSuccess);
+             //System.out.println("try consume = "+ consumeSuccess);
              if(consumeSuccess){
                  numberOfConsumed++;
+                 System.out.println("Number of token consumed: " + numberOfConsumed);
              }
          }
 
-         System.out.println("no of consumed request = "+ numberOfConsumed);
+         /*System.out.println("no of consumed request = "+ numberOfConsumed);
          System.out.println("time taken = "+ totalTime);
          System.out.println("no of request per window =" + (numberOfConsumed * TokenBucketConstants.windowSizeForRateLimitInMilliSeconds/ totalTime));
-         System.out.println("no of request per window expected = " + TokenBucketConstants.numberOfRequest);
+         System.out.println("no of request per window expected = " + TokenBucketConstants.numberOfRequest);*/
 
     }
 }
