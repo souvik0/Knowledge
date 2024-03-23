@@ -1,135 +1,74 @@
 package com.expression;
 
-import java.util.Stack;
+import java.util.*;
 
 public class InfixToPrefix {
 
-    public static boolean isOperator(char c) {
-        return (!(c >= 'a' && c <= 'z') &&  
-               !(c >= '0' && c <= '9') &&  
-               !(c >= 'A' && c <= 'Z')); 
+    public static void main(String[] args) {
+        String infix = "(a+b*c-(d/e+f)*g)";
+        String prefix = infixToPrefix(infix);
+        System.out.println("Infix expression: " + infix);
+        System.out.println("Prefix expression: " + prefix);
     }
 
-    // Function to find priority  
-    // of given operator. 
-    public static int precedence(char ch) {
-        switch (ch) { 
-        case '+': 
-        case '-': 
-            return 1; 
+    public static String infixToPrefix(String infix) {
+        // Reverse the infix expression and swap '(' with ')' and vice versa
+        infix = reverseInfix(infix);
 
-        case '*': 
-        case '/': 
-            return 2; 
+        StringBuilder prefix = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
 
-        case '^': 
-            return 3; 
-        } 
-        return -1; 
-    }
-
-    // Function that converts infix 
-    // expression to prefix expression. 
-    public static String infixToPrefix(String infix) { 
-        // stack for operators. 
-        Stack<Character> operators = new Stack<Character>(); 
-
-        // stack for operands. 
-        Stack<String> operands = new Stack<String>(); 
-
-        for (int i = 0; i < infix.length(); i++) {
-            // If current character is an 
-            // opening bracket, then 
-            // push into the operators stack. 
-            if (infix.charAt(i) == '(') { 
-               operators.push(infix.charAt(i)); 
+        for (char c : infix.toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                prefix.append(c);
+            } else if (c == ')') {
+                stack.push(c);
+            } else if (c == '(') {
+                while (!stack.isEmpty() && stack.peek() != ')') {
+                    prefix.append(stack.pop());
+                }
+                stack.pop(); // Discard ')'
+            } else {
+                while (!stack.isEmpty() && precedence(c) < precedence(stack.peek())) {
+                    prefix.append(stack.pop());
+                }
+                stack.push(c);
             }
-
-            // If current character is a 
-            // closing bracket, then pop from 
-            // both stacks and push result 
-            // in operands stack until 
-            // matching opening bracket is 
-            // not found. 
-            else if (infix.charAt(i) == ')') {
-                while (!operators.isEmpty() && operators.peek() != '(') {
-                    // operand 1 
-                    String operand1 = operands.peek(); 
-                    operands.pop(); 
-                    // operand 2 
-                    String operand2 = operands.peek(); 
-                    operands.pop();
-                    // operator 
-                    char operator = operators.peek(); 
-                    operators.pop();
-                    // Add operands and operator 
-                    // in form operator + 
-                    // operand1 + operand2. 
-                    String tmp = operator + operand1 + operand2; 
-                    operands.push(tmp); 
-                } 
-
-                // Pop opening bracket from stack. 
-                operators.pop(); 
-            }
-
-            // If current character is an operand then push it into operands stack. 
-            else if (!isOperator(infix.charAt(i))) {
-                operands.push(infix.charAt(i) + ""); 
-            }
-
-            // If current character is an 
-            // operator, then push it into 
-            // operators stack after popping 
-            // high priority operators from 
-            // operators stack and pushing 
-            // result in operands stack. 
-            else {
-                while (!operators.isEmpty() && 
-                       precedence(infix.charAt(i)) <= precedence(operators.peek())) { 
-                    String operand1 = operands.peek(); 
-                    operands.pop(); 
-
-                    String operand2 = operands.peek(); 
-                    operands.pop(); 
-
-                    char operator = operators.peek(); 
-                    operators.pop();
-
-                    String tmp = operator + operand1 + operand2; 
-                    operands.push(tmp); 
-                } 
-
-                operators.push(infix.charAt(i)); 
-            } 
-        } 
-
-        // Pop operators from operators  
-        // stack until it is empty and  
-        // operation in add result of  
-        // each pop operands stack. 
-        while (!operators.empty()) { 
-            String operand1 = operands.peek(); 
-            operands.pop();
-
-            String operand2 = operands.peek(); 
-            operands.pop();
-
-            char operator = operators.peek(); 
-            operators.pop();
-
-            String tmp = operator + operand2 + operand1; 
-            operands.push(tmp); 
         }
-        // Final prefix expression is 
-        // present in operands stack. 
-        return operands.pop(); 
-    } 
 
-    // Driver code 
-    public static void main(String args[]) 
-    { 
-        String s = "(A-B/C)*(A/K-L)"; 
-        System.out.println( infixToPrefix(s)); 
-    } 
+        while (!stack.isEmpty()) {
+            prefix.append(stack.pop());
+        }
+
+        return prefix.reverse().toString();
+    }
+
+    private static String reverseInfix(String infix) {
+        StringBuilder reversed = new StringBuilder();
+        for (char c : infix.toCharArray()) {
+            if (c == '(') {
+                reversed.append(')');
+            } else if (c == ')') {
+                reversed.append('(');
+            } else {
+                reversed.append(c);
+            }
+        }
+        return reversed.reverse().toString();
+    }
+
+    private static int precedence(char operator) {
+        switch (operator) {
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            case '^':
+                return 3;
+            default:
+                return 0;
+        }
+    }
 }
