@@ -3,22 +3,27 @@ package com.arrayString;
 public class StockBuySell {
 
     public static void main(String[] args) {
-        int[] prices = {100, 180, 260, 310, 40, 535, 695};
+        int[] prices = new int[] {7, 1, 5, 3, 6, 4};
         int maxProfit = maxProfit(prices);
         System.out.println("Maximum Profit: " + maxProfit);
     }
 
     public static int maxProfit(int[] prices) {
-        int n = prices.length;
-        int maxProfit = 0;
+         int n = prices.length;
+         if (n <= 1) {
+             return 0;
+         }
 
-        for (int i = 1; i < n; i++) {
-            // If the current price is higher than the previous, we can sell
-            if (prices[i] > prices[i - 1]) {
-                maxProfit += prices[i] - prices[i - 1];
-            }
-        }
+         int maxProfit = 0;
+         int minPrice = prices[0];
 
-        return maxProfit;
+         for (int i = 1; i < n; i++) {
+             int currentPrice = prices[i];
+             int profit = currentPrice - minPrice;
+             maxProfit = Math.max(maxProfit, profit);
+             minPrice = Math.min(minPrice, currentPrice);
+         }
+
+         return maxProfit;
     }
 }

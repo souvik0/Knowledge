@@ -3,7 +3,7 @@ package com.recursion;
 public class PowerCalculation {
 
     public static void main(String[] args) {
-        int base = 2, power = 10;
+        int base = 5, power = 5;
         int result = powerCalculator(base, power);
         System.out.println(base + "^" + power + " = " + result);
     }

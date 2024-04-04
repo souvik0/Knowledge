@@ -1,6 +1,7 @@
 package com.arrayString;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class LongestUniqueSubString {
 
@@ -20,7 +21,7 @@ public class LongestUniqueSubString {
         int start = 0; // Starting index of the current unique substring
         int maxStart = 0; // Starting index of the longest unique substring found so far
 
-        HashMap<Character, Integer> charIndexMap = new HashMap<>();
+        Map<Character, Integer> charIndexMap = new HashMap<>();
 
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);

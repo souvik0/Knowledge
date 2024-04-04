@@ -9,22 +9,22 @@ public class ReverseStringWithSpecialChar {
 
     public static String reverseString(String str) {
         char[] strChar = str.toCharArray();
-        int i = 0;
-        int j = strChar.length - 1;
+        int left = 0;
+        int right = strChar.length - 1;
 
-        while (i < j) {
-            while (!Character.isLetter(strChar[i])) {
-                i++;
+        while (left < right) {
+            while (!Character.isLetter(strChar[left])) {
+                left++;
             }
-            while (!Character.isLetter(strChar[j])) {
-                j--;
+            while (!Character.isLetter(strChar[right])) {
+                right--;
             }
-            if (i < j) { // Reversal used to take place here
-                char temp = strChar[i];
-                strChar[i] = strChar[j];
-                strChar[j] = temp;
-                i++;
-                j--;
+            if (left < right) { // Reversal used to take place here
+                char temp = strChar[left];
+                strChar[left] = strChar[right];
+                strChar[left] = temp;
+                left++;
+                right--;
             }
         }
 

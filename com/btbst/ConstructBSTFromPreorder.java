@@ -14,33 +14,29 @@ public class ConstructBSTFromPreorder {
     }
 
     public TreeNode constructTree(int pre[], int size) {
-        Stack<TreeNode> s = new Stack<TreeNode>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
         // The first element of pre[] is always root
         TreeNode root = new TreeNode(pre[0]);
         // Push root
-        s.push(root);
+        stack.push(root);
 
         // Iterate through rest of the size-1 items of given pre-order array
         for (int i = 1; i < size; ++i) {
             TreeNode temp = null;
 
             //Keep on popping while the next value is greater than stack's top value
-            while (!s.isEmpty() && pre[i] > s.peek().data) {
-                temp = s.pop();
+            while (!stack.isEmpty() && pre[i] > stack.peek().data) {
+                temp = stack.pop();
             }
 
             // Make this greater value as the right child and push it to the stack
             if (temp != null) {
                 temp.right = new TreeNode(pre[i]);
-                s.push(temp.right);
-            }
-
-            // If the next value is less than the stack's top value, make this value as 
-            // the left child of the stack's top node. Push the new node to stack
-            else {
-                temp = s.peek();
+                stack.push(temp.right);
+            } else {
+                temp = stack.peek();
                 temp.left = new TreeNode(pre[i]);
-                s.push(temp.left);
+                stack.push(temp.left);
             }
         }
 
