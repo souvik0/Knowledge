@@ -1,5 +1,6 @@
 package com.arrayString;
 
+// This should use if. instead of while to perform internal swapping.
 public class ReverseStringWithSpecialChar {
 
     public static void main(String[] args) {
@@ -8,27 +9,25 @@ public class ReverseStringWithSpecialChar {
     }
 
     public static String reverseString(String str) {
-        char[] strChar = str.toCharArray();
+        char[] pattern = str.toCharArray();
         int left = 0;
-        int right = strChar.length - 1;
+        int right = pattern.length - 1;
 
         while (left < right) {
-            while (!Character.isLetter(strChar[left])) {
+            if (!Character.isLetter(pattern[left])) {
                 left++;
-            }
-            while (!Character.isLetter(strChar[right])) {
+            } else if (!Character.isLetter(pattern[right])) {
                 right--;
-            }
-            if (left < right) { // Reversal used to take place here
-                char temp = strChar[left];
-                strChar[left] = strChar[right];
-                strChar[left] = temp;
+            } else {
+                char temp = pattern[left];
+                pattern[left] = pattern[right];
+                pattern[right] = temp;
                 left++;
                 right--;
             }
         }
 
         // Returning the result in the form of String
-        return new String(strChar);
+        return new String(pattern);
     }
 }

@@ -23,7 +23,7 @@ public class DecimalToAnyBaseConversion {
         ix.append(result);
 
         // Reverse the result
-        return new String(ix.reverse());
+        return ix.reverse().toString();
     }
 
     // To return char for a value. For example '2' is returned for 2.

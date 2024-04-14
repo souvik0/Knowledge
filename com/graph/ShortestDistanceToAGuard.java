@@ -11,75 +11,79 @@ import java.util.Queue;
 public class ShortestDistanceToAGuard {
 
     public static void main(String[] args) {
-        char[][] grid = {{'G', 'W', 'G', 'G', 'G'},
-                         {'W', 'W', 'W', 'W', 'W'},
-                         {'G', 'W', 'G', 'W', 'G'},
-                         {'G', 'W', 'W', 'W', 'G'},
-                         {'G', 'G', 'G', 'G', 'G'}};
+        char[][] grid = {{'O', 'O', 'O', 'O', 'G'},
+                         {'O', 'W', 'W', 'O', 'O'},
+                         {'O', 'O', 'O', 'W', 'O'},
+                         {'G', 'W', 'W', 'W', 'O'},
+                         {'O', 'O', 'O', 'O', 'G'}};
 
-        int result = shortestDistance(grid);
-        System.out.println("Shortest distance to a guard: " + result);
+        int[][] result = shortestDistanceToGuard(grid);
+        printResult(result);
     }
 
-    public static int shortestDistance(char[][] grid) {
+    public static int[][] shortestDistanceToGuard(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
-            return -1; // Invalid input
+            return null;
         }
 
-        int rows = grid.length;
-        int cols = grid[0].length;
-        int[][] distance = new int[rows][cols];
-        int guardCount = 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        int[][] result = new int[m][n]; // Default value with 0
 
-        // Find all guards and initialize the distance matrix
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (grid[i][j] == 'G') {
-                    guardCount++;
-                    bfs(grid, distance, i, j);
-                }
-            }
-        }
-
-        int minDistance = Integer.MAX_VALUE;
-
-        // Find the minimum distance to a guard from each empty cell
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (grid[i][j] == '0' + guardCount && distance[i][j] > 0) {
-                    minDistance = Math.min(minDistance, distance[i][j]);
-                }
-            }
-        }
-
-        return minDistance == Integer.MAX_VALUE ? -1 : minDistance;
-    }
-
-    private static void bfs(char[][] grid, int[][] distance, int startX, int startY) {
-        int rows = grid.length;
-        int cols = grid[0].length;
-        boolean[][] visited = new boolean[rows][cols];
         Queue<int[]> queue = new LinkedList<>();
 
-        queue.offer(new int[]{startX, startY, 0});
-        visited[startX][startY] = true;
-
-        while (!queue.isEmpty()) {
-            int[] current = queue.poll();
-            int x = current[0];
-            int y = current[1];
-            int dist = current[2];
-
-            // Explore neighbors
-            int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-            for (int[] dir : directions) {
-                int newX = x + dir[0];
-                int newY = y + dir[1];
-                if (newX >= 0 && newX < rows && newY >= 0 && newY < cols && !visited[newX][newY] && grid[newX][newY] != 'W') {
-                    queue.offer(new int[]{newX, newY, dist + 1});
-                    visited[newX][newY] = true;
+        // Add all guard cells to the queue and mark them as visited
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 'G') {
+                    queue.offer(new int[]{i, j});
                 }
             }
+        }
+
+        // Possible directions for BFS
+        int[][] dirs = {{-1, 0},
+                        {1, 0},
+                        {0, -1},
+                        {0, 1}};
+
+        // Perform BFS
+        while (!queue.isEmpty()) {
+            int[] cell = queue.poll();
+            int row = cell[0];
+            int col = cell[1];
+
+            for (int[] dir : dirs) {
+                int newRow = row + dir[0];
+                int newCol = col + dir[1];
+
+                if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n &&
+                   (grid[newRow][newCol] == 'O' || grid[newRow][newCol] == 'D')) {
+                    if (grid[newRow][newCol] == 'O') {
+                        result[newRow][newCol] = result[row][col] + 1;
+                        grid[newRow][newCol] = 'D'; // Mark as visited
+                        queue.offer(new int[]{newRow, newCol});
+                    } else if (grid[newRow][newCol] == 'D') {
+                        // If already visited, check if this path gives shorter distance
+                        if (result[newRow][newCol] > result[row][col] + 1) {
+                            result[newRow][newCol] = result[row][col] + 1;
+                            queue.offer(new int[]{newRow, newCol});
+                        }
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+
+    // Helper function to print the result
+    public static void printResult(int[][] result) {
+        for (int[] row : result) {
+            for (int val : row) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
         }
     }
 }

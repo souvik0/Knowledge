@@ -22,7 +22,7 @@ public class ContigiousSubArraySum {
        int right = 0;
        int currentSum = arr[0]; // consider currentSum as first element only
 
-       for (int i = 1 ; i < arr.length ; i++) {
+       for (int i = 1; i < arr.length; i++) {
 
             if (currentSum == givenSum) {
                 right = i - 1;

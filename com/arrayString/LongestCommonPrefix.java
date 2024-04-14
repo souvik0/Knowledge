@@ -31,9 +31,7 @@ public class LongestCommonPrefix {
                      break;
                  }
              }
-             if (j < minString.length()) {
-                 minPrefixLength = j;
-             }
+             minPrefixLength = j;
         }
 
         return minString.substring(0, minPrefixLength);

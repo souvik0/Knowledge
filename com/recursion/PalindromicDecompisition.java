@@ -2,6 +2,7 @@ package com.recursion;
 
 //Time Complexity : O(n*2^n)
 import java.util.ArrayList;
+// import java.util.List;
 
 public class PalindromicDecompisition {
 
@@ -84,5 +85,6 @@ public class PalindromicDecompisition {
             }
             System.out.println();
         }
+        // finalList.stream().flatMap(List::stream).forEach(System.out:: println);
     }
 }

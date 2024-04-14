@@ -6,9 +6,10 @@ public class RotateArrayCyclically {
 
     /* Driver program */
     public static void main(String[] args) {
-        int arr[] = new int[] { 1, 2, 3, 4, 5};
+        int arr[] = new int[] {1, 2, 3, 4, 5};
         System.out.println("Given Array is");
         System.out.println(Arrays.toString(arr));
+        rotate(arr);
         rotate(arr);
         System.out.println("Rotated Array is");
         System.out.println(Arrays.toString(arr));

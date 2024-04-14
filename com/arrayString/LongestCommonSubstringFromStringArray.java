@@ -30,14 +30,15 @@ public class LongestCommonSubstringFromStringArray {
                 for (k = 1; k < n; k++) {
                     // Check if the generated stem is
                     // common to all words
-                    if (!arr[k].contains(subString))
+                    if (!arr[k].contains(subString)) {
                         break;
+                    }
                 }
 
                 // If current substring is present in
                 // all strings and its length is greater
                 // than current result
-                if (k == n && result.length() < subString.length())
+                if (k == n && subString.length() > result.length())
                     result = subString;
             }
         }

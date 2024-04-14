@@ -1,16 +1,11 @@
 package com.btbst;
 
 public class Result {
+    int level;
+    TreeNode node;
 
-    TreeNode root;
-    int size;
-    int min;
-    int max;
-
-    public Result(TreeNode root, int size, int min, int max) {
-        this.root = root;
-        this.size = size;
-        this.min = min;
-        this.max = max;
+    public Result(int level, TreeNode node) {
+        this.level = level;
+        this.node = node;
     }
 }

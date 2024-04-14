@@ -11,12 +11,13 @@ public class Client {
                             / \
                            1   7
          */
-         ArithmeticExpression two = new Number(2);
          ArithmeticExpression one = new Number(1);
          ArithmeticExpression seven = new Number(7);
-         ArithmeticExpression subExpression = new Expression(one,seven, Operation.ADD);
-         ArithmeticExpression finalExpression = new Expression(two,subExpression, Operation.MULTIPLY);
+         ArithmeticExpression subExpression = new Expression(one, seven, Operation.ADD);
 
-         System.out.println(finalExpression.evaluate());
+         ArithmeticExpression two = new Number(2);
+         ArithmeticExpression finalExpression = new Expression(two, subExpression, Operation.MULTIPLY);
+
+         finalExpression.evaluate();
     }
 }

@@ -10,15 +10,33 @@ public class FindListOfPaekElements {
         System.out.println("Peak Elements: " + peakElements);
     }
 
-    public static List<Integer> findPeakElements(int[] nums) {
-        List<Integer> peakElements = new ArrayList<>();
+    public static List<Integer> findPeakElements(int[] arr) {
+        List<Integer> peaks = new ArrayList<>();
 
-        for (int i = 1; i < nums.length - 1; i++) {
-            if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) {
-                peakElements.add(nums[i]);
+        if (arr == null || arr.length == 0) {
+            return peaks;
+        }
+
+        int n = arr.length;
+        if (n == 1) {
+            peaks.add(arr[0]);
+            return peaks;
+        }
+
+        if (arr[0] > arr[1]) {
+            peaks.add(arr[0]);
+        }
+
+        for (int i = 1; i < n - 1; i++) {
+            if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+                peaks.add(arr[i]);
             }
         }
 
-        return peakElements;
+        if (arr[n - 1] > arr[n - 2]) {
+            peaks.add(arr[n - 1]);
+        }
+
+        return peaks;
     }
 }

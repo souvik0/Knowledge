@@ -4,21 +4,22 @@ package com.arrayString;
 public class CaeserCipherEncrypter {
 
     public static void main(String[] args) {
-        System.out.println(shiftLetters("SouvikPupu", 2));
+        System.out.println(shiftLetters("SouvikPupu 424", 6));
     }
 
     public static String shiftLetters(String str, int key) {
-        char[] newLetter = new char[str.length()];
-        int newKey = key % 26;
-        for (int i = 0; i < str.length(); i++) {
-             newLetter[i] = getNewLetter(str.charAt(i), newKey);
-        }
-        return new String(newLetter);
-    }
+        StringBuilder encrypted = new StringBuilder();
 
-    public static char getNewLetter(char letter, int key) {
-        int newLetterCode = (int) (letter + key);
-        return newLetterCode <= 122 ? (char) newLetterCode :
-                                      (char) (96 + newLetterCode % 122);
+        for (char c : str.toCharArray()) {
+            if (Character.isLetter(c)) {
+                char shifted = (char) (((c - 'a' + key) % 26) + 'a');
+                encrypted.append(shifted);
+            } else {
+                // If the character is not a letter, keep it unchanged
+                encrypted.append(c);
+            }
+        }
+
+        return encrypted.toString();
     }
 }

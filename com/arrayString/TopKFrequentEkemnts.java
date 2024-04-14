@@ -25,14 +25,10 @@ public class TopKFrequentEkemnts {
     // This method helping us to find out efficiently with the help of PriorityQueue
     public static void findKOccurances(int[] arr, int k) {
         // This map stores number as Key & frequency of number as value
-        Map<Integer, Integer> hmap = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();
 
-        for (int i = 0; i < arr.length; i++) {
-            if (hmap.containsKey(arr[i])) {
-                hmap.put(arr[i], hmap.get(arr[i]) + 1);
-            } else {
-                hmap.put(arr[i], 1);
-            }
+        for (int val: arr) {
+             frequencyMap.put(val, frequencyMap.getOrDefault(val, 0) + 1);
         }
 
        // Create a Priority Queue to sort based on the count or on the key if the count 
@@ -44,7 +40,7 @@ public class TopKFrequentEkemnts {
        );
 
        // Traversing over map to populate the queue
-       for (Map.Entry<Integer, Integer> entry : hmap.entrySet()) {
+       for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
            priorityQueue.add(entry);
        }
 
