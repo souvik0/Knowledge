@@ -34,6 +34,7 @@ public class ConstructBSTFromPostOrder {
         }
 
         TreeNode root = new TreeNode(postorder[end]);
+        // PartitionIndex used to identify partitions between left & right subtree
         int partitionIndex = findPartitionIndex(postorder, start, end, root.data);
 
         root.left = constructBST(postorder, start, partitionIndex - 1);

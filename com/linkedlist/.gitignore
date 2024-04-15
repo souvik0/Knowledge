@@ -1,3 +1,12 @@
 /Node.class
 /SinglyLInkedListTest.class
 /SinglyLinkedListImpl.class
+/InsertAtLinkedList.class
+/FindMiddleElementOfLinkedList.class
+/DetectCycleInLinkedList.class
+/MergeTwoSortedLinkedLists.class
+/IntersectionOfTwoLinkedLists.class
+/RotateLinkedListByKPosition.class
+/NthNodeFromFirst.class
+/NthNodeFromLast.class
+/LinkedListPalindromeCheck.class

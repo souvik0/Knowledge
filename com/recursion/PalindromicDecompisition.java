@@ -85,6 +85,5 @@ public class PalindromicDecompisition {
             }
             System.out.println();
         }
-        // finalList.stream().flatMap(List::stream).forEach(System.out:: println);
     }
 }

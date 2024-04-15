@@ -187,27 +187,6 @@ public class BinarySearchTree {
         }
     }
 
-    public TreeNode insert(TreeNode root, TreeNode nodeToBeInserted) {
-        if (root == null) {
-            root = nodeToBeInserted;
-        } else {
-            if (root.data > nodeToBeInserted.data) {
-                if (root.left == null) {
-                    root.left = nodeToBeInserted;
-                } else {
-                    insert(root.left, nodeToBeInserted);
-                }
-            } else if (root.data < nodeToBeInserted.data) {
-                if (root.right == null) {
-                    root.right = nodeToBeInserted;
-                } else {
-                    insert(root.right, nodeToBeInserted);
-                }
-            }
-        }
-        return root;
-    }
-
     // value stands for data of the node to be deleted
     public TreeNode deleteNode(TreeNode root, int nodeData) {
         if (root == null) {
