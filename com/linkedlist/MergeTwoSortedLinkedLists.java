@@ -17,29 +17,22 @@ public class MergeTwoSortedLinkedLists {
         printList(mergedList); 
     }
 
-    public static Node<Integer> mergeTwoLists(Node<Integer> start1, Node<Integer> start2) {
-        Node<Integer> dummy = new Node<Integer>(0);
-        Node<Integer> current = dummy;
+    public static Node<Integer> mergeTwoLists(Node<Integer> head1, Node<Integer> head2) {
+         if (head1 == null) {
+             return head2;
+         }
 
-        while (start1 != null && start2 != null) {
-            if (start1.data < start2.data) {
-                current.next = start1;
-                start1 = start1.next;
-            } else {
-                current.next = start2;
-                start2 = start2.next;
-            }
-            current = current.next;
-        }
+         if (head2 == null) {
+             return head1;
+         }
 
-        // Append the remaining elements
-        if (start1 != null) {
-            current.next = start1;
-        } else {
-            current.next = start2;
-        }
-
-        return dummy.next; // Head of the merged list
+         if (head1.data < head2.data) {
+             head1.next = mergeTwoLists(head1.next, head2);
+             return head1;
+         } else {
+             head2.next = mergeTwoLists(head1, head2.next);
+             return head2;
+         }
     }
 
     // Method to print the linked list

@@ -1,6 +1,6 @@
 package com.linkedlist;
-// Rotate list in right direction
 
+// Rotate list in right direction
 public class RotateLinkedListByKPosition {
 
     public static void main(String[] args) {
@@ -29,8 +29,10 @@ public class RotateLinkedListByKPosition {
             return head;
         }
 
+        int count = 0;
         Node<Integer> newTail = head;
-        for (int i = 0; i < length - k - 1; i++) {
+
+        while (newTail != null && count++ < k) {
             newTail = newTail.next;
         }
 

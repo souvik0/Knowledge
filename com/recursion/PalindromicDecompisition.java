@@ -29,9 +29,9 @@ public class PalindromicDecompisition {
     // Goes through all indexes and recursively add remaining
     // partitions if current string is palindrome.
     public static ArrayList<ArrayList<String>> addStrings(ArrayList<ArrayList<String>> finalList,
-           String s, ArrayList<String> resultList, int start) {
+           String input, ArrayList<String> resultList, int start) {
 
-        int len = s.length();
+        int len = input.length();
         String str = "";
         // The same will be used in future for backtracking
         ArrayList<String> current = new ArrayList<>(resultList);
@@ -39,7 +39,7 @@ public class PalindromicDecompisition {
         // Iterate over the string
         for (int i = start; i < len; ++i) {
             // Partitioning individual characters from String
-            str = str + s.charAt(i);
+            str = str + input.charAt(i);
 
             // check whether the substring is palindromic or not
             if (checkPalindrome(str)) {
@@ -48,7 +48,7 @@ public class PalindromicDecompisition {
 
                 if (i + 1 < len) {
                     // recurr to get all the palindromic partitions for the substrings
-                    finalList = addStrings(finalList, s, resultList, i + 1);
+                    finalList = addStrings(finalList, input, resultList, i + 1);
                 } else {
                     // if end of the string is reached add temp to v
                     finalList.add(resultList);

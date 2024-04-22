@@ -1,5 +1,6 @@
 package com.linkedlist;
 
+// kth node means, needs to return (k -1)th node
 public class KthNodeFromFirst {
 
     public static void main(String[] args) {
@@ -19,13 +20,12 @@ public class KthNodeFromFirst {
         int count = 0;
         Node<Integer> current = head;
 
-        while (current != null && count < k -1) {
+        while (current != null && count++ < k - 1) {
             current = current.next;
-            count++;
         }
 
         if (current == null) {
-            return null; // If n is greater than the length of the list
+            return null; // If k is greater than the length of the list
         }
 
         return current;

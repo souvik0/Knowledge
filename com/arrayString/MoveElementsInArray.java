@@ -7,8 +7,8 @@ public class MoveElementsInArray {
 
     public static void main(String[] args) {
         int[] arr = {1, 1, 3, 5, 6};
-        int K = 3;
-        int[] ans = moveElement(arr, K);
+        int targetElement = 3;
+        int[] ans = moveElement(arr, targetElement);
 
         for (int i = 0; i < arr.length; i++)
             System.out.print(ans[i] + " ");

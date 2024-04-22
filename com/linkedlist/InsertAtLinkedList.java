@@ -18,8 +18,7 @@ public class InsertAtLinkedList {
         list.printList();
     }
 
-    public void inserAtFirst(int key) {
-        Node<Integer> newNode = new Node<Integer>(key);
+    public void inserAtFirst(Node<Integer> newNode) {
         newNode.next = start;
         start = newNode;
     }
@@ -33,22 +32,22 @@ public class InsertAtLinkedList {
         }
 
         if (position == 1) {
-            inserAtFirst(key);
+            inserAtFirst(newNode);
             return;
         }
 
         Node<Integer> current = start;
-        int count = 1;
+        int count = 1; // Assign to 1st position
 
         // Traverse up to target position
-        while (count < position - 1 && current != null) {
+        while (current != null && count < position - 1) {
             current = current.next;
             count++;
         }
 
         // Reached end of list
         if (current == null) {
-            System.out.println("Invalid position.");
+            System.out.println("Position beyond length of list.");
             return;
         }
 

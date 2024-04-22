@@ -19,6 +19,7 @@ public class KthLargestFromStreamIndividual {
         System.out.println(kthLargest.add(4)); // Output: 8
     }
 
+    // To populate priority queue initially with array elements
     public KthLargestFromStreamIndividual(int k, int[] nums) {
         this.k = k;
         this.minHeap = new PriorityQueue<>(k);

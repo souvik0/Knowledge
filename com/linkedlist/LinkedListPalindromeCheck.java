@@ -9,7 +9,7 @@ public class LinkedListPalindromeCheck {
         head.next.next.next = new Node<Integer>(2);
         head.next.next.next.next = new Node<Integer>(1);
 
-        System.out.println("Is the linked list a palindrome? " + isPalindrome(head));
+        System.out.println("Is the linked list a palindrome ? " + isPalindrome(head));
     }
 
     public static boolean isPalindrome(Node<Integer> head) {
@@ -47,10 +47,10 @@ public class LinkedListPalindromeCheck {
         Node<Integer> current = head;
 
         while (current != null) {
-            Node<Integer> next = current.next;
+            Node<Integer> nextNode = current.next;
             current.next = newHead;
             newHead = current;
-            current = next;
+            current = nextNode;
         }
 
         return newHead; // New head of the reversed list
