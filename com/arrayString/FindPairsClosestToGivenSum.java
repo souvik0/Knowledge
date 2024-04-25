@@ -7,35 +7,46 @@ import java.util.Arrays;
 public class FindPairsClosestToGivenSum {
 
     public static void main(String[] args) {
-        int arr[] = {10, 22, 28, 29, 30, 40};
-        int x = 54;
-        findPairs(arr, x);
+        int[] nums = {1, 60, -10, 70, -80, 85};
+        int target = 0;
+        int[] closestPair = findClosestPair(nums, target);
+        System.out.println("The closest pair to " + target + " is [" +
+                           closestPair[0] + ", " + closestPair[1] + "]");
     }
 
-    public static void findPairs(int[] arr, int givenSum) {
-        int left = 0;
-        int right = arr.length - 1;
-        int minleft = 0, minright = 0;
-        // To find closest difference is needed to calculate
-        int minDiff = Integer.MAX_VALUE;
+    public static int[] findClosestPair(int[] nums, int target) {
+        int n = nums.length;
+        if (n < 2) {
+            return new int[]{};  // Edge case: not enough elements to form a pair
+        }
 
-        Arrays.sort(arr);
+        Arrays.sort(nums);  // Sort the array to use two-pointer technique
+        int left = 0;
+        int right = n - 1;
+        int closestSum = nums[left] + nums[right];
+        int closestLeft = left;
+        int closestRight = right;
 
         while (left < right) {
-            int currentSum = arr[left] + arr[right];
-            int diff = (currentSum - givenSum);
-            if (Math.abs(diff) < Math.abs(minDiff)) {
-                minDiff = diff;
-                minleft = left;
-                minright = right;
-                System.out.println("Left: " + arr[minleft] + " : right: " + arr[minright]);
+            int currentSum = nums[left] + nums[right];
+
+            // Update the closest sum if the current one is closer to the target
+            if (Math.abs(currentSum - target) < Math.abs(closestSum - target)) {
+                closestSum = currentSum;
+                closestLeft = left;
+                closestRight = right;
             }
-            if (currentSum > givenSum) {
-                right--;
-            }
-            if (currentSum < givenSum) {
+
+            // Move pointers to try to get closer to the target sum
+            if (currentSum < target) {
                 left++;
+            } else if (currentSum > target) {
+                right--;
+            } else {
+                break;  // The current sum is exactly the target
             }
         }
+
+        return new int[] {nums[closestLeft], nums[closestRight]};
     }
 }

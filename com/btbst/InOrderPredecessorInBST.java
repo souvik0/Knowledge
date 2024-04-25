@@ -20,13 +20,12 @@ public class InOrderPredecessorInBST {
             root = insert(root, key);
         }
 
-        // find inorder predecessor for each key
+        // find in-order predecessor for each key
         for (int key: keys) {
             TreeNode prec = findPredecessor(root, null, key);
             if (prec != null) {
                  System.out.println("The predecessor of node " + key + " is " + prec.data);
-            }
-            else {
+            } else {
                  System.out.println("The predecessor doesn't exist for node " + key);
             }
         }

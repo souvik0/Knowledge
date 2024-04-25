@@ -4,8 +4,8 @@ import java.util.*;
 
 public class KthLargestFromStreamIndividual {
 
-    private final PriorityQueue<Integer> minHeap;
-    private final int k;
+    private PriorityQueue<Integer> minHeap;
+    private int k;
 
     public static void main(String[] args) {
         int k = 3;

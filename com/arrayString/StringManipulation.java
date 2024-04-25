@@ -3,7 +3,7 @@ package com.arrayString;
 public class StringManipulation {
 
     public static void main(String[] args) {
-        String input = "[aa]5[b]3[cc]4";
+        String input = "[aa]2[b]1[cc]2";
         System.out.println(manipulateString(input));
     }
 

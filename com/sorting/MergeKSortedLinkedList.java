@@ -1,43 +1,40 @@
 package com.sorting;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class MergeKSortedLinkedList {
 
     public static Node mergeKLists(Node[] lists) {
-        // create an empty min-heap using a comparison object for ordering the min-heap
-        PriorityQueue<Node> pq = new PriorityQueue<Node>(Comparator.comparingInt(a -> ((Node) a).data));
+        if (lists == null || lists.length == 0) {
+            return null;
+        }
 
-        // push the first node of each list into the min-heap
-        pq.addAll(Arrays.asList(lists).subList(0, lists.length));
+        PriorityQueue<Node> minHeap = new PriorityQueue<>(lists.length, (a, b) -> a.data - b.data);
 
-        // take two pointers, head and tail, where the head points to the first node
-        // of the output list and tail points to its last node
-        Node head = null, last = null;
-
-        // run till min-heap is empty
-        while (!pq.isEmpty()) {
-            // extract the minimum node from the min-heap
-            Node min = pq.poll();
-
-            // add the minimum node to the output list
-            if (head == null) {
-                head = last = min;
-            } else {
-                last.next = min;
-                last = min;
-            }
-
-            // take the next node from the "same" list and insert it into the min-heap
-            if (min.next != null) {
-                pq.add(min.next);
+        // Insert the first node of each list into the priority queue
+        for (Node node : lists) {
+            if (node != null) {
+                minHeap.add(node);
             }
         }
 
-        // return head node of the merged list
-        return head;
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        while (!minHeap.isEmpty()) {
+            // Extract the smallest node from the heap
+            Node minNode = minHeap.poll();
+            // Move the tail and point it to the current smallest node
+            tail.next = minNode;
+            tail = minNode;
+
+            // If there is a next node in the list, push it into the queue
+            if (minNode.next != null) {
+                minHeap.add(minNode.next);
+            }
+        }
+
+        return dummy.next;
     }
 
     // Utility function to print contents of a linked list
@@ -50,27 +47,21 @@ public class MergeKSortedLinkedList {
     }
 
     public static void main(String[] args) {
-        int k = 3;// total number of linked lists
+        // Test the function with an example
+        Node list1 = new Node(1);
+        list1.next = new Node(4);
+        list1.next.next = new Node(5);
 
-        // an array to store the head nodes of the linked lists
-        Node[] lists = new Node[k];
+        Node list2 = new Node(1);
+        list2.next = new Node(3);
+        list2.next.next = new Node(4);
 
-        lists[0] = new Node(1);
-        lists[0].next = new Node(5);
-        lists[0].next.next = new Node(7);
+        Node list3 = new Node(2);
+        list3.next = new Node(6);
 
-        lists[1] = new Node(2);
-        lists[1].next = new Node(3);
-        lists[1].next.next = new Node(6);
-        lists[1].next.next.next = new Node(9);
-
-        lists[2] = new Node(4);
-        lists[2].next = new Node(8);
-        lists[2].next.next = new Node(10);
-
-        // Merge all lists into one
-        Node head = mergeKLists(lists);
-        printList(head);
+        Node[] lists = new Node[] {list1, list2, list3};
+        Node mergedList = mergeKLists(lists);
+        printList(mergedList);
     }
 }
 

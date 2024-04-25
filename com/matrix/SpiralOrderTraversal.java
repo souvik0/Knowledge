@@ -33,8 +33,8 @@ public class SpiralOrderTraversal {
             top++;
 
             // Traverse right column
-            for (int j = top; j <= bottom; j++) {
-                result.add(matrix[j][right]);
+            for (int i = top; i <= bottom; i++) {
+                result.add(matrix[i][right]);
             }
             right--;
 
@@ -48,8 +48,8 @@ public class SpiralOrderTraversal {
 
             // Traverse left column (if applicable)
             if (left <= right) {
-                for (int j = bottom; j >= top; j--) {
-                    result.add(matrix[j][left]);
+                for (int i = bottom; i >= top; i--) {
+                    result.add(matrix[i][left]);
                 }
                 left++;
             }

@@ -3,37 +3,35 @@ package com.linkedlist;
 public class DeleteNodeBySearchingValue {
 
     public static void main(String[] args) {
-        // Create a sample linked list: 1 -> 2 -> 3 -> 4 -> 5
         Node<Integer> head = new Node<Integer>(1);
         head.next = new Node<Integer>(2);
         head.next.next = new Node<Integer>(3);
         head.next.next.next = new Node<Integer>(4);
         head.next.next.next.next = new Node<Integer>(5);
 
-        // Delete node with value 3
-        deleteNode(head, 1);
+        deleteNode(head, 3);
     }
 
     public static void deleteNode(Node<Integer> head, int data) {
-         Node<Integer> temp = head;
+         Node<Integer> current = head;
          Node<Integer> prev = null;
 
-         while (temp != null && temp.data != data) {
-             prev = temp;
-             temp = temp.next;
+         while (current != null && current.data != data) {
+             prev = current;
+             current = current.next;
          }
 
-         if (temp == null) {
+         // nothing to be deleted
+         if (current == null) {
              return;
          }
 
+         // delete either from 1st or any position
          if (prev == null) {
              head = head.next;
          } else {
-             prev.next = temp.next;
+             prev.next = current.next;
          }
-
-         temp = null;
 
          // Print the modified list
          printList(head);

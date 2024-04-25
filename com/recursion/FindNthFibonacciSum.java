@@ -1,6 +1,6 @@
 package com.recursion;
 
-public class FindNthFibonaci {
+public class FindNthFibonacciSum {
 
     public static void main(String[] args) {
         int n = 5;

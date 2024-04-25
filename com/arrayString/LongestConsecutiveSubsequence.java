@@ -15,7 +15,7 @@ public class LongestConsecutiveSubsequence {
             return 0;
         }
 
-        HashSet<Integer> numSet = new HashSet<>();
+        Set<Integer> numSet = new HashSet<>();
         for (int num : nums) {
             numSet.add(num);
         }
