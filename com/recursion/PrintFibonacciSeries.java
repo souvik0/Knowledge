@@ -3,10 +3,10 @@ package com.recursion;
 public class PrintFibonacciSeries {
 
     public static void main(String[] args) {
-        printFibonacci(5);
+        printFibonacciSeries(5);
     }
 
-    public static void printFibonacci(int number) {
+    public static void printFibonacciSeries(int number) {
         int first = 0;
         int second = 1;
         System.out.println(first + " ");
