@@ -1,7 +1,10 @@
 package com.arrayString;
 
-/* Any kind of grouping of objects can be done easily with hashing algorithm
-   Like this one as well topView, bottomView & verticalView of BT/BST 
+/*  Any kind of grouping of objects can be done easily with hashing algorithm
+    Here ascii is taken into consideration to identify key of the hashing 
+    algorithm to group the strings.
+    topView, bottomView & verticalView of BT/BST problems are also falling 
+    under the same category
 */
 
 import java.util.ArrayList;
