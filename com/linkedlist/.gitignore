@@ -16,3 +16,5 @@
 /DeleteNodeFromAnyPosition.class
 /DeleteNodeBySearchingValue.class
 /DetectLoopNodeInLinkedList.class
+/DetectCycleNodeInLinkedList.class
+/RemoveElementFromSortedLinkedList.class
