@@ -1,5 +1,8 @@
 package com.arrayString;
-// Successive multiplication
+/*
+ * Successive multiplication starting from last character of the string has to be performed with increasing power starting from 1.
+ * Meanwhile needs to covert the character to Integer to have a mathematical value
+ */
 public class AnyBaseToDecimalConversion {
 
     public static void main(String[] args) {
